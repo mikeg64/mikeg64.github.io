@@ -79,6 +79,7 @@
 
 <h2 id="1-shell-basics">1. Shell Basics:</h2>
 
+<p>
 <table>
 <thead>
 <tr>
@@ -119,7 +120,7 @@
   <td>displays the *man*ual page for a command.</td>
 </tr>
 </tbody></table>
-
+</p>
 
 
 
@@ -129,6 +130,7 @@
 
 <h3 id="a-how-to-create-new-files-and-directories">a) How to create new files and directories..</h3>
 
+<p>
 <table>
 <thead>
 <tr>
@@ -145,6 +147,7 @@
   <td>if <code>filename</code> does not exist, <code>nano</code> creates it and opens the <code>nano</code> text editor. If the file exists, <code>nano</code> opens it. <em>Note:</em> <em>(i)</em> You can use a different text editor if you like.  In gnome Linux, <code>gedit</code> works really well too. <em>(ii)</em> <code>nano</code> (or <code>gedit</code>) create text files. It doesn’t matter what the file extension is (or if there is one)</td>
 </tr>
 </tbody></table>
+</p>
 
 
 
@@ -155,6 +158,7 @@
 
 <h4 id="remember-that-deleting-is-forever-there-is-no-going-back"><em>Remember that deleting is forever. There is NO going back</em></h4>
 
+<p>
 <table>
 <thead>
 <tr>
@@ -171,12 +175,13 @@
   <td>deletes the directory <code>dirname</code> from the current directory. <em>Note:</em> <code>dirname</code> must be empty for <code>rmdir</code> to run.</td>
 </tr>
 </tbody></table>
-
+</p>
 
 
 
 <h3 id="c-how-to-copy-and-rename-files-and-directories">c) How to copy and rename files and directories…</h3>
 
+<p>
 <table>
 <thead>
 <tr>
@@ -193,7 +198,7 @@
   <td>copies the file <code>filename</code> from the directory <code>tmp</code> to the current directory. <em>Note:</em> <em>(i)</em> the original file is still there</td>
 </tr>
 </tbody></table>
-
+</p>
 
 
 
@@ -212,6 +217,7 @@ text strings as arguments.</p>
 
 <h4 id="table-of-commonly-used-wildcards">Table of commonly used wildcards</h4>
 
+<p>
 <table>
 <thead>
 <tr>
@@ -248,7 +254,7 @@ text strings as arguments.</p>
   <td>exactly one entire word from the options given</td>
 </tr>
 </tbody></table>
-
+</p>
 
 <p>See the cheatsheet on regular expressions for more “wildcard” shortcuts.</p>
 
@@ -258,6 +264,7 @@ text strings as arguments.</p>
 
 <p>Redirection operators can be used to redirect the ouput from a program from the display screen to a file where it is saved (or many other places too, like your printer or to another program where it can be used as input).</p>
 
+<p>
 <table>
 <thead>
 <tr>
@@ -278,7 +285,7 @@ text strings as arguments.</p>
   <td>assigns the information in a file to a variable, loop, etc (e.g., <code>n &lt; markdownfiles.md</code>)</td>
 </tr>
 </tbody></table>
-
+</p>
 
 
 
@@ -286,6 +293,7 @@ text strings as arguments.</p>
 
 <p>A special kind of redirection is called a pipe and is denoted by <code>|</code>. </p>
 
+<p>
 <table>
 <thead>
 <tr>
@@ -298,7 +306,7 @@ text strings as arguments.</p>
   <td>Output from one command line program can be used as input to another one (e.g. ls *.md | head gives you the first 5 <code>*.md</code> files in your directory)</td>
 </tr>
 </tbody></table>
-
+</p>
 
 
 
@@ -322,12 +330,14 @@ There are 2 primary kinds of loops: <code>for</code> loops and <code>while</code
 
 <p>For loops loop through variables in a list</p>
 
+<p>
 <pre><code>for varname in list
 do
     command 1
     command 2
 done
 </code></pre>
+</p>
 
 <p>where,</p>
 
@@ -338,6 +348,7 @@ done
 
 <p>–</p>
 
+<p>
 <pre><code>list[0]=Sam
 list[1]=Lynne
 list[2]=Dhavide
@@ -347,15 +358,18 @@ list[3]=Trevor
 .
 list[n]=Mark
 </code></pre>
+</p>
 
 <p>which is referenced in the loop by:</p>
 
+<p>
 <pre><code>for varname in ${list[@]}
 do
     command 1
     command 2
 done
 </code></pre>
+</p>
 
 <p><em>Note:</em> Bash is zero indexed, so counting always starts at <code>0</code>, not <code>1</code>.</p>
 
@@ -365,6 +379,7 @@ done
 
 <p>While loops loop through the commands until a condition is met. For example</p>
 
+<p>
 <pre><code>COUNTER=0
 while [ ${COUNTER} -lt 10 ]; do
     command 1
@@ -372,17 +387,20 @@ while [ ${COUNTER} -lt 10 ]; do
     COUNTER=`expr ${COUNTER} + 1` 
 done
 </code></pre>
+</p>
 
 <p>continues the loop as long as the value in the variable COUNTER is less than 10 (incremented by 1 on each iteration of the loop).</p>
 
+<p>
 <ul>
 <li><code>while</code>, <code>do</code>, and <code>done</code> are keywords</li>
 </ul>
-
+</p>
 
 
 <h4 id="b1-commonly-used-conditional-operators">b.1) Commonly used conditional operators</h4>
 
+<p>
 <table>
 <thead>
 <tr>
@@ -415,7 +433,7 @@ done
   <td>less than or equal to</td>
 </tr>
 </tbody></table>
-
+</p>
 
 <p>Use <code>man bash</code> or <code>man test</code> to learn about other operators you can use.</p>
 
@@ -429,6 +447,7 @@ done
 
 <p>To find information within files, you use a command called <code>grep</code>.</p>
 
+<p>
 <table>
 <thead>
 <tr>
@@ -441,12 +460,13 @@ done
   <td>finds every instance of the string <code>day</code> in the file haiku.txt and pipes it to standard output</td>
 </tr>
 </tbody></table>
-
+</p>
 
 
 
 <h4 id="a1-commonly-used-grep-options">a.1) Commonly used <code>grep</code> options</h4>
 
+<p>
 <table>
 <thead>
 <tr>
@@ -469,7 +489,7 @@ done
   <td><code>-w</code></td>
 </tr>
 </tbody></table>
-
+</p>
 
 
 
@@ -477,6 +497,7 @@ done
 
 <p>To find file and directory names, you use a command called <code>find</code></p>
 
+<p>
 <table>
 <thead>
 <tr>
@@ -489,12 +510,13 @@ done
   <td><code>find</code> recursively descends the directory tree for each path listed to match the expression given in the command line with file or directory names in the search path</td>
 </tr>
 </tbody></table>
-
+</p>
 
 
 
 <h4 id="b1-commonly-used-find-options">b.1) Commonly used <code>find</code> options</h4>
 
+<p>
 <table>
 <thead>
 <tr>
@@ -511,7 +533,7 @@ done
   <td><code>-mindepth n</code></td>
 </tr>
 </tbody></table>
-
+</p>
 
 </body>
 </html>
