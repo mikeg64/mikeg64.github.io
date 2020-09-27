@@ -1,0 +1,8 @@
+title: Mikeg64.GitHub.io
+description: web documentation for mikeg64
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-slate
+
+gems:
+  - jekyll-mentions
