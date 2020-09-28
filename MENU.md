@@ -7,4 +7,4 @@ It is perfect to add external links or Collections of relevant material.
 
 # Project one
 
-[lablog on Github](https://mikeg64.github.io/)
+[lablog on Github](https://mikeg64.github.io/projects)
