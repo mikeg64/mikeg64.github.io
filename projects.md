@@ -1,18 +1,50 @@
 ---
 layout: page
 title: Projects
-permalink: /projects/
+customlink: /projects/
+
+
+
+
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+<div class="home">
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+  <h1 class="page-heading">Projects</h1>
+junk junk junk
+  <ul class="post-list">
+    {% for post in site.projects %}
+      <li>
+      
+  <h2 class="page-heading">Projects2</h2>
+junk1 junk1 junk1      
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}{% if post.updated %} • <b>updated: </b>{{ post.updated | date_to_long_string }}{% endif %}{% if post.author %} • {{ post.author }}{% endif %}{% if post.place %} • {{ post.place }}{% endif %} </span>
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
 
 
-[jekyll-organization]: https://github.com/jekyll
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+
+
+<ul>
+  {% for post in site.projects %}
+    <li>
+      {% if post.customlink %}
+        <a href="{{ post.customlink }}">{{ post.title }}</a>
+      {% else %}
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
+
+
+
+
+
+</div>
