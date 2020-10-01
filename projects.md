@@ -10,6 +10,8 @@ customlink: /projects/
 
 <div class="home">
 
+This is the actual blog
+
   <ul class="post-list">
     {% for post in site.projects %}
       <li>
