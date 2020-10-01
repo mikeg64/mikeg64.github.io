@@ -10,14 +10,11 @@ customlink: /projects/
 
 <div class="home">
 
-  <h1 class="page-heading">Projects</h1>
-junk junk junk
   <ul class="post-list">
     {% for post in site.projects %}
       <li>
       
-  <h2 class="page-heading">Projects2</h2>
-junk1 junk1 junk1      
+
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}{% if post.updated %} • <b>updated: </b>{{ post.updated | date_to_long_string }}{% endif %}{% if post.author %} • {{ post.author }}{% endif %}{% if post.place %} • {{ post.place }}{% endif %} </span>
 
 
@@ -31,17 +28,6 @@ junk1 junk1 junk1
 
 
 
-<ul>
-  {% for post in site.projects %}
-    <li>
-      {% if post.customlink %}
-        <a href="{{ post.customlink }}">{{ post.title }}</a>
-      {% else %}
-        <a href="{{ post.url }}">{{ post.title }}</a>
-      {% endif %}
-    </li>
-  {% endfor %}
-</ul>
 
 
 
