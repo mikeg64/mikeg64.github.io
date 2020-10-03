@@ -7,7 +7,7 @@ tags: washingmachine simulation smaug
 ---
 In this post we describe the smaug models and the set up of each of the simulations
 
-We outlined the simulations in the project description "[Solar Washing Machine](http://mikeg64.github.io/projects/2020-10-02-Solar-WashingMachine.html)"
+We outlined the simulations in the project description "[Solar Washing Machine](http://mikeg64.github.io/projects/2020-10-02-Solar-Washing-Machine.html)"
 
 All the simulations and models are detailed on git hub
 [smaug_wash@github](https://github.com/mikeg64/smaug_wash)
@@ -26,6 +26,8 @@ All the simulations and models are detailed on git hub
 |ymaz  | 2.54 Mm  |.  |
 |zmax.  |.     |.  |
 
+
+<img src="https://render.githubusercontent.com/render/math?math=e^{i %2B\pi} =x%2B1">
 
 ## LaTeX
 $$x_{1,2} = {-b\pm\sqrt{b^2 - 4ac} \over 2a}.$$
