@@ -53,6 +53,8 @@ Driver amplitude
 
 <img src="https://render.githubusercontent.com/render/math?math=tdepy=\sin{\frac{2\pi (t-0.25T)}{T}}">
 
+## Veloc
+
 <img src="https://render.githubusercontent.com/render/math?math=v_x=amp \times tdepx">
 
 <img src="https://render.githubusercontent.com/render/math?math=v_y=amp \times tdepy">
