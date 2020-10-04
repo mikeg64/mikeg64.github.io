@@ -41,15 +41,21 @@ For example : [Driver source file](https://github.com/mikeg64/smaug_wash/blob/ma
 |------------------------------|--------------------------|
 | aa | 0.1 m/s        |Amplitude |
 | s_period | 180 s       |Driver period |
-| tdep | 1        | Switeches tdepenedence on/off |
+| tdep | 1        | Switches tdepenedence on/off |
+| dx,dy,dz | 0.5,0.5,0.25Mm       | Gaussian width of driver |
 
 
+Driver amplitude
 
-
+<img src="https://render.githubusercontent.com/render/math?math=amp=aa.\exp{(-\frac{x^2}{dx^2})}\times\exp{(-\frac{y^2}{dy^2})}\times\exp{(-\frac{z^2}{dz^2})}">
 
 <img src="https://render.githubusercontent.com/render/math?math=tdepx=\sin{\frac{2\pi t}{T}}">
 
 <img src="https://render.githubusercontent.com/render/math?math=tdepy=\sin{\frac{2\pi (t-0.25T)}{T}}">
+
+<img src="https://render.githubusercontent.com/render/math?math=v_x=amp \times tdepx">
+
+<img src="https://render.githubusercontent.com/render/math?math=v_y=amp \times tdepy">
 
 
 ### uni2
