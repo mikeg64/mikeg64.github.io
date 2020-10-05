@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Solar Washing Machine Model Configurations"
+title:  "Solar Washing Machine Model Atmosphere and Field Generation"
 date:   2020-10-05 15:11:28 +0100
 categories: Washing Machine Update
 tags: washingmachine simulation smaug configuration matlab
