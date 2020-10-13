@@ -19,16 +19,20 @@ The following matlab routines were used to generate videos illustrating the vari
 
 # [plotsecs_densslice_vecarrows_array.m](https://github.com/mikeg64/smaug_wash/blob/master/matlab/plotsecs_densslice_vecarrows_array.m) 
 
+This is git commit [https://github.com/mikeg64/smaug_wash/commit/fe2f1f2079ef905b5e4d205fc9d31a12057039ac](https://github.com/mikeg64/smaug_wash/commit/fe2f1f2079ef905b5e4d205fc9d31a12057039ac)
 Colours show plasma velocity magnitude at 3rd layer of the model i.e. taken perpendicular to the x-axis, contours show the perturbed magnetic field magnitude quiver arrows indicate the plasma velocity. 
 
 
 #  [iplotsecs_array_v.m](https://github.com/mikeg64/smaug_wash/blob/master/matlab/plotsecs_array_v.m)
+
+This is git commit [https://github.com/mikeg64/smaug_wash/commit/fe2f1f2079ef905b5e4d205fc9d31a12057039ac](https://github.com/mikeg64/smaug_wash/commit/fe2f1f2079ef905b5e4d205fc9d31a12057039ac)
 
 Plot the vertical component of the velocity magnitude at a number of different sections (layer 1 and 20 along the x-axis) and  sections perpendicular to the y and z axis
 
 
 # [iplotsecs_array_h.m](https://github.com/mikeg64/smaug_wash/blob/master/matlab/plotsecs_array_h.m) 
 
+This is git commit [https://github.com/mikeg64/smaug_wash/commit/fe2f1f2079ef905b5e4d205fc9d31a12057039ac](https://github.com/mikeg64/smaug_wash/commit/fe2f1f2079ef905b5e4d205fc9d31a12057039ac)
 Plot the radial component of the velocity magnitude at a number of different sections (layer 1 and 20 along the x-axis) and  sections perpendicular to the y and z axis
 
 # uni1
