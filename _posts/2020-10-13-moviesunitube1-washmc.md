@@ -11,9 +11,25 @@ In this post we describe the configurations used for the solar washing machine s
 
 The following matlab routines were used to generate videos illustrating the variation fo plasma field flow in the model
 
-*  [plotsecs_densslice_vecarrows_array.m]() used to generate Velocity slice with velocity quiver. (rhosecs_vquiv)
+*  [plotsecs_densslice_vecarrows_array.m](https://github.com/mikeg64/smaug_wash/blob/master/matlab/plotsecs_densslice_vecarrows_array.m) used to generate Velocity slice with velocity quiver. (rhosecs_vquiv)
 * [iplotsecs_array_v.m](https://github.com/mikeg64/smaug_wash/blob/master/matlab/plotsecs_array_v.m) used to generate velocity slices at different layers for vertical component
 * [iplotsecs_array_h.m](https://github.com/mikeg64/smaug_wash/blob/master/matlab/plotsecs_array_h.m) used to generate velocity slices at different layers for radial component
+
+
+
+# [plotsecs_densslice_vecarrows_array.m](https://github.com/mikeg64/smaug_wash/blob/master/matlab/plotsecs_densslice_vecarrows_array.m) 
+
+Colours show plasma velocity magnitude at 3rd layer of the model i.e. taken perpendicular to the x-axis, contours show the perturbed magnetic field magnitude quiver arrows indicate the plasma velocity. 
+
+
+#  [iplotsecs_array_v.m](https://github.com/mikeg64/smaug_wash/blob/master/matlab/plotsecs_array_v.m)
+
+Plot the vertical component of the velocity magnitude at a number of different sections (layer 1 and 20 along the x-axis) and  sections perpendicular to the y and z axis
+
+
+# [iplotsecs_array_h.m](https://github.com/mikeg64/smaug_wash/blob/master/matlab/plotsecs_array_h.m) 
+
+Plot the radial component of the velocity magnitude at a number of different sections (layer 1 and 20 along the x-axis) and  sections perpendicular to the y and z axis
 
 # uni1
 
