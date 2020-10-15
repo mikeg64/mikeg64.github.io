@@ -40,12 +40,12 @@ Plot the radial component of the velocity magnitude at a number of different sec
 ### Velocity slice with velocity quiver
 
 
-[![rhosecs-vquiv](https://drive.google.com/uc?export=view&id=1FGPalJfnkLemhIh833kqYk1H6uvqfaWc)](https://drive.google.com/file/d/1FGPalJfnkLemhIh833kqYk1H6uvqfaWc/view?usp=sharing)
+[![rhosecs-vquiv](https://drive.google.com/uc?export=view&id=1FGPalJfnkLemhIh833kqYk1H6uvqfaWc)](https://drive.google.com/file/d/1EUhy5PLXoseAHtsAMI20Tyt1wW6j9W-K/view?usp=sharing)
 
 
 ### Velocity slices at different layers - vertical
 
-[![3d_vsecs_v](https://drive.google.com/uc?export=view&id=1FJncyQVUK_Jh0S6QJjy3GRTeJFEV6Ojr)](https://github.com/mikeg64/smaug_wash/blob/master/matlab/plotsecs_array_v.m)
+[![3d_vsecs_v](https://drive.google.com/uc?export=view&id=1FJncyQVUK_Jh0S6QJjy3GRTeJFEV6Ojr)](https://drive.google.com/file/d/1EWXHqH6VpKOwrelu_03YUhq6bFSfTDwL/view?usp=sharing)
 
 ## Velocity slices at different layers - radial
 
