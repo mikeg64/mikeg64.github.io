@@ -16,7 +16,7 @@ In this post we describe the configurations used for the solar washing machine s
 | first column      | second column | third column   | fourth column |
 |-------------------|:--------------|:--------------:|--------------:|
 | [pvertvvt.m](https://github.com/mikeg64/smaug_wash/blob/master/matlab/pvertvvt.m) | evelv2Mm_v,1Mm_v, p5Mm_v  |v_z vertical sections 62, 31,15 (2Mm, 1Mm, 0.5Mm)  | hhzverustime.mat|
-|  [pvvt.m](https://github.com/mikeg64/smaug_wash/blob/master/matlab/pvvt.m)          | evelv2Mm_v,1Mm_v, p5Mm_v      |v vertical sections 62, 31,15 (2Mm, 1Mm, 0.5Mm) magnitude of speed       | column 4      |
+|  [pvvt.m](https://github.com/mikeg64/smaug_wash/blob/master/matlab/pvvt.m)          | evelv2Mm_v,1Mm_v, p5Mm_v      |v vertical sections 62, 31,15 (2Mm, 1Mm, 0.5Mm) magnitude of speed       | hmagverustime.mat      |
 
 
 # Pictures
