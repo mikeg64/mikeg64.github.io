@@ -71,3 +71,10 @@ Helpful Links with Athena
 
 [2D Orszag-Tang Test (MHD)](https://princetonuniversity.github.io/Athena-Cversion/AthenaDocsTutOT1)
 
+
+# Running under docker
+
+docker run -v /Users/mikegriffiths/proj:/home/jupyter/solar/docker   --rm -p 8888:8888 mikeg64/sac-smaug
+
+[Docker hub sac-smaug](https://hub.docker.com/repository/docker/mikeg64/sac-smaug#)
+
