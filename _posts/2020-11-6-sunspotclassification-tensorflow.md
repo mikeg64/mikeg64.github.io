@@ -39,9 +39,8 @@ Unable to run the test model as tensor flow unable to detect a GPU. Solution is 
 
 
 
-## sunspot classification analysis
+## ML tools for space weather forecasting
 
-* [tensorflow model - github](https://github.com/mikeg64/solar/tree/master/tensorflow)
 * [CME Arrival Time Prediction Using Convolutional Neural Network](https://github.com/PyDL/CME-CNN)
 
 
