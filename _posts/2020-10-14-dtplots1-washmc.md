@@ -13,10 +13,19 @@ In this post we describe the configurations used for the solar washing machine s
 * [pvvt.m](https://github.com/mikeg64/smaug_wash/blob/master/matlab/pvvt.m)  evelv2Mm_v,1Mm_v, p5Mm_v v vertical sections 62, 31,15 (2Mm, 1Mm, 0.5Mm) magnitude of speed. saved as hmagverustime.mat
 
 
-| first column      | second column | third column   | fourth column |
+| matlab script      | mat file variable name | notes   | output file |
 |-------------------|:--------------|:--------------:|--------------:|
 | [pvertvvt.m](https://github.com/mikeg64/smaug_wash/blob/master/matlab/pvertvvt.m) | evelv2Mm_v,1Mm_v, p5Mm_v  |v_z vertical sections 62, 31,15 (2Mm, 1Mm, 0.5Mm)  | hhzverustime.mat|
+| [pvertvvt.m](https://github.com/mikeg64/smaug_wash/blob/master/matlab/pvertvvt.m) | evelv2Mm_bz,1Mm_bz, p5Mm_bz  |b_z vertical sections 62, 31,15 (2Mm, 1Mm, 0.5Mm)  | hhzverustime.mat|
+| [pvertvvt.m](https://github.com/mikeg64/smaug_wash/blob/master/matlab/pvertvvt.m) | evelchrom_vh, eveltran_vh, evelcor_vh  |v_z horizontal sections 20,42,90  | hhzverustime.mat|
+| [pvertvvt.m](https://github.com/mikeg64/smaug_wash/blob/master/matlab/pvertvvt.m) | evelchrom_bz, eveltran_bz, evelcor_bz  |bz horizontal sections 20,42,90  | hhzverustime.mat|
 |  [pvvt.m](https://github.com/mikeg64/smaug_wash/blob/master/matlab/pvvt.m)          | evelv2Mm_v,1Mm_v, p5Mm_v      |v vertical sections 62, 31,15 (2Mm, 1Mm, 0.5Mm) magnitude of speed       | hmagverustime.mat      |
+
+
+
+
+
+evelchrom_vh, eveltran_vh, evelcor_vh
 
 
 # Pictures
