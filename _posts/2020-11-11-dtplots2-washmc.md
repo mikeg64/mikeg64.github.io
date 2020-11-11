@@ -38,6 +38,8 @@ evelchrom_vh, eveltran_vh, evelcor_vh
 
 Using the findpeaks function in matlab to determine the frequency and phase shifts
 
+Graphs show time (s) on the x axis and amplitude on the vertical axis. Amplitude for magnetic field perturbation has been multiplied by 10^5.
+
 ![p5Mm](https://drive.google.com/file/d/1J7VkOAdGUrMlHC2hrbMT72cP7q6wQWws/view?usp=sharing)  
 
 ![1Mm](https://drive.google.com/file/d/1J8jIT8h1SgThGVly85jC26MK8-ucVu-F/view?usp=sharing)  
