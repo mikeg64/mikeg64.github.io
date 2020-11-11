@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Solar Washing Machine Distance Time Plots (1)"
+title:  "Solar Washing Machine Distance Time Plots (2)"
 date:   2020-10-11 15:11:28 +0100
 categories: Washing Machine Update
 tags: washingmachine simulation smaug configuration matlab d-t
