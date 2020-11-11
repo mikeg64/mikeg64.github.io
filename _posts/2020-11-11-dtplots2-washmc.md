@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Solar Washing Machine Distance Time Plots (1)"
-date:   2020-10-14 15:11:28 +0100
+date:   2020-10-11 15:11:28 +0100
 categories: Washing Machine Update
 tags: washingmachine simulation smaug configuration matlab d-t
 ---
@@ -28,32 +28,65 @@ In this post we describe the configurations used for the solar washing machine s
 evelchrom_vh, eveltran_vh, evelcor_vh
 
 
-# Pictures
+# Pictures for uni1 with amplitude 10m/s
 
-## uni1
+## podtest2.m
 
+[podtest2.m](https://github.com/mikeg64/smaug_wash/blob/master/matlab/podtest2.m)
 
-![dt-vz](https://drive.google.com/uc?export=view&id=1GEuEd4plu077lkQhz9eVC2FRjoQDaPEz)  
+### evel
 
+Using the findpeaks function in matlab to determine the frequency and phase shifts
 
+![p5Mm](https://drive.google.com/file/d/1J7VkOAdGUrMlHC2hrbMT72cP7q6wQWws/view?usp=sharing)  
 
+![1Mm](https://drive.google.com/file/d/1J8jIT8h1SgThGVly85jC26MK8-ucVu-F/view?usp=sharing)  
 
-## uni2
-
-
-![dt-vz](https://drive.google.com/uc?export=view&id=1GFQOlMX5TRwUvrhmBWMHQ4anzO4lwOCy)  
-
-
-
-## uni3
+![2Mm](https://drive.google.com/file/d/1JFqW_WAPKapr9Ph3uDJ9Q5xH0fis_W94/view?usp=sharing)  
 
 
-![dt-vz](https://drive.google.com/uc?export=view&id=1GP_aFpk_IYNkKvS3rSSJIq1Awgkldaa6)  
+### Positions of peaks
+
+| component      | time (s) | time(s)   |  time(s) |
+|-------------------|:--------------|:--------------:|
+| vz| 144  | 332 | 520 |
+| bz          | 161     | 358      | 529     |
+
+### Periods
+
+| component      | time (s) | time(s)   |  
+|-------------------|:--------------|:--------------:|
+| vz| 188  | 188 | 
+| bz          | 197     | 171      | 
+
+### Phase Difference (s)
+
+Phase difference between the magnetic and vz wave
+
+| component      | time (s) | time(s)   |  time(s) |
+|-------------------|:--------------|:--------------:|
+| phase difference| 17  | 26 | 9 | 
+
+0.1 pi radian phase difference
+
+## podsurftest.m
+
+[podsurftest.m](https://github.com/mikeg64/smaug_wash/blob/master/matlab/podsurftest.m)
+
+![chrom](https://drive.google.com/file/d/1JG55dWBLDUV7DNqqkUyTf7c7Me88YdIq/view?usp=sharing)  
+
+![tran](https://drive.google.com/file/d/1JGUGiJscrJE_iclvd7P_7ntFc5sjVNJU/view?usp=sharing)  
+
+![cor](https://drive.google.com/file/d/1JK95hKms2lZIKgxspQu-6BfFPHbg5P3u/view?usp=sharing)  
 
 
-## uni4
+### vertical slices
 
+![surf p5Mm](https://drive.google.com/file/d/1JMgUrOO3XPZU3X5Df0d0SGC62JqmBCKq/view?usp=sharing)  
 
-![dt-vz](https://drive.google.com/uc?export=view&id=1GSHOrLjqDcM4Iap2fcpO5gwUh3IgZcPM)  
+![tsurf 1Mm](https://drive.google.com/file/d/1JPHPCrpr8kemKM9sm4UFWXdXmmf4jVU3/view?usp=sharing)  
+
+![surf 2Mm](https://drive.google.com/file/d/1JQaRv2p6dc0GDd2Gy8V2sO8JYQPVv0BL/view?usp=sharing)  
+
 
 
