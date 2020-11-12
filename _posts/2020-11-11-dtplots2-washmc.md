@@ -40,11 +40,20 @@ Using the findpeaks function in matlab to determine the frequency and phase shif
 
 Graphs show time (s) on the x axis and amplitude on the vertical axis. Amplitude for magnetic field perturbation has been multiplied by 10^5.
 
-![p5Mm](https://drive.google.com/file/d/1J7VkOAdGUrMlHC2hrbMT72cP7q6wQWws/view?usp=sharing)  
 
-![1Mm](https://drive.google.com/file/d/1J8jIT8h1SgThGVly85jC26MK8-ucVu-F/view?usp=sharing)  
+![p5Mm](https://drive.google.com/uc?export=view&id=1J7VkOAdGUrMlHC2hrbMT72cP7q6wQWws)  
 
-![2Mm](https://drive.google.com/file/d/1JFqW_WAPKapr9Ph3uDJ9Q5xH0fis_W94/view?usp=sharing)  
+
+
+
+
+![1Mm](https://drive.google.com/uc?export=view&id=1J8jIT8h1SgThGVly85jC26MK8-ucVu-F)  
+
+
+
+
+
+![2Mm](https://drive.google.com/uc?export=view&id=1JFqW_WAPKapr9Ph3uDJ9Q5xH0fis_W94)  
 
 
 ### Positions of peaks
@@ -75,20 +84,48 @@ Phase difference between the magnetic and vz wave
 
 [podsurftest.m](https://github.com/mikeg64/smaug_wash/blob/master/matlab/podsurftest.m)
 
-![chrom](https://drive.google.com/file/d/1JG55dWBLDUV7DNqqkUyTf7c7Me88YdIq/view?usp=sharing)  
 
-![tran](https://drive.google.com/file/d/1JGUGiJscrJE_iclvd7P_7ntFc5sjVNJU/view?usp=sharing)  
 
-![cor](https://drive.google.com/file/d/1JK95hKms2lZIKgxspQu-6BfFPHbg5P3u/view?usp=sharing)  
+
+
+
+
+
+Chromosphere
+
+![chrom](https://drive.google.com/uc?export=view&id=1JG55dWBLDUV7DNqqkUyTf7c7Me88YdIq)  
+
+
+
+Transition Layer
+
+![tran](https://drive.google.com/uc?export=view&id=1JGUGiJscrJE_iclvd7P_7ntFc5sjVNJU)  
+
+
+Corona
+
+![cor](https://drive.google.com/uc?export=view&id=1JK95hKms2lZIKgxspQu-6BfFPHbg5P3u)  
 
 
 ### vertical slices
 
-![surf p5Mm](https://drive.google.com/file/d/1JMgUrOO3XPZU3X5Df0d0SGC62JqmBCKq/view?usp=sharing)  
 
-![tsurf 1Mm](https://drive.google.com/file/d/1JPHPCrpr8kemKM9sm4UFWXdXmmf4jVU3/view?usp=sharing)  
 
-![surf 2Mm](https://drive.google.com/file/d/1JQaRv2p6dc0GDd2Gy8V2sO8JYQPVv0BL/view?usp=sharing)  
+
+
+0.5Mm
+
+![surf p5Mm](https://drive.google.com/uc?export=view&id=1JMgUrOO3XPZU3X5Df0d0SGC62JqmBCKq)  
+
+
+1Mm
+
+![tsurf 1Mm](https://drive.google.com/uc?export=view&id=1JPHPCrpr8kemKM9sm4UFWXdXmmf4jVU3)  
+
+
+2Mm
+
+![surf 2Mm](https://drive.google.com/uc?export=view&id=1JQaRv2p6dc0GDd2Gy8V2sO8JYQPVv0BL)  
 
 
 
