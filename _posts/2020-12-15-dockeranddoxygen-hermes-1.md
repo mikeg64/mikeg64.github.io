@@ -26,6 +26,7 @@ Need to update dockerfile as follows
 * Use latest version of cuda with ubuntu image e.g. [nvidia/cuda:11.1.0-devel-ubuntu18.04](https://hub.docker.com/r/nvidia/cuda/)
 * Include gdb compiler using the command RUN apt-get install -y gdb
 * valgrind using the command RUN apt-get install -y valgrind
+* install tau using sudo apt-get install -y tau
 
 Useful tutorial
 * [GDB tutorial](http://www.iro.umontreal.ca/~mignotte/IFT2425/Documents/Debugger_gdb.pdf)
@@ -33,6 +34,10 @@ Useful tutorial
 * [C programming GDB tutorial](https://www.cprogramming.com/gdb.html)
 * [Valgrind quickstart](https://www.valgrind.org/docs/manual/quick-start.html)
 * [Valgrind tutorial](http://cs.ecs.baylor.edu/~donahoo/tools/valgrind/)
+* [TAU Performance System](https://www.cs.uoregon.edu/research/tau/home.php)
+* [TAU Userguide](https://www.cs.uoregon.edu/research/tau/tau-usersguide.pdf)
+* [TAU By example](https://wiki.mpich.org/mpich/index.php/TAU_by_example)
+
 
 
 
