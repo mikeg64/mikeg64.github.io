@@ -39,6 +39,17 @@ Useful tutorial
 * [TAU By example](https://wiki.mpich.org/mpich/index.php/TAU_by_example)
 
 
+Commands for configuring and running models in hermes use make all to actually build before running
+
+./configure --with-gas=hydro --with-problem=shkset1d
+../bin/athena -i ../tst/1D-hydro/athinput.sod
+
+
+./configure --with-gas=hydro --with-problem=shkset1d --enable-bkg --with-integrator=sac --with-flux=sac
+../bin/athena -i ../tst/1D-hydro/athinput.sod-sac
+
+
+
 
 
 
