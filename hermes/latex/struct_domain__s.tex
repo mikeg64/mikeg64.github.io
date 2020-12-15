@@ -1,0 +1,255 @@
+\hypertarget{struct_domain__s}{}\doxysection{Domain\+\_\+s Struct Reference}
+\label{struct_domain__s}\index{Domain\_s@{Domain\_s}}
+
+
+{\ttfamily \#include $<$athena.\+h$>$}
+
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+Real \mbox{\hyperlink{struct_domain__s_a184ef82e87510405715199901cde8540}{Root\+MinX}} \mbox{[}3\mbox{]}
+\item 
+Real \mbox{\hyperlink{struct_domain__s_aa5043e1abc3ef89f6af80ad5c2a625fd}{Root\+MaxX}} \mbox{[}3\mbox{]}
+\item 
+Real \mbox{\hyperlink{struct_domain__s_a8a3061843f5de74f2f82946fb2874cf7}{MinX}} \mbox{[}3\mbox{]}
+\item 
+Real \mbox{\hyperlink{struct_domain__s_add81f84efcbd07860b310474594cefed}{MaxX}} \mbox{[}3\mbox{]}
+\item 
+Real \mbox{\hyperlink{struct_domain__s_a7c298001af6d3df2af292f796cb3c616}{dx}} \mbox{[}3\mbox{]}
+\item 
+int \mbox{\hyperlink{struct_domain__s_a4e4507641a330c8d5597e10caceccdbe}{Nx}} \mbox{[}3\mbox{]}
+\item 
+int \mbox{\hyperlink{struct_domain__s_a65cb1783fab1b19fc03942032f6b07de}{N\+Grid}} \mbox{[}3\mbox{]}
+\item 
+int \mbox{\hyperlink{struct_domain__s_acbc331285873adb10034600d5d6f542f}{Disp}} \mbox{[}3\mbox{]}
+\item 
+int \mbox{\hyperlink{struct_domain__s_a879a93f9d2ab803bb4ca7f9bd55e52f8}{Level}}
+\item 
+int \mbox{\hyperlink{struct_domain__s_a48cf726d7e4d74bf014f00909761197d}{Dom\+Number}}
+\item 
+int \mbox{\hyperlink{struct_domain__s_a82062879cea351a0476880d9d778759a}{Input\+Block}}
+\item 
+\mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$ \mbox{\hyperlink{struct_domain__s_a539b527bf40b88918216908c699dc6cd}{Grid}}
+\item 
+\mbox{\hyperlink{struct_grids_data_s}{Grids\+DataS}} $\ast$$\ast$$\ast$ \mbox{\hyperlink{struct_domain__s_aa8d560b3429b6ed665bd513418c3e43e}{G\+Data}}
+\item 
+\mbox{\hyperlink{athena_8h_a665c6a09a1b144dc16774a5b74040387}{V\+G\+Fun\+\_\+t}} \mbox{\hyperlink{struct_domain__s_ae37ca6cfdd20469621e84b23fb3608d0}{ix1\+\_\+\+B\+C\+Fun}}
+\item 
+\mbox{\hyperlink{athena_8h_a665c6a09a1b144dc16774a5b74040387}{V\+G\+Fun\+\_\+t}} \mbox{\hyperlink{struct_domain__s_a720ae5912b8b2a3dd636f1bec9ef4297}{ox1\+\_\+\+B\+C\+Fun}}
+\item 
+\mbox{\hyperlink{athena_8h_a665c6a09a1b144dc16774a5b74040387}{V\+G\+Fun\+\_\+t}} \mbox{\hyperlink{struct_domain__s_a372cdcf2b2f6302224b6275da7315204}{ix2\+\_\+\+B\+C\+Fun}}
+\item 
+\mbox{\hyperlink{athena_8h_a665c6a09a1b144dc16774a5b74040387}{V\+G\+Fun\+\_\+t}} \mbox{\hyperlink{struct_domain__s_abbbeddc4e38610cae689c33475f907d9}{ox2\+\_\+\+B\+C\+Fun}}
+\item 
+\mbox{\hyperlink{athena_8h_a665c6a09a1b144dc16774a5b74040387}{V\+G\+Fun\+\_\+t}} \mbox{\hyperlink{struct_domain__s_ab89c4fb526dc9192c3831651fabbe600}{ix3\+\_\+\+B\+C\+Fun}}
+\item 
+\mbox{\hyperlink{athena_8h_a665c6a09a1b144dc16774a5b74040387}{V\+G\+Fun\+\_\+t}} \mbox{\hyperlink{struct_domain__s_aa40112f1de515a9721ef101ce501e58c}{ox3\+\_\+\+B\+C\+Fun}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 573 of file athena.\+h.
+
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{struct_domain__s_acbc331285873adb10034600d5d6f542f}\label{struct_domain__s_acbc331285873adb10034600d5d6f542f}} 
+\index{Domain\_s@{Domain\_s}!Disp@{Disp}}
+\index{Disp@{Disp}!Domain\_s@{Domain\_s}}
+\doxysubsubsection{\texorpdfstring{Disp}{Disp}}
+{\footnotesize\ttfamily int Disp\mbox{[}3\mbox{]}}
+
+i,j,k displacements of Domain from origin \mbox{[}0,1,2\mbox{]}=\mbox{[}i,j,k\mbox{]} 
+
+Definition at line 581 of file athena.\+h.
+
+\mbox{\Hypertarget{struct_domain__s_a48cf726d7e4d74bf014f00909761197d}\label{struct_domain__s_a48cf726d7e4d74bf014f00909761197d}} 
+\index{Domain\_s@{Domain\_s}!DomNumber@{DomNumber}}
+\index{DomNumber@{DomNumber}!Domain\_s@{Domain\_s}}
+\doxysubsubsection{\texorpdfstring{DomNumber}{DomNumber}}
+{\footnotesize\ttfamily int Dom\+Number}
+
+level and ID number of this Domain 
+
+Definition at line 582 of file athena.\+h.
+
+\mbox{\Hypertarget{struct_domain__s_a7c298001af6d3df2af292f796cb3c616}\label{struct_domain__s_a7c298001af6d3df2af292f796cb3c616}} 
+\index{Domain\_s@{Domain\_s}!dx@{dx}}
+\index{dx@{dx}!Domain\_s@{Domain\_s}}
+\doxysubsubsection{\texorpdfstring{dx}{dx}}
+{\footnotesize\ttfamily Real dx\mbox{[}3\mbox{]}}
+
+cell size in this Domain \mbox{[}0,1,2\mbox{]}=\mbox{[}x1,x2,x3\mbox{]} 
+
+Definition at line 578 of file athena.\+h.
+
+\mbox{\Hypertarget{struct_domain__s_aa8d560b3429b6ed665bd513418c3e43e}\label{struct_domain__s_aa8d560b3429b6ed665bd513418c3e43e}} 
+\index{Domain\_s@{Domain\_s}!GData@{GData}}
+\index{GData@{GData}!Domain\_s@{Domain\_s}}
+\doxysubsubsection{\texorpdfstring{GData}{GData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_grids_data_s}{Grids\+DataS}}$\ast$$\ast$$\ast$ G\+Data}
+
+size,location,\& processor I\+Ds of Grids in this Dom 
+
+Definition at line 586 of file athena.\+h.
+
+\mbox{\Hypertarget{struct_domain__s_a539b527bf40b88918216908c699dc6cd}\label{struct_domain__s_a539b527bf40b88918216908c699dc6cd}} 
+\index{Domain\_s@{Domain\_s}!Grid@{Grid}}
+\index{Grid@{Grid}!Domain\_s@{Domain\_s}}
+\doxysubsubsection{\texorpdfstring{Grid}{Grid}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_grid_s}{GridS}}$\ast$ Grid}
+
+pointer to Grid in this Dom updated on this processor 
+
+Definition at line 584 of file athena.\+h.
+
+\mbox{\Hypertarget{struct_domain__s_a82062879cea351a0476880d9d778759a}\label{struct_domain__s_a82062879cea351a0476880d9d778759a}} 
+\index{Domain\_s@{Domain\_s}!InputBlock@{InputBlock}}
+\index{InputBlock@{InputBlock}!Domain\_s@{Domain\_s}}
+\doxysubsubsection{\texorpdfstring{InputBlock}{InputBlock}}
+{\footnotesize\ttfamily int Input\+Block}
+
+\hypertarget{struct_domain__s_autotoc_md3}{}\doxysubsection{of $<$domain$>$ block in input file for this Domain}\label{struct_domain__s_autotoc_md3}
+
+
+Definition at line 583 of file athena.\+h.
+
+\mbox{\Hypertarget{struct_domain__s_ae37ca6cfdd20469621e84b23fb3608d0}\label{struct_domain__s_ae37ca6cfdd20469621e84b23fb3608d0}} 
+\index{Domain\_s@{Domain\_s}!ix1\_BCFun@{ix1\_BCFun}}
+\index{ix1\_BCFun@{ix1\_BCFun}!Domain\_s@{Domain\_s}}
+\doxysubsubsection{\texorpdfstring{ix1\_BCFun}{ix1\_BCFun}}
+{\footnotesize\ttfamily \mbox{\hyperlink{athena_8h_a665c6a09a1b144dc16774a5b74040387}{V\+G\+Fun\+\_\+t}} ix1\+\_\+\+B\+C\+Fun}
+
+
+
+Definition at line 588 of file athena.\+h.
+
+\mbox{\Hypertarget{struct_domain__s_a372cdcf2b2f6302224b6275da7315204}\label{struct_domain__s_a372cdcf2b2f6302224b6275da7315204}} 
+\index{Domain\_s@{Domain\_s}!ix2\_BCFun@{ix2\_BCFun}}
+\index{ix2\_BCFun@{ix2\_BCFun}!Domain\_s@{Domain\_s}}
+\doxysubsubsection{\texorpdfstring{ix2\_BCFun}{ix2\_BCFun}}
+{\footnotesize\ttfamily \mbox{\hyperlink{athena_8h_a665c6a09a1b144dc16774a5b74040387}{V\+G\+Fun\+\_\+t}} ix2\+\_\+\+B\+C\+Fun}
+
+
+
+Definition at line 589 of file athena.\+h.
+
+\mbox{\Hypertarget{struct_domain__s_ab89c4fb526dc9192c3831651fabbe600}\label{struct_domain__s_ab89c4fb526dc9192c3831651fabbe600}} 
+\index{Domain\_s@{Domain\_s}!ix3\_BCFun@{ix3\_BCFun}}
+\index{ix3\_BCFun@{ix3\_BCFun}!Domain\_s@{Domain\_s}}
+\doxysubsubsection{\texorpdfstring{ix3\_BCFun}{ix3\_BCFun}}
+{\footnotesize\ttfamily \mbox{\hyperlink{athena_8h_a665c6a09a1b144dc16774a5b74040387}{V\+G\+Fun\+\_\+t}} ix3\+\_\+\+B\+C\+Fun}
+
+
+
+Definition at line 590 of file athena.\+h.
+
+\mbox{\Hypertarget{struct_domain__s_a879a93f9d2ab803bb4ca7f9bd55e52f8}\label{struct_domain__s_a879a93f9d2ab803bb4ca7f9bd55e52f8}} 
+\index{Domain\_s@{Domain\_s}!Level@{Level}}
+\index{Level@{Level}!Domain\_s@{Domain\_s}}
+\doxysubsubsection{\texorpdfstring{Level}{Level}}
+{\footnotesize\ttfamily int Level}
+
+
+
+Definition at line 582 of file athena.\+h.
+
+\mbox{\Hypertarget{struct_domain__s_add81f84efcbd07860b310474594cefed}\label{struct_domain__s_add81f84efcbd07860b310474594cefed}} 
+\index{Domain\_s@{Domain\_s}!MaxX@{MaxX}}
+\index{MaxX@{MaxX}!Domain\_s@{Domain\_s}}
+\doxysubsubsection{\texorpdfstring{MaxX}{MaxX}}
+{\footnotesize\ttfamily Real MaxX\mbox{[}3\mbox{]}}
+
+max(x) in each dir on this Domain \mbox{[}0,1,2\mbox{]}=\mbox{[}x1,x2,x3\mbox{]} 
+
+Definition at line 577 of file athena.\+h.
+
+\mbox{\Hypertarget{struct_domain__s_a8a3061843f5de74f2f82946fb2874cf7}\label{struct_domain__s_a8a3061843f5de74f2f82946fb2874cf7}} 
+\index{Domain\_s@{Domain\_s}!MinX@{MinX}}
+\index{MinX@{MinX}!Domain\_s@{Domain\_s}}
+\doxysubsubsection{\texorpdfstring{MinX}{MinX}}
+{\footnotesize\ttfamily Real MinX\mbox{[}3\mbox{]}}
+
+min(x) in each dir on this Domain \mbox{[}0,1,2\mbox{]}=\mbox{[}x1,x2,x3\mbox{]} 
+
+Definition at line 576 of file athena.\+h.
+
+\mbox{\Hypertarget{struct_domain__s_a65cb1783fab1b19fc03942032f6b07de}\label{struct_domain__s_a65cb1783fab1b19fc03942032f6b07de}} 
+\index{Domain\_s@{Domain\_s}!NGrid@{NGrid}}
+\index{NGrid@{NGrid}!Domain\_s@{Domain\_s}}
+\doxysubsubsection{\texorpdfstring{NGrid}{NGrid}}
+{\footnotesize\ttfamily int N\+Grid\mbox{[}3\mbox{]}}
+
+\hypertarget{struct_domain__s_autotoc_md2}{}\doxysubsection{of Grids in each dir in this Domain \mbox{[}0,1,2\mbox{]}=\mbox{[}x1,x2,x3\mbox{]}}\label{struct_domain__s_autotoc_md2}
+
+
+Definition at line 580 of file athena.\+h.
+
+\mbox{\Hypertarget{struct_domain__s_a4e4507641a330c8d5597e10caceccdbe}\label{struct_domain__s_a4e4507641a330c8d5597e10caceccdbe}} 
+\index{Domain\_s@{Domain\_s}!Nx@{Nx}}
+\index{Nx@{Nx}!Domain\_s@{Domain\_s}}
+\doxysubsubsection{\texorpdfstring{Nx}{Nx}}
+{\footnotesize\ttfamily int Nx\mbox{[}3\mbox{]}}
+
+\hypertarget{struct_domain__s_autotoc_md1}{}\doxysubsection{of zones in each dir in this Domain \mbox{[}0,1,2\mbox{]}=\mbox{[}x1,x2,x3\mbox{]}}\label{struct_domain__s_autotoc_md1}
+
+
+Definition at line 579 of file athena.\+h.
+
+\mbox{\Hypertarget{struct_domain__s_a720ae5912b8b2a3dd636f1bec9ef4297}\label{struct_domain__s_a720ae5912b8b2a3dd636f1bec9ef4297}} 
+\index{Domain\_s@{Domain\_s}!ox1\_BCFun@{ox1\_BCFun}}
+\index{ox1\_BCFun@{ox1\_BCFun}!Domain\_s@{Domain\_s}}
+\doxysubsubsection{\texorpdfstring{ox1\_BCFun}{ox1\_BCFun}}
+{\footnotesize\ttfamily \mbox{\hyperlink{athena_8h_a665c6a09a1b144dc16774a5b74040387}{V\+G\+Fun\+\_\+t}} ox1\+\_\+\+B\+C\+Fun}
+
+ix1/ox1 BC function pointers for this Dom 
+
+Definition at line 588 of file athena.\+h.
+
+\mbox{\Hypertarget{struct_domain__s_abbbeddc4e38610cae689c33475f907d9}\label{struct_domain__s_abbbeddc4e38610cae689c33475f907d9}} 
+\index{Domain\_s@{Domain\_s}!ox2\_BCFun@{ox2\_BCFun}}
+\index{ox2\_BCFun@{ox2\_BCFun}!Domain\_s@{Domain\_s}}
+\doxysubsubsection{\texorpdfstring{ox2\_BCFun}{ox2\_BCFun}}
+{\footnotesize\ttfamily \mbox{\hyperlink{athena_8h_a665c6a09a1b144dc16774a5b74040387}{V\+G\+Fun\+\_\+t}} ox2\+\_\+\+B\+C\+Fun}
+
+ix1/ox1 BC function pointers for this Dom 
+
+Definition at line 589 of file athena.\+h.
+
+\mbox{\Hypertarget{struct_domain__s_aa40112f1de515a9721ef101ce501e58c}\label{struct_domain__s_aa40112f1de515a9721ef101ce501e58c}} 
+\index{Domain\_s@{Domain\_s}!ox3\_BCFun@{ox3\_BCFun}}
+\index{ox3\_BCFun@{ox3\_BCFun}!Domain\_s@{Domain\_s}}
+\doxysubsubsection{\texorpdfstring{ox3\_BCFun}{ox3\_BCFun}}
+{\footnotesize\ttfamily \mbox{\hyperlink{athena_8h_a665c6a09a1b144dc16774a5b74040387}{V\+G\+Fun\+\_\+t}} ox3\+\_\+\+B\+C\+Fun}
+
+ix1/ox1 BC function pointers for this Dom 
+
+Definition at line 590 of file athena.\+h.
+
+\mbox{\Hypertarget{struct_domain__s_aa5043e1abc3ef89f6af80ad5c2a625fd}\label{struct_domain__s_aa5043e1abc3ef89f6af80ad5c2a625fd}} 
+\index{Domain\_s@{Domain\_s}!RootMaxX@{RootMaxX}}
+\index{RootMaxX@{RootMaxX}!Domain\_s@{Domain\_s}}
+\doxysubsubsection{\texorpdfstring{RootMaxX}{RootMaxX}}
+{\footnotesize\ttfamily Real Root\+MaxX\mbox{[}3\mbox{]}}
+
+max(x) in each dir on root Domain \mbox{[}0,1,2\mbox{]}=\mbox{[}x1,x2,x3\mbox{]} 
+
+Definition at line 575 of file athena.\+h.
+
+\mbox{\Hypertarget{struct_domain__s_a184ef82e87510405715199901cde8540}\label{struct_domain__s_a184ef82e87510405715199901cde8540}} 
+\index{Domain\_s@{Domain\_s}!RootMinX@{RootMinX}}
+\index{RootMinX@{RootMinX}!Domain\_s@{Domain\_s}}
+\doxysubsubsection{\texorpdfstring{RootMinX}{RootMinX}}
+{\footnotesize\ttfamily Real Root\+MinX\mbox{[}3\mbox{]}}
+
+min(x) in each dir on root Domain \mbox{[}0,1,2\mbox{]}=\mbox{[}x1,x2,x3\mbox{]} 
+
+Definition at line 574 of file athena.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{athena_8h}{athena.\+h}}\end{DoxyCompactItemize}

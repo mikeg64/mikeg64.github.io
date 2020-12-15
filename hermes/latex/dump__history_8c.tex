@@ -1,0 +1,146 @@
+\hypertarget{dump__history_8c}{}\doxysection{src/dump\+\_\+history.c File Reference}
+\label{dump__history_8c}\index{src/dump\_history.c@{src/dump\_history.c}}
+
+
+Functions to write dumps of scalar \char`\"{}history\char`\"{} variables in a formatted table.  
+
+
+{\ttfamily \#include \char`\"{}copyright.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}athena.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prototypes.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{dump__history_8c_a97440e5d1a0e859e11abc6552b758d8c}{N\+S\+C\+AL}}~14
+\item 
+\#define \mbox{\hyperlink{dump__history_8c_a458b9b0820c5dc45a89076bfaa052440}{M\+A\+X\+\_\+\+U\+S\+R\+\_\+\+H\+\_\+\+C\+O\+U\+NT}}~30
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{dump__history_8c_a04359dca00afaaa4174cea334622a472}{dump\+\_\+history}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, \mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$p\+Out)
+\begin{DoxyCompactList}\small\item\em Function to write dumps of scalar \char`\"{}history\char`\"{} variables in a formatted table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{dump__history_8c_af708912b4ea7f10be9fea2861ea0374c}{dump\+\_\+history\+\_\+enroll}} (const \mbox{\hyperlink{athena_8h_aaa64b3ee5eefc566b7c09368c414de89}{Cons\+Fun\+\_\+t}} pfun, const char $\ast$label)
+\begin{DoxyCompactList}\small\item\em Adds new user-\/defined history variables ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions to write dumps of scalar \char`\"{}history\char`\"{} variables in a formatted table. 
+
+P\+U\+R\+P\+O\+SE\+: Functions to write dumps of scalar \char`\"{}history\char`\"{} variables in a formatted table. \char`\"{}\+History\char`\"{} variables are mostly V\+O\+L\+U\+ME A\+V\+E\+R\+A\+G\+ES, e.\+g.
+\begin{DoxyItemize}
+\item S = \textbackslash{}\+Sum\+\_\+\{ijk\} q\mbox{[}k\mbox{]}\mbox{[}j\mbox{]}\mbox{[}i\mbox{]}$\ast$dx1\mbox{[}i\mbox{]}$\ast$dx2\mbox{[}j\mbox{]}$\ast$dx3\mbox{[}k\mbox{]} / \textbackslash{}\+Sum\+\_\+\{ijk\} dx1\mbox{[}i\mbox{]}$\ast$dx2\mbox{[}j\mbox{]}$\ast$dx3\mbox{[}k\mbox{]},
+\end{DoxyItemize}
+
+although other quantities like time and dt are also output. To compute T\+O\+T\+AL, V\+O\+L\+U\+ME I\+N\+T\+E\+G\+R\+A\+T\+ED quantities, just multiply by the Domain volume, which is output in the first line of the history file. History data is written periodically, giving the time-\/evolution of that quantitity. Default (hardwired) values are\+:
+\begin{DoxyItemize}
+\item scal\mbox{[}0\mbox{]} = time
+\item scal\mbox{[}1\mbox{]} = dt
+\item scal\mbox{[}2\mbox{]} = mass
+\item scal\mbox{[}3\mbox{]} = total energy
+\item scal\mbox{[}4\mbox{]} = d$\ast$v1
+\item scal\mbox{[}5\mbox{]} = d$\ast$v2
+\item scal\mbox{[}6\mbox{]} = d$\ast$v3
+\item scal\mbox{[}7\mbox{]} = 0.\+5$\ast$d$\ast$v1$\ast$$\ast$2
+\item scal\mbox{[}8\mbox{]} = 0.\+5$\ast$d$\ast$v2$\ast$$\ast$2
+\item scal\mbox{[}9\mbox{]} = 0.\+5$\ast$d$\ast$v3$\ast$$\ast$2
+\item scal\mbox{[}10\mbox{]} = 0.\+5$\ast$b1$\ast$$\ast$2
+\item scal\mbox{[}11\mbox{]} = 0.\+5$\ast$b2$\ast$$\ast$2
+\item scal\mbox{[}12\mbox{]} = 0.\+5$\ast$b3$\ast$$\ast$2
+\item scal\mbox{[}13\mbox{]} = d$\ast$\+Phi
+\item scal\mbox{[}14+N\+S\+C\+A\+L\+A\+RS\mbox{]} = passively advected scalars
+\item scal\mbox{[}15+N\+S\+C\+A\+L\+A\+RS\mbox{]} = angular momentum
+\end{DoxyItemize}
+
+More variables can be hardwired by increasing N\+S\+C\+AL=number of variables, and adding calculation of desired quantities below.
+
+Alternatively, up to M\+A\+X\+\_\+\+U\+S\+R\+\_\+\+H\+\_\+\+C\+O\+U\+NT new history variables can be added using \mbox{\hyperlink{dump__history_8c_af708912b4ea7f10be9fea2861ea0374c}{dump\+\_\+history\+\_\+enroll()}} in the problem generator.
+
+With S\+MR, data is averaged over each Domain separately, and dumped to separate files with the level and domain number encoded in the filename. Dumps are always made for all levels and domains, and are written in lev\# directories of the root (rank=0) process F\+OR T\+H\+AT D\+O\+M\+A\+IN C\+O\+M\+M\+U\+N\+I\+C\+A\+T\+OR.
+
+With SR, the default (hardwired) variables are\+:
+\begin{DoxyItemize}
+\item scal\mbox{[}0\mbox{]} = time
+\item scal\mbox{[}1\mbox{]} = dt
+\item scal\mbox{[}2\mbox{]} = mass
+\item scal\mbox{[}3\mbox{]} = total energy
+\item scal\mbox{[}4\mbox{]} = x1-\/mom
+\item scal\mbox{[}5\mbox{]} = x2-\/mom
+\item scal\mbox{[}6\mbox{]} = x3-\/mom
+\item scal\mbox{[}7\mbox{]} = (U$^\wedge$t)$\ast$$\ast$2
+\item scal\mbox{[}8\mbox{]} = (U$^\wedge$x)$\ast$$\ast$2
+\item scal\mbox{[}9\mbox{]} = (U$^\wedge$y)$\ast$$\ast$2
+\item scal\mbox{[}10\mbox{]} = (U$^\wedge$z)$\ast$$\ast$2
+\item scal\mbox{[}11\mbox{]} = (b$^\wedge$t)$\ast$$\ast$2
+\item scal\mbox{[}12\mbox{]} = (b$^\wedge$x)$\ast$$\ast$2
+\item scal\mbox{[}13\mbox{]} = (b$^\wedge$y)$\ast$$\ast$2
+\item scal\mbox{[}14\mbox{]} = (b$^\wedge$z)$\ast$$\ast$2
+\item scal\mbox{[}15\mbox{]} = $\vert$b$\vert$$\ast$$\ast$2
+\item scal\mbox{[}16\mbox{]} = T$^\wedge$00\+\_\+\+EM
+\end{DoxyItemize}
+
+C\+O\+N\+T\+A\+I\+NS P\+U\+B\+L\+IC F\+U\+N\+C\+T\+I\+O\+NS\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{dump__history_8c_a04359dca00afaaa4174cea334622a472}{dump\+\_\+history()}} -\/ Writes variables as formatted table
+\item \mbox{\hyperlink{dump__history_8c_af708912b4ea7f10be9fea2861ea0374c}{dump\+\_\+history\+\_\+enroll()}} -\/ Adds new user-\/defined history variables ~\newline
+ 
+\end{DoxyItemize}
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{dump__history_8c_a458b9b0820c5dc45a89076bfaa052440}\label{dump__history_8c_a458b9b0820c5dc45a89076bfaa052440}} 
+\index{dump\_history.c@{dump\_history.c}!MAX\_USR\_H\_COUNT@{MAX\_USR\_H\_COUNT}}
+\index{MAX\_USR\_H\_COUNT@{MAX\_USR\_H\_COUNT}!dump\_history.c@{dump\_history.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_USR\_H\_COUNT}{MAX\_USR\_H\_COUNT}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+U\+S\+R\+\_\+\+H\+\_\+\+C\+O\+U\+NT~30}
+
+
+
+Definition at line 80 of file dump\+\_\+history.\+c.
+
+\mbox{\Hypertarget{dump__history_8c_a97440e5d1a0e859e11abc6552b758d8c}\label{dump__history_8c_a97440e5d1a0e859e11abc6552b758d8c}} 
+\index{dump\_history.c@{dump\_history.c}!NSCAL@{NSCAL}}
+\index{NSCAL@{NSCAL}!dump\_history.c@{dump\_history.c}}
+\doxysubsubsection{\texorpdfstring{NSCAL}{NSCAL}}
+{\footnotesize\ttfamily \#define N\+S\+C\+AL~14}
+
+
+
+Definition at line 77 of file dump\+\_\+history.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{dump__history_8c_a04359dca00afaaa4174cea334622a472}\label{dump__history_8c_a04359dca00afaaa4174cea334622a472}} 
+\index{dump\_history.c@{dump\_history.c}!dump\_history@{dump\_history}}
+\index{dump\_history@{dump\_history}!dump\_history.c@{dump\_history.c}}
+\doxysubsubsection{\texorpdfstring{dump\_history()}{dump\_history()}}
+{\footnotesize\ttfamily void dump\+\_\+history (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{\mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$}]{p\+Out }\end{DoxyParamCaption})}
+
+
+
+Function to write dumps of scalar \char`\"{}history\char`\"{} variables in a formatted table. 
+
+
+
+Definition at line 95 of file dump\+\_\+history.\+c.
+
+\mbox{\Hypertarget{dump__history_8c_af708912b4ea7f10be9fea2861ea0374c}\label{dump__history_8c_af708912b4ea7f10be9fea2861ea0374c}} 
+\index{dump\_history.c@{dump\_history.c}!dump\_history\_enroll@{dump\_history\_enroll}}
+\index{dump\_history\_enroll@{dump\_history\_enroll}!dump\_history.c@{dump\_history.c}}
+\doxysubsubsection{\texorpdfstring{dump\_history\_enroll()}{dump\_history\_enroll()}}
+{\footnotesize\ttfamily void dump\+\_\+history\+\_\+enroll (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{athena_8h_aaa64b3ee5eefc566b7c09368c414de89}{Cons\+Fun\+\_\+t}}}]{pfun,  }\item[{const char $\ast$}]{label }\end{DoxyParamCaption})}
+
+
+
+Adds new user-\/defined history variables ~\newline
+ 
+
+
+
+Definition at line 477 of file dump\+\_\+history.\+c.
+

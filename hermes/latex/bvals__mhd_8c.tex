@@ -1,0 +1,151 @@
+\hypertarget{bvals__mhd_8c}{}\doxysection{src/bvals\+\_\+mhd.c File Reference}
+\label{bvals__mhd_8c}\index{src/bvals\_mhd.c@{src/bvals\_mhd.c}}
+
+
+Sets boundary conditions (quantities in ghost zones) on each edge of a Grid for the M\+HD variables.  
+
+
+{\ttfamily \#include \char`\"{}copyright.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}athena.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prototypes.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{bvals__mhd_8c_ab450dc8f6ddc146aab7dcc71c0795253}{bvals\+\_\+mhd}} (\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$pD)
+\begin{DoxyCompactList}\small\item\em Calls appropriate functions to set ghost zones. ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bvals__mhd_8c_a73fd08ad3c131672ff0473236faee5e2}{bvals\+\_\+mhd\+\_\+init}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\begin{DoxyCompactList}\small\item\em Sets function pointers for physical boundaries during initialization, allocates memory for send/receive buffers with M\+PI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bvals__mhd_8c_a8f18bdb818b65c7946c7dc7d63b7cdb3}{bvals\+\_\+mhd\+\_\+fun}} (\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$pD, enum \mbox{\hyperlink{athena_8h_a3c1bd98b7783340b3ff1dd2fcea56df4}{B\+C\+Direction}} dir, \mbox{\hyperlink{athena_8h_a665c6a09a1b144dc16774a5b74040387}{V\+G\+Fun\+\_\+t}} prob\+\_\+bc)
+\begin{DoxyCompactList}\small\item\em Sets function ptrs for user-\/defined B\+Cs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sets boundary conditions (quantities in ghost zones) on each edge of a Grid for the M\+HD variables. 
+
+P\+U\+R\+P\+O\+SE\+: Sets boundary conditions (quantities in ghost zones) on each edge of a Grid for the M\+HD variables. Each edge of a Grid represents either\+:
+\begin{DoxyItemize}
+\item (1) a physical boundary at the edge of the Mesh; in which case B\+Cs are specified by an integer flag input by user (or by user-\/defined BC function in the problem file)
+\item (2) the boundary between Grids resulting from decomposition of a larger Domain using M\+PI; in which case B\+Cs are handled by M\+PI calls
+\item (3) an internal boundary between fine/coarse grid levels in a nested Mesh; in which case the B\+Cs require a prolongation operator from the parent
+
+This file contains functions that can handle the first two cases. Case (3) is handled in the Prolongate function called from main loop. The naming convention of the integer flags for B\+Cs is\+:
+\begin{DoxyItemize}
+\item bc\+\_\+ix1 = Boundary Condition for Inner x1 (at i=is)
+\item bc\+\_\+ox1 = Boundary Condition for Outer x1 (at i=ie) similarly for bc\+\_\+ix2; bc\+\_\+ox2; bc\+\_\+ix3; bc\+\_\+ox3
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+For case (1) -- P\+H\+Y\+S\+I\+C\+AL B\+O\+U\+N\+D\+A\+R\+I\+ES The values of the integer flags (bc\+\_\+ix1, etc.) are\+:
+\begin{DoxyItemize}
+\item 1 = reflecting; 2 = outflow; 4 = periodic; 5 = conductor For flow-\/in bondaries (ghost zones set to pre-\/determined values), pointers to user-\/defined functions in the problem file are used.
+\end{DoxyItemize}
+
+For case (2) -- M\+PI B\+O\+U\+N\+D\+A\+R\+I\+ES We do the parallel synchronization by having every grid\+:
+\begin{DoxyItemize}
+\item 1) Post non-\/blocking receives for data from both L and R Grids
+\item 2) Pack and send data to the Grids on both L and R
+\item 3) Check for receives and unpack data in order of first to finish If the Grid is at the edge of the Domain, we set B\+Cs as in case (1) or (3).
+\end{DoxyItemize}
+
+For case (3) -- I\+N\+T\+E\+R\+N\+AL G\+R\+ID L\+E\+V\+EL B\+O\+U\+N\+D\+A\+R\+I\+ES This step is complicated and must be handled separately, in the function \mbox{\hyperlink{prototypes_8h_ad2fa4773d22ac52368d121fbc64753b8}{Prolongate()}} called from the main loop. In the algorithm below, nothing is done for this case; the B\+Cs are left to be set later.
+
+With S\+E\+L\+F-\/\+G\+R\+A\+V\+I\+TY\+: B\+Cs for Phi are set independently of the M\+HD variables in a separate function bvals\+\_\+grav().
+
+C\+O\+N\+T\+A\+I\+NS P\+U\+B\+L\+IC F\+U\+N\+C\+T\+I\+O\+NS\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{bvals__mhd_8c_ab450dc8f6ddc146aab7dcc71c0795253}{bvals\+\_\+mhd()}} -\/ calls appropriate functions to set ghost cells
+\item \mbox{\hyperlink{bvals__mhd_8c_a73fd08ad3c131672ff0473236faee5e2}{bvals\+\_\+mhd\+\_\+init()}} -\/ sets function pointers used by \mbox{\hyperlink{bvals__mhd_8c_ab450dc8f6ddc146aab7dcc71c0795253}{bvals\+\_\+mhd()}}
+\item \mbox{\hyperlink{bvals__mhd_8c_a8f18bdb818b65c7946c7dc7d63b7cdb3}{bvals\+\_\+mhd\+\_\+fun()}} -\/ enrolls a pointer to a user-\/defined BC function
+\end{DoxyItemize}
+
+P\+R\+I\+V\+A\+TE F\+U\+N\+C\+T\+I\+ON P\+R\+O\+T\+O\+T\+Y\+P\+ES\+:
+\begin{DoxyItemize}
+\item reflect\+\_\+ix1() -\/ reflecting B\+Cs at boundary ix1
+\item reflect\+\_\+ox1() -\/ reflecting B\+Cs at boundary ox1
+\item reflect\+\_\+ix2() -\/ reflecting B\+Cs at boundary ix2
+\item reflect\+\_\+ox2() -\/ reflecting B\+Cs at boundary ox2
+\item reflect\+\_\+ix3() -\/ reflecting B\+Cs at boundary ix3
+\item reflect\+\_\+ox3() -\/ reflecting B\+Cs at boundary ox3
+\item outflow\+\_\+ix1() -\/ outflow B\+Cs at boundary ix1
+\item outflow\+\_\+ox1() -\/ outflow B\+Cs at boundary ox1
+\item outflow\+\_\+ix2() -\/ outflow B\+Cs at boundary ix2
+\item outflow\+\_\+ox2() -\/ outflow B\+Cs at boundary ox2
+\item outflow\+\_\+ix3() -\/ outflow B\+Cs at boundary ix3
+\item outflow\+\_\+ox3() -\/ outflow B\+Cs at boundary ox3
+\item periodic\+\_\+ix1() -\/ periodic B\+Cs at boundary ix1
+\item periodic\+\_\+ox1() -\/ periodic B\+Cs at boundary ox1
+\item periodic\+\_\+ix2() -\/ periodic B\+Cs at boundary ix2
+\item periodic\+\_\+ox2() -\/ periodic B\+Cs at boundary ox2
+\item periodic\+\_\+ix3() -\/ periodic B\+Cs at boundary ix3
+\item periodic\+\_\+ox3() -\/ periodic B\+Cs at boundary ox3
+\item conduct\+\_\+ix1() -\/ conducting B\+Cs at boundary ix1
+\item conduct\+\_\+ox1() -\/ conducting B\+Cs at boundary ox1
+\item conduct\+\_\+ix2() -\/ conducting B\+Cs at boundary ix2
+\item conduct\+\_\+ox2() -\/ conducting B\+Cs at boundary ox2
+\item conduct\+\_\+ix3() -\/ conducting B\+Cs at boundary ix3
+\item conduct\+\_\+ox3() -\/ conducting B\+Cs at boundary ox3
+\item pack\+\_\+ix1() -\/ pack data for M\+PI non-\/blocking send at ix1 boundary
+\item pack\+\_\+ox1() -\/ pack data for M\+PI non-\/blocking send at ox1 boundary
+\item pack\+\_\+ix2() -\/ pack data for M\+PI non-\/blocking send at ix2 boundary
+\item pack\+\_\+ox2() -\/ pack data for M\+PI non-\/blocking send at ox2 boundary
+\item pack\+\_\+ix3() -\/ pack data for M\+PI non-\/blocking send at ix3 boundary
+\item pack\+\_\+ox3() -\/ pack data for M\+PI non-\/blocking send at ox3 boundary
+\item unpack\+\_\+ix1() -\/ unpack data for M\+PI non-\/blocking receive at ix1 boundary
+\item unpack\+\_\+ox1() -\/ unpack data for M\+PI non-\/blocking receive at ox1 boundary
+\item unpack\+\_\+ix2() -\/ unpack data for M\+PI non-\/blocking receive at ix2 boundary
+\item unpack\+\_\+ox2() -\/ unpack data for M\+PI non-\/blocking receive at ox2 boundary
+\item unpack\+\_\+ix3() -\/ unpack data for M\+PI non-\/blocking receive at ix3 boundary
+\item unpack\+\_\+ox3() -\/ unpack data for M\+PI non-\/blocking receive at ox3 boundary 
+\end{DoxyItemize}
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{bvals__mhd_8c_ab450dc8f6ddc146aab7dcc71c0795253}\label{bvals__mhd_8c_ab450dc8f6ddc146aab7dcc71c0795253}} 
+\index{bvals\_mhd.c@{bvals\_mhd.c}!bvals\_mhd@{bvals\_mhd}}
+\index{bvals\_mhd@{bvals\_mhd}!bvals\_mhd.c@{bvals\_mhd.c}}
+\doxysubsubsection{\texorpdfstring{bvals\_mhd()}{bvals\_mhd()}}
+{\footnotesize\ttfamily void bvals\+\_\+mhd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{pD }\end{DoxyParamCaption})}
+
+
+
+Calls appropriate functions to set ghost zones. ~\newline
+ 
+
+The function pointers ($\ast$(p\+D-\/$>$???\+\_\+\+B\+C\+Fun)) are set by bvals\+\_\+init() to be either a user-\/defined function, or one of the functions corresponding to reflecting, periodic, or outflow. If the left-\/ or right-\/\+Grid ID numbers are $>$= 1 (neighboring grids exist), then M\+PI calls are used.
+
+Order for updating boundary conditions must always be x1-\/x2-\/x3 in order to fill the corner cells properly 
+
+Definition at line 174 of file bvals\+\_\+mhd.\+c.
+
+\mbox{\Hypertarget{bvals__mhd_8c_a8f18bdb818b65c7946c7dc7d63b7cdb3}\label{bvals__mhd_8c_a8f18bdb818b65c7946c7dc7d63b7cdb3}} 
+\index{bvals\_mhd.c@{bvals\_mhd.c}!bvals\_mhd\_fun@{bvals\_mhd\_fun}}
+\index{bvals\_mhd\_fun@{bvals\_mhd\_fun}!bvals\_mhd.c@{bvals\_mhd.c}}
+\doxysubsubsection{\texorpdfstring{bvals\_mhd\_fun()}{bvals\_mhd\_fun()}}
+{\footnotesize\ttfamily void bvals\+\_\+mhd\+\_\+fun (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{pD,  }\item[{enum \mbox{\hyperlink{athena_8h_a3c1bd98b7783340b3ff1dd2fcea56df4}{B\+C\+Direction}}}]{dir,  }\item[{\mbox{\hyperlink{athena_8h_a665c6a09a1b144dc16774a5b74040387}{V\+G\+Fun\+\_\+t}}}]{prob\+\_\+bc }\end{DoxyParamCaption})}
+
+
+
+Sets function ptrs for user-\/defined B\+Cs. 
+
+
+
+Definition at line 915 of file bvals\+\_\+mhd.\+c.
+
+\mbox{\Hypertarget{bvals__mhd_8c_a73fd08ad3c131672ff0473236faee5e2}\label{bvals__mhd_8c_a73fd08ad3c131672ff0473236faee5e2}} 
+\index{bvals\_mhd.c@{bvals\_mhd.c}!bvals\_mhd\_init@{bvals\_mhd\_init}}
+\index{bvals\_mhd\_init@{bvals\_mhd\_init}!bvals\_mhd.c@{bvals\_mhd.c}}
+\doxysubsubsection{\texorpdfstring{bvals\_mhd\_init()}{bvals\_mhd\_init()}}
+{\footnotesize\ttfamily void bvals\+\_\+mhd\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+Sets function pointers for physical boundaries during initialization, allocates memory for send/receive buffers with M\+PI. 
+
+
+
+Definition at line 514 of file bvals\+\_\+mhd.\+c.
+

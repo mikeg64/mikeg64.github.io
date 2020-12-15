@@ -1,0 +1,110 @@
+\hypertarget{output__tab_8c}{}\doxysection{src/output\+\_\+tab.c File Reference}
+\label{output__tab_8c}\index{src/output\_tab.c@{src/output\_tab.c}}
+
+
+Functions for writing output in tabular format.  
+
+
+{\ttfamily \#include \char`\"{}copyright.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}athena.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prototypes.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{output__tab_8c_a199ae0fb6e5e332fd277907b622bb959}{output\+\_\+tab\+\_\+1d}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, \mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$p\+Out, int nl, int nd)
+\begin{DoxyCompactList}\small\item\em Writes 1D data. Note x-\/coordinate is just i-\/index. ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{output__tab_8c_a7b2f43b41a5cfe0e0c6910e128d24731}{output\+\_\+tab\+\_\+2d}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, \mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$p\+Out, int nl, int nd)
+\begin{DoxyCompactList}\small\item\em Writes 2D data. Note x/y-\/coordinate is just i/j-\/index. ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{output__tab_8c_ac5b86c52635cd5bd633669a4d9a1b6a1}{output\+\_\+tab\+\_\+3d}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, \mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$p\+Out, int nl, int nd)
+\begin{DoxyCompactList}\small\item\em Writes 3D data. Note x/y/z-\/coordinate is just i/j/k-\/index ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{output__tab_8c_a6847490e314cc9dc2ab5b75e0d74fe3a}{output\+\_\+tab}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, \mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$p\+Out)
+\begin{DoxyCompactList}\small\item\em Open file, call 1D/2\+D/3D writer; called by data\+\_\+ouput ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions for writing output in tabular format. 
+
+P\+U\+R\+P\+O\+SE\+: Functions for writing output in tabular format. With S\+MR, dumps are made for all levels and domains, unless nlevel and ndomain are specified in $<$output$>$ blocks.
+
+C\+O\+N\+T\+A\+I\+NS P\+U\+B\+L\+IC F\+U\+N\+C\+T\+I\+O\+NS\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{output__tab_8c_a6847490e314cc9dc2ab5b75e0d74fe3a}{output\+\_\+tab()}} -\/ opens file and calls appropriate 1D/2\+D/3D output function Uses Out\+Data1,2,3() to extract appropriate section to be output.
+\end{DoxyItemize}
+
+P\+R\+I\+V\+A\+TE F\+U\+N\+C\+T\+I\+ON P\+R\+O\+T\+O\+T\+Y\+P\+ES\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{output__tab_8c_a199ae0fb6e5e332fd277907b622bb959}{output\+\_\+tab\+\_\+1d()}} -\/ write tab file for 1D slice of data
+\item \mbox{\hyperlink{output__tab_8c_a7b2f43b41a5cfe0e0c6910e128d24731}{output\+\_\+tab\+\_\+2d()}} -\/ write tab file for 2D plane of data
+\item \mbox{\hyperlink{output__tab_8c_ac5b86c52635cd5bd633669a4d9a1b6a1}{output\+\_\+tab\+\_\+3d()}} -\/ write tab file for 3D section of data ~\newline
+ 
+\end{DoxyItemize}
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{output__tab_8c_a6847490e314cc9dc2ab5b75e0d74fe3a}\label{output__tab_8c_a6847490e314cc9dc2ab5b75e0d74fe3a}} 
+\index{output\_tab.c@{output\_tab.c}!output\_tab@{output\_tab}}
+\index{output\_tab@{output\_tab}!output\_tab.c@{output\_tab.c}}
+\doxysubsubsection{\texorpdfstring{output\_tab()}{output\_tab()}}
+{\footnotesize\ttfamily void output\+\_\+tab (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{\mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$}]{p\+Out }\end{DoxyParamCaption})}
+
+
+
+Open file, call 1D/2\+D/3D writer; called by data\+\_\+ouput ~\newline
+ 
+
+
+
+Definition at line 43 of file output\+\_\+tab.\+c.
+
+\mbox{\Hypertarget{output__tab_8c_a199ae0fb6e5e332fd277907b622bb959}\label{output__tab_8c_a199ae0fb6e5e332fd277907b622bb959}} 
+\index{output\_tab.c@{output\_tab.c}!output\_tab\_1d@{output\_tab\_1d}}
+\index{output\_tab\_1d@{output\_tab\_1d}!output\_tab.c@{output\_tab.c}}
+\doxysubsubsection{\texorpdfstring{output\_tab\_1d()}{output\_tab\_1d()}}
+{\footnotesize\ttfamily void output\+\_\+tab\+\_\+1d (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{\mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$}]{p\+Out,  }\item[{int}]{nl,  }\item[{int}]{nd }\end{DoxyParamCaption})}
+
+
+
+Writes 1D data. Note x-\/coordinate is just i-\/index. ~\newline
+ 
+
+
+
+Definition at line 75 of file output\+\_\+tab.\+c.
+
+\mbox{\Hypertarget{output__tab_8c_a7b2f43b41a5cfe0e0c6910e128d24731}\label{output__tab_8c_a7b2f43b41a5cfe0e0c6910e128d24731}} 
+\index{output\_tab.c@{output\_tab.c}!output\_tab\_2d@{output\_tab\_2d}}
+\index{output\_tab\_2d@{output\_tab\_2d}!output\_tab.c@{output\_tab.c}}
+\doxysubsubsection{\texorpdfstring{output\_tab\_2d()}{output\_tab\_2d()}}
+{\footnotesize\ttfamily void output\+\_\+tab\+\_\+2d (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{\mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$}]{p\+Out,  }\item[{int}]{nl,  }\item[{int}]{nd }\end{DoxyParamCaption})}
+
+
+
+Writes 2D data. Note x/y-\/coordinate is just i/j-\/index. ~\newline
+ 
+
+
+
+Definition at line 141 of file output\+\_\+tab.\+c.
+
+\mbox{\Hypertarget{output__tab_8c_ac5b86c52635cd5bd633669a4d9a1b6a1}\label{output__tab_8c_ac5b86c52635cd5bd633669a4d9a1b6a1}} 
+\index{output\_tab.c@{output\_tab.c}!output\_tab\_3d@{output\_tab\_3d}}
+\index{output\_tab\_3d@{output\_tab\_3d}!output\_tab.c@{output\_tab.c}}
+\doxysubsubsection{\texorpdfstring{output\_tab\_3d()}{output\_tab\_3d()}}
+{\footnotesize\ttfamily void output\+\_\+tab\+\_\+3d (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{\mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$}]{p\+Out,  }\item[{int}]{nl,  }\item[{int}]{nd }\end{DoxyParamCaption})}
+
+
+
+Writes 3D data. Note x/y/z-\/coordinate is just i/j/k-\/index ~\newline
+ 
+
+
+
+Definition at line 216 of file output\+\_\+tab.\+c.
+

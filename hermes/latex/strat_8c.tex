@@ -1,0 +1,286 @@
+\hypertarget{strat_8c}{}\doxysection{src/prob/strat.c File Reference}
+\label{strat_8c}\index{src/prob/strat.c@{src/prob/strat.c}}
+
+
+Problem generator for stratified 3D shearing sheet.  
+
+
+{\ttfamily \#include \char`\"{}copyright.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$float.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}athena.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prototypes.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{strat_8c_a78325bdf48423acef7c012567628b391}{I\+M1}}~2147483563
+\item 
+\#define \mbox{\hyperlink{strat_8c_ad8c519de7e5de4ae35344ddcf21fd062}{I\+M2}}~2147483399
+\item 
+\#define \mbox{\hyperlink{strat_8c_ad301e6a88b1c01108f4867f2ea6f683c}{AM}}~(1.\+0/\mbox{\hyperlink{turb_8c_a78325bdf48423acef7c012567628b391}{I\+M1}})
+\item 
+\#define \mbox{\hyperlink{strat_8c_a87a6e0054f9d827c979c43aa0d5e621a}{I\+M\+M1}}~(\mbox{\hyperlink{turb_8c_a78325bdf48423acef7c012567628b391}{I\+M1}}-\/1)
+\item 
+\#define \mbox{\hyperlink{strat_8c_a6ef2749dca39c605c3d033f788afe6e3}{I\+A1}}~40014
+\item 
+\#define \mbox{\hyperlink{strat_8c_a372a58d7e9e25912fd79e7afaa06cc7a}{I\+A2}}~40692
+\item 
+\#define \mbox{\hyperlink{strat_8c_a9afa86ff22da69bda72fe271ae71ad46}{I\+Q1}}~53668
+\item 
+\#define \mbox{\hyperlink{strat_8c_abae040385946a6acdf5e10d2efd86f3d}{I\+Q2}}~52774
+\item 
+\#define \mbox{\hyperlink{strat_8c_a7b2b32709f9770a283701ffcf3723497}{I\+R1}}~12211
+\item 
+\#define \mbox{\hyperlink{strat_8c_a5a08e4f5cb3582e623cc14a6c92d48de}{I\+R2}}~3791
+\item 
+\#define \mbox{\hyperlink{strat_8c_a0e93cfb2d62849853fd34957ba6e6fdc}{N\+T\+AB}}~32
+\item 
+\#define \mbox{\hyperlink{strat_8c_a62339d74dd5d9d00480e1a288cf88fe8}{N\+D\+IV}}~(1+\mbox{\hyperlink{turb_8c_a87a6e0054f9d827c979c43aa0d5e621a}{I\+M\+M1}}/\mbox{\hyperlink{turb_8c_a0e93cfb2d62849853fd34957ba6e6fdc}{N\+T\+AB}})
+\item 
+\#define \mbox{\hyperlink{strat_8c_aa7436c9270ffb06f8c1eae8d2e605cec}{R\+N\+MX}}~(1.\+0-\/D\+B\+L\+\_\+\+E\+P\+S\+I\+L\+ON)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{strat_8c_a1b323f47153f1975b64382e0ffac6b73}{problem}} (\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$p\+Domain)
+\item 
+void \mbox{\hyperlink{strat_8c_a2c334369ab621e9815591c76ccfb5fc7}{problem\+\_\+write\+\_\+restart}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, F\+I\+LE $\ast$fp)
+\item 
+void \mbox{\hyperlink{strat_8c_acf733c9792756cbec1e9d226c4ff37ab}{problem\+\_\+read\+\_\+restart}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, F\+I\+LE $\ast$fp)
+\item 
+\mbox{\hyperlink{athena_8h_aaa64b3ee5eefc566b7c09368c414de89}{Cons\+Fun\+\_\+t}} \mbox{\hyperlink{strat_8c_a4575c4cdbf2965a9857c45970d736676}{get\+\_\+usr\+\_\+expr}} (const char $\ast$expr)
+\item 
+\mbox{\hyperlink{athena_8h_a8bc2403d4d3a27d6f475f2dc6acc94cc}{V\+Out\+Fun\+\_\+t}} \mbox{\hyperlink{strat_8c_a8b8cabb1061d5399fb492be89de213ff}{get\+\_\+usr\+\_\+out\+\_\+fun}} (const char $\ast$\mbox{\hyperlink{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}{name}})
+\item 
+void \mbox{\hyperlink{strat_8c_a0ff640c24db1dc0d7c89d91f1d55ffce}{Userwork\+\_\+in\+\_\+loop}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\item 
+void \mbox{\hyperlink{strat_8c_a5506a1df41ed88e038443271b9785337}{Userwork\+\_\+after\+\_\+loop}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Problem generator for stratified 3D shearing sheet. 
+
+P\+U\+R\+P\+O\+SE\+: Problem generator for stratified 3D shearing sheet. Based on the initial conditions described in \char`\"{}\+Three-\/dimensional Magnetohydrodynamic
+  Simulations of Vertically Stratified Accretion Disks\char`\"{} by Stone, Hawley, Gammie \& Balbus.
+
+Several different field configurations and perturbations are possible\+: ifield = 1 -\/ Bz=B0 sin(x1) field with zero-\/net-\/flux \mbox{[}default\mbox{]} ifield = 2 -\/ uniform Bz ifield = 3 -\/ B=(0,B0cos(kx$\ast$x1),B0sin(kx$\ast$x1))= zero-\/net flux w helicity ifield = 4 -\/ uniform By, but only for $\vert$z$\vert$$<$2 ifield = 5 -\/ By with constant \textbackslash{}beta versus z ifield = 6 -\/ flux tube at disk center from Hirose et al. ifield = 7 -\/ zero field everywhere
+
+
+\begin{DoxyItemize}
+\item ipert = 1 -\/ random perturbations to P and V \mbox{[}default, used by H\+GB\mbox{]}
+\end{DoxyItemize}
+
+Code must be configured using --enable-\/shearing-\/box
+
+R\+E\+F\+E\+R\+E\+N\+CE\+: Stone, J., Hawley, J. \& Balbus, S. A., ApJ 463, 656-\/673 (1996) Hawley, J. F. \& Balbus, S. A., ApJ 400, 595-\/609 (1992) ~\newline
+ 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{strat_8c_ad301e6a88b1c01108f4867f2ea6f683c}\label{strat_8c_ad301e6a88b1c01108f4867f2ea6f683c}} 
+\index{strat.c@{strat.c}!AM@{AM}}
+\index{AM@{AM}!strat.c@{strat.c}}
+\doxysubsubsection{\texorpdfstring{AM}{AM}}
+{\footnotesize\ttfamily \#define AM~(1.\+0/\mbox{\hyperlink{turb_8c_a78325bdf48423acef7c012567628b391}{I\+M1}})}
+
+
+
+Definition at line 550 of file strat.\+c.
+
+\mbox{\Hypertarget{strat_8c_a6ef2749dca39c605c3d033f788afe6e3}\label{strat_8c_a6ef2749dca39c605c3d033f788afe6e3}} 
+\index{strat.c@{strat.c}!IA1@{IA1}}
+\index{IA1@{IA1}!strat.c@{strat.c}}
+\doxysubsubsection{\texorpdfstring{IA1}{IA1}}
+{\footnotesize\ttfamily \#define I\+A1~40014}
+
+
+
+Definition at line 552 of file strat.\+c.
+
+\mbox{\Hypertarget{strat_8c_a372a58d7e9e25912fd79e7afaa06cc7a}\label{strat_8c_a372a58d7e9e25912fd79e7afaa06cc7a}} 
+\index{strat.c@{strat.c}!IA2@{IA2}}
+\index{IA2@{IA2}!strat.c@{strat.c}}
+\doxysubsubsection{\texorpdfstring{IA2}{IA2}}
+{\footnotesize\ttfamily \#define I\+A2~40692}
+
+
+
+Definition at line 553 of file strat.\+c.
+
+\mbox{\Hypertarget{strat_8c_a78325bdf48423acef7c012567628b391}\label{strat_8c_a78325bdf48423acef7c012567628b391}} 
+\index{strat.c@{strat.c}!IM1@{IM1}}
+\index{IM1@{IM1}!strat.c@{strat.c}}
+\doxysubsubsection{\texorpdfstring{IM1}{IM1}}
+{\footnotesize\ttfamily \#define I\+M1~2147483563}
+
+
+
+Definition at line 548 of file strat.\+c.
+
+\mbox{\Hypertarget{strat_8c_ad8c519de7e5de4ae35344ddcf21fd062}\label{strat_8c_ad8c519de7e5de4ae35344ddcf21fd062}} 
+\index{strat.c@{strat.c}!IM2@{IM2}}
+\index{IM2@{IM2}!strat.c@{strat.c}}
+\doxysubsubsection{\texorpdfstring{IM2}{IM2}}
+{\footnotesize\ttfamily \#define I\+M2~2147483399}
+
+
+
+Definition at line 549 of file strat.\+c.
+
+\mbox{\Hypertarget{strat_8c_a87a6e0054f9d827c979c43aa0d5e621a}\label{strat_8c_a87a6e0054f9d827c979c43aa0d5e621a}} 
+\index{strat.c@{strat.c}!IMM1@{IMM1}}
+\index{IMM1@{IMM1}!strat.c@{strat.c}}
+\doxysubsubsection{\texorpdfstring{IMM1}{IMM1}}
+{\footnotesize\ttfamily \#define I\+M\+M1~(\mbox{\hyperlink{turb_8c_a78325bdf48423acef7c012567628b391}{I\+M1}}-\/1)}
+
+
+
+Definition at line 551 of file strat.\+c.
+
+\mbox{\Hypertarget{strat_8c_a9afa86ff22da69bda72fe271ae71ad46}\label{strat_8c_a9afa86ff22da69bda72fe271ae71ad46}} 
+\index{strat.c@{strat.c}!IQ1@{IQ1}}
+\index{IQ1@{IQ1}!strat.c@{strat.c}}
+\doxysubsubsection{\texorpdfstring{IQ1}{IQ1}}
+{\footnotesize\ttfamily \#define I\+Q1~53668}
+
+
+
+Definition at line 554 of file strat.\+c.
+
+\mbox{\Hypertarget{strat_8c_abae040385946a6acdf5e10d2efd86f3d}\label{strat_8c_abae040385946a6acdf5e10d2efd86f3d}} 
+\index{strat.c@{strat.c}!IQ2@{IQ2}}
+\index{IQ2@{IQ2}!strat.c@{strat.c}}
+\doxysubsubsection{\texorpdfstring{IQ2}{IQ2}}
+{\footnotesize\ttfamily \#define I\+Q2~52774}
+
+
+
+Definition at line 555 of file strat.\+c.
+
+\mbox{\Hypertarget{strat_8c_a7b2b32709f9770a283701ffcf3723497}\label{strat_8c_a7b2b32709f9770a283701ffcf3723497}} 
+\index{strat.c@{strat.c}!IR1@{IR1}}
+\index{IR1@{IR1}!strat.c@{strat.c}}
+\doxysubsubsection{\texorpdfstring{IR1}{IR1}}
+{\footnotesize\ttfamily \#define I\+R1~12211}
+
+
+
+Definition at line 556 of file strat.\+c.
+
+\mbox{\Hypertarget{strat_8c_a5a08e4f5cb3582e623cc14a6c92d48de}\label{strat_8c_a5a08e4f5cb3582e623cc14a6c92d48de}} 
+\index{strat.c@{strat.c}!IR2@{IR2}}
+\index{IR2@{IR2}!strat.c@{strat.c}}
+\doxysubsubsection{\texorpdfstring{IR2}{IR2}}
+{\footnotesize\ttfamily \#define I\+R2~3791}
+
+
+
+Definition at line 557 of file strat.\+c.
+
+\mbox{\Hypertarget{strat_8c_a62339d74dd5d9d00480e1a288cf88fe8}\label{strat_8c_a62339d74dd5d9d00480e1a288cf88fe8}} 
+\index{strat.c@{strat.c}!NDIV@{NDIV}}
+\index{NDIV@{NDIV}!strat.c@{strat.c}}
+\doxysubsubsection{\texorpdfstring{NDIV}{NDIV}}
+{\footnotesize\ttfamily \#define N\+D\+IV~(1+\mbox{\hyperlink{turb_8c_a87a6e0054f9d827c979c43aa0d5e621a}{I\+M\+M1}}/\mbox{\hyperlink{turb_8c_a0e93cfb2d62849853fd34957ba6e6fdc}{N\+T\+AB}})}
+
+
+
+Definition at line 559 of file strat.\+c.
+
+\mbox{\Hypertarget{strat_8c_a0e93cfb2d62849853fd34957ba6e6fdc}\label{strat_8c_a0e93cfb2d62849853fd34957ba6e6fdc}} 
+\index{strat.c@{strat.c}!NTAB@{NTAB}}
+\index{NTAB@{NTAB}!strat.c@{strat.c}}
+\doxysubsubsection{\texorpdfstring{NTAB}{NTAB}}
+{\footnotesize\ttfamily \#define N\+T\+AB~32}
+
+
+
+Definition at line 558 of file strat.\+c.
+
+\mbox{\Hypertarget{strat_8c_aa7436c9270ffb06f8c1eae8d2e605cec}\label{strat_8c_aa7436c9270ffb06f8c1eae8d2e605cec}} 
+\index{strat.c@{strat.c}!RNMX@{RNMX}}
+\index{RNMX@{RNMX}!strat.c@{strat.c}}
+\doxysubsubsection{\texorpdfstring{RNMX}{RNMX}}
+{\footnotesize\ttfamily \#define R\+N\+MX~(1.\+0-\/D\+B\+L\+\_\+\+E\+P\+S\+I\+L\+ON)}
+
+
+
+Definition at line 560 of file strat.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{strat_8c_a4575c4cdbf2965a9857c45970d736676}\label{strat_8c_a4575c4cdbf2965a9857c45970d736676}} 
+\index{strat.c@{strat.c}!get\_usr\_expr@{get\_usr\_expr}}
+\index{get\_usr\_expr@{get\_usr\_expr}!strat.c@{strat.c}}
+\doxysubsubsection{\texorpdfstring{get\_usr\_expr()}{get\_usr\_expr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{athena_8h_aaa64b3ee5eefc566b7c09368c414de89}{Cons\+Fun\+\_\+t}} get\+\_\+usr\+\_\+expr (\begin{DoxyParamCaption}\item[{const char $\ast$}]{expr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 482 of file strat.\+c.
+
+\mbox{\Hypertarget{strat_8c_a8b8cabb1061d5399fb492be89de213ff}\label{strat_8c_a8b8cabb1061d5399fb492be89de213ff}} 
+\index{strat.c@{strat.c}!get\_usr\_out\_fun@{get\_usr\_out\_fun}}
+\index{get\_usr\_out\_fun@{get\_usr\_out\_fun}!strat.c@{strat.c}}
+\doxysubsubsection{\texorpdfstring{get\_usr\_out\_fun()}{get\_usr\_out\_fun()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{athena_8h_a8bc2403d4d3a27d6f475f2dc6acc94cc}{V\+Out\+Fun\+\_\+t}} get\+\_\+usr\+\_\+out\+\_\+fun (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 492 of file strat.\+c.
+
+\mbox{\Hypertarget{strat_8c_a1b323f47153f1975b64382e0ffac6b73}\label{strat_8c_a1b323f47153f1975b64382e0ffac6b73}} 
+\index{strat.c@{strat.c}!problem@{problem}}
+\index{problem@{problem}!strat.c@{strat.c}}
+\doxysubsubsection{\texorpdfstring{problem()}{problem()}}
+{\footnotesize\ttfamily void problem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{p\+Domain }\end{DoxyParamCaption})}
+
+
+
+Definition at line 87 of file strat.\+c.
+
+\mbox{\Hypertarget{strat_8c_acf733c9792756cbec1e9d226c4ff37ab}\label{strat_8c_acf733c9792756cbec1e9d226c4ff37ab}} 
+\index{strat.c@{strat.c}!problem\_read\_restart@{problem\_read\_restart}}
+\index{problem\_read\_restart@{problem\_read\_restart}!strat.c@{strat.c}}
+\doxysubsubsection{\texorpdfstring{problem\_read\_restart()}{problem\_read\_restart()}}
+{\footnotesize\ttfamily void problem\+\_\+read\+\_\+restart (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 418 of file strat.\+c.
+
+\mbox{\Hypertarget{strat_8c_a2c334369ab621e9815591c76ccfb5fc7}\label{strat_8c_a2c334369ab621e9815591c76ccfb5fc7}} 
+\index{strat.c@{strat.c}!problem\_write\_restart@{problem\_write\_restart}}
+\index{problem\_write\_restart@{problem\_write\_restart}!strat.c@{strat.c}}
+\doxysubsubsection{\texorpdfstring{problem\_write\_restart()}{problem\_write\_restart()}}
+{\footnotesize\ttfamily void problem\+\_\+write\+\_\+restart (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 409 of file strat.\+c.
+
+\mbox{\Hypertarget{strat_8c_a5506a1df41ed88e038443271b9785337}\label{strat_8c_a5506a1df41ed88e038443271b9785337}} 
+\index{strat.c@{strat.c}!Userwork\_after\_loop@{Userwork\_after\_loop}}
+\index{Userwork\_after\_loop@{Userwork\_after\_loop}!strat.c@{strat.c}}
+\doxysubsubsection{\texorpdfstring{Userwork\_after\_loop()}{Userwork\_after\_loop()}}
+{\footnotesize\ttfamily void Userwork\+\_\+after\+\_\+loop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+Definition at line 541 of file strat.\+c.
+
+\mbox{\Hypertarget{strat_8c_a0ff640c24db1dc0d7c89d91f1d55ffce}\label{strat_8c_a0ff640c24db1dc0d7c89d91f1d55ffce}} 
+\index{strat.c@{strat.c}!Userwork\_in\_loop@{Userwork\_in\_loop}}
+\index{Userwork\_in\_loop@{Userwork\_in\_loop}!strat.c@{strat.c}}
+\doxysubsubsection{\texorpdfstring{Userwork\_in\_loop()}{Userwork\_in\_loop()}}
+{\footnotesize\ttfamily void Userwork\+\_\+in\+\_\+loop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+Definition at line 511 of file strat.\+c.
+

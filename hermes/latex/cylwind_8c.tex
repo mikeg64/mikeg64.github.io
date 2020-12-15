@@ -1,0 +1,160 @@
+\hypertarget{cylwind_8c}{}\doxysection{src/prob/cylwind.c File Reference}
+\label{cylwind_8c}\index{src/prob/cylwind.c@{src/prob/cylwind.c}}
+
+
+The cylindrical analogue of the Bondi accretion (Parker wind) problem.  
+
+
+{\ttfamily \#include \char`\"{}copyright.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}athena.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prototypes.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Real \mbox{\hyperlink{cylwind_8c_ab96d39891400b325474dcab674830d4f}{grav\+\_\+pot}} (const Real x1, const Real x2, const Real x3)
+\begin{DoxyCompactList}\small\item\em Gravitational potential ~\newline
+ \end{DoxyCompactList}\item 
+Real \mbox{\hyperlink{cylwind_8c_ab80c954de62717b9a3d008bae994b42a}{myfunc}} (const Real x, const Real v)
+\begin{DoxyCompactList}\small\item\em This funciton is used to calculate velocity v as a function of position x using lambda\+\_\+c, the critical value of the dimensionless mass wind/accretion rate. Standard bisection is used to find the root(s). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cylwind_8c_a1b323f47153f1975b64382e0ffac6b73}{problem}} (\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$p\+Domain)
+\item 
+void \mbox{\hyperlink{cylwind_8c_a2c334369ab621e9815591c76ccfb5fc7}{problem\+\_\+write\+\_\+restart}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, F\+I\+LE $\ast$fp)
+\item 
+void \mbox{\hyperlink{cylwind_8c_acf733c9792756cbec1e9d226c4ff37ab}{problem\+\_\+read\+\_\+restart}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, F\+I\+LE $\ast$fp)
+\item 
+\mbox{\hyperlink{athena_8h_aaa64b3ee5eefc566b7c09368c414de89}{Cons\+Fun\+\_\+t}} \mbox{\hyperlink{cylwind_8c_a4575c4cdbf2965a9857c45970d736676}{get\+\_\+usr\+\_\+expr}} (const char $\ast$expr)
+\item 
+\mbox{\hyperlink{athena_8h_a8bc2403d4d3a27d6f475f2dc6acc94cc}{V\+Out\+Fun\+\_\+t}} \mbox{\hyperlink{cylwind_8c_a8b8cabb1061d5399fb492be89de213ff}{get\+\_\+usr\+\_\+out\+\_\+fun}} (const char $\ast$\mbox{\hyperlink{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}{name}})
+\item 
+void \mbox{\hyperlink{cylwind_8c_a0ff640c24db1dc0d7c89d91f1d55ffce}{Userwork\+\_\+in\+\_\+loop}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\item 
+void \mbox{\hyperlink{cylwind_8c_a5506a1df41ed88e038443271b9785337}{Userwork\+\_\+after\+\_\+loop}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The cylindrical analogue of the Bondi accretion (Parker wind) problem. 
+
+Hydrodynamic, rotationless, axisymmetric.
+
+
+\begin{DoxyItemize}
+\item R\+E\+F\+E\+R\+E\+N\+CE\+: F. Shu, \char`\"{}\+The Physics of Astrophysics, Vol. I\+I\+:  Gas Dynamics\char`\"{},
+\begin{DoxyEnumerate}
+\item I\+S\+BN 0935702652
+\end{DoxyEnumerate}
+\item R\+E\+F\+E\+R\+E\+N\+CE\+: L. Spitzer, \char`\"{}\+Physical Processes in the Interstellar Medium\char`\"{},
+\begin{DoxyEnumerate}
+\item I\+S\+BN 0471293350 
+\end{DoxyEnumerate}
+\end{DoxyItemize}
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{cylwind_8c_a4575c4cdbf2965a9857c45970d736676}\label{cylwind_8c_a4575c4cdbf2965a9857c45970d736676}} 
+\index{cylwind.c@{cylwind.c}!get\_usr\_expr@{get\_usr\_expr}}
+\index{get\_usr\_expr@{get\_usr\_expr}!cylwind.c@{cylwind.c}}
+\doxysubsubsection{\texorpdfstring{get\_usr\_expr()}{get\_usr\_expr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{athena_8h_aaa64b3ee5eefc566b7c09368c414de89}{Cons\+Fun\+\_\+t}} get\+\_\+usr\+\_\+expr (\begin{DoxyParamCaption}\item[{const char $\ast$}]{expr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 161 of file cylwind.\+c.
+
+\mbox{\Hypertarget{cylwind_8c_a8b8cabb1061d5399fb492be89de213ff}\label{cylwind_8c_a8b8cabb1061d5399fb492be89de213ff}} 
+\index{cylwind.c@{cylwind.c}!get\_usr\_out\_fun@{get\_usr\_out\_fun}}
+\index{get\_usr\_out\_fun@{get\_usr\_out\_fun}!cylwind.c@{cylwind.c}}
+\doxysubsubsection{\texorpdfstring{get\_usr\_out\_fun()}{get\_usr\_out\_fun()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{athena_8h_a8bc2403d4d3a27d6f475f2dc6acc94cc}{V\+Out\+Fun\+\_\+t}} get\+\_\+usr\+\_\+out\+\_\+fun (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 166 of file cylwind.\+c.
+
+\mbox{\Hypertarget{cylwind_8c_ab96d39891400b325474dcab674830d4f}\label{cylwind_8c_ab96d39891400b325474dcab674830d4f}} 
+\index{cylwind.c@{cylwind.c}!grav\_pot@{grav\_pot}}
+\index{grav\_pot@{grav\_pot}!cylwind.c@{cylwind.c}}
+\doxysubsubsection{\texorpdfstring{grav\_pot()}{grav\_pot()}}
+{\footnotesize\ttfamily static Real grav\+\_\+pot (\begin{DoxyParamCaption}\item[{const Real}]{x1,  }\item[{const Real}]{x2,  }\item[{const Real}]{x3 }\end{DoxyParamCaption})}
+
+
+
+Gravitational potential ~\newline
+ 
+
+Gravitational potential. 
+
+Definition at line 184 of file cylwind.\+c.
+
+\mbox{\Hypertarget{cylwind_8c_ab80c954de62717b9a3d008bae994b42a}\label{cylwind_8c_ab80c954de62717b9a3d008bae994b42a}} 
+\index{cylwind.c@{cylwind.c}!myfunc@{myfunc}}
+\index{myfunc@{myfunc}!cylwind.c@{cylwind.c}}
+\doxysubsubsection{\texorpdfstring{myfunc()}{myfunc()}}
+{\footnotesize\ttfamily Real myfunc (\begin{DoxyParamCaption}\item[{const Real}]{x,  }\item[{const Real}]{v }\end{DoxyParamCaption})}
+
+
+
+This funciton is used to calculate velocity v as a function of position x using lambda\+\_\+c, the critical value of the dimensionless mass wind/accretion rate. Standard bisection is used to find the root(s). 
+
+This function is used to calculate y (ie. rho) as a function of x (ie. R), gamma, eta, theta, omega, and E using the bisection method.
+
+This function is used to calculate v as a function of x, gamma, and lambda using the bisection method. ~\newline
+ 
+
+Definition at line 195 of file cylwind.\+c.
+
+\mbox{\Hypertarget{cylwind_8c_a1b323f47153f1975b64382e0ffac6b73}\label{cylwind_8c_a1b323f47153f1975b64382e0ffac6b73}} 
+\index{cylwind.c@{cylwind.c}!problem@{problem}}
+\index{problem@{problem}!cylwind.c@{cylwind.c}}
+\doxysubsubsection{\texorpdfstring{problem()}{problem()}}
+{\footnotesize\ttfamily void problem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{p\+Domain }\end{DoxyParamCaption})}
+
+
+
+Definition at line 39 of file cylwind.\+c.
+
+\mbox{\Hypertarget{cylwind_8c_acf733c9792756cbec1e9d226c4ff37ab}\label{cylwind_8c_acf733c9792756cbec1e9d226c4ff37ab}} 
+\index{cylwind.c@{cylwind.c}!problem\_read\_restart@{problem\_read\_restart}}
+\index{problem\_read\_restart@{problem\_read\_restart}!cylwind.c@{cylwind.c}}
+\doxysubsubsection{\texorpdfstring{problem\_read\_restart()}{problem\_read\_restart()}}
+{\footnotesize\ttfamily void problem\+\_\+read\+\_\+restart (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 156 of file cylwind.\+c.
+
+\mbox{\Hypertarget{cylwind_8c_a2c334369ab621e9815591c76ccfb5fc7}\label{cylwind_8c_a2c334369ab621e9815591c76ccfb5fc7}} 
+\index{cylwind.c@{cylwind.c}!problem\_write\_restart@{problem\_write\_restart}}
+\index{problem\_write\_restart@{problem\_write\_restart}!cylwind.c@{cylwind.c}}
+\doxysubsubsection{\texorpdfstring{problem\_write\_restart()}{problem\_write\_restart()}}
+{\footnotesize\ttfamily void problem\+\_\+write\+\_\+restart (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 151 of file cylwind.\+c.
+
+\mbox{\Hypertarget{cylwind_8c_a5506a1df41ed88e038443271b9785337}\label{cylwind_8c_a5506a1df41ed88e038443271b9785337}} 
+\index{cylwind.c@{cylwind.c}!Userwork\_after\_loop@{Userwork\_after\_loop}}
+\index{Userwork\_after\_loop@{Userwork\_after\_loop}!cylwind.c@{cylwind.c}}
+\doxysubsubsection{\texorpdfstring{Userwork\_after\_loop()}{Userwork\_after\_loop()}}
+{\footnotesize\ttfamily void Userwork\+\_\+after\+\_\+loop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+Definition at line 174 of file cylwind.\+c.
+
+\mbox{\Hypertarget{cylwind_8c_a0ff640c24db1dc0d7c89d91f1d55ffce}\label{cylwind_8c_a0ff640c24db1dc0d7c89d91f1d55ffce}} 
+\index{cylwind.c@{cylwind.c}!Userwork\_in\_loop@{Userwork\_in\_loop}}
+\index{Userwork\_in\_loop@{Userwork\_in\_loop}!cylwind.c@{cylwind.c}}
+\doxysubsubsection{\texorpdfstring{Userwork\_in\_loop()}{Userwork\_in\_loop()}}
+{\footnotesize\ttfamily void Userwork\+\_\+in\+\_\+loop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+Definition at line 170 of file cylwind.\+c.
+

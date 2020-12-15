@@ -1,0 +1,41 @@
+\hypertarget{palette_8h}{}\doxysection{src/palette.h File Reference}
+\label{palette_8h}\index{src/palette.h@{src/palette.h}}
+
+
+Look-\/up tables (palettes) for inclusion in ppm images written by \mbox{\hyperlink{output__ppm_8c_a3b937585b40185f0397235b20baa21c7}{output\+\_\+ppm()}}.  
+
+
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_r_g_b__s}{R\+G\+B\+\_\+s}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_r_g_b__s}{R\+G\+B\+\_\+s}} \mbox{\hyperlink{palette_8h_a7e289c38fa625afcf145d957c40ca2d6}{R\+GB}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Look-\/up tables (palettes) for inclusion in ppm images written by \mbox{\hyperlink{output__ppm_8c_a3b937585b40185f0397235b20baa21c7}{output\+\_\+ppm()}}. 
+
+P\+U\+R\+P\+O\+SE\+: Look-\/up tables (palettes) for inclusion in ppm images written by \mbox{\hyperlink{output__ppm_8c_a3b937585b40185f0397235b20baa21c7}{output\+\_\+ppm()}}. Images of the 7 tables included here can be found in the documentation; they are named\+:
+\begin{DoxyItemize}
+\item rainbow -\/ red-\/blue-\/black.
+\item jh\+\_\+colors -\/ John Hawley\textquotesingle{}s \char`\"{}famous\char`\"{} color table. Red-\/gray-\/blue.
+\item idl1 -\/ red-\/blue-\/black
+\item idl2 -\/ black-\/blue-\/red-\/black
+\item step8 -\/ rainbow in 8 steps
+\item step32 -\/ rainbow in 32 steps
+\item heat -\/ white to black through shades of red The tables are stored in a structure \mbox{\hyperlink{struct_r_g_b}{R\+GB}}, and accessed by the above names No grayscale color table is provided; use pgm format for grayscale! ~\newline
+ 
+\end{DoxyItemize}
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{palette_8h_a7e289c38fa625afcf145d957c40ca2d6}\label{palette_8h_a7e289c38fa625afcf145d957c40ca2d6}} 
+\index{palette.h@{palette.h}!RGB@{RGB}}
+\index{RGB@{RGB}!palette.h@{palette.h}}
+\doxysubsubsection{\texorpdfstring{RGB}{RGB}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_r_g_b__s}{R\+G\+B\+\_\+s}} \mbox{\hyperlink{struct_r_g_b}{R\+GB}}}
+

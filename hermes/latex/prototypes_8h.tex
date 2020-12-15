@@ -1,0 +1,1717 @@
+\hypertarget{prototypes_8h}{}\doxysection{src/prototypes.h File Reference}
+\label{prototypes_8h}\index{src/prototypes.h@{src/prototypes.h}}
+
+
+Prototypes for all public functions from the /src directory. ~\newline
+  
+
+
+{\ttfamily \#include \char`\"{}copyright.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}athena.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gravity/prototypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}integrators/prototypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}microphysics/prototypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}particles/prototypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}reconstruction/prototypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rsolvers/prototypes.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{prototypes_8h_aba1abe41ca3515107f11233227a03dd6}{athena\+\_\+main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+void $\ast$ \mbox{\hyperlink{prototypes_8h_a400a6622e20871a87b8990d1f6ee7b1b}{calloc\+\_\+1d\+\_\+array}} (size\+\_\+t nc, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Construct 1D array = array\mbox{[}nc\mbox{]} ~\newline
+ \end{DoxyCompactList}\item 
+void $\ast$$\ast$ \mbox{\hyperlink{prototypes_8h_ab5d35ed2ca1bfc756eae79d19a4c01c2}{calloc\+\_\+2d\+\_\+array}} (size\+\_\+t nr, size\+\_\+t nc, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Construct 2D array = array\mbox{[}nr\mbox{]}\mbox{[}nc\mbox{]} ~\newline
+ \end{DoxyCompactList}\item 
+void $\ast$$\ast$$\ast$ \mbox{\hyperlink{prototypes_8h_a269072a648a3198a2a3e5e7044d426cc}{calloc\+\_\+3d\+\_\+array}} (size\+\_\+t nt, size\+\_\+t nr, size\+\_\+t nc, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Construct 3D array = array\mbox{[}nt\mbox{]}\mbox{[}nr\mbox{]}\mbox{[}nc\mbox{]} ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_af06c93640c785f8ca376b21222b5593b}{free\+\_\+1d\+\_\+array}} (void $\ast$array)
+\begin{DoxyCompactList}\small\item\em Free memory used by 1D array ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_ae39760c22be8cfd70c88f547dd054596}{free\+\_\+2d\+\_\+array}} (void $\ast$array)
+\begin{DoxyCompactList}\small\item\em Free memory used by 2D array ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_aa639a50b59af0bc55505fe267a0ec5a1}{free\+\_\+3d\+\_\+array}} (void $\ast$array)
+\begin{DoxyCompactList}\small\item\em Free memory used by 3D array ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_a7add156c56dde5a523942cece2760819}{ath\+\_\+log\+\_\+set\+\_\+level}} (const int out, const int err)
+\begin{DoxyCompactList}\small\item\em Sets \char`\"{}output level\char`\"{} and \char`\"{}error level\char`\"{} from input arguments, global parameters used by many functions in this file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_af69817089bbb5b2d033aa588cbe54b89}{ath\+\_\+log\+\_\+open}} (const char $\ast$basename, const int lazy, const char $\ast$\mbox{\hyperlink{iotypes_8h_a1a6b6fb557d8d37d59700faf4e4c9167}{mode}})
+\begin{DoxyCompactList}\small\item\em Opens output and error log files if \char`\"{}lazy\char`\"{} flag is false (0). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_a6ea3302c606292e0511ef451f0d5b78b}{ath\+\_\+log\+\_\+close}} (void)
+\begin{DoxyCompactList}\small\item\em Closes output and error log files. \end{DoxyCompactList}\item 
+F\+I\+LE $\ast$ \mbox{\hyperlink{prototypes_8h_a042615914e38978aa4ff2537e2813173}{athout\+\_\+fp}} (void)
+\begin{DoxyCompactList}\small\item\em Open output file if needed and return a pointer to file. \end{DoxyCompactList}\item 
+F\+I\+LE $\ast$ \mbox{\hyperlink{prototypes_8h_a2fa37607c57586cf0ec7d5661e98cb91}{atherr\+\_\+fp}} (void)
+\begin{DoxyCompactList}\small\item\em Open error file if needed and return a pointer to file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_add8ed1d287dead804cbac46fdbfad1e9}{ath\+\_\+flush\+\_\+out}} (void)
+\begin{DoxyCompactList}\small\item\em Flush output file buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_a707825963151da1fcaf76d5b523ca0cf}{ath\+\_\+flush\+\_\+err}} (void)
+\begin{DoxyCompactList}\small\item\em Flush error file buffer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{prototypes_8h_af21347278c9b783a269474386c4289c5}{ath\+\_\+perr}} (const int level, const char $\ast$fmt,...)
+\begin{DoxyCompactList}\small\item\em Foutput variable argument string to \char`\"{}error log file\char`\"{}. ~\newline
+ \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{prototypes_8h_a4d9be5e0a6376ae96b3de9d9bb754c10}{ath\+\_\+pout}} (const int level, const char $\ast$fmt,...)
+\begin{DoxyCompactList}\small\item\em Output variable argument string to \char`\"{}output log file\char`\"{}. ~\newline
+ \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{prototypes_8h_a6580ac78a040ee2c5265342091958fb8}{ath\+\_\+fname}} (const char $\ast$path, const char $\ast$basename, const char $\ast$levstr, const char $\ast$domstr, const int dlen, const int idump, const char $\ast$id, const char $\ast$ext)
+\begin{DoxyCompactList}\small\item\em Creates descriptive output filenames. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_a5a25afc512191ef77dfc2b43184b9193}{ath\+\_\+sig\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Defines the signal handler function. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{prototypes_8h_aebc5c1f65709177569e43077ba9a272a}{ath\+\_\+sig\+\_\+act}} (int $\ast$piquit)
+\begin{DoxyCompactList}\small\item\em Handles response to any received signals. ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_ab012dc3459875830b6e80a5dbf9ba110}{baton\+\_\+start}} (const int Nb, const int tag)
+\item 
+void \mbox{\hyperlink{prototypes_8h_a206f64b6c68459e4ec7789ab92b65665}{baton\+\_\+stop}} (const int Nb, const int tag)
+\item 
+void \mbox{\hyperlink{prototypes_8h_a73fd08ad3c131672ff0473236faee5e2}{bvals\+\_\+mhd\+\_\+init}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\begin{DoxyCompactList}\small\item\em Sets function pointers for physical boundaries during initialization, allocates memory for send/receive buffers with M\+PI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_a8f18bdb818b65c7946c7dc7d63b7cdb3}{bvals\+\_\+mhd\+\_\+fun}} (\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$pD, enum \mbox{\hyperlink{athena_8h_a3c1bd98b7783340b3ff1dd2fcea56df4}{B\+C\+Direction}} dir, \mbox{\hyperlink{athena_8h_a665c6a09a1b144dc16774a5b74040387}{V\+G\+Fun\+\_\+t}} prob\+\_\+bc)
+\begin{DoxyCompactList}\small\item\em Sets function ptrs for user-\/defined B\+Cs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_adf4dacdf2a70d9423bc50e7ea57b1056}{bvals\+\_\+mhd}} (\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$p\+Domain)
+\begin{DoxyCompactList}\small\item\em Calls appropriate functions to set ghost zones. ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_a9204d609430c459b0ace484b66dca353}{cc\+\_\+pos}} (const \mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$pG, const int i, const int \mbox{\hyperlink{bound1__flowout_8c_abf2bc2545a4a5f5683d9ef3ed0d977e0}{j}}, const int \mbox{\hyperlink{bound3_8c_adc468c70fb574ebd07287b38d0d0676d}{k}}, Real $\ast$px1, Real $\ast$px2, Real $\ast$px3)
+\begin{DoxyCompactList}\small\item\em given i,j,k returns cell-\/centered x1,x2,x3 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_a3a3fe61c5f149b3a497cd773ac77abc5}{fc\+\_\+pos}} (const \mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$pG, const int i, const int \mbox{\hyperlink{bound1__flowout_8c_abf2bc2545a4a5f5683d9ef3ed0d977e0}{j}}, const int \mbox{\hyperlink{bound3_8c_adc468c70fb574ebd07287b38d0d0676d}{k}}, Real $\ast$px1, Real $\ast$px2, Real $\ast$px3)
+\begin{DoxyCompactList}\small\item\em given i,j,k returns face-\/centered x1,x2,x3 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_prim_s}{PrimS}} \mbox{\hyperlink{prototypes_8h_a1babe0008e46b59a6cac12ee862c3741}{Cons\+\_\+to\+\_\+\+Prim}} (const \mbox{\hyperlink{struct_cons_s}{ConsS}} $\ast$pU)
+\begin{DoxyCompactList}\small\item\em Wrapper for the Cons1\+D\+\_\+to\+\_\+\+Prim1D function, works for both N\+E\+W\+T\+O\+N\+I\+AN and S\+P\+E\+C\+I\+A\+L\+\_\+\+R\+E\+L\+A\+T\+I\+V\+I\+TY. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_cons_s}{ConsS}} \mbox{\hyperlink{prototypes_8h_a14fb5d3e9e0eccca4b0ca178d7e8f608}{Prim\+\_\+to\+\_\+\+Cons}} (const \mbox{\hyperlink{struct_prim_s}{PrimS}} $\ast$pW)
+\begin{DoxyCompactList}\small\item\em Wrapper for the Prim1\+D\+\_\+to\+\_\+\+Cons1D function, works for both N\+E\+W\+T\+O\+N\+I\+AN and S\+P\+E\+C\+I\+A\+L\+\_\+\+R\+E\+L\+A\+T\+I\+V\+I\+TY. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_prim1_d_s}{Prim1\+DS}} \mbox{\hyperlink{prototypes_8h_a168e092d771134a92ff8be7e624d51d9}{Cons1\+D\+\_\+to\+\_\+\+Prim1D}} (const \mbox{\hyperlink{struct_cons1_d_s}{Cons1\+DS}} $\ast$pU, const Real $\ast$p\+Bx)
+\begin{DoxyCompactList}\small\item\em Cons1\+D\+\_\+to\+\_\+\+Prim1D\+: N\+E\+W\+T\+O\+N\+I\+AN V\+E\+R\+S\+I\+ON. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_cons1_d_s}{Cons1\+DS}} \mbox{\hyperlink{prototypes_8h_a030b3be2910e01b12ca3a425196aa77b}{Prim1\+D\+\_\+to\+\_\+\+Cons1D}} (const \mbox{\hyperlink{struct_prim1_d_s}{Prim1\+DS}} $\ast$pW, const Real $\ast$p\+Bx)
+\begin{DoxyCompactList}\small\item\em Prim1\+D\+\_\+to\+\_\+\+Cons1D\+: N\+E\+W\+T\+O\+N\+I\+AN V\+E\+R\+S\+I\+ON. \end{DoxyCompactList}\item 
+Real \mbox{\hyperlink{prototypes_8h_a014d3ca3dda378d010d612b454eccd93}{cfast}} (const \mbox{\hyperlink{struct_cons1_d_s}{Cons1\+DS}} $\ast$U, const Real $\ast$Bx)
+\begin{DoxyCompactList}\small\item\em Returns fast magnetosonic speed given input 1D vector of conserved variables and Bx -- N\+E\+W\+T\+O\+N\+I\+AN P\+H\+Y\+S\+I\+CS O\+N\+LY. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_a95667109c997592ac508a6f67e34b827}{init\+\_\+grid}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\begin{DoxyCompactList}\small\item\em Initializes most variables in the Grid structure. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_a916f9c7c3347abd0ff4e1acc00cd0f27}{init\+\_\+mesh}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\begin{DoxyCompactList}\small\item\em General initialization of the nested mesh hierarchy. ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_ad8f0c9ec3860159716b58bee6cabb74e}{get\+\_\+my\+Grid\+Index}} (\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$pD, const int my\+\_\+id, int $\ast$pi, int $\ast$pj, int $\ast$pk)
+\begin{DoxyCompactList}\small\item\em Searches G\+Data\mbox{[}\mbox{]}\mbox{[}\mbox{]}\mbox{[}\mbox{]} array to find i,j,k components of block being updated on this processor. ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_a994061a05b936430f0066cbdd1267fdb}{new\+\_\+dt}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\begin{DoxyCompactList}\small\item\em Computes timestep using C\+FL condition. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_a9034e0a0c277e481597e9a0709908edb}{init\+\_\+output}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\begin{DoxyCompactList}\small\item\em Initializes data output. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_a292f4e4bd2a42e78dfe5b86da556188c}{data\+\_\+output}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, const int flag)
+\begin{DoxyCompactList}\small\item\em Called by \mbox{\hyperlink{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{main()}}, tests whether time for output, and calls appropriate output functions. ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_ab1dd648e394d7af04bdbbcf3f1a20512}{add\+\_\+rst\+\_\+out}} (\mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$new\+\_\+out)
+\item 
+void \mbox{\hyperlink{prototypes_8h_a34d2b00e03678f6d6dd36654a5de5c4e}{data\+\_\+output\+\_\+destruct}} (void)
+\begin{DoxyCompactList}\small\item\em Free all memory associated with Output, called by \mbox{\hyperlink{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{main()}} at end of run. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_af708912b4ea7f10be9fea2861ea0374c}{dump\+\_\+history\+\_\+enroll}} (const \mbox{\hyperlink{athena_8h_aaa64b3ee5eefc566b7c09368c414de89}{Cons\+Fun\+\_\+t}} pfun, const char $\ast$label)
+\begin{DoxyCompactList}\small\item\em Adds new user-\/defined history variables ~\newline
+ \end{DoxyCompactList}\item 
+Real $\ast$$\ast$$\ast$ \mbox{\hyperlink{prototypes_8h_acb8c8af538a2be3b4c9e9db66105a39a}{Out\+Data3}} (\mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$p\+Grid, \mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$p\+Out, int $\ast$Nx1, int $\ast$Nx2, int $\ast$Nx3)
+\begin{DoxyCompactList}\small\item\em Creates 3D array of output data with dimensions equal to Grid using output expression (function pointer) stored in Output structure. \end{DoxyCompactList}\item 
+Real $\ast$$\ast$ \mbox{\hyperlink{prototypes_8h_ad1fb22dcff9bacfd6155bb3881d56ffa}{Out\+Data2}} (\mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$p\+Grid, \mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$p\+Out, int $\ast$Nx1, int $\ast$Nx2)
+\begin{DoxyCompactList}\small\item\em Creates 2D array of output data with two dimensions equal to Grid and one dimension reduced according to range stored in x1l/x1u, etc. ~\newline
+ \end{DoxyCompactList}\item 
+Real $\ast$ \mbox{\hyperlink{prototypes_8h_ac58eef44023b7a584cc3ed74b3c01bbe}{Out\+Data1}} (\mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$p\+Grid, \mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$p\+Out, int $\ast$Nx1)
+\begin{DoxyCompactList}\small\item\em Creates 1D array of output data with one dimensions equal to Grid and two dimensions reduced according to range stored in x1l/x1u, etc. ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_ab8f7ef8a651b07524b87ef0f4f9b0262}{output\+\_\+pdf}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, \mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$p\+Out)
+\begin{DoxyCompactList}\small\item\em Outputs P\+D\+Fs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_a0c052773606e15004e3f3d255814246c}{output\+\_\+pgm}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, \mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$p\+Out)
+\begin{DoxyCompactList}\small\item\em Output 2D P\+GM image ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_a3b937585b40185f0397235b20baa21c7}{output\+\_\+ppm}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, \mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$p\+Out)
+\begin{DoxyCompactList}\small\item\em Output P\+PM image. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_acc6eeb793b57379cbfd79e0fc7ba0415}{output\+\_\+vtk}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, \mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$p\+Out)
+\begin{DoxyCompactList}\small\item\em Writes V\+TK file (single variable). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_a6847490e314cc9dc2ab5b75e0d74fe3a}{output\+\_\+tab}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, \mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$p\+Out)
+\begin{DoxyCompactList}\small\item\em Open file, call 1D/2\+D/3D writer; called by data\+\_\+ouput ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_aefcd88676b809ca0437c8bcf63dff9a3}{dump\+\_\+binary}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, \mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$p\+Out)
+\begin{DoxyCompactList}\small\item\em Function to write an unformatted dump of the field variables. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_a04359dca00afaaa4174cea334622a472}{dump\+\_\+history}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, \mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$p\+Out)
+\begin{DoxyCompactList}\small\item\em Function to write dumps of scalar \char`\"{}history\char`\"{} variables in a formatted table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_a884b64ef77f0588a8f520a8fb146d0b3}{dump\+\_\+tab\+\_\+cons}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, \mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$p\+Out)
+\begin{DoxyCompactList}\small\item\em Output C\+O\+N\+S\+E\+R\+V\+ED variables ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_a6d6e54eb309d62f1cdf145fc184b07bb}{dump\+\_\+tab\+\_\+prim}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, \mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$p\+Out)
+\begin{DoxyCompactList}\small\item\em Output P\+R\+I\+M\+I\+T\+I\+VE variables. ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_aaf11bcf5455df27a5dd663a00be350d2}{dump\+\_\+vtk}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, \mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$p\+Out)
+\begin{DoxyCompactList}\small\item\em Writes V\+TK dump (all variables). ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_a6a4b49cc9265c8a71f9265452073aa00}{par\+\_\+open}} (char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em Open a parameter file for R/O access. ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_af4526137969aecd4928c354f8bf011ea}{par\+\_\+cmdline}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Parse a commandline, very forgiving (no warnings) when not in the right block/name=value format. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{prototypes_8h_ad7ff0f7b4cee0ec0751000359a117093}{par\+\_\+exist}} (char $\ast$block, char $\ast$\mbox{\hyperlink{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}{name}})
+\begin{DoxyCompactList}\small\item\em Return 0 or 1 if a block/name exists. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{prototypes_8h_a70fa44c8e1f140f10f29bd07bedb0a1c}{par\+\_\+gets}} (char $\ast$block, char $\ast$\mbox{\hyperlink{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}{name}})
+\begin{DoxyCompactList}\small\item\em Return a string. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{prototypes_8h_ac03bbd5713f3a93db722aea8d1c1b5c0}{par\+\_\+geti}} (char $\ast$block, char $\ast$\mbox{\hyperlink{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}{name}})
+\begin{DoxyCompactList}\small\item\em Return an integer. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{prototypes_8h_ac234e8c1085523fa6adcd6d4f48281b5}{par\+\_\+getd}} (char $\ast$block, char $\ast$\mbox{\hyperlink{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}{name}})
+\begin{DoxyCompactList}\small\item\em Return a Real value. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{prototypes_8h_ad5e2a2df0068ea716d16668ab77158c6}{par\+\_\+gets\+\_\+def}} (char $\ast$block, char $\ast$\mbox{\hyperlink{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}{name}}, char $\ast$def)
+\begin{DoxyCompactList}\small\item\em Return string $\ast$name in $\ast$block if it exists, else use the string $\ast$def as a default value. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{prototypes_8h_a789945c886abda300582ff5511c0a029}{par\+\_\+geti\+\_\+def}} (char $\ast$block, char $\ast$\mbox{\hyperlink{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}{name}}, int def)
+\begin{DoxyCompactList}\small\item\em Return integer $\ast$name in $\ast$block if it exists, else use the integer def as a default value. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{prototypes_8h_a0f36a2890d652e2c2ca86d72c91cc8cf}{par\+\_\+getd\+\_\+def}} (char $\ast$block, char $\ast$\mbox{\hyperlink{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}{name}}, double def)
+\begin{DoxyCompactList}\small\item\em Return double $\ast$name in $\ast$block if it exists, else use the double def as a default value ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_a38fb6cd1c2178aea355f342578f7796d}{par\+\_\+sets}} (char $\ast$block, char $\ast$\mbox{\hyperlink{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}{name}}, char $\ast$sval, char $\ast$comment)
+\begin{DoxyCompactList}\small\item\em Set or add a string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_a92384b69c20d713c9e3f9f45234765a5}{par\+\_\+seti}} (char $\ast$block, char $\ast$\mbox{\hyperlink{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}{name}}, char $\ast$fmt, int ival, char $\ast$comment)
+\begin{DoxyCompactList}\small\item\em Set or add an integer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_aca86a680715a5deb34d96dc9d4279edd}{par\+\_\+setd}} (char $\ast$block, char $\ast$\mbox{\hyperlink{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}{name}}, char $\ast$fmt, double dval, char $\ast$comment)
+\begin{DoxyCompactList}\small\item\em Set or add a double. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_a0a1296aa610308e1d4cb8c334a1d0c57}{par\+\_\+dump}} (int \mbox{\hyperlink{iotypes_8h_a1a6b6fb557d8d37d59700faf4e4c9167}{mode}}, F\+I\+LE $\ast$fp)
+\begin{DoxyCompactList}\small\item\em Debugging aid\+: print out the current status of all Blocks/\+Pars. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_a90709646bfed7d95dff41d30d67e4d81}{par\+\_\+close}} (void)
+\begin{DoxyCompactList}\small\item\em Close up shop, free memory ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_aa218b64c90ee92848b8f3fb47ce8df7a}{problem}} (\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$pD)
+\item 
+void \mbox{\hyperlink{prototypes_8h_a0ff640c24db1dc0d7c89d91f1d55ffce}{Userwork\+\_\+in\+\_\+loop}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\item 
+void \mbox{\hyperlink{prototypes_8h_a5506a1df41ed88e038443271b9785337}{Userwork\+\_\+after\+\_\+loop}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\item 
+void \mbox{\hyperlink{prototypes_8h_acf733c9792756cbec1e9d226c4ff37ab}{problem\+\_\+read\+\_\+restart}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, F\+I\+LE $\ast$fp)
+\item 
+void \mbox{\hyperlink{prototypes_8h_a2c334369ab621e9815591c76ccfb5fc7}{problem\+\_\+write\+\_\+restart}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, F\+I\+LE $\ast$fp)
+\item 
+\mbox{\hyperlink{athena_8h_aaa64b3ee5eefc566b7c09368c414de89}{Cons\+Fun\+\_\+t}} \mbox{\hyperlink{prototypes_8h_a4575c4cdbf2965a9857c45970d736676}{get\+\_\+usr\+\_\+expr}} (const char $\ast$expr)
+\item 
+\mbox{\hyperlink{athena_8h_a8bc2403d4d3a27d6f475f2dc6acc94cc}{V\+Out\+Fun\+\_\+t}} \mbox{\hyperlink{prototypes_8h_a8b8cabb1061d5399fb492be89de213ff}{get\+\_\+usr\+\_\+out\+\_\+fun}} (const char $\ast$\mbox{\hyperlink{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}{name}})
+\item 
+void \mbox{\hyperlink{prototypes_8h_a0c8423a9f51dd688b5867e611120ba0e}{dump\+\_\+restart}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, \mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$pout)
+\begin{DoxyCompactList}\small\item\em Writes a restart file, including problem-\/specific data from a user defined function ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_ad964b97cdef7ace0e38dea077f7dbc0b}{restart\+\_\+grids}} (char $\ast$res\+\_\+file, \mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\begin{DoxyCompactList}\small\item\em Reads nstep, time, dt, and arrays of \mbox{\hyperlink{struct_cons_s}{ConsS}} and interface B for each of the Grid structures in the restart file. ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_af12bd9bac2a3f16550c28165ebc630e6}{show\+\_\+config}} (void)
+\begin{DoxyCompactList}\small\item\em The packages and features reported on by this functin should be kept consistent with the optional packages and features added by the file configure.\+ac in the top-\/level directory ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_a6e6c4b6195e06dbfc4aaa84629ad2988}{show\+\_\+config\+\_\+par}} (void)
+\begin{DoxyCompactList}\small\item\em Add the configure block to the parameter database used by the functions in \mbox{\hyperlink{par_8c}{par.\+c}}. ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_a95d62260eb6486f98bc7508c87f3a91f}{Restrict\+Correct}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\item 
+void \mbox{\hyperlink{prototypes_8h_ad2fa4773d22ac52368d121fbc64753b8}{Prolongate}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\item 
+void \mbox{\hyperlink{prototypes_8h_a367c7c18ff1c30281f2abce33710663e}{S\+M\+R\+\_\+init}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\item 
+char $\ast$ \mbox{\hyperlink{prototypes_8h_a38f8cb947bb5fc0f4c63f5de8aa704dd}{ath\+\_\+strdup}} (const char $\ast$in)
+\begin{DoxyCompactList}\small\item\em This is really strdup(), but strdup is not available in A\+N\+SI (-\/pendantic or -\/ansi will leave it undefined in gcc) much like allocate. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{prototypes_8h_a0a18e8bd24c84b0f4746cdda2d501d31}{ath\+\_\+gcd}} (int a, int b)
+\begin{DoxyCompactList}\small\item\em Calculate the Greatest Common Divisor by Euler\textquotesingle{}s method. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{prototypes_8h_adc247edf6c1491b0e19b381226c6f8d3}{ath\+\_\+big\+\_\+endian}} (void)
+\begin{DoxyCompactList}\small\item\em Return 1 if the machine is big endian (e.\+g. Sun, Power\+PC) return 0 if not (e.\+g. Intel) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_a5c0bff1ac57f176dc5832b458c1c1d2e}{ath\+\_\+bswap}} (void $\ast$vdat, int sizeof\+\_\+len, int cnt)
+\begin{DoxyCompactList}\small\item\em Swap bytes, code stolen from N\+E\+MO ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_ab4a402b1bd69e8f49435ee8fe45ecce6}{ath\+\_\+error}} (char $\ast$fmt,...)
+\begin{DoxyCompactList}\small\item\em Terminate execution and output error message Uses variable-\/length argument lists provided in $<$stdarg.\+h$>$ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_a643e354ce4ae8dfeb66fb20209e4ad48}{minmax1}} (Real $\ast$data, int nx1, Real $\ast$dmin, Real $\ast$dmax)
+\begin{DoxyCompactList}\small\item\em Return the min and max of a 1D array using registers Works on data of type float, not Real. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_a718dc1d943fd0fe9c5c310f308c6fb0e}{minmax2}} (Real $\ast$$\ast$data, int nx2, int nx1, Real $\ast$dmin, Real $\ast$dmax)
+\begin{DoxyCompactList}\small\item\em Return the min and max of a 2D array using registers Works on data of type float, not Real. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_a846768bb9325a8bd6216051a1dd4b294}{minmax3}} (Real $\ast$$\ast$$\ast$data, int nx3, int nx2, int nx1, Real $\ast$dmin, Real $\ast$dmax)
+\begin{DoxyCompactList}\small\item\em Return the min and max of a 3D array using registers Works on data of type float, not Real. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prototypes_8h_a86cf5cdcf1a9993bb581f3ea35275556}{gradient4}} (Real $\ast$data, int nx1, Real dx, Real $\ast$grad)
+\item 
+void \mbox{\hyperlink{prototypes_8h_ab9ea0e30a1666f1b53bb73f32535f603}{gradient1}} (Real $\ast$data, int nx1, Real dx, Real $\ast$grad)
+\item 
+void \mbox{\hyperlink{prototypes_8h_a8c9b3229540459ea71c4974335692e74}{gradient1l}} (Real $\ast$data, int nx1, Real dx, Real $\ast$grad)
+\item 
+void \mbox{\hyperlink{prototypes_8h_a8f0b62776231ff38385415161ce343db}{gradient1r}} (Real $\ast$data, int nx1, Real dx, Real $\ast$grad)
+\item 
+void \mbox{\hyperlink{prototypes_8h_a5db8d685e4ec6f6c45c3716dde2c6669}{do\+\_\+nothing\+\_\+bc}} (\mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$pG)
+\begin{DoxyCompactList}\small\item\em D\+O\+ES A\+B\+S\+O\+L\+U\+T\+E\+LY N\+O\+T\+H\+I\+N\+G! T\+H\+US, W\+H\+A\+T\+E\+V\+ER T\+HE B\+O\+U\+N\+D\+A\+RY A\+RE S\+ET TO I\+N\+I\+T\+I\+A\+L\+LY, T\+H\+EY R\+E\+M\+A\+IN F\+OR A\+LL T\+I\+ME. \end{DoxyCompactList}\item 
+Real \mbox{\hyperlink{prototypes_8h_a5526ddd79d108c0f865e99d498257648}{compute\+\_\+div\+\_\+b}} (\mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$pG)
+\begin{DoxyCompactList}\small\item\em C\+O\+M\+P\+U\+TE T\+HE D\+I\+V\+E\+R\+G\+E\+N\+CE OF T\+HE M\+A\+G\+N\+E\+T\+IC F\+I\+E\+LD U\+S\+I\+NG F\+A\+C\+E-\/\+C\+E\+N\+T\+E\+R\+ED F\+I\+E\+L\+DS O\+V\+ER T\+HE E\+N\+T\+I\+RE A\+C\+T\+I\+VE G\+R\+ID. R\+E\+T\+U\+R\+NS T\+HE M\+A\+X\+I\+M\+UM OF $\vert$\+D\+IV B$\vert$. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{prototypes_8h_aff2126e5af14dfbd96aee3a0db267ffb}{sign\+\_\+change}} (Real($\ast$func)(const Real, const Real), const Real a0, const Real b0, const Real x, Real $\ast$a, Real $\ast$b)
+\begin{DoxyCompactList}\small\item\em S\+E\+A\+R\+CH F\+OR A S\+I\+GN C\+H\+A\+N\+GE. ~\newline
+ \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{prototypes_8h_ad268f3523ea74dda1cdcc2e88d2c81f7}{bisection}} (Real($\ast$func)(const Real, const Real), const Real a0, const Real b0, const Real x, Real $\ast$root)
+\begin{DoxyCompactList}\small\item\em T\+H\+IS F\+U\+N\+C\+T\+I\+ON I\+M\+P\+L\+E\+M\+E\+N\+TS T\+HE B\+I\+S\+E\+C\+T\+I\+ON M\+E\+T\+H\+OD F\+OR R\+O\+OT F\+I\+N\+D\+I\+NG. \end{DoxyCompactList}\item 
+Real \mbox{\hyperlink{prototypes_8h_a2bb742f07e587da602b911f7d1ed7092}{trapzd}} (Real($\ast$func)(Real), const Real a, const Real b, const int n, const Real \mbox{\hyperlink{streaming3d__single_8c_a0e63b0ad913b68a68ba39aa88ab60cb3}{s}})
+\begin{DoxyCompactList}\small\item\em T\+H\+IS R\+O\+U\+T\+I\+NE C\+O\+M\+P\+U\+T\+ES T\+HE n\+TH S\+T\+A\+GE OF R\+E\+F\+I\+N\+E\+M\+E\+NT OF AN E\+X\+T\+E\+N\+D\+ED T\+R\+A\+P\+E\+Z\+O\+I\+D\+AL R\+U\+LE. ~\newline
+ \end{DoxyCompactList}\item 
+Real \mbox{\hyperlink{prototypes_8h_a0c355d966fd1ec1aeb9a64bf10a9553f}{qsimp}} (Real($\ast$func)(Real), const Real a, const Real b)
+\begin{DoxyCompactList}\small\item\em R\+E\+T\+U\+R\+NS T\+HE I\+N\+T\+E\+G\+R\+AL OF T\+HE F\+U\+N\+C\+T\+I\+ON func F\+R\+OM a TO b. \end{DoxyCompactList}\item 
+Real \mbox{\hyperlink{prototypes_8h_a3af615cc9681543deda315e0af36b804}{avg1d}} (Real($\ast$func)(Real, Real, Real), const \mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$pG, const int i, const int \mbox{\hyperlink{bound1__flowout_8c_abf2bc2545a4a5f5683d9ef3ed0d977e0}{j}}, const int \mbox{\hyperlink{bound3_8c_adc468c70fb574ebd07287b38d0d0676d}{k}})
+\begin{DoxyCompactList}\small\item\em R\+E\+T\+U\+R\+NS T\+HE I\+N\+T\+E\+G\+R\+AL OF A U\+S\+E\+R-\/\+S\+U\+P\+P\+L\+I\+ED F\+U\+N\+C\+T\+I\+ON func O\+V\+ER T\+HE O\+N\+E-\/ D\+I\+M\+E\+N\+S\+I\+O\+N\+AL G\+R\+ID C\+E\+LL (i,j,k). ~\newline
+ \end{DoxyCompactList}\item 
+Real \mbox{\hyperlink{prototypes_8h_a404e9accba5c621b990a4c954e969b36}{avg2d}} (Real($\ast$func)(Real, Real, Real), const \mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$pG, const int i, const int \mbox{\hyperlink{bound1__flowout_8c_abf2bc2545a4a5f5683d9ef3ed0d977e0}{j}}, const int \mbox{\hyperlink{bound3_8c_adc468c70fb574ebd07287b38d0d0676d}{k}})
+\begin{DoxyCompactList}\small\item\em R\+E\+T\+U\+R\+NS T\+HE I\+N\+T\+E\+G\+R\+AL OF A U\+S\+E\+R-\/\+S\+U\+P\+P\+L\+I\+ED F\+U\+N\+C\+T\+I\+ON func O\+V\+ER T\+HE T\+W\+O-\/ D\+I\+M\+E\+N\+S\+I\+O\+N\+AL G\+R\+ID C\+E\+LL (i,j,k). ~\newline
+ \end{DoxyCompactList}\item 
+Real \mbox{\hyperlink{prototypes_8h_a219d816f8d00e71680a44f08d78cb9fd}{avg3d}} (Real($\ast$func)(Real, Real, Real), const \mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$pG, const int i, const int \mbox{\hyperlink{bound1__flowout_8c_abf2bc2545a4a5f5683d9ef3ed0d977e0}{j}}, const int \mbox{\hyperlink{bound3_8c_adc468c70fb574ebd07287b38d0d0676d}{k}})
+\begin{DoxyCompactList}\small\item\em R\+E\+T\+U\+R\+NS T\+HE I\+N\+T\+E\+G\+R\+AL OF A U\+S\+E\+R-\/\+S\+U\+P\+P\+L\+I\+ED F\+U\+N\+C\+T\+I\+ON func O\+V\+ER T\+HE T\+H\+R\+E\+E-\/\+D\+I\+M\+E\+N\+S\+I\+O\+N\+AL G\+R\+ID C\+E\+LL (i,j,k). ~\newline
+ \end{DoxyCompactList}\item 
+Real \mbox{\hyperlink{prototypes_8h_af81b2e846fa9007517b671c795546a36}{avg\+XZ}} (Real($\ast$func)(Real, Real, Real), const \mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$pG, const int i, const int \mbox{\hyperlink{bound1__flowout_8c_abf2bc2545a4a5f5683d9ef3ed0d977e0}{j}}, const int \mbox{\hyperlink{bound3_8c_adc468c70fb574ebd07287b38d0d0676d}{k}})
+\item 
+Real \mbox{\hyperlink{prototypes_8h_ad2eaa784b3d190f1f823749a6d53f321}{vecpot2b1i}} (Real($\ast$A2)(Real, Real, Real), Real($\ast$\mbox{\hyperlink{cylfieldloop_8c_a08fa99b8e1672882848cd99d22d411dc}{A3}})(Real, Real, Real), const \mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$pG, const int i, const int \mbox{\hyperlink{bound1__flowout_8c_abf2bc2545a4a5f5683d9ef3ed0d977e0}{j}}, const int \mbox{\hyperlink{bound3_8c_adc468c70fb574ebd07287b38d0d0676d}{k}})
+\begin{DoxyCompactList}\small\item\em Compute B-\/field components from a vector potential. \end{DoxyCompactList}\item 
+Real \mbox{\hyperlink{prototypes_8h_a926fab6ea9750cd860b98d9e7aaa50d1}{vecpot2b2i}} (Real($\ast$A1)(Real, Real, Real), Real($\ast$\mbox{\hyperlink{cylfieldloop_8c_a08fa99b8e1672882848cd99d22d411dc}{A3}})(Real, Real, Real), const \mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$pG, const int i, const int \mbox{\hyperlink{bound1__flowout_8c_abf2bc2545a4a5f5683d9ef3ed0d977e0}{j}}, const int \mbox{\hyperlink{bound3_8c_adc468c70fb574ebd07287b38d0d0676d}{k}})
+\begin{DoxyCompactList}\small\item\em Compute B-\/field components from a vector potential. \end{DoxyCompactList}\item 
+Real \mbox{\hyperlink{prototypes_8h_abaf65b9c282ca0e685cabcac9864822f}{vecpot2b3i}} (Real($\ast$A1)(Real, Real, Real), Real($\ast$A2)(Real, Real, Real), const \mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$pG, const int i, const int \mbox{\hyperlink{bound1__flowout_8c_abf2bc2545a4a5f5683d9ef3ed0d977e0}{j}}, const int \mbox{\hyperlink{bound3_8c_adc468c70fb574ebd07287b38d0d0676d}{k}})
+\begin{DoxyCompactList}\small\item\em Compute B-\/field components from a vector potential. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Prototypes for all public functions from the /src directory. ~\newline
+ 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{prototypes_8h_ab1dd648e394d7af04bdbbcf3f1a20512}\label{prototypes_8h_ab1dd648e394d7af04bdbbcf3f1a20512}} 
+\index{prototypes.h@{prototypes.h}!add\_rst\_out@{add\_rst\_out}}
+\index{add\_rst\_out@{add\_rst\_out}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{add\_rst\_out()}{add\_rst\_out()}}
+{\footnotesize\ttfamily void add\+\_\+rst\+\_\+out (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$}]{new\+\_\+out }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{prototypes_8h_adc247edf6c1491b0e19b381226c6f8d3}\label{prototypes_8h_adc247edf6c1491b0e19b381226c6f8d3}} 
+\index{prototypes.h@{prototypes.h}!ath\_big\_endian@{ath\_big\_endian}}
+\index{ath\_big\_endian@{ath\_big\_endian}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{ath\_big\_endian()}{ath\_big\_endian()}}
+{\footnotesize\ttfamily int ath\+\_\+big\+\_\+endian (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Return 1 if the machine is big endian (e.\+g. Sun, Power\+PC) return 0 if not (e.\+g. Intel) 
+
+
+
+Definition at line 68 of file utils.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a5c0bff1ac57f176dc5832b458c1c1d2e}\label{prototypes_8h_a5c0bff1ac57f176dc5832b458c1c1d2e}} 
+\index{prototypes.h@{prototypes.h}!ath\_bswap@{ath\_bswap}}
+\index{ath\_bswap@{ath\_bswap}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{ath\_bswap()}{ath\_bswap()}}
+{\footnotesize\ttfamily void ath\+\_\+bswap (\begin{DoxyParamCaption}\item[{void $\ast$}]{vdat,  }\item[{int}]{sizeof\+\_\+len,  }\item[{int}]{cnt }\end{DoxyParamCaption})}
+
+
+
+Swap bytes, code stolen from N\+E\+MO ~\newline
+ 
+
+
+
+Definition at line 81 of file utils.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_ab4a402b1bd69e8f49435ee8fe45ecce6}\label{prototypes_8h_ab4a402b1bd69e8f49435ee8fe45ecce6}} 
+\index{prototypes.h@{prototypes.h}!ath\_error@{ath\_error}}
+\index{ath\_error@{ath\_error}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{ath\_error()}{ath\_error()}}
+{\footnotesize\ttfamily void ath\+\_\+error (\begin{DoxyParamCaption}\item[{char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Terminate execution and output error message Uses variable-\/length argument lists provided in $<$stdarg.\+h$>$ 
+
+
+
+Definition at line 122 of file utils.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a707825963151da1fcaf76d5b523ca0cf}\label{prototypes_8h_a707825963151da1fcaf76d5b523ca0cf}} 
+\index{prototypes.h@{prototypes.h}!ath\_flush\_err@{ath\_flush\_err}}
+\index{ath\_flush\_err@{ath\_flush\_err}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{ath\_flush\_err()}{ath\_flush\_err()}}
+{\footnotesize\ttfamily void ath\+\_\+flush\+\_\+err (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Flush error file buffer. 
+
+
+
+Definition at line 241 of file ath\+\_\+log.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_add8ed1d287dead804cbac46fdbfad1e9}\label{prototypes_8h_add8ed1d287dead804cbac46fdbfad1e9}} 
+\index{prototypes.h@{prototypes.h}!ath\_flush\_out@{ath\_flush\_out}}
+\index{ath\_flush\_out@{ath\_flush\_out}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{ath\_flush\_out()}{ath\_flush\_out()}}
+{\footnotesize\ttfamily void ath\+\_\+flush\+\_\+out (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Flush output file buffer. 
+
+
+
+Definition at line 226 of file ath\+\_\+log.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a6580ac78a040ee2c5265342091958fb8}\label{prototypes_8h_a6580ac78a040ee2c5265342091958fb8}} 
+\index{prototypes.h@{prototypes.h}!ath\_fname@{ath\_fname}}
+\index{ath\_fname@{ath\_fname}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{ath\_fname()}{ath\_fname()}}
+{\footnotesize\ttfamily char$\ast$ ath\+\_\+fname (\begin{DoxyParamCaption}\item[{const char $\ast$}]{path,  }\item[{const char $\ast$}]{basename,  }\item[{const char $\ast$}]{levstr,  }\item[{const char $\ast$}]{domstr,  }\item[{const int}]{dlen,  }\item[{const int}]{idump,  }\item[{const char $\ast$}]{id,  }\item[{const char $\ast$}]{ext }\end{DoxyParamCaption})}
+
+
+
+Creates descriptive output filenames. 
+
+Creates filenames with form
+\begin{DoxyItemize}
+\item \mbox{[}path\mbox{]}$<$basename$>$\mbox{[}-\/lev\#\mbox{]}\mbox{[}-\/dom\#\mbox{]}\mbox{[}.idump\mbox{]}\mbox{[}.id\mbox{]}.$<$ext$>$
+\end{DoxyItemize}
+
+Used by most of the dump\+\_\+$\ast$() and output\+\_\+$\ast$() functions.
+
+This function malloc\textquotesingle{}s the memory needed for the name. The calling function must free this memory once it is no longer needed. 
+
+Definition at line 44 of file ath\+\_\+files.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a0a18e8bd24c84b0f4746cdda2d501d31}\label{prototypes_8h_a0a18e8bd24c84b0f4746cdda2d501d31}} 
+\index{prototypes.h@{prototypes.h}!ath\_gcd@{ath\_gcd}}
+\index{ath\_gcd@{ath\_gcd}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{ath\_gcd()}{ath\_gcd()}}
+{\footnotesize\ttfamily int ath\+\_\+gcd (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{b }\end{DoxyParamCaption})}
+
+
+
+Calculate the Greatest Common Divisor by Euler\textquotesingle{}s method. 
+
+
+
+Definition at line 54 of file utils.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a6ea3302c606292e0511ef451f0d5b78b}\label{prototypes_8h_a6ea3302c606292e0511ef451f0d5b78b}} 
+\index{prototypes.h@{prototypes.h}!ath\_log\_close@{ath\_log\_close}}
+\index{ath\_log\_close@{ath\_log\_close}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{ath\_log\_close()}{ath\_log\_close()}}
+{\footnotesize\ttfamily void ath\+\_\+log\+\_\+close (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Closes output and error log files. 
+
+
+
+Definition at line 180 of file ath\+\_\+log.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_af69817089bbb5b2d033aa588cbe54b89}\label{prototypes_8h_af69817089bbb5b2d033aa588cbe54b89}} 
+\index{prototypes.h@{prototypes.h}!ath\_log\_open@{ath\_log\_open}}
+\index{ath\_log\_open@{ath\_log\_open}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{ath\_log\_open()}{ath\_log\_open()}}
+{\footnotesize\ttfamily void ath\+\_\+log\+\_\+open (\begin{DoxyParamCaption}\item[{const char $\ast$}]{basename,  }\item[{const int}]{lazy,  }\item[{const char $\ast$}]{mode }\end{DoxyParamCaption})}
+
+
+
+Opens output and error log files if \char`\"{}lazy\char`\"{} flag is false (0). 
+
+If \char`\"{}lazy\char`\"{} is true, then the \mbox{\hyperlink{ath__log_8c_af69817089bbb5b2d033aa588cbe54b89}{ath\+\_\+log\+\_\+open()}} call does not actually open the files, but rather prepares to open them on the first invocation of either \mbox{\hyperlink{ath__log_8c_a4d9be5e0a6376ae96b3de9d9bb754c10}{ath\+\_\+pout()}} \mbox{\hyperlink{ath__log_8c_af21347278c9b783a269474386c4289c5}{ath\+\_\+perr()}}, \mbox{\hyperlink{ath__log_8c_ad1aa66eb6e7af73976ce23f83e38a068}{athout\+\_\+fp()}} or \mbox{\hyperlink{ath__log_8c_ad4fe019acf86bdfb9ab014b2f3ab10da}{atherr\+\_\+fp()}}. This is useful for parallel jobs where the children, if made sufficiently quiet would otherwise generate a large number of empty files. -- T. A. Gardiner -- 
+
+Definition at line 141 of file ath\+\_\+log.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a7add156c56dde5a523942cece2760819}\label{prototypes_8h_a7add156c56dde5a523942cece2760819}} 
+\index{prototypes.h@{prototypes.h}!ath\_log\_set\_level@{ath\_log\_set\_level}}
+\index{ath\_log\_set\_level@{ath\_log\_set\_level}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{ath\_log\_set\_level()}{ath\_log\_set\_level()}}
+{\footnotesize\ttfamily void ath\+\_\+log\+\_\+set\+\_\+level (\begin{DoxyParamCaption}\item[{const int}]{out,  }\item[{const int}]{err }\end{DoxyParamCaption})}
+
+
+
+Sets \char`\"{}output level\char`\"{} and \char`\"{}error level\char`\"{} from input arguments, global parameters used by many functions in this file. 
+
+Called from \mbox{\hyperlink{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{main()}}, where the parameters are parsed from athinput. 
+
+Definition at line 122 of file ath\+\_\+log.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_af21347278c9b783a269474386c4289c5}\label{prototypes_8h_af21347278c9b783a269474386c4289c5}} 
+\index{prototypes.h@{prototypes.h}!ath\_perr@{ath\_perr}}
+\index{ath\_perr@{ath\_perr}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{ath\_perr()}{ath\_perr()}}
+{\footnotesize\ttfamily int ath\+\_\+perr (\begin{DoxyParamCaption}\item[{const int}]{level,  }\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Foutput variable argument string to \char`\"{}error log file\char`\"{}. ~\newline
+ 
+
+Should be used in place of printf(stderr,...). The first argument should be\+: -\/1 \+: all processes write output 0 \+: only root process writes output 1 \+: neither root nor child processes write output 
+
+Definition at line 261 of file ath\+\_\+log.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a4d9be5e0a6376ae96b3de9d9bb754c10}\label{prototypes_8h_a4d9be5e0a6376ae96b3de9d9bb754c10}} 
+\index{prototypes.h@{prototypes.h}!ath\_pout@{ath\_pout}}
+\index{ath\_pout@{ath\_pout}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{ath\_pout()}{ath\_pout()}}
+{\footnotesize\ttfamily int ath\+\_\+pout (\begin{DoxyParamCaption}\item[{const int}]{level,  }\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Output variable argument string to \char`\"{}output log file\char`\"{}. ~\newline
+ 
+
+Should be used in place of printf(stdout,...). The first argument should be\+: -\/1 \+: all processes write output 0 \+: only root process writes output 1 \+: neither root nor child processes write output 
+
+Definition at line 291 of file ath\+\_\+log.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_aebc5c1f65709177569e43077ba9a272a}\label{prototypes_8h_aebc5c1f65709177569e43077ba9a272a}} 
+\index{prototypes.h@{prototypes.h}!ath\_sig\_act@{ath\_sig\_act}}
+\index{ath\_sig\_act@{ath\_sig\_act}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{ath\_sig\_act()}{ath\_sig\_act()}}
+{\footnotesize\ttfamily int ath\+\_\+sig\+\_\+act (\begin{DoxyParamCaption}\item[{int $\ast$}]{piquit }\end{DoxyParamCaption})}
+
+
+
+Handles response to any received signals. ~\newline
+ 
+
+At the moment, only response to S\+I\+G\+T\+E\+RM is implemented. ~\newline
+ 
+
+Definition at line 50 of file ath\+\_\+signal.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a5a25afc512191ef77dfc2b43184b9193}\label{prototypes_8h_a5a25afc512191ef77dfc2b43184b9193}} 
+\index{prototypes.h@{prototypes.h}!ath\_sig\_init@{ath\_sig\_init}}
+\index{ath\_sig\_init@{ath\_sig\_init}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{ath\_sig\_init()}{ath\_sig\_init()}}
+{\footnotesize\ttfamily void ath\+\_\+sig\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Defines the signal handler function. 
+
+
+
+Definition at line 39 of file ath\+\_\+signal.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a38f8cb947bb5fc0f4c63f5de8aa704dd}\label{prototypes_8h_a38f8cb947bb5fc0f4c63f5de8aa704dd}} 
+\index{prototypes.h@{prototypes.h}!ath\_strdup@{ath\_strdup}}
+\index{ath\_strdup@{ath\_strdup}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{ath\_strdup()}{ath\_strdup()}}
+{\footnotesize\ttfamily char $\ast$ ath\+\_\+strdup (\begin{DoxyParamCaption}\item[{const char $\ast$}]{in }\end{DoxyParamCaption})}
+
+
+
+This is really strdup(), but strdup is not available in A\+N\+SI (-\/pendantic or -\/ansi will leave it undefined in gcc) much like allocate. 
+
+
+
+Definition at line 39 of file utils.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_aba1abe41ca3515107f11233227a03dd6}\label{prototypes_8h_aba1abe41ca3515107f11233227a03dd6}} 
+\index{prototypes.h@{prototypes.h}!athena\_main@{athena\_main}}
+\index{athena\_main@{athena\_main}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{athena\_main()}{athena\_main()}}
+{\footnotesize\ttfamily int athena\+\_\+main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{prototypes_8h_a2fa37607c57586cf0ec7d5661e98cb91}\label{prototypes_8h_a2fa37607c57586cf0ec7d5661e98cb91}} 
+\index{prototypes.h@{prototypes.h}!atherr\_fp@{atherr\_fp}}
+\index{atherr\_fp@{atherr\_fp}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{atherr\_fp()}{atherr\_fp()}}
+{\footnotesize\ttfamily F\+I\+LE$\ast$ atherr\+\_\+fp (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Open error file if needed and return a pointer to file. 
+
+
+
+Definition at line 213 of file ath\+\_\+log.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a042615914e38978aa4ff2537e2813173}\label{prototypes_8h_a042615914e38978aa4ff2537e2813173}} 
+\index{prototypes.h@{prototypes.h}!athout\_fp@{athout\_fp}}
+\index{athout\_fp@{athout\_fp}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{athout\_fp()}{athout\_fp()}}
+{\footnotesize\ttfamily F\+I\+LE$\ast$ athout\+\_\+fp (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Open output file if needed and return a pointer to file. 
+
+
+
+Definition at line 200 of file ath\+\_\+log.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a3af615cc9681543deda315e0af36b804}\label{prototypes_8h_a3af615cc9681543deda315e0af36b804}} 
+\index{prototypes.h@{prototypes.h}!avg1d@{avg1d}}
+\index{avg1d@{avg1d}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{avg1d()}{avg1d()}}
+{\footnotesize\ttfamily Real avg1d (\begin{DoxyParamCaption}\item[{Real($\ast$)(Real, Real, Real)}]{func,  }\item[{const \mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$}]{pG,  }\item[{const int}]{i,  }\item[{const int}]{j,  }\item[{const int}]{k }\end{DoxyParamCaption})}
+
+
+
+R\+E\+T\+U\+R\+NS T\+HE I\+N\+T\+E\+G\+R\+AL OF A U\+S\+E\+R-\/\+S\+U\+P\+P\+L\+I\+ED F\+U\+N\+C\+T\+I\+ON func O\+V\+ER T\+HE O\+N\+E-\/ D\+I\+M\+E\+N\+S\+I\+O\+N\+AL G\+R\+ID C\+E\+LL (i,j,k). ~\newline
+ 
+
+I\+N\+T\+E\+G\+R\+A\+T\+I\+ON IS P\+E\+R\+F\+O\+R\+M\+ED U\+S\+I\+NG qsimp. A\+D\+A\+P\+T\+ED F\+R\+OM N\+U\+M\+E\+R\+I\+C\+AL R\+E\+C\+I\+P\+ES BY A\+A\+R\+ON S\+K\+I\+N\+N\+ER 
+
+Definition at line 827 of file utils.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a404e9accba5c621b990a4c954e969b36}\label{prototypes_8h_a404e9accba5c621b990a4c954e969b36}} 
+\index{prototypes.h@{prototypes.h}!avg2d@{avg2d}}
+\index{avg2d@{avg2d}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{avg2d()}{avg2d()}}
+{\footnotesize\ttfamily Real avg2d (\begin{DoxyParamCaption}\item[{Real($\ast$)(Real, Real, Real)}]{func,  }\item[{const \mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$}]{pG,  }\item[{const int}]{i,  }\item[{const int}]{j,  }\item[{const int}]{k }\end{DoxyParamCaption})}
+
+
+
+R\+E\+T\+U\+R\+NS T\+HE I\+N\+T\+E\+G\+R\+AL OF A U\+S\+E\+R-\/\+S\+U\+P\+P\+L\+I\+ED F\+U\+N\+C\+T\+I\+ON func O\+V\+ER T\+HE T\+W\+O-\/ D\+I\+M\+E\+N\+S\+I\+O\+N\+AL G\+R\+ID C\+E\+LL (i,j,k). ~\newline
+ 
+
+I\+N\+T\+E\+G\+R\+A\+T\+I\+ON IS P\+E\+R\+F\+O\+R\+M\+ED U\+S\+I\+NG qsimp. A\+D\+A\+P\+T\+ED F\+R\+OM N\+U\+M\+E\+R\+I\+C\+AL R\+E\+C\+I\+P\+ES BY A\+A\+R\+ON S\+K\+I\+N\+N\+ER 
+
+Definition at line 854 of file utils.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a219d816f8d00e71680a44f08d78cb9fd}\label{prototypes_8h_a219d816f8d00e71680a44f08d78cb9fd}} 
+\index{prototypes.h@{prototypes.h}!avg3d@{avg3d}}
+\index{avg3d@{avg3d}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{avg3d()}{avg3d()}}
+{\footnotesize\ttfamily Real avg3d (\begin{DoxyParamCaption}\item[{Real($\ast$)(Real, Real, Real)}]{func,  }\item[{const \mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$}]{pG,  }\item[{const int}]{i,  }\item[{const int}]{j,  }\item[{const int}]{k }\end{DoxyParamCaption})}
+
+
+
+R\+E\+T\+U\+R\+NS T\+HE I\+N\+T\+E\+G\+R\+AL OF A U\+S\+E\+R-\/\+S\+U\+P\+P\+L\+I\+ED F\+U\+N\+C\+T\+I\+ON func O\+V\+ER T\+HE T\+H\+R\+E\+E-\/\+D\+I\+M\+E\+N\+S\+I\+O\+N\+AL G\+R\+ID C\+E\+LL (i,j,k). ~\newline
+ 
+
+I\+N\+T\+E\+G\+R\+A\+T\+I\+ON IS P\+E\+R\+F\+O\+R\+M\+ED U\+S\+I\+NG qsimp. A\+D\+A\+P\+T\+ED F\+R\+OM N\+U\+M\+E\+R\+I\+C\+AL R\+E\+C\+I\+P\+ES BY A\+A\+R\+ON S\+K\+I\+N\+N\+ER 
+
+Definition at line 881 of file utils.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_af81b2e846fa9007517b671c795546a36}\label{prototypes_8h_af81b2e846fa9007517b671c795546a36}} 
+\index{prototypes.h@{prototypes.h}!avgXZ@{avgXZ}}
+\index{avgXZ@{avgXZ}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{avgXZ()}{avgXZ()}}
+{\footnotesize\ttfamily Real avg\+XZ (\begin{DoxyParamCaption}\item[{Real($\ast$)(Real, Real, Real)}]{func,  }\item[{const \mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$}]{pG,  }\item[{const int}]{i,  }\item[{const int}]{j,  }\item[{const int}]{k }\end{DoxyParamCaption})}
+
+
+
+Definition at line 925 of file utils.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_ab012dc3459875830b6e80a5dbf9ba110}\label{prototypes_8h_ab012dc3459875830b6e80a5dbf9ba110}} 
+\index{prototypes.h@{prototypes.h}!baton\_start@{baton\_start}}
+\index{baton\_start@{baton\_start}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{baton\_start()}{baton\_start()}}
+{\footnotesize\ttfamily void baton\+\_\+start (\begin{DoxyParamCaption}\item[{const int}]{Nb,  }\item[{const int}]{tag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{prototypes_8h_a206f64b6c68459e4ec7789ab92b65665}\label{prototypes_8h_a206f64b6c68459e4ec7789ab92b65665}} 
+\index{prototypes.h@{prototypes.h}!baton\_stop@{baton\_stop}}
+\index{baton\_stop@{baton\_stop}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{baton\_stop()}{baton\_stop()}}
+{\footnotesize\ttfamily void baton\+\_\+stop (\begin{DoxyParamCaption}\item[{const int}]{Nb,  }\item[{const int}]{tag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{prototypes_8h_ad268f3523ea74dda1cdcc2e88d2c81f7}\label{prototypes_8h_ad268f3523ea74dda1cdcc2e88d2c81f7}} 
+\index{prototypes.h@{prototypes.h}!bisection@{bisection}}
+\index{bisection@{bisection}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{bisection()}{bisection()}}
+{\footnotesize\ttfamily int bisection (\begin{DoxyParamCaption}\item[{Real($\ast$)(const Real, const Real)}]{func,  }\item[{const Real}]{a0,  }\item[{const Real}]{b0,  }\item[{const Real}]{x,  }\item[{Real $\ast$}]{root }\end{DoxyParamCaption})}
+
+
+
+T\+H\+IS F\+U\+N\+C\+T\+I\+ON I\+M\+P\+L\+E\+M\+E\+N\+TS T\+HE B\+I\+S\+E\+C\+T\+I\+ON M\+E\+T\+H\+OD F\+OR R\+O\+OT F\+I\+N\+D\+I\+NG. 
+
+
+
+Definition at line 680 of file utils.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_adf4dacdf2a70d9423bc50e7ea57b1056}\label{prototypes_8h_adf4dacdf2a70d9423bc50e7ea57b1056}} 
+\index{prototypes.h@{prototypes.h}!bvals\_mhd@{bvals\_mhd}}
+\index{bvals\_mhd@{bvals\_mhd}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{bvals\_mhd()}{bvals\_mhd()}}
+{\footnotesize\ttfamily void bvals\+\_\+mhd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{pD }\end{DoxyParamCaption})}
+
+
+
+Calls appropriate functions to set ghost zones. ~\newline
+ 
+
+The function pointers ($\ast$(p\+D-\/$>$???\+\_\+\+B\+C\+Fun)) are set by bvals\+\_\+init() to be either a user-\/defined function, or one of the functions corresponding to reflecting, periodic, or outflow. If the left-\/ or right-\/\+Grid ID numbers are $>$= 1 (neighboring grids exist), then M\+PI calls are used.
+
+Order for updating boundary conditions must always be x1-\/x2-\/x3 in order to fill the corner cells properly 
+
+Definition at line 174 of file bvals\+\_\+mhd.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a8f18bdb818b65c7946c7dc7d63b7cdb3}\label{prototypes_8h_a8f18bdb818b65c7946c7dc7d63b7cdb3}} 
+\index{prototypes.h@{prototypes.h}!bvals\_mhd\_fun@{bvals\_mhd\_fun}}
+\index{bvals\_mhd\_fun@{bvals\_mhd\_fun}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{bvals\_mhd\_fun()}{bvals\_mhd\_fun()}}
+{\footnotesize\ttfamily void bvals\+\_\+mhd\+\_\+fun (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{pD,  }\item[{enum \mbox{\hyperlink{athena_8h_a3c1bd98b7783340b3ff1dd2fcea56df4}{B\+C\+Direction}}}]{dir,  }\item[{\mbox{\hyperlink{athena_8h_a665c6a09a1b144dc16774a5b74040387}{V\+G\+Fun\+\_\+t}}}]{prob\+\_\+bc }\end{DoxyParamCaption})}
+
+
+
+Sets function ptrs for user-\/defined B\+Cs. 
+
+
+
+Definition at line 915 of file bvals\+\_\+mhd.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a73fd08ad3c131672ff0473236faee5e2}\label{prototypes_8h_a73fd08ad3c131672ff0473236faee5e2}} 
+\index{prototypes.h@{prototypes.h}!bvals\_mhd\_init@{bvals\_mhd\_init}}
+\index{bvals\_mhd\_init@{bvals\_mhd\_init}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{bvals\_mhd\_init()}{bvals\_mhd\_init()}}
+{\footnotesize\ttfamily void bvals\+\_\+mhd\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+Sets function pointers for physical boundaries during initialization, allocates memory for send/receive buffers with M\+PI. 
+
+
+
+Definition at line 514 of file bvals\+\_\+mhd.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a400a6622e20871a87b8990d1f6ee7b1b}\label{prototypes_8h_a400a6622e20871a87b8990d1f6ee7b1b}} 
+\index{prototypes.h@{prototypes.h}!calloc\_1d\_array@{calloc\_1d\_array}}
+\index{calloc\_1d\_array@{calloc\_1d\_array}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{calloc\_1d\_array()}{calloc\_1d\_array()}}
+{\footnotesize\ttfamily void$\ast$ calloc\+\_\+1d\+\_\+array (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{nc,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Construct 1D array = array\mbox{[}nc\mbox{]} ~\newline
+ 
+
+
+
+Definition at line 36 of file ath\+\_\+array.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_ab5d35ed2ca1bfc756eae79d19a4c01c2}\label{prototypes_8h_ab5d35ed2ca1bfc756eae79d19a4c01c2}} 
+\index{prototypes.h@{prototypes.h}!calloc\_2d\_array@{calloc\_2d\_array}}
+\index{calloc\_2d\_array@{calloc\_2d\_array}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{calloc\_2d\_array()}{calloc\_2d\_array()}}
+{\footnotesize\ttfamily void$\ast$$\ast$ calloc\+\_\+2d\+\_\+array (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{nr,  }\item[{size\+\_\+t}]{nc,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Construct 2D array = array\mbox{[}nr\mbox{]}\mbox{[}nc\mbox{]} ~\newline
+ 
+
+
+
+Definition at line 51 of file ath\+\_\+array.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a269072a648a3198a2a3e5e7044d426cc}\label{prototypes_8h_a269072a648a3198a2a3e5e7044d426cc}} 
+\index{prototypes.h@{prototypes.h}!calloc\_3d\_array@{calloc\_3d\_array}}
+\index{calloc\_3d\_array@{calloc\_3d\_array}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{calloc\_3d\_array()}{calloc\_3d\_array()}}
+{\footnotesize\ttfamily void$\ast$$\ast$$\ast$ calloc\+\_\+3d\+\_\+array (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{nt,  }\item[{size\+\_\+t}]{nr,  }\item[{size\+\_\+t}]{nc,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Construct 3D array = array\mbox{[}nt\mbox{]}\mbox{[}nr\mbox{]}\mbox{[}nc\mbox{]} ~\newline
+ 
+
+
+
+Definition at line 78 of file ath\+\_\+array.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a9204d609430c459b0ace484b66dca353}\label{prototypes_8h_a9204d609430c459b0ace484b66dca353}} 
+\index{prototypes.h@{prototypes.h}!cc\_pos@{cc\_pos}}
+\index{cc\_pos@{cc\_pos}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{cc\_pos()}{cc\_pos()}}
+{\footnotesize\ttfamily void cc\+\_\+pos (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$}]{pG,  }\item[{const int}]{i,  }\item[{const int}]{j,  }\item[{const int}]{k,  }\item[{Real $\ast$}]{px1,  }\item[{Real $\ast$}]{px2,  }\item[{Real $\ast$}]{px3 }\end{DoxyParamCaption})}
+
+
+
+given i,j,k returns cell-\/centered x1,x2,x3 
+
+
+
+Definition at line 36 of file cc\+\_\+pos.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a014d3ca3dda378d010d612b454eccd93}\label{prototypes_8h_a014d3ca3dda378d010d612b454eccd93}} 
+\index{prototypes.h@{prototypes.h}!cfast@{cfast}}
+\index{cfast@{cfast}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{cfast()}{cfast()}}
+{\footnotesize\ttfamily Real cfast (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_cons1_d_s}{Cons1\+DS}} $\ast$}]{U,  }\item[{const Real $\ast$}]{Bx }\end{DoxyParamCaption})}
+
+
+
+Returns fast magnetosonic speed given input 1D vector of conserved variables and Bx -- N\+E\+W\+T\+O\+N\+I\+AN P\+H\+Y\+S\+I\+CS O\+N\+LY. 
+
+
+
+Definition at line 822 of file convert\+\_\+var.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a5526ddd79d108c0f865e99d498257648}\label{prototypes_8h_a5526ddd79d108c0f865e99d498257648}} 
+\index{prototypes.h@{prototypes.h}!compute\_div\_b@{compute\_div\_b}}
+\index{compute\_div\_b@{compute\_div\_b}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{compute\_div\_b()}{compute\_div\_b()}}
+{\footnotesize\ttfamily Real compute\+\_\+div\+\_\+b (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$}]{pG }\end{DoxyParamCaption})}
+
+
+
+C\+O\+M\+P\+U\+TE T\+HE D\+I\+V\+E\+R\+G\+E\+N\+CE OF T\+HE M\+A\+G\+N\+E\+T\+IC F\+I\+E\+LD U\+S\+I\+NG F\+A\+C\+E-\/\+C\+E\+N\+T\+E\+R\+ED F\+I\+E\+L\+DS O\+V\+ER T\+HE E\+N\+T\+I\+RE A\+C\+T\+I\+VE G\+R\+ID. R\+E\+T\+U\+R\+NS T\+HE M\+A\+X\+I\+M\+UM OF $\vert$\+D\+IV B$\vert$. 
+
+
+
+Definition at line 354 of file utils.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a168e092d771134a92ff8be7e624d51d9}\label{prototypes_8h_a168e092d771134a92ff8be7e624d51d9}} 
+\index{prototypes.h@{prototypes.h}!Cons1D\_to\_Prim1D@{Cons1D\_to\_Prim1D}}
+\index{Cons1D\_to\_Prim1D@{Cons1D\_to\_Prim1D}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{Cons1D\_to\_Prim1D()}{Cons1D\_to\_Prim1D()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_prim1_d_s}{Prim1\+DS}} Cons1\+D\+\_\+to\+\_\+\+Prim1D (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_cons1_d_s}{Cons1\+DS}} $\ast$}]{pU,  }\item[{const Real $\ast$}]{p\+Bx }\end{DoxyParamCaption})}
+
+
+
+Cons1\+D\+\_\+to\+\_\+\+Prim1D\+: N\+E\+W\+T\+O\+N\+I\+AN V\+E\+R\+S\+I\+ON. 
+
+
+\begin{DoxyItemize}
+\item conserved variables = (d,Mx,My,Mz,\mbox{[}E\mbox{]},\mbox{[}By,Bz\mbox{]},\mbox{[}s(n)\mbox{]})
+\item primitive variables = (d,Vx,Vy,Vz,\mbox{[}P\mbox{]},\mbox{[}By,Bz\mbox{]},\mbox{[}r(n)\mbox{]})
+\item Bx is passed in through the argument list. 
+\end{DoxyItemize}
+
+Definition at line 610 of file convert\+\_\+var.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a1babe0008e46b59a6cac12ee862c3741}\label{prototypes_8h_a1babe0008e46b59a6cac12ee862c3741}} 
+\index{prototypes.h@{prototypes.h}!Cons\_to\_Prim@{Cons\_to\_Prim}}
+\index{Cons\_to\_Prim@{Cons\_to\_Prim}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{Cons\_to\_Prim()}{Cons\_to\_Prim()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_prim_s}{PrimS}} Cons\+\_\+to\+\_\+\+Prim (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_cons_s}{ConsS}} $\ast$}]{p\+Cons }\end{DoxyParamCaption})}
+
+
+
+Wrapper for the Cons1\+D\+\_\+to\+\_\+\+Prim1D function, works for both N\+E\+W\+T\+O\+N\+I\+AN and S\+P\+E\+C\+I\+A\+L\+\_\+\+R\+E\+L\+A\+T\+I\+V\+I\+TY. 
+
+
+\begin{DoxyItemize}
+\item conserved variables = (d,M1,M2,M3,\mbox{[}E\mbox{]},\mbox{[}B1c,B2c,B3c\mbox{]},\mbox{[}s(n)\mbox{]})
+\item primitive variables = (d,V1,V2,V3,\mbox{[}P\mbox{]},\mbox{[}B1c,B2c,B3c\mbox{]},\mbox{[}r(n)\mbox{]}) 
+\end{DoxyItemize}
+
+Definition at line 106 of file convert\+\_\+var.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a292f4e4bd2a42e78dfe5b86da556188c}\label{prototypes_8h_a292f4e4bd2a42e78dfe5b86da556188c}} 
+\index{prototypes.h@{prototypes.h}!data\_output@{data\_output}}
+\index{data\_output@{data\_output}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{data\_output()}{data\_output()}}
+{\footnotesize\ttfamily void data\+\_\+output (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{const int}]{flag }\end{DoxyParamCaption})}
+
+
+
+Called by \mbox{\hyperlink{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{main()}}, tests whether time for output, and calls appropriate output functions. ~\newline
+ 
+
+Setting the input argument flag=1 forces a write of all output\textquotesingle{}s. If the input argument flag=0, then only those output\textquotesingle{}s whose next output time has passed will be written. ~\newline
+ 
+
+Definition at line 480 of file output.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a34d2b00e03678f6d6dd36654a5de5c4e}\label{prototypes_8h_a34d2b00e03678f6d6dd36654a5de5c4e}} 
+\index{prototypes.h@{prototypes.h}!data\_output\_destruct@{data\_output\_destruct}}
+\index{data\_output\_destruct@{data\_output\_destruct}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{data\_output\_destruct()}{data\_output\_destruct()}}
+{\footnotesize\ttfamily void data\+\_\+output\+\_\+destruct (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Free all memory associated with Output, called by \mbox{\hyperlink{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{main()}} at end of run. 
+
+
+
+Definition at line 566 of file output.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a5db8d685e4ec6f6c45c3716dde2c6669}\label{prototypes_8h_a5db8d685e4ec6f6c45c3716dde2c6669}} 
+\index{prototypes.h@{prototypes.h}!do\_nothing\_bc@{do\_nothing\_bc}}
+\index{do\_nothing\_bc@{do\_nothing\_bc}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{do\_nothing\_bc()}{do\_nothing\_bc()}}
+{\footnotesize\ttfamily void do\+\_\+nothing\+\_\+bc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$}]{pG }\end{DoxyParamCaption})}
+
+
+
+D\+O\+ES A\+B\+S\+O\+L\+U\+T\+E\+LY N\+O\+T\+H\+I\+N\+G! T\+H\+US, W\+H\+A\+T\+E\+V\+ER T\+HE B\+O\+U\+N\+D\+A\+RY A\+RE S\+ET TO I\+N\+I\+T\+I\+A\+L\+LY, T\+H\+EY R\+E\+M\+A\+IN F\+OR A\+LL T\+I\+ME. 
+
+\mbox{\Hypertarget{prototypes_8h_aefcd88676b809ca0437c8bcf63dff9a3}\label{prototypes_8h_aefcd88676b809ca0437c8bcf63dff9a3}} 
+\index{prototypes.h@{prototypes.h}!dump\_binary@{dump\_binary}}
+\index{dump\_binary@{dump\_binary}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{dump\_binary()}{dump\_binary()}}
+{\footnotesize\ttfamily void dump\+\_\+binary (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{\mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$}]{p\+Out }\end{DoxyParamCaption})}
+
+
+
+Function to write an unformatted dump of the field variables. 
+
+
+
+Definition at line 30 of file dump\+\_\+binary.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a04359dca00afaaa4174cea334622a472}\label{prototypes_8h_a04359dca00afaaa4174cea334622a472}} 
+\index{prototypes.h@{prototypes.h}!dump\_history@{dump\_history}}
+\index{dump\_history@{dump\_history}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{dump\_history()}{dump\_history()}}
+{\footnotesize\ttfamily void dump\+\_\+history (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{\mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$}]{p\+Out }\end{DoxyParamCaption})}
+
+
+
+Function to write dumps of scalar \char`\"{}history\char`\"{} variables in a formatted table. 
+
+
+
+Definition at line 95 of file dump\+\_\+history.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_af708912b4ea7f10be9fea2861ea0374c}\label{prototypes_8h_af708912b4ea7f10be9fea2861ea0374c}} 
+\index{prototypes.h@{prototypes.h}!dump\_history\_enroll@{dump\_history\_enroll}}
+\index{dump\_history\_enroll@{dump\_history\_enroll}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{dump\_history\_enroll()}{dump\_history\_enroll()}}
+{\footnotesize\ttfamily void dump\+\_\+history\+\_\+enroll (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{athena_8h_aaa64b3ee5eefc566b7c09368c414de89}{Cons\+Fun\+\_\+t}}}]{pfun,  }\item[{const char $\ast$}]{label }\end{DoxyParamCaption})}
+
+
+
+Adds new user-\/defined history variables ~\newline
+ 
+
+
+
+Definition at line 477 of file dump\+\_\+history.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a0c8423a9f51dd688b5867e611120ba0e}\label{prototypes_8h_a0c8423a9f51dd688b5867e611120ba0e}} 
+\index{prototypes.h@{prototypes.h}!dump\_restart@{dump\_restart}}
+\index{dump\_restart@{dump\_restart}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{dump\_restart()}{dump\_restart()}}
+{\footnotesize\ttfamily void dump\+\_\+restart (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{\mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$}]{pout }\end{DoxyParamCaption})}
+
+
+
+Writes a restart file, including problem-\/specific data from a user defined function ~\newline
+ 
+
+
+
+Definition at line 439 of file restart.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a884b64ef77f0588a8f520a8fb146d0b3}\label{prototypes_8h_a884b64ef77f0588a8f520a8fb146d0b3}} 
+\index{prototypes.h@{prototypes.h}!dump\_tab\_cons@{dump\_tab\_cons}}
+\index{dump\_tab\_cons@{dump\_tab\_cons}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{dump\_tab\_cons()}{dump\_tab\_cons()}}
+{\footnotesize\ttfamily void dump\+\_\+tab\+\_\+cons (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{\mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$}]{p\+Out }\end{DoxyParamCaption})}
+
+
+
+Output C\+O\+N\+S\+E\+R\+V\+ED variables ~\newline
+ 
+
+
+
+Definition at line 37 of file dump\+\_\+tab.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a6d6e54eb309d62f1cdf145fc184b07bb}\label{prototypes_8h_a6d6e54eb309d62f1cdf145fc184b07bb}} 
+\index{prototypes.h@{prototypes.h}!dump\_tab\_prim@{dump\_tab\_prim}}
+\index{dump\_tab\_prim@{dump\_tab\_prim}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{dump\_tab\_prim()}{dump\_tab\_prim()}}
+{\footnotesize\ttfamily void dump\+\_\+tab\+\_\+prim (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{\mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$}]{p\+Out }\end{DoxyParamCaption})}
+
+
+
+Output P\+R\+I\+M\+I\+T\+I\+VE variables. ~\newline
+ 
+
+
+
+Definition at line 283 of file dump\+\_\+tab.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_aaf11bcf5455df27a5dd663a00be350d2}\label{prototypes_8h_aaf11bcf5455df27a5dd663a00be350d2}} 
+\index{prototypes.h@{prototypes.h}!dump\_vtk@{dump\_vtk}}
+\index{dump\_vtk@{dump\_vtk}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{dump\_vtk()}{dump\_vtk()}}
+{\footnotesize\ttfamily void dump\+\_\+vtk (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{\mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$}]{p\+Out }\end{DoxyParamCaption})}
+
+
+
+Writes V\+TK dump (all variables). ~\newline
+ 
+
+
+
+Definition at line 28 of file dump\+\_\+vtk.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a3a3fe61c5f149b3a497cd773ac77abc5}\label{prototypes_8h_a3a3fe61c5f149b3a497cd773ac77abc5}} 
+\index{prototypes.h@{prototypes.h}!fc\_pos@{fc\_pos}}
+\index{fc\_pos@{fc\_pos}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{fc\_pos()}{fc\_pos()}}
+{\footnotesize\ttfamily void fc\+\_\+pos (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$}]{pG,  }\item[{const int}]{i,  }\item[{const int}]{j,  }\item[{const int}]{k,  }\item[{Real $\ast$}]{px1,  }\item[{Real $\ast$}]{px2,  }\item[{Real $\ast$}]{px3 }\end{DoxyParamCaption})}
+
+
+
+given i,j,k returns face-\/centered x1,x2,x3 
+
+
+
+Definition at line 51 of file cc\+\_\+pos.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_af06c93640c785f8ca376b21222b5593b}\label{prototypes_8h_af06c93640c785f8ca376b21222b5593b}} 
+\index{prototypes.h@{prototypes.h}!free\_1d\_array@{free\_1d\_array}}
+\index{free\_1d\_array@{free\_1d\_array}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{free\_1d\_array()}{free\_1d\_array()}}
+{\footnotesize\ttfamily void free\+\_\+1d\+\_\+array (\begin{DoxyParamCaption}\item[{void $\ast$}]{array }\end{DoxyParamCaption})}
+
+
+
+Free memory used by 1D array ~\newline
+ 
+
+
+
+Definition at line 125 of file ath\+\_\+array.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_ae39760c22be8cfd70c88f547dd054596}\label{prototypes_8h_ae39760c22be8cfd70c88f547dd054596}} 
+\index{prototypes.h@{prototypes.h}!free\_2d\_array@{free\_2d\_array}}
+\index{free\_2d\_array@{free\_2d\_array}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{free\_2d\_array()}{free\_2d\_array()}}
+{\footnotesize\ttfamily void free\+\_\+2d\+\_\+array (\begin{DoxyParamCaption}\item[{void $\ast$}]{array }\end{DoxyParamCaption})}
+
+
+
+Free memory used by 2D array ~\newline
+ 
+
+
+
+Definition at line 133 of file ath\+\_\+array.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_aa639a50b59af0bc55505fe267a0ec5a1}\label{prototypes_8h_aa639a50b59af0bc55505fe267a0ec5a1}} 
+\index{prototypes.h@{prototypes.h}!free\_3d\_array@{free\_3d\_array}}
+\index{free\_3d\_array@{free\_3d\_array}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{free\_3d\_array()}{free\_3d\_array()}}
+{\footnotesize\ttfamily void free\+\_\+3d\+\_\+array (\begin{DoxyParamCaption}\item[{void $\ast$}]{array }\end{DoxyParamCaption})}
+
+
+
+Free memory used by 3D array ~\newline
+ 
+
+
+
+Definition at line 144 of file ath\+\_\+array.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_ad8f0c9ec3860159716b58bee6cabb74e}\label{prototypes_8h_ad8f0c9ec3860159716b58bee6cabb74e}} 
+\index{prototypes.h@{prototypes.h}!get\_myGridIndex@{get\_myGridIndex}}
+\index{get\_myGridIndex@{get\_myGridIndex}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{get\_myGridIndex()}{get\_myGridIndex()}}
+{\footnotesize\ttfamily void get\+\_\+my\+Grid\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{pD,  }\item[{const int}]{my\+\_\+id,  }\item[{int $\ast$}]{pi,  }\item[{int $\ast$}]{pj,  }\item[{int $\ast$}]{pk }\end{DoxyParamCaption})}
+
+
+
+Searches G\+Data\mbox{[}\mbox{]}\mbox{[}\mbox{]}\mbox{[}\mbox{]} array to find i,j,k components of block being updated on this processor. ~\newline
+ 
+
+
+
+Definition at line 833 of file init\+\_\+mesh.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a4575c4cdbf2965a9857c45970d736676}\label{prototypes_8h_a4575c4cdbf2965a9857c45970d736676}} 
+\index{prototypes.h@{prototypes.h}!get\_usr\_expr@{get\_usr\_expr}}
+\index{get\_usr\_expr@{get\_usr\_expr}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{get\_usr\_expr()}{get\_usr\_expr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{athena_8h_aaa64b3ee5eefc566b7c09368c414de89}{Cons\+Fun\+\_\+t}} get\+\_\+usr\+\_\+expr (\begin{DoxyParamCaption}\item[{const char $\ast$}]{expr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 123 of file blast.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a8b8cabb1061d5399fb492be89de213ff}\label{prototypes_8h_a8b8cabb1061d5399fb492be89de213ff}} 
+\index{prototypes.h@{prototypes.h}!get\_usr\_out\_fun@{get\_usr\_out\_fun}}
+\index{get\_usr\_out\_fun@{get\_usr\_out\_fun}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{get\_usr\_out\_fun()}{get\_usr\_out\_fun()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{athena_8h_a8bc2403d4d3a27d6f475f2dc6acc94cc}{V\+Out\+Fun\+\_\+t}} get\+\_\+usr\+\_\+out\+\_\+fun (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 128 of file blast.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_ab9ea0e30a1666f1b53bb73f32535f603}\label{prototypes_8h_ab9ea0e30a1666f1b53bb73f32535f603}} 
+\index{prototypes.h@{prototypes.h}!gradient1@{gradient1}}
+\index{gradient1@{gradient1}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{gradient1()}{gradient1()}}
+{\footnotesize\ttfamily void gradient1 (\begin{DoxyParamCaption}\item[{Real $\ast$}]{data,  }\item[{int}]{nx1,  }\item[{Real}]{dx,  }\item[{Real $\ast$}]{grad }\end{DoxyParamCaption})}
+
+
+
+Definition at line 147 of file utils.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a8c9b3229540459ea71c4974335692e74}\label{prototypes_8h_a8c9b3229540459ea71c4974335692e74}} 
+\index{prototypes.h@{prototypes.h}!gradient1l@{gradient1l}}
+\index{gradient1l@{gradient1l}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{gradient1l()}{gradient1l()}}
+{\footnotesize\ttfamily void gradient1l (\begin{DoxyParamCaption}\item[{Real $\ast$}]{data,  }\item[{int}]{nx1,  }\item[{Real}]{dx,  }\item[{Real $\ast$}]{grad }\end{DoxyParamCaption})}
+
+
+
+Definition at line 200 of file utils.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a8f0b62776231ff38385415161ce343db}\label{prototypes_8h_a8f0b62776231ff38385415161ce343db}} 
+\index{prototypes.h@{prototypes.h}!gradient1r@{gradient1r}}
+\index{gradient1r@{gradient1r}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{gradient1r()}{gradient1r()}}
+{\footnotesize\ttfamily void gradient1r (\begin{DoxyParamCaption}\item[{Real $\ast$}]{data,  }\item[{int}]{nx1,  }\item[{Real}]{dx,  }\item[{Real $\ast$}]{grad }\end{DoxyParamCaption})}
+
+
+
+Definition at line 245 of file utils.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a86cf5cdcf1a9993bb581f3ea35275556}\label{prototypes_8h_a86cf5cdcf1a9993bb581f3ea35275556}} 
+\index{prototypes.h@{prototypes.h}!gradient4@{gradient4}}
+\index{gradient4@{gradient4}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{gradient4()}{gradient4()}}
+{\footnotesize\ttfamily void gradient4 (\begin{DoxyParamCaption}\item[{Real $\ast$}]{data,  }\item[{int}]{nx1,  }\item[{Real}]{dx,  }\item[{Real $\ast$}]{grad }\end{DoxyParamCaption})}
+
+
+
+Definition at line 177 of file utils.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a95667109c997592ac508a6f67e34b827}\label{prototypes_8h_a95667109c997592ac508a6f67e34b827}} 
+\index{prototypes.h@{prototypes.h}!init\_grid@{init\_grid}}
+\index{init\_grid@{init\_grid}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{init\_grid()}{init\_grid()}}
+{\footnotesize\ttfamily void init\+\_\+grid (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+Initializes most variables in the Grid structure. 
+
+
+
+Definition at line 46 of file init\+\_\+grid.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a916f9c7c3347abd0ff4e1acc00cd0f27}\label{prototypes_8h_a916f9c7c3347abd0ff4e1acc00cd0f27}} 
+\index{prototypes.h@{prototypes.h}!init\_mesh@{init\_mesh}}
+\index{init\_mesh@{init\_mesh}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{init\_mesh()}{init\_mesh()}}
+{\footnotesize\ttfamily void init\+\_\+mesh (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+General initialization of the nested mesh hierarchy. ~\newline
+ 
+
+
+
+Definition at line 84 of file init\+\_\+mesh.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a9034e0a0c277e481597e9a0709908edb}\label{prototypes_8h_a9034e0a0c277e481597e9a0709908edb}} 
+\index{prototypes.h@{prototypes.h}!init\_output@{init\_output}}
+\index{init\_output@{init\_output}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{init\_output()}{init\_output()}}
+{\footnotesize\ttfamily void init\+\_\+output (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+Initializes data output. 
+
+
+
+Definition at line 157 of file output.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a643e354ce4ae8dfeb66fb20209e4ad48}\label{prototypes_8h_a643e354ce4ae8dfeb66fb20209e4ad48}} 
+\index{prototypes.h@{prototypes.h}!minmax1@{minmax1}}
+\index{minmax1@{minmax1}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{minmax1()}{minmax1()}}
+{\footnotesize\ttfamily void minmax1 (\begin{DoxyParamCaption}\item[{Real $\ast$}]{data,  }\item[{int}]{nx1,  }\item[{Real $\ast$}]{dmin,  }\item[{Real $\ast$}]{dmax }\end{DoxyParamCaption})}
+
+
+
+Return the min and max of a 1D array using registers Works on data of type float, not Real. 
+
+
+
+Definition at line 278 of file utils.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a718dc1d943fd0fe9c5c310f308c6fb0e}\label{prototypes_8h_a718dc1d943fd0fe9c5c310f308c6fb0e}} 
+\index{prototypes.h@{prototypes.h}!minmax2@{minmax2}}
+\index{minmax2@{minmax2}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{minmax2()}{minmax2()}}
+{\footnotesize\ttfamily void minmax2 (\begin{DoxyParamCaption}\item[{Real $\ast$$\ast$}]{data,  }\item[{int}]{nx2,  }\item[{int}]{nx1,  }\item[{Real $\ast$}]{dmin,  }\item[{Real $\ast$}]{dmax }\end{DoxyParamCaption})}
+
+
+
+Return the min and max of a 2D array using registers Works on data of type float, not Real. 
+
+
+
+Definition at line 296 of file utils.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a846768bb9325a8bd6216051a1dd4b294}\label{prototypes_8h_a846768bb9325a8bd6216051a1dd4b294}} 
+\index{prototypes.h@{prototypes.h}!minmax3@{minmax3}}
+\index{minmax3@{minmax3}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{minmax3()}{minmax3()}}
+{\footnotesize\ttfamily void minmax3 (\begin{DoxyParamCaption}\item[{Real $\ast$$\ast$$\ast$}]{data,  }\item[{int}]{nx3,  }\item[{int}]{nx2,  }\item[{int}]{nx1,  }\item[{Real $\ast$}]{dmin,  }\item[{Real $\ast$}]{dmax }\end{DoxyParamCaption})}
+
+
+
+Return the min and max of a 3D array using registers Works on data of type float, not Real. 
+
+
+
+Definition at line 317 of file utils.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a994061a05b936430f0066cbdd1267fdb}\label{prototypes_8h_a994061a05b936430f0066cbdd1267fdb}} 
+\index{prototypes.h@{prototypes.h}!new\_dt@{new\_dt}}
+\index{new\_dt@{new\_dt}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{new\_dt()}{new\_dt()}}
+{\footnotesize\ttfamily void new\+\_\+dt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+Computes timestep using C\+FL condition. 
+
+
+
+Definition at line 40 of file new\+\_\+dt.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_ac58eef44023b7a584cc3ed74b3c01bbe}\label{prototypes_8h_ac58eef44023b7a584cc3ed74b3c01bbe}} 
+\index{prototypes.h@{prototypes.h}!OutData1@{OutData1}}
+\index{OutData1@{OutData1}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{OutData1()}{OutData1()}}
+{\footnotesize\ttfamily Real$\ast$ Out\+Data1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$}]{pgrid,  }\item[{\mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$}]{pout,  }\item[{int $\ast$}]{Nx1 }\end{DoxyParamCaption})}
+
+
+
+Creates 1D array of output data with one dimensions equal to Grid and two dimensions reduced according to range stored in x1l/x1u, etc. ~\newline
+ 
+
+Data is computed using output expression (function pointer) stored in Output structure. If slice range lies outside of coordinate range in Grid, the N\+U\+LL pointer is returned. Dimension of array created is also returned in arguments. 
+
+Definition at line 871 of file output.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_ad1fb22dcff9bacfd6155bb3881d56ffa}\label{prototypes_8h_ad1fb22dcff9bacfd6155bb3881d56ffa}} 
+\index{prototypes.h@{prototypes.h}!OutData2@{OutData2}}
+\index{OutData2@{OutData2}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{OutData2()}{OutData2()}}
+{\footnotesize\ttfamily Real$\ast$$\ast$ Out\+Data2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$}]{pgrid,  }\item[{\mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$}]{pout,  }\item[{int $\ast$}]{Nx1,  }\item[{int $\ast$}]{Nx2 }\end{DoxyParamCaption})}
+
+
+
+Creates 2D array of output data with two dimensions equal to Grid and one dimension reduced according to range stored in x1l/x1u, etc. ~\newline
+ 
+
+Data is computed using output expression (function pointer) stored in Output structure. If slice range lies outside of coordinate range in Grid, the N\+U\+LL pointer is returned. Dimensions of array created are also returned in arguments 
+
+Definition at line 689 of file output.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_acb8c8af538a2be3b4c9e9db66105a39a}\label{prototypes_8h_acb8c8af538a2be3b4c9e9db66105a39a}} 
+\index{prototypes.h@{prototypes.h}!OutData3@{OutData3}}
+\index{OutData3@{OutData3}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{OutData3()}{OutData3()}}
+{\footnotesize\ttfamily Real$\ast$$\ast$$\ast$ Out\+Data3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$}]{pgrid,  }\item[{\mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$}]{pout,  }\item[{int $\ast$}]{Nx1,  }\item[{int $\ast$}]{Nx2,  }\item[{int $\ast$}]{Nx3 }\end{DoxyParamCaption})}
+
+
+
+Creates 3D array of output data with dimensions equal to Grid using output expression (function pointer) stored in Output structure. 
+
+Dimensions of array created also returned in arguments. 
+
+Definition at line 626 of file output.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_ab8f7ef8a651b07524b87ef0f4f9b0262}\label{prototypes_8h_ab8f7ef8a651b07524b87ef0f4f9b0262}} 
+\index{prototypes.h@{prototypes.h}!output\_pdf@{output\_pdf}}
+\index{output\_pdf@{output\_pdf}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{output\_pdf()}{output\_pdf()}}
+{\footnotesize\ttfamily void output\+\_\+pdf (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{\mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$}]{p\+Out }\end{DoxyParamCaption})}
+
+
+
+Outputs P\+D\+Fs. 
+
+
+
+Definition at line 40 of file output\+\_\+pdf.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a0c052773606e15004e3f3d255814246c}\label{prototypes_8h_a0c052773606e15004e3f3d255814246c}} 
+\index{prototypes.h@{prototypes.h}!output\_pgm@{output\_pgm}}
+\index{output\_pgm@{output\_pgm}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{output\_pgm()}{output\_pgm()}}
+{\footnotesize\ttfamily void output\+\_\+pgm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{\mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$}]{p\+Out }\end{DoxyParamCaption})}
+
+
+
+Output 2D P\+GM image ~\newline
+ 
+
+
+
+Definition at line 27 of file output\+\_\+pgm.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a3b937585b40185f0397235b20baa21c7}\label{prototypes_8h_a3b937585b40185f0397235b20baa21c7}} 
+\index{prototypes.h@{prototypes.h}!output\_ppm@{output\_ppm}}
+\index{output\_ppm@{output\_ppm}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{output\_ppm()}{output\_ppm()}}
+{\footnotesize\ttfamily void output\+\_\+ppm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{\mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$}]{p\+Out }\end{DoxyParamCaption})}
+
+
+
+Output P\+PM image. 
+
+
+
+Definition at line 39 of file output\+\_\+ppm.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a6847490e314cc9dc2ab5b75e0d74fe3a}\label{prototypes_8h_a6847490e314cc9dc2ab5b75e0d74fe3a}} 
+\index{prototypes.h@{prototypes.h}!output\_tab@{output\_tab}}
+\index{output\_tab@{output\_tab}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{output\_tab()}{output\_tab()}}
+{\footnotesize\ttfamily void output\+\_\+tab (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{\mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$}]{p\+Out }\end{DoxyParamCaption})}
+
+
+
+Open file, call 1D/2\+D/3D writer; called by data\+\_\+ouput ~\newline
+ 
+
+
+
+Definition at line 43 of file output\+\_\+tab.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_acc6eeb793b57379cbfd79e0fc7ba0415}\label{prototypes_8h_acc6eeb793b57379cbfd79e0fc7ba0415}} 
+\index{prototypes.h@{prototypes.h}!output\_vtk@{output\_vtk}}
+\index{output\_vtk@{output\_vtk}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{output\_vtk()}{output\_vtk()}}
+{\footnotesize\ttfamily void output\+\_\+vtk (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{\mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$}]{p\+Out }\end{DoxyParamCaption})}
+
+
+
+Writes V\+TK file (single variable). 
+
+
+
+Definition at line 38 of file output\+\_\+vtk.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a90709646bfed7d95dff41d30d67e4d81}\label{prototypes_8h_a90709646bfed7d95dff41d30d67e4d81}} 
+\index{prototypes.h@{prototypes.h}!par\_close@{par\_close}}
+\index{par\_close@{par\_close}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{par\_close()}{par\_close()}}
+{\footnotesize\ttfamily void par\+\_\+close (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Close up shop, free memory ~\newline
+ 
+
+
+
+Definition at line 418 of file par.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_af4526137969aecd4928c354f8bf011ea}\label{prototypes_8h_af4526137969aecd4928c354f8bf011ea}} 
+\index{prototypes.h@{prototypes.h}!par\_cmdline@{par\_cmdline}}
+\index{par\_cmdline@{par\_cmdline}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{par\_cmdline()}{par\_cmdline()}}
+{\footnotesize\ttfamily void par\+\_\+cmdline (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Parse a commandline, very forgiving (no warnings) when not in the right block/name=value format. 
+
+
+
+Definition at line 194 of file par.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a0a1296aa610308e1d4cb8c334a1d0c57}\label{prototypes_8h_a0a1296aa610308e1d4cb8c334a1d0c57}} 
+\index{prototypes.h@{prototypes.h}!par\_dump@{par\_dump}}
+\index{par\_dump@{par\_dump}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{par\_dump()}{par\_dump()}}
+{\footnotesize\ttfamily void par\+\_\+dump (\begin{DoxyParamCaption}\item[{int}]{mode,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Debugging aid\+: print out the current status of all Blocks/\+Pars. 
+
+
+
+Definition at line 377 of file par.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_ad7ff0f7b4cee0ec0751000359a117093}\label{prototypes_8h_ad7ff0f7b4cee0ec0751000359a117093}} 
+\index{prototypes.h@{prototypes.h}!par\_exist@{par\_exist}}
+\index{par\_exist@{par\_exist}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{par\_exist()}{par\_exist()}}
+{\footnotesize\ttfamily int par\+\_\+exist (\begin{DoxyParamCaption}\item[{char $\ast$}]{block,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+Return 0 or 1 if a block/name exists. 
+
+
+
+Definition at line 239 of file par.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_ac234e8c1085523fa6adcd6d4f48281b5}\label{prototypes_8h_ac234e8c1085523fa6adcd6d4f48281b5}} 
+\index{prototypes.h@{prototypes.h}!par\_getd@{par\_getd}}
+\index{par\_getd@{par\_getd}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{par\_getd()}{par\_getd()}}
+{\footnotesize\ttfamily double par\+\_\+getd (\begin{DoxyParamCaption}\item[{char $\ast$}]{block,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+Return a Real value. 
+
+
+
+Definition at line 277 of file par.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a0f36a2890d652e2c2ca86d72c91cc8cf}\label{prototypes_8h_a0f36a2890d652e2c2ca86d72c91cc8cf}} 
+\index{prototypes.h@{prototypes.h}!par\_getd\_def@{par\_getd\_def}}
+\index{par\_getd\_def@{par\_getd\_def}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{par\_getd\_def()}{par\_getd\_def()}}
+{\footnotesize\ttfamily double par\+\_\+getd\+\_\+def (\begin{DoxyParamCaption}\item[{char $\ast$}]{block,  }\item[{char $\ast$}]{name,  }\item[{double}]{def }\end{DoxyParamCaption})}
+
+
+
+Return double $\ast$name in $\ast$block if it exists, else use the double def as a default value ~\newline
+ 
+
+
+
+Definition at line 320 of file par.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_ac03bbd5713f3a93db722aea8d1c1b5c0}\label{prototypes_8h_ac03bbd5713f3a93db722aea8d1c1b5c0}} 
+\index{prototypes.h@{prototypes.h}!par\_geti@{par\_geti}}
+\index{par\_geti@{par\_geti}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{par\_geti()}{par\_geti()}}
+{\footnotesize\ttfamily int par\+\_\+geti (\begin{DoxyParamCaption}\item[{char $\ast$}]{block,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+Return an integer. 
+
+
+
+Definition at line 267 of file par.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a789945c886abda300582ff5511c0a029}\label{prototypes_8h_a789945c886abda300582ff5511c0a029}} 
+\index{prototypes.h@{prototypes.h}!par\_geti\_def@{par\_geti\_def}}
+\index{par\_geti\_def@{par\_geti\_def}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{par\_geti\_def()}{par\_geti\_def()}}
+{\footnotesize\ttfamily int par\+\_\+geti\+\_\+def (\begin{DoxyParamCaption}\item[{char $\ast$}]{block,  }\item[{char $\ast$}]{name,  }\item[{int}]{def }\end{DoxyParamCaption})}
+
+
+
+Return integer $\ast$name in $\ast$block if it exists, else use the integer def as a default value. 
+
+
+
+Definition at line 304 of file par.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a70fa44c8e1f140f10f29bd07bedb0a1c}\label{prototypes_8h_a70fa44c8e1f140f10f29bd07bedb0a1c}} 
+\index{prototypes.h@{prototypes.h}!par\_gets@{par\_gets}}
+\index{par\_gets@{par\_gets}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{par\_gets()}{par\_gets()}}
+{\footnotesize\ttfamily char$\ast$ par\+\_\+gets (\begin{DoxyParamCaption}\item[{char $\ast$}]{block,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+Return a string. 
+
+
+
+Definition at line 257 of file par.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_ad5e2a2df0068ea716d16668ab77158c6}\label{prototypes_8h_ad5e2a2df0068ea716d16668ab77158c6}} 
+\index{prototypes.h@{prototypes.h}!par\_gets\_def@{par\_gets\_def}}
+\index{par\_gets\_def@{par\_gets\_def}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{par\_gets\_def()}{par\_gets\_def()}}
+{\footnotesize\ttfamily char$\ast$ par\+\_\+gets\+\_\+def (\begin{DoxyParamCaption}\item[{char $\ast$}]{block,  }\item[{char $\ast$}]{name,  }\item[{char $\ast$}]{def }\end{DoxyParamCaption})}
+
+
+
+Return string $\ast$name in $\ast$block if it exists, else use the string $\ast$def as a default value. 
+
+
+
+Definition at line 288 of file par.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a6a4b49cc9265c8a71f9265452073aa00}\label{prototypes_8h_a6a4b49cc9265c8a71f9265452073aa00}} 
+\index{prototypes.h@{prototypes.h}!par\_open@{par\_open}}
+\index{par\_open@{par\_open}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{par\_open()}{par\_open()}}
+{\footnotesize\ttfamily void par\+\_\+open (\begin{DoxyParamCaption}\item[{char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+
+
+Open a parameter file for R/O access. ~\newline
+ 
+
+Lines read from the file are locally patched; all names, values and comments are allocated and put into a linked list of \mbox{\hyperlink{struct_block}{Block}}\textquotesingle{}s and \mbox{\hyperlink{struct_par}{Par}}\textquotesingle{}s. 
+
+Definition at line 156 of file par.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_aca86a680715a5deb34d96dc9d4279edd}\label{prototypes_8h_aca86a680715a5deb34d96dc9d4279edd}} 
+\index{prototypes.h@{prototypes.h}!par\_setd@{par\_setd}}
+\index{par\_setd@{par\_setd}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{par\_setd()}{par\_setd()}}
+{\footnotesize\ttfamily void par\+\_\+setd (\begin{DoxyParamCaption}\item[{char $\ast$}]{block,  }\item[{char $\ast$}]{name,  }\item[{char $\ast$}]{fmt,  }\item[{double}]{dval,  }\item[{char $\ast$}]{comment }\end{DoxyParamCaption})}
+
+
+
+Set or add a double. 
+
+
+
+Definition at line 363 of file par.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a92384b69c20d713c9e3f9f45234765a5}\label{prototypes_8h_a92384b69c20d713c9e3f9f45234765a5}} 
+\index{prototypes.h@{prototypes.h}!par\_seti@{par\_seti}}
+\index{par\_seti@{par\_seti}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{par\_seti()}{par\_seti()}}
+{\footnotesize\ttfamily void par\+\_\+seti (\begin{DoxyParamCaption}\item[{char $\ast$}]{block,  }\item[{char $\ast$}]{name,  }\item[{char $\ast$}]{fmt,  }\item[{int}]{ival,  }\item[{char $\ast$}]{comment }\end{DoxyParamCaption})}
+
+
+
+Set or add an integer. 
+
+
+
+Definition at line 348 of file par.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a38fb6cd1c2178aea355f342578f7796d}\label{prototypes_8h_a38fb6cd1c2178aea355f342578f7796d}} 
+\index{prototypes.h@{prototypes.h}!par\_sets@{par\_sets}}
+\index{par\_sets@{par\_sets}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{par\_sets()}{par\_sets()}}
+{\footnotesize\ttfamily void par\+\_\+sets (\begin{DoxyParamCaption}\item[{char $\ast$}]{block,  }\item[{char $\ast$}]{name,  }\item[{char $\ast$}]{sval,  }\item[{char $\ast$}]{comment }\end{DoxyParamCaption})}
+
+
+
+Set or add a string. 
+
+
+
+Definition at line 335 of file par.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a030b3be2910e01b12ca3a425196aa77b}\label{prototypes_8h_a030b3be2910e01b12ca3a425196aa77b}} 
+\index{prototypes.h@{prototypes.h}!Prim1D\_to\_Cons1D@{Prim1D\_to\_Cons1D}}
+\index{Prim1D\_to\_Cons1D@{Prim1D\_to\_Cons1D}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{Prim1D\_to\_Cons1D()}{Prim1D\_to\_Cons1D()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_cons1_d_s}{Cons1\+DS}} Prim1\+D\+\_\+to\+\_\+\+Cons1D (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_prim1_d_s}{Prim1\+DS}} $\ast$}]{pW,  }\item[{const Real $\ast$}]{p\+Bx }\end{DoxyParamCaption})}
+
+
+
+Prim1\+D\+\_\+to\+\_\+\+Cons1D\+: N\+E\+W\+T\+O\+N\+I\+AN V\+E\+R\+S\+I\+ON. 
+
+
+\begin{DoxyItemize}
+\item primitive variables = (d,Vx,Vy,Vz,\mbox{[}P\mbox{]},\mbox{[}By,Bz\mbox{]},\mbox{[}r(n)\mbox{]})
+\item conserved variables = (d,Mx,My,Mz,\mbox{[}E\mbox{]},\mbox{[}By,Bz\mbox{]},\mbox{[}s(n)\mbox{]})
+\item Bx is passed in through the argument list. 
+\end{DoxyItemize}
+
+Definition at line 719 of file convert\+\_\+var.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a14fb5d3e9e0eccca4b0ca178d7e8f608}\label{prototypes_8h_a14fb5d3e9e0eccca4b0ca178d7e8f608}} 
+\index{prototypes.h@{prototypes.h}!Prim\_to\_Cons@{Prim\_to\_Cons}}
+\index{Prim\_to\_Cons@{Prim\_to\_Cons}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{Prim\_to\_Cons()}{Prim\_to\_Cons()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_cons_s}{ConsS}} Prim\+\_\+to\+\_\+\+Cons (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_prim_s}{PrimS}} $\ast$}]{pW }\end{DoxyParamCaption})}
+
+
+
+Wrapper for the Prim1\+D\+\_\+to\+\_\+\+Cons1D function, works for both N\+E\+W\+T\+O\+N\+I\+AN and S\+P\+E\+C\+I\+A\+L\+\_\+\+R\+E\+L\+A\+T\+I\+V\+I\+TY. 
+
+
+\begin{DoxyItemize}
+\item conserved variables = (d,M1,M2,M3,\mbox{[}E\mbox{]},\mbox{[}B1c,B2c,B3c\mbox{]},\mbox{[}s(n)\mbox{]})
+\item primitive variables = (d,V1,V2,V3,\mbox{[}P\mbox{]},\mbox{[}B1c,B2c,B3c\mbox{]},\mbox{[}r(n)\mbox{]}) 
+\end{DoxyItemize}
+
+Definition at line 212 of file convert\+\_\+var.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_aa218b64c90ee92848b8f3fb47ce8df7a}\label{prototypes_8h_aa218b64c90ee92848b8f3fb47ce8df7a}} 
+\index{prototypes.h@{prototypes.h}!problem@{problem}}
+\index{problem@{problem}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{problem()}{problem()}}
+{\footnotesize\ttfamily void problem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{pD }\end{DoxyParamCaption})}
+
+
+
+Definition at line 23 of file blast.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_acf733c9792756cbec1e9d226c4ff37ab}\label{prototypes_8h_acf733c9792756cbec1e9d226c4ff37ab}} 
+\index{prototypes.h@{prototypes.h}!problem\_read\_restart@{problem\_read\_restart}}
+\index{problem\_read\_restart@{problem\_read\_restart}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{problem\_read\_restart()}{problem\_read\_restart()}}
+{\footnotesize\ttfamily void problem\+\_\+read\+\_\+restart (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 118 of file blast.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a2c334369ab621e9815591c76ccfb5fc7}\label{prototypes_8h_a2c334369ab621e9815591c76ccfb5fc7}} 
+\index{prototypes.h@{prototypes.h}!problem\_write\_restart@{problem\_write\_restart}}
+\index{problem\_write\_restart@{problem\_write\_restart}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{problem\_write\_restart()}{problem\_write\_restart()}}
+{\footnotesize\ttfamily void problem\+\_\+write\+\_\+restart (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 113 of file blast.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_ad2fa4773d22ac52368d121fbc64753b8}\label{prototypes_8h_ad2fa4773d22ac52368d121fbc64753b8}} 
+\index{prototypes.h@{prototypes.h}!Prolongate@{Prolongate}}
+\index{Prolongate@{Prolongate}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{Prolongate()}{Prolongate()}}
+{\footnotesize\ttfamily void Prolongate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{prototypes_8h_a0c355d966fd1ec1aeb9a64bf10a9553f}\label{prototypes_8h_a0c355d966fd1ec1aeb9a64bf10a9553f}} 
+\index{prototypes.h@{prototypes.h}!qsimp@{qsimp}}
+\index{qsimp@{qsimp}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{qsimp()}{qsimp()}}
+{\footnotesize\ttfamily Real qsimp (\begin{DoxyParamCaption}\item[{Real($\ast$)(Real)}]{func,  }\item[{const Real}]{a,  }\item[{const Real}]{b }\end{DoxyParamCaption})}
+
+
+
+R\+E\+T\+U\+R\+NS T\+HE I\+N\+T\+E\+G\+R\+AL OF T\+HE F\+U\+N\+C\+T\+I\+ON func F\+R\+OM a TO b. 
+
+T\+HE P\+A\+R\+A\+M\+E\+T\+ER E\+PS C\+AN BE S\+ET TO T\+HE D\+E\+S\+I\+R\+ED F\+R\+A\+C\+T\+I\+O\+N\+AL A\+C\+C\+U\+R\+A\+CY A\+ND J\+M\+AX SO T\+H\+AT 2$^\wedge$(J\+M\+A\+X-\/1) IS T\+HE M\+A\+X\+I\+M\+UM A\+L\+L\+O\+W\+ED N\+U\+M\+B\+ER OF S\+T\+E\+PS. I\+N\+T\+E\+G\+R\+A\+T\+I\+ON IS P\+E\+R\+F\+O\+R\+M\+ED BY S\+I\+M\+P\+S\+ON\textquotesingle{}S R\+U\+LE. A\+D\+A\+P\+T\+ED F\+R\+OM N\+U\+M\+E\+R\+I\+C\+AL R\+E\+C\+I\+P\+ES BY A\+A\+R\+ON S\+K\+I\+N\+N\+ER 
+
+Definition at line 789 of file utils.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_ad964b97cdef7ace0e38dea077f7dbc0b}\label{prototypes_8h_ad964b97cdef7ace0e38dea077f7dbc0b}} 
+\index{prototypes.h@{prototypes.h}!restart\_grids@{restart\_grids}}
+\index{restart\_grids@{restart\_grids}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{restart\_grids()}{restart\_grids()}}
+{\footnotesize\ttfamily void restart\+\_\+grids (\begin{DoxyParamCaption}\item[{char $\ast$}]{res\+\_\+file,  }\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+Reads nstep, time, dt, and arrays of \mbox{\hyperlink{struct_cons_s}{ConsS}} and interface B for each of the Grid structures in the restart file. ~\newline
+ 
+
+By the time this function is called (in Step 6 of \mbox{\hyperlink{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{main()}}), the Mesh hierarchy has already been re-\/initialized by \mbox{\hyperlink{init__mesh_8c_a916f9c7c3347abd0ff4e1acc00cd0f27}{init\+\_\+mesh()}} and \mbox{\hyperlink{init__grid_8c_a95667109c997592ac508a6f67e34b827}{init\+\_\+grid()}} in Step 4 of \mbox{\hyperlink{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{main()}} using parameters in the athinput file at the start of this restart file, the command line, or from a new input file. 
+
+Definition at line 56 of file restart.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a95d62260eb6486f98bc7508c87f3a91f}\label{prototypes_8h_a95d62260eb6486f98bc7508c87f3a91f}} 
+\index{prototypes.h@{prototypes.h}!RestrictCorrect@{RestrictCorrect}}
+\index{RestrictCorrect@{RestrictCorrect}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{RestrictCorrect()}{RestrictCorrect()}}
+{\footnotesize\ttfamily void Restrict\+Correct (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{prototypes_8h_af12bd9bac2a3f16550c28165ebc630e6}\label{prototypes_8h_af12bd9bac2a3f16550c28165ebc630e6}} 
+\index{prototypes.h@{prototypes.h}!show\_config@{show\_config}}
+\index{show\_config@{show\_config}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{show\_config()}{show\_config()}}
+{\footnotesize\ttfamily void show\+\_\+config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+The packages and features reported on by this functin should be kept consistent with the optional packages and features added by the file configure.\+ac in the top-\/level directory ~\newline
+ 
+
+
+
+Definition at line 23 of file show\+\_\+config.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a6e6c4b6195e06dbfc4aaa84629ad2988}\label{prototypes_8h_a6e6c4b6195e06dbfc4aaa84629ad2988}} 
+\index{prototypes.h@{prototypes.h}!show\_config\_par@{show\_config\_par}}
+\index{show\_config\_par@{show\_config\_par}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{show\_config\_par()}{show\_config\_par()}}
+{\footnotesize\ttfamily void show\+\_\+config\+\_\+par (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Add the configure block to the parameter database used by the functions in \mbox{\hyperlink{par_8c}{par.\+c}}. ~\newline
+ 
+
+
+
+Definition at line 192 of file show\+\_\+config.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_aff2126e5af14dfbd96aee3a0db267ffb}\label{prototypes_8h_aff2126e5af14dfbd96aee3a0db267ffb}} 
+\index{prototypes.h@{prototypes.h}!sign\_change@{sign\_change}}
+\index{sign\_change@{sign\_change}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{sign\_change()}{sign\_change()}}
+{\footnotesize\ttfamily int sign\+\_\+change (\begin{DoxyParamCaption}\item[{Real($\ast$)(const Real, const Real)}]{func,  }\item[{const Real}]{a0,  }\item[{const Real}]{b0,  }\item[{const Real}]{x,  }\item[{Real $\ast$}]{a,  }\item[{Real $\ast$}]{b }\end{DoxyParamCaption})}
+
+
+
+S\+E\+A\+R\+CH F\+OR A S\+I\+GN C\+H\+A\+N\+GE. ~\newline
+ 
+
+T\+H\+IS F\+U\+N\+C\+T\+I\+ON P\+A\+R\+T\+I\+T\+I\+O\+NS T\+HE I\+N\+T\+E\+R\+V\+AL (a0,b0) I\+N\+TO 2$^\wedge$k E\+Q\+U\+A\+L\+LY S\+P\+A\+C\+ED G\+R\+ID P\+O\+I\+N\+TS, E\+V\+A\+L\+U\+A\+T\+ES T\+HE F\+U\+N\+C\+T\+I\+ON f AT T\+H\+O\+SE P\+O\+I\+N\+TS, A\+ND T\+H\+EN S\+E\+A\+R\+C\+H\+ES F\+OR A S\+I\+GN C\+H\+A\+N\+GE IN f B\+E\+T\+W\+E\+EN A\+D\+J\+A\+C\+E\+NT G\+R\+ID P\+O\+I\+N\+TS. T\+HE F\+I\+R\+ST S\+U\+CH I\+N\+T\+E\+R\+V\+AL F\+O\+U\+ND, (a,b), IS R\+E\+T\+U\+R\+N\+ED. 
+
+Definition at line 650 of file utils.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a367c7c18ff1c30281f2abce33710663e}\label{prototypes_8h_a367c7c18ff1c30281f2abce33710663e}} 
+\index{prototypes.h@{prototypes.h}!SMR\_init@{SMR\_init}}
+\index{SMR\_init@{SMR\_init}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{SMR\_init()}{SMR\_init()}}
+{\footnotesize\ttfamily void S\+M\+R\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{prototypes_8h_a2bb742f07e587da602b911f7d1ed7092}\label{prototypes_8h_a2bb742f07e587da602b911f7d1ed7092}} 
+\index{prototypes.h@{prototypes.h}!trapzd@{trapzd}}
+\index{trapzd@{trapzd}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{trapzd()}{trapzd()}}
+{\footnotesize\ttfamily Real trapzd (\begin{DoxyParamCaption}\item[{Real($\ast$)(Real)}]{func,  }\item[{const Real}]{a,  }\item[{const Real}]{b,  }\item[{const int}]{n,  }\item[{const Real}]{s }\end{DoxyParamCaption})}
+
+
+
+T\+H\+IS R\+O\+U\+T\+I\+NE C\+O\+M\+P\+U\+T\+ES T\+HE n\+TH S\+T\+A\+GE OF R\+E\+F\+I\+N\+E\+M\+E\+NT OF AN E\+X\+T\+E\+N\+D\+ED T\+R\+A\+P\+E\+Z\+O\+I\+D\+AL R\+U\+LE. ~\newline
+ 
+
+func IS I\+N\+P\+UT AS A P\+O\+I\+N\+T\+ER TO T\+HE F\+U\+N\+C\+T\+I\+ON TO BE I\+N\+T\+E\+G\+R\+A\+T\+ED B\+E\+T\+W\+E\+EN L\+I\+M\+I\+TS a A\+ND b, A\+L\+SO I\+N\+P\+UT. W\+H\+EN C\+A\+L\+L\+ED W\+I\+TH n=1, T\+HE R\+O\+U\+T\+I\+NE R\+E\+T\+U\+R\+NS T\+HE C\+R\+U\+D\+E\+ST E\+S\+T\+I\+M\+A\+TE OF \textbackslash{}int\+\_\+a$^\wedge$b f(\+R) R dR. S\+U\+B\+S\+E\+Q\+U\+E\+NT C\+A\+L\+LS W\+I\+TH n=2,3,... (IN T\+H\+AT S\+E\+Q\+U\+E\+N\+T\+I\+AL O\+R\+D\+ER) W\+I\+LL I\+M\+P\+R\+O\+VE T\+HE A\+C\+C\+U\+R\+A\+CY BY A\+D\+D\+I\+NG 2n-\/2 A\+D\+D\+I\+T\+I\+O\+N\+AL I\+N\+T\+E\+R\+I\+OR P\+O\+I\+N\+TS. A\+D\+A\+P\+T\+ED F\+R\+OM N\+U\+M\+E\+R\+I\+C\+AL R\+E\+C\+I\+P\+ES BY A\+A\+R\+ON S\+K\+I\+N\+N\+ER 
+
+Definition at line 756 of file utils.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a5506a1df41ed88e038443271b9785337}\label{prototypes_8h_a5506a1df41ed88e038443271b9785337}} 
+\index{prototypes.h@{prototypes.h}!Userwork\_after\_loop@{Userwork\_after\_loop}}
+\index{Userwork\_after\_loop@{Userwork\_after\_loop}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{Userwork\_after\_loop()}{Userwork\_after\_loop()}}
+{\footnotesize\ttfamily void Userwork\+\_\+after\+\_\+loop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+Definition at line 150 of file blast.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a0ff640c24db1dc0d7c89d91f1d55ffce}\label{prototypes_8h_a0ff640c24db1dc0d7c89d91f1d55ffce}} 
+\index{prototypes.h@{prototypes.h}!Userwork\_in\_loop@{Userwork\_in\_loop}}
+\index{Userwork\_in\_loop@{Userwork\_in\_loop}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{Userwork\_in\_loop()}{Userwork\_in\_loop()}}
+{\footnotesize\ttfamily void Userwork\+\_\+in\+\_\+loop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+Definition at line 146 of file blast.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_ad2eaa784b3d190f1f823749a6d53f321}\label{prototypes_8h_ad2eaa784b3d190f1f823749a6d53f321}} 
+\index{prototypes.h@{prototypes.h}!vecpot2b1i@{vecpot2b1i}}
+\index{vecpot2b1i@{vecpot2b1i}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{vecpot2b1i()}{vecpot2b1i()}}
+{\footnotesize\ttfamily Real vecpot2b1i (\begin{DoxyParamCaption}\item[{Real($\ast$)(Real, Real, Real)}]{A2,  }\item[{Real($\ast$)(Real, Real, Real)}]{A3,  }\item[{const \mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$}]{pG,  }\item[{const int}]{i,  }\item[{const int}]{j,  }\item[{const int}]{k }\end{DoxyParamCaption})}
+
+
+
+Compute B-\/field components from a vector potential. 
+
+T\+H\+E\+SE F\+U\+N\+C\+T\+I\+O\+NS C\+O\+M\+P\+U\+TE M\+A\+G\+N\+E\+T\+IC F\+I\+E\+LD C\+O\+M\+P\+O\+N\+E\+N\+TS F\+R\+OM C\+O\+M\+P\+O\+N\+E\+N\+TS OF A S\+P\+E\+C\+I\+F\+I\+ED V\+E\+C\+T\+OR P\+O\+T\+E\+N\+T\+I\+AL U\+S\+I\+NG S\+T\+O\+K\+ES\textquotesingle{} T\+H\+E\+O\+R\+EM A\+ND S\+I\+M\+P\+S\+ON\textquotesingle{}S Q\+U\+A\+D\+R\+A\+T\+U\+RE. N\+O\+TE\+: T\+H\+IS IS O\+N\+LY G\+U\+A\+R\+A\+N\+T\+E\+ED TO W\+O\+RK IF T\+HE P\+O\+T\+E\+N\+T\+I\+AL IS OF C\+L\+A\+SS C$^\wedge$1. W\+R\+I\+T\+T\+EN BY A\+A\+R\+ON S\+K\+I\+N\+N\+ER. 
+
+Definition at line 975 of file utils.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_a926fab6ea9750cd860b98d9e7aaa50d1}\label{prototypes_8h_a926fab6ea9750cd860b98d9e7aaa50d1}} 
+\index{prototypes.h@{prototypes.h}!vecpot2b2i@{vecpot2b2i}}
+\index{vecpot2b2i@{vecpot2b2i}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{vecpot2b2i()}{vecpot2b2i()}}
+{\footnotesize\ttfamily Real vecpot2b2i (\begin{DoxyParamCaption}\item[{Real($\ast$)(Real, Real, Real)}]{A1,  }\item[{Real($\ast$)(Real, Real, Real)}]{A3,  }\item[{const \mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$}]{pG,  }\item[{const int}]{i,  }\item[{const int}]{j,  }\item[{const int}]{k }\end{DoxyParamCaption})}
+
+
+
+Compute B-\/field components from a vector potential. 
+
+T\+H\+E\+SE F\+U\+N\+C\+T\+I\+O\+NS C\+O\+M\+P\+U\+TE M\+A\+G\+N\+E\+T\+IC F\+I\+E\+LD C\+O\+M\+P\+O\+N\+E\+N\+TS F\+R\+OM C\+O\+M\+P\+O\+N\+E\+N\+TS OF A S\+P\+E\+C\+I\+F\+I\+ED V\+E\+C\+T\+OR P\+O\+T\+E\+N\+T\+I\+AL U\+S\+I\+NG S\+T\+O\+K\+ES\textquotesingle{} T\+H\+E\+O\+R\+EM A\+ND S\+I\+M\+P\+S\+ON\textquotesingle{}S Q\+U\+A\+D\+R\+A\+T\+U\+RE. N\+O\+TE\+: T\+H\+IS IS O\+N\+LY G\+U\+A\+R\+A\+N\+T\+E\+ED TO W\+O\+RK IF T\+HE P\+O\+T\+E\+N\+T\+I\+AL IS OF C\+L\+A\+SS C$^\wedge$1. W\+R\+I\+T\+T\+EN BY A\+A\+R\+ON S\+K\+I\+N\+N\+ER. 
+
+Definition at line 1031 of file utils.\+c.
+
+\mbox{\Hypertarget{prototypes_8h_abaf65b9c282ca0e685cabcac9864822f}\label{prototypes_8h_abaf65b9c282ca0e685cabcac9864822f}} 
+\index{prototypes.h@{prototypes.h}!vecpot2b3i@{vecpot2b3i}}
+\index{vecpot2b3i@{vecpot2b3i}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{vecpot2b3i()}{vecpot2b3i()}}
+{\footnotesize\ttfamily Real vecpot2b3i (\begin{DoxyParamCaption}\item[{Real($\ast$)(Real, Real, Real)}]{A1,  }\item[{Real($\ast$)(Real, Real, Real)}]{A2,  }\item[{const \mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$}]{pG,  }\item[{const int}]{i,  }\item[{const int}]{j,  }\item[{const int}]{k }\end{DoxyParamCaption})}
+
+
+
+Compute B-\/field components from a vector potential. 
+
+T\+H\+E\+SE F\+U\+N\+C\+T\+I\+O\+NS C\+O\+M\+P\+U\+TE M\+A\+G\+N\+E\+T\+IC F\+I\+E\+LD C\+O\+M\+P\+O\+N\+E\+N\+TS F\+R\+OM C\+O\+M\+P\+O\+N\+E\+N\+TS OF A S\+P\+E\+C\+I\+F\+I\+ED V\+E\+C\+T\+OR P\+O\+T\+E\+N\+T\+I\+AL U\+S\+I\+NG S\+T\+O\+K\+ES\textquotesingle{} T\+H\+E\+O\+R\+EM A\+ND S\+I\+M\+P\+S\+ON\textquotesingle{}S Q\+U\+A\+D\+R\+A\+T\+U\+RE. N\+O\+TE\+: T\+H\+IS IS O\+N\+LY G\+U\+A\+R\+A\+N\+T\+E\+ED TO W\+O\+RK IF T\+HE P\+O\+T\+E\+N\+T\+I\+AL IS OF C\+L\+A\+SS C$^\wedge$1. W\+R\+I\+T\+T\+EN BY A\+A\+R\+ON S\+K\+I\+N\+N\+ER. 
+
+Definition at line 1083 of file utils.\+c.
+

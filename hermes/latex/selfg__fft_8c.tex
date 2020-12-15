@@ -1,0 +1,38 @@
+\hypertarget{selfg__fft_8c}{}\doxysection{src/gravity/selfg\+\_\+fft.c File Reference}
+\label{selfg__fft_8c}\index{src/gravity/selfg\_fft.c@{src/gravity/selfg\_fft.c}}
+
+
+Contains functions to solve Poisson\textquotesingle{}s equation for self-\/gravity in 1D, 2D and 3D using F\+F\+Ts (actually, the 1D algorithm uses Forward Elimination followed by Back Substitution\+: F\+E\+BS).  
+
+
+{\ttfamily \#include \char`\"{}../copyright.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$float.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../athena.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prototypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../prototypes.\+h\char`\"{}}\newline
+
+
+\doxysubsection{Detailed Description}
+Contains functions to solve Poisson\textquotesingle{}s equation for self-\/gravity in 1D, 2D and 3D using F\+F\+Ts (actually, the 1D algorithm uses Forward Elimination followed by Back Substitution\+: F\+E\+BS). 
+
+These functions require P\+E\+R\+I\+O\+D\+IC B\+Cs and use the Jeans swindle.
+
+The 2D and 3D f\textquotesingle{}ns use F\+F\+T\+W3.\+x, and for M\+PI parallel use Steve Plimpton\textquotesingle{}s block decomposition routines added by N. Lemaster to /athena/fftsrc. This means to use these fns the code must be
+\begin{DoxyItemize}
+\item (1) configured with --with-\/gravity=fft --enable-\/fft
+\item (2) compiled with links to F\+F\+TW libraries (may need to edit Makeoptions)
+\end{DoxyItemize}
+
+For N\+O\+N-\/\+P\+E\+R\+I\+O\+D\+IC B\+Cs, use selfg\+\_\+multig() functions.
+
+C\+O\+N\+T\+A\+I\+NS P\+U\+B\+L\+IC F\+U\+N\+C\+T\+I\+O\+NS\+:
+\begin{DoxyItemize}
+\item selfg\+\_\+fft\+\_\+1d() -\/ actually uses F\+E\+BS
+\item selfg\+\_\+fft\+\_\+2d() -\/ 2D Poisson solver using F\+F\+Ts
+\item selfg\+\_\+fft\+\_\+3d() -\/ 3D Poisson solver using F\+F\+Ts
+\item selfg\+\_\+fft\+\_\+2d\+\_\+init() -\/ initializes F\+FT plans for 2D
+\item selfg\+\_\+fft\+\_\+3d\+\_\+init() -\/ initializes F\+FT plans for 3D 
+\end{DoxyItemize}

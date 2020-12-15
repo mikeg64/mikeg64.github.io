@@ -1,0 +1,395 @@
+\hypertarget{par_8c}{}\doxysection{src/par.c File Reference}
+\label{par_8c}\index{src/par.c@{src/par.c}}
+
+
+Set of routines to provide simple access to a R/O parameter file.  
+
+
+{\ttfamily \#include \char`\"{}copyright.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prototypes.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_par__s}{Par\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_block__s}{Block\+\_\+s}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_par__s}{Par\+\_\+s}} \mbox{\hyperlink{par_8c_ab3ea2feb9406b910fafc9c848171dd22}{Par}}
+\item 
+typedef struct \mbox{\hyperlink{struct_block__s}{Block\+\_\+s}} \mbox{\hyperlink{par_8c_af2a833055d90bc2d4ede107273fa4707}{Block}}
+\item 
+typedef void($\ast$ \mbox{\hyperlink{par_8c_a535d4c72bfa4b0750b80d740a6a8f5b8}{proc}}) (void)
+\begin{DoxyCompactList}\small\item\em function pointer type \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{par_8c_a51bf477c23288addfbe64edebd59d946}{par\+\_\+debug}} (int level)
+\begin{DoxyCompactList}\small\item\em Set debug flag to level. Call with argument=1 to enable diagnositc output. Alas, not really for the outside world to use. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{par_8c_a6a4b49cc9265c8a71f9265452073aa00}{par\+\_\+open}} (char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em Open a parameter file for R/O access. ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{par_8c_af4526137969aecd4928c354f8bf011ea}{par\+\_\+cmdline}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Parse a commandline, very forgiving (no warnings) when not in the right block/name=value format. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{par_8c_ad7ff0f7b4cee0ec0751000359a117093}{par\+\_\+exist}} (char $\ast$block, char $\ast$\mbox{\hyperlink{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}{name}})
+\begin{DoxyCompactList}\small\item\em Return 0 or 1 if a block/name exists. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{par_8c_a40b778a24bb0d47d69a023ec5c3276e7}{par\+\_\+gets}} (char $\ast$block, char $\ast$\mbox{\hyperlink{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}{name}})
+\begin{DoxyCompactList}\small\item\em Return a string. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{par_8c_ac03bbd5713f3a93db722aea8d1c1b5c0}{par\+\_\+geti}} (char $\ast$block, char $\ast$\mbox{\hyperlink{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}{name}})
+\begin{DoxyCompactList}\small\item\em Return an integer. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{par_8c_ac234e8c1085523fa6adcd6d4f48281b5}{par\+\_\+getd}} (char $\ast$block, char $\ast$\mbox{\hyperlink{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}{name}})
+\begin{DoxyCompactList}\small\item\em Return a Real value. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{par_8c_a5951ebb5008d962e7625020fe177b66b}{par\+\_\+gets\+\_\+def}} (char $\ast$block, char $\ast$\mbox{\hyperlink{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}{name}}, char $\ast$def)
+\begin{DoxyCompactList}\small\item\em Return string $\ast$name in $\ast$block if it exists, else use the string $\ast$def as a default value. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{par_8c_a789945c886abda300582ff5511c0a029}{par\+\_\+geti\+\_\+def}} (char $\ast$block, char $\ast$\mbox{\hyperlink{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}{name}}, int def)
+\begin{DoxyCompactList}\small\item\em Return integer $\ast$name in $\ast$block if it exists, else use the integer def as a default value. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{par_8c_a0f36a2890d652e2c2ca86d72c91cc8cf}{par\+\_\+getd\+\_\+def}} (char $\ast$block, char $\ast$\mbox{\hyperlink{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}{name}}, double def)
+\begin{DoxyCompactList}\small\item\em Return double $\ast$name in $\ast$block if it exists, else use the double def as a default value ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{par_8c_a38fb6cd1c2178aea355f342578f7796d}{par\+\_\+sets}} (char $\ast$block, char $\ast$\mbox{\hyperlink{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}{name}}, char $\ast$sval, char $\ast$comment)
+\begin{DoxyCompactList}\small\item\em Set or add a string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{par_8c_a92384b69c20d713c9e3f9f45234765a5}{par\+\_\+seti}} (char $\ast$block, char $\ast$\mbox{\hyperlink{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}{name}}, char $\ast$fmt, int ival, char $\ast$comment)
+\begin{DoxyCompactList}\small\item\em Set or add an integer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{par_8c_aca86a680715a5deb34d96dc9d4279edd}{par\+\_\+setd}} (char $\ast$block, char $\ast$\mbox{\hyperlink{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}{name}}, char $\ast$fmt, double dval, char $\ast$comment)
+\begin{DoxyCompactList}\small\item\em Set or add a double. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{par_8c_a0a1296aa610308e1d4cb8c334a1d0c57}{par\+\_\+dump}} (int \mbox{\hyperlink{iotypes_8h_a1a6b6fb557d8d37d59700faf4e4c9167}{mode}}, F\+I\+LE $\ast$fp)
+\begin{DoxyCompactList}\small\item\em Debugging aid\+: print out the current status of all Blocks/\+Pars. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{par_8c_a90709646bfed7d95dff41d30d67e4d81}{par\+\_\+close}} (void)
+\begin{DoxyCompactList}\small\item\em Close up shop, free memory ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Set of routines to provide simple access to a R/O parameter file. 
+
+P\+U\+R\+P\+O\+SE\+: set of routines to provide simple access to a R/O parameter file slightly modeled after F\+O\+R\+T\+R\+AN namelist. Parameters can also be read directly from the commandline in the same format.
+
+E\+X\+A\+M\+P\+LE of input file in \textquotesingle{}par\textquotesingle{} format\+:
+\begin{DoxyItemize}
+\item $<$blockname1$>$ \# block name; should be on a line by itself
+\item name1 = value1 \# whitespace around the = is optional
+\item \# blank lines between blocks are OK
+\item $<$blockname2$>$ \# start new block
+\item name1 = value1 \# note that name1 can appear in different blocks
+\item name2 = value2 \#
+\item 
+\item $<$blockname1$>$ \# same blockname can re-\/appear, though is a bit odd
+\item name3 = value3 \# this would be the 3rd name in this block
+\end{DoxyItemize}
+
+L\+I\+M\+I\+T\+A\+T\+I\+O\+NS\+:
+\begin{DoxyItemize}
+\item M\+A\+X\+L\+EN means static strings; could make fancier dynamic string reader
+\item blocknames and parameters (key=val\+::comment) are all single-\/line based
+\end{DoxyItemize}
+
+H\+I\+S\+T\+O\+RY\+:
+\begin{DoxyItemize}
+\item 15-\/nov-\/2002 Created for the Athena/\+Cambridge release 1.\+0 -- Peter Teuben
+\item 18-\/nov-\/2002 added \mbox{\hyperlink{par_8c_af4526137969aecd4928c354f8bf011ea}{par\+\_\+cmdline()}} -- P\+JT
+\item 6-\/jan-\/2003 made the public par\+\_\+get\+X() routines -- P\+JT
+\item 6-\/jan-\/2003 Implemented par\+\_\+set\+X() routines -- Thomas A. Gardiner
+\item 7-\/jan-\/2003 add\+\_\+block() find or add a named block -- T\+AG
+\item 7-\/jan-\/2003 add\+\_\+par() split into add\+\_\+par() and add\+\_\+par\+\_\+line() -- T\+AG
+\item 7-\/jan-\/2003 mode = 0, \mbox{\hyperlink{par_8c_a0a1296aa610308e1d4cb8c334a1d0c57}{par\+\_\+dump()}} outputs the comment field -- T\+AG
+\item 9-\/jan-\/2003 add\+\_\+par() only overwrites a comment field in an existing par if the input comment is != N\+U\+LL. -- T\+AG
+\item 9-\/jan-\/2003 Column aligned format added to mode=0, \mbox{\hyperlink{par_8c_a0a1296aa610308e1d4cb8c334a1d0c57}{par\+\_\+dump()}} -- T\+AG
+\item 1-\/mar-\/2004 Moved error out to \mbox{\hyperlink{utils_8c}{utils.\+c}} as \mbox{\hyperlink{prototypes_8h_ab4a402b1bd69e8f49435ee8fe45ecce6}{ath\+\_\+error()}} -- P\+JT
+\item 2-\/apr-\/2004 Added the get\+\_\+par\+\_\+def routines -- P\+JT
+\end{DoxyItemize}
+
+C\+O\+N\+T\+A\+I\+NS P\+U\+B\+L\+IC F\+U\+N\+C\+T\+I\+O\+NS\+:
+\begin{DoxyItemize}
+\item int \mbox{\hyperlink{par_8c_a6a4b49cc9265c8a71f9265452073aa00}{par\+\_\+open()}} -\/ open and read a parameter file for R/O access
+\item void \mbox{\hyperlink{par_8c_af4526137969aecd4928c354f8bf011ea}{par\+\_\+cmdline()}} -\/ parse a commandline, extract parameters
+\item int \mbox{\hyperlink{par_8c_ad7ff0f7b4cee0ec0751000359a117093}{par\+\_\+exist()}} -\/ returns 0 if block/name exists
+\item char $\ast$par\+\_\+gets() -\/ returns a string from input field
+\item int \mbox{\hyperlink{par_8c_ac03bbd5713f3a93db722aea8d1c1b5c0}{par\+\_\+geti()}} -\/ returns an integer from the input field
+\item double \mbox{\hyperlink{par_8c_ac234e8c1085523fa6adcd6d4f48281b5}{par\+\_\+getd()}} -\/ returns a Real from the input field
+\item char $\ast$par\+\_\+gets\+\_\+def() -\/ set string to input value, or default
+\item int \mbox{\hyperlink{par_8c_a789945c886abda300582ff5511c0a029}{par\+\_\+geti\+\_\+def()}} -\/ set int to input value, or default
+\item double \mbox{\hyperlink{par_8c_a0f36a2890d652e2c2ca86d72c91cc8cf}{par\+\_\+getd\+\_\+def()}} -\/ set double to input value, or default
+\item void \mbox{\hyperlink{par_8c_a38fb6cd1c2178aea355f342578f7796d}{par\+\_\+sets()}} -\/ sets/adds a string
+\item void \mbox{\hyperlink{par_8c_a92384b69c20d713c9e3f9f45234765a5}{par\+\_\+seti()}} -\/ sets/adds an integer
+\item void \mbox{\hyperlink{par_8c_aca86a680715a5deb34d96dc9d4279edd}{par\+\_\+setd()}} -\/ sets/adds a Real
+\item void \mbox{\hyperlink{par_8c_a0a1296aa610308e1d4cb8c334a1d0c57}{par\+\_\+dump()}} -\/ print out all Blocks/\+Pars for debugging
+\item void \mbox{\hyperlink{par_8c_a90709646bfed7d95dff41d30d67e4d81}{par\+\_\+close()}} -\/ free memory
+\item void par\+\_\+dist\+\_\+mpi() -\/ broadcast Blocks and Pars to children in M\+PI
+\end{DoxyItemize}
+
+V\+A\+R\+I\+A\+B\+LE T\+Y\+PE A\+ND S\+T\+R\+U\+C\+T\+U\+RE D\+E\+F\+I\+N\+I\+T\+I\+O\+NS\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{struct_par__s}{Par\+\_\+s}} -\/ linked list of parameters
+\item \mbox{\hyperlink{struct_block__s}{Block\+\_\+s}} -\/ linked list of Pars ~\newline
+
+\end{DoxyItemize}
+
+P\+R\+I\+V\+A\+TE F\+U\+N\+C\+T\+I\+ON P\+R\+O\+T\+O\+T\+Y\+P\+ES\+:
+\begin{DoxyItemize}
+\item allocate() -\/ wrapper for calloc which terminates code on failure
+\item my\+\_\+strdup() -\/ wrapper for strdup which terminates code on failure
+\item skipwhite() -\/ returns pointer to next non-\/whitespace
+\item str\+\_\+term() -\/ remove whitespace at end of string
+\item line\+\_\+block\+\_\+name()-\/ extract block name
+\item add\+\_\+par() -\/ add \char`\"{}name = value \# comment\char`\"{} to \mbox{\hyperlink{struct_par}{Par}} list
+\item add\+\_\+par\+\_\+line() -\/ parse line and add it to a block
+\item add\+\_\+block() -\/ find or add a new named block
+\item find\+\_\+block() -\/ check if a \mbox{\hyperlink{struct_block}{Block}} name already exists
+\item find\+\_\+par() -\/ check if a \mbox{\hyperlink{struct_block}{Block}} contains a \mbox{\hyperlink{struct_par}{Par}} with certain name
+\item free\+\_\+all -\/ free all Blocks/\+Pars
+\item par\+\_\+getsl -\/ return string, for use of local functions only
+\item \mbox{\hyperlink{par_8c_a51bf477c23288addfbe64edebd59d946}{par\+\_\+debug()}} -\/ sets debug level in test program
+\item \mbox{\hyperlink{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{main()}} -\/ test program for par package 
+\end{DoxyItemize}
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{par_8c_af2a833055d90bc2d4ede107273fa4707}\label{par_8c_af2a833055d90bc2d4ede107273fa4707}} 
+\index{par.c@{par.c}!Block@{Block}}
+\index{Block@{Block}!par.c@{par.c}}
+\doxysubsubsection{\texorpdfstring{Block}{Block}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_block__s}{Block\+\_\+s}} \mbox{\hyperlink{struct_block}{Block}}}
+
+\mbox{\Hypertarget{par_8c_ab3ea2feb9406b910fafc9c848171dd22}\label{par_8c_ab3ea2feb9406b910fafc9c848171dd22}} 
+\index{par.c@{par.c}!Par@{Par}}
+\index{Par@{Par}!par.c@{par.c}}
+\doxysubsubsection{\texorpdfstring{Par}{Par}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_par__s}{Par\+\_\+s}} \mbox{\hyperlink{struct_par}{Par}}}
+
+\mbox{\Hypertarget{par_8c_a535d4c72bfa4b0750b80d740a6a8f5b8}\label{par_8c_a535d4c72bfa4b0750b80d740a6a8f5b8}} 
+\index{par.c@{par.c}!proc@{proc}}
+\index{proc@{proc}!par.c@{par.c}}
+\doxysubsubsection{\texorpdfstring{proc}{proc}}
+{\footnotesize\ttfamily void($\ast$ proc)(void)}
+
+
+
+function pointer type 
+
+
+
+Definition at line 110 of file par.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{par_8c_a90709646bfed7d95dff41d30d67e4d81}\label{par_8c_a90709646bfed7d95dff41d30d67e4d81}} 
+\index{par.c@{par.c}!par\_close@{par\_close}}
+\index{par\_close@{par\_close}!par.c@{par.c}}
+\doxysubsubsection{\texorpdfstring{par\_close()}{par\_close()}}
+{\footnotesize\ttfamily void par\+\_\+close (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Close up shop, free memory ~\newline
+ 
+
+
+
+Definition at line 418 of file par.\+c.
+
+\mbox{\Hypertarget{par_8c_af4526137969aecd4928c354f8bf011ea}\label{par_8c_af4526137969aecd4928c354f8bf011ea}} 
+\index{par.c@{par.c}!par\_cmdline@{par\_cmdline}}
+\index{par\_cmdline@{par\_cmdline}!par.c@{par.c}}
+\doxysubsubsection{\texorpdfstring{par\_cmdline()}{par\_cmdline()}}
+{\footnotesize\ttfamily void par\+\_\+cmdline (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Parse a commandline, very forgiving (no warnings) when not in the right block/name=value format. 
+
+
+
+Definition at line 194 of file par.\+c.
+
+\mbox{\Hypertarget{par_8c_a51bf477c23288addfbe64edebd59d946}\label{par_8c_a51bf477c23288addfbe64edebd59d946}} 
+\index{par.c@{par.c}!par\_debug@{par\_debug}}
+\index{par\_debug@{par\_debug}!par.c@{par.c}}
+\doxysubsubsection{\texorpdfstring{par\_debug()}{par\_debug()}}
+{\footnotesize\ttfamily void par\+\_\+debug (\begin{DoxyParamCaption}\item[{int}]{level }\end{DoxyParamCaption})}
+
+
+
+Set debug flag to level. Call with argument=1 to enable diagnositc output. Alas, not really for the outside world to use. 
+
+
+
+Definition at line 827 of file par.\+c.
+
+\mbox{\Hypertarget{par_8c_a0a1296aa610308e1d4cb8c334a1d0c57}\label{par_8c_a0a1296aa610308e1d4cb8c334a1d0c57}} 
+\index{par.c@{par.c}!par\_dump@{par\_dump}}
+\index{par\_dump@{par\_dump}!par.c@{par.c}}
+\doxysubsubsection{\texorpdfstring{par\_dump()}{par\_dump()}}
+{\footnotesize\ttfamily void par\+\_\+dump (\begin{DoxyParamCaption}\item[{int}]{mode,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Debugging aid\+: print out the current status of all Blocks/\+Pars. 
+
+
+
+Definition at line 377 of file par.\+c.
+
+\mbox{\Hypertarget{par_8c_ad7ff0f7b4cee0ec0751000359a117093}\label{par_8c_ad7ff0f7b4cee0ec0751000359a117093}} 
+\index{par.c@{par.c}!par\_exist@{par\_exist}}
+\index{par\_exist@{par\_exist}!par.c@{par.c}}
+\doxysubsubsection{\texorpdfstring{par\_exist()}{par\_exist()}}
+{\footnotesize\ttfamily int par\+\_\+exist (\begin{DoxyParamCaption}\item[{char $\ast$}]{block,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+Return 0 or 1 if a block/name exists. 
+
+
+
+Definition at line 239 of file par.\+c.
+
+\mbox{\Hypertarget{par_8c_ac234e8c1085523fa6adcd6d4f48281b5}\label{par_8c_ac234e8c1085523fa6adcd6d4f48281b5}} 
+\index{par.c@{par.c}!par\_getd@{par\_getd}}
+\index{par\_getd@{par\_getd}!par.c@{par.c}}
+\doxysubsubsection{\texorpdfstring{par\_getd()}{par\_getd()}}
+{\footnotesize\ttfamily double par\+\_\+getd (\begin{DoxyParamCaption}\item[{char $\ast$}]{block,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+Return a Real value. 
+
+
+
+Definition at line 277 of file par.\+c.
+
+\mbox{\Hypertarget{par_8c_a0f36a2890d652e2c2ca86d72c91cc8cf}\label{par_8c_a0f36a2890d652e2c2ca86d72c91cc8cf}} 
+\index{par.c@{par.c}!par\_getd\_def@{par\_getd\_def}}
+\index{par\_getd\_def@{par\_getd\_def}!par.c@{par.c}}
+\doxysubsubsection{\texorpdfstring{par\_getd\_def()}{par\_getd\_def()}}
+{\footnotesize\ttfamily double par\+\_\+getd\+\_\+def (\begin{DoxyParamCaption}\item[{char $\ast$}]{block,  }\item[{char $\ast$}]{name,  }\item[{double}]{def }\end{DoxyParamCaption})}
+
+
+
+Return double $\ast$name in $\ast$block if it exists, else use the double def as a default value ~\newline
+ 
+
+
+
+Definition at line 320 of file par.\+c.
+
+\mbox{\Hypertarget{par_8c_ac03bbd5713f3a93db722aea8d1c1b5c0}\label{par_8c_ac03bbd5713f3a93db722aea8d1c1b5c0}} 
+\index{par.c@{par.c}!par\_geti@{par\_geti}}
+\index{par\_geti@{par\_geti}!par.c@{par.c}}
+\doxysubsubsection{\texorpdfstring{par\_geti()}{par\_geti()}}
+{\footnotesize\ttfamily int par\+\_\+geti (\begin{DoxyParamCaption}\item[{char $\ast$}]{block,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+Return an integer. 
+
+
+
+Definition at line 267 of file par.\+c.
+
+\mbox{\Hypertarget{par_8c_a789945c886abda300582ff5511c0a029}\label{par_8c_a789945c886abda300582ff5511c0a029}} 
+\index{par.c@{par.c}!par\_geti\_def@{par\_geti\_def}}
+\index{par\_geti\_def@{par\_geti\_def}!par.c@{par.c}}
+\doxysubsubsection{\texorpdfstring{par\_geti\_def()}{par\_geti\_def()}}
+{\footnotesize\ttfamily int par\+\_\+geti\+\_\+def (\begin{DoxyParamCaption}\item[{char $\ast$}]{block,  }\item[{char $\ast$}]{name,  }\item[{int}]{def }\end{DoxyParamCaption})}
+
+
+
+Return integer $\ast$name in $\ast$block if it exists, else use the integer def as a default value. 
+
+
+
+Definition at line 304 of file par.\+c.
+
+\mbox{\Hypertarget{par_8c_a40b778a24bb0d47d69a023ec5c3276e7}\label{par_8c_a40b778a24bb0d47d69a023ec5c3276e7}} 
+\index{par.c@{par.c}!par\_gets@{par\_gets}}
+\index{par\_gets@{par\_gets}!par.c@{par.c}}
+\doxysubsubsection{\texorpdfstring{par\_gets()}{par\_gets()}}
+{\footnotesize\ttfamily char $\ast$ par\+\_\+gets (\begin{DoxyParamCaption}\item[{char $\ast$}]{block,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+Return a string. 
+
+
+
+Definition at line 257 of file par.\+c.
+
+\mbox{\Hypertarget{par_8c_a5951ebb5008d962e7625020fe177b66b}\label{par_8c_a5951ebb5008d962e7625020fe177b66b}} 
+\index{par.c@{par.c}!par\_gets\_def@{par\_gets\_def}}
+\index{par\_gets\_def@{par\_gets\_def}!par.c@{par.c}}
+\doxysubsubsection{\texorpdfstring{par\_gets\_def()}{par\_gets\_def()}}
+{\footnotesize\ttfamily char $\ast$ par\+\_\+gets\+\_\+def (\begin{DoxyParamCaption}\item[{char $\ast$}]{block,  }\item[{char $\ast$}]{name,  }\item[{char $\ast$}]{def }\end{DoxyParamCaption})}
+
+
+
+Return string $\ast$name in $\ast$block if it exists, else use the string $\ast$def as a default value. 
+
+
+
+Definition at line 288 of file par.\+c.
+
+\mbox{\Hypertarget{par_8c_a6a4b49cc9265c8a71f9265452073aa00}\label{par_8c_a6a4b49cc9265c8a71f9265452073aa00}} 
+\index{par.c@{par.c}!par\_open@{par\_open}}
+\index{par\_open@{par\_open}!par.c@{par.c}}
+\doxysubsubsection{\texorpdfstring{par\_open()}{par\_open()}}
+{\footnotesize\ttfamily void par\+\_\+open (\begin{DoxyParamCaption}\item[{char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+
+
+Open a parameter file for R/O access. ~\newline
+ 
+
+Lines read from the file are locally patched; all names, values and comments are allocated and put into a linked list of \mbox{\hyperlink{struct_block}{Block}}\textquotesingle{}s and \mbox{\hyperlink{struct_par}{Par}}\textquotesingle{}s. 
+
+Definition at line 156 of file par.\+c.
+
+\mbox{\Hypertarget{par_8c_aca86a680715a5deb34d96dc9d4279edd}\label{par_8c_aca86a680715a5deb34d96dc9d4279edd}} 
+\index{par.c@{par.c}!par\_setd@{par\_setd}}
+\index{par\_setd@{par\_setd}!par.c@{par.c}}
+\doxysubsubsection{\texorpdfstring{par\_setd()}{par\_setd()}}
+{\footnotesize\ttfamily void par\+\_\+setd (\begin{DoxyParamCaption}\item[{char $\ast$}]{block,  }\item[{char $\ast$}]{name,  }\item[{char $\ast$}]{fmt,  }\item[{double}]{dval,  }\item[{char $\ast$}]{comment }\end{DoxyParamCaption})}
+
+
+
+Set or add a double. 
+
+
+
+Definition at line 363 of file par.\+c.
+
+\mbox{\Hypertarget{par_8c_a92384b69c20d713c9e3f9f45234765a5}\label{par_8c_a92384b69c20d713c9e3f9f45234765a5}} 
+\index{par.c@{par.c}!par\_seti@{par\_seti}}
+\index{par\_seti@{par\_seti}!par.c@{par.c}}
+\doxysubsubsection{\texorpdfstring{par\_seti()}{par\_seti()}}
+{\footnotesize\ttfamily void par\+\_\+seti (\begin{DoxyParamCaption}\item[{char $\ast$}]{block,  }\item[{char $\ast$}]{name,  }\item[{char $\ast$}]{fmt,  }\item[{int}]{ival,  }\item[{char $\ast$}]{comment }\end{DoxyParamCaption})}
+
+
+
+Set or add an integer. 
+
+
+
+Definition at line 348 of file par.\+c.
+
+\mbox{\Hypertarget{par_8c_a38fb6cd1c2178aea355f342578f7796d}\label{par_8c_a38fb6cd1c2178aea355f342578f7796d}} 
+\index{par.c@{par.c}!par\_sets@{par\_sets}}
+\index{par\_sets@{par\_sets}!par.c@{par.c}}
+\doxysubsubsection{\texorpdfstring{par\_sets()}{par\_sets()}}
+{\footnotesize\ttfamily void par\+\_\+sets (\begin{DoxyParamCaption}\item[{char $\ast$}]{block,  }\item[{char $\ast$}]{name,  }\item[{char $\ast$}]{sval,  }\item[{char $\ast$}]{comment }\end{DoxyParamCaption})}
+
+
+
+Set or add a string. 
+
+
+
+Definition at line 335 of file par.\+c.
+

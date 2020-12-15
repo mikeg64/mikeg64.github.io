@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['p_1628',['P',['../struct_prim__s.html#aa5452d35a39d2c0779a864b25ce5fb98',1,'Prim_s::P()'],['../struct_prim1_d__s.html#aa5452d35a39d2c0779a864b25ce5fb98',1,'Prim1D_s::P()'],['../struct_block__s.html#aa0594b88656606cbccbefbcb3d75bd97',1,'Block_s::p()']]],
+  ['pack_1629',['pack',['../structremap__plan__2d.html#ad498b1ae10da34d1ddc3e6b4f63d1c7a',1,'remap_plan_2d::pack()'],['../structremap__plan__3d.html#ad498b1ae10da34d1ddc3e6b4f63d1c7a',1,'remap_plan_3d::pack()']]],
+  ['packplan_1630',['packplan',['../structremap__plan__2d.html#a31e8ae97d030ea02628d2fa8258de02a',1,'remap_plan_2d::packplan()'],['../structremap__plan__3d.html#aa5e53c14706c93646d91fd97b7b16616',1,'remap_plan_3d::packplan()']]],
+  ['palette_1631',['palette',['../struct_output__s.html#a24fbd8c514283aac35c51d23d089c62e',1,'Output_s']]],
+  ['plan_5ffast_5fbackward_1632',['plan_fast_backward',['../structfft__plan__2d.html#abeb86edd50c1f9824852556d139d26de',1,'fft_plan_2d::plan_fast_backward()'],['../structfft__plan__3d.html#abeb86edd50c1f9824852556d139d26de',1,'fft_plan_3d::plan_fast_backward()']]],
+  ['plan_5ffast_5fforward_1633',['plan_fast_forward',['../structfft__plan__2d.html#a246be427af0bddf6f88a80e5a3e5ee55',1,'fft_plan_2d::plan_fast_forward()'],['../structfft__plan__3d.html#a246be427af0bddf6f88a80e5a3e5ee55',1,'fft_plan_3d::plan_fast_forward()']]],
+  ['plan_5fmid_5fbackward_1634',['plan_mid_backward',['../structfft__plan__3d.html#a9a9d81c53a548f5c8ad8b982462e7c6a',1,'fft_plan_3d']]],
+  ['plan_5fmid_5fforward_1635',['plan_mid_forward',['../structfft__plan__3d.html#a31e46560a45a27d7d0cd841d5879dced',1,'fft_plan_3d']]],
+  ['plan_5fslow_5fbackward_1636',['plan_slow_backward',['../structfft__plan__2d.html#ab2aa82a8efb9d4f01967e592ba67285e',1,'fft_plan_2d::plan_slow_backward()'],['../structfft__plan__3d.html#ab2aa82a8efb9d4f01967e592ba67285e',1,'fft_plan_3d::plan_slow_backward()']]],
+  ['plan_5fslow_5fforward_1637',['plan_slow_forward',['../structfft__plan__2d.html#a477b332599a92b3e5f234dde05994824',1,'fft_plan_2d::plan_slow_forward()'],['../structfft__plan__3d.html#a477b332599a92b3e5f234dde05994824',1,'fft_plan_3d::plan_slow_forward()']]],
+  ['platform_1638',['platform',['../struct_meta.html#a1a0fc1d5051af323d74f096b412da680',1,'Meta']]],
+  ['pmax_1639',['pmax',['../structparams.html#a0b41955d57477b71c3bb96113c6b138e',1,'params']]],
+  ['pmean_1640',['pmean',['../structparams.html#a9a71ea732c4da57af0472ed5f11a6e17',1,'params']]],
+  ['pmin_1641',['pmin',['../structparams.html#adb7404812ba488443cafa115fbc1bef1',1,'params']]],
+  ['port_1642',['port',['../struct_iome.html#a63c89c04d1feae07ca35558055155ffb',1,'Iome']]],
+  ['post_5fplan_1643',['post_plan',['../structfft__plan__2d.html#af075a8967217b0ab3b2100383f8f0fca',1,'fft_plan_2d::post_plan()'],['../structfft__plan__3d.html#afab91ca7604c5fcf775e89e37e3686b1',1,'fft_plan_3d::post_plan()']]],
+  ['pre_5fplan_1644',['pre_plan',['../structfft__plan__2d.html#a1ee1051e8ebd9ebbe5144fa599dd1ac6',1,'fft_plan_2d::pre_plan()'],['../structfft__plan__3d.html#ac849faa0c063ce2b2a7b7254bf4b2ee5',1,'fft_plan_3d::pre_plan()']]],
+  ['pre_5ftarget_1645',['pre_target',['../structfft__plan__2d.html#ab5f0f2c507eccf67eb502507096edf32',1,'fft_plan_2d::pre_target()'],['../structfft__plan__3d.html#ab5f0f2c507eccf67eb502507096edf32',1,'fft_plan_3d::pre_target()']]]
+];

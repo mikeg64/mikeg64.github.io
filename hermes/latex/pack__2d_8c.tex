@@ -1,0 +1,87 @@
+\hypertarget{pack__2d_8c}{}\doxysection{src/fftsrc/pack\+\_\+2d.c File Reference}
+\label{pack__2d_8c}\index{src/fftsrc/pack\_2d.c@{src/fftsrc/pack\_2d.c}}
+{\ttfamily \#include \char`\"{}pack\+\_\+2d.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pack__2d_8c_a58cc9f256201c7ec20588ae55490e30f}{P\+A\+C\+K\+\_\+\+A\+R\+R\+AY}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{pack__2d_8c_a18221a3cb45b102609541a9075bf04a7}{pack\+\_\+2d}} (double $\ast$data, double $\ast$buf, struct \mbox{\hyperlink{structpack__plan__2d}{pack\+\_\+plan\+\_\+2d}} $\ast$plan)
+\item 
+void \mbox{\hyperlink{pack__2d_8c_a9f7df67f58f0029c977e453222970ea4}{unpack\+\_\+2d}} (double $\ast$buf, double $\ast$data, struct \mbox{\hyperlink{structpack__plan__2d}{pack\+\_\+plan\+\_\+2d}} $\ast$plan)
+\item 
+void \mbox{\hyperlink{pack__2d_8c_a2c14077878baba403329e1a9c4145cbd}{unpack\+\_\+2d\+\_\+permute\+\_\+1}} (double $\ast$buf, double $\ast$data, struct \mbox{\hyperlink{structpack__plan__2d}{pack\+\_\+plan\+\_\+2d}} $\ast$plan)
+\item 
+void \mbox{\hyperlink{pack__2d_8c_a330e409deb00baef7398995693e09333}{unpack\+\_\+2d\+\_\+permute\+\_\+2}} (double $\ast$buf, double $\ast$data, struct \mbox{\hyperlink{structpack__plan__2d}{pack\+\_\+plan\+\_\+2d}} $\ast$plan)
+\item 
+void \mbox{\hyperlink{pack__2d_8c_a26edc48b86bc60791b6d5dfae214c37e}{unpack\+\_\+2d\+\_\+permute\+\_\+n}} (double $\ast$buf, double $\ast$data, struct \mbox{\hyperlink{structpack__plan__2d}{pack\+\_\+plan\+\_\+2d}} $\ast$plan)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pack__2d_8c_a58cc9f256201c7ec20588ae55490e30f}\label{pack__2d_8c_a58cc9f256201c7ec20588ae55490e30f}} 
+\index{pack\_2d.c@{pack\_2d.c}!PACK\_ARRAY@{PACK\_ARRAY}}
+\index{PACK\_ARRAY@{PACK\_ARRAY}!pack\_2d.c@{pack\_2d.c}}
+\doxysubsubsection{\texorpdfstring{PACK\_ARRAY}{PACK\_ARRAY}}
+{\footnotesize\ttfamily \#define P\+A\+C\+K\+\_\+\+A\+R\+R\+AY}
+
+
+
+Definition at line 18 of file pack\+\_\+2d.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pack__2d_8c_a18221a3cb45b102609541a9075bf04a7}\label{pack__2d_8c_a18221a3cb45b102609541a9075bf04a7}} 
+\index{pack\_2d.c@{pack\_2d.c}!pack\_2d@{pack\_2d}}
+\index{pack\_2d@{pack\_2d}!pack\_2d.c@{pack\_2d.c}}
+\doxysubsubsection{\texorpdfstring{pack\_2d()}{pack\_2d()}}
+{\footnotesize\ttfamily void pack\+\_\+2d (\begin{DoxyParamCaption}\item[{double $\ast$}]{data,  }\item[{double $\ast$}]{buf,  }\item[{struct \mbox{\hyperlink{structpack__plan__2d}{pack\+\_\+plan\+\_\+2d}} $\ast$}]{plan }\end{DoxyParamCaption})}
+
+
+
+Definition at line 43 of file pack\+\_\+2d.\+c.
+
+\mbox{\Hypertarget{pack__2d_8c_a9f7df67f58f0029c977e453222970ea4}\label{pack__2d_8c_a9f7df67f58f0029c977e453222970ea4}} 
+\index{pack\_2d.c@{pack\_2d.c}!unpack\_2d@{unpack\_2d}}
+\index{unpack\_2d@{unpack\_2d}!pack\_2d.c@{pack\_2d.c}}
+\doxysubsubsection{\texorpdfstring{unpack\_2d()}{unpack\_2d()}}
+{\footnotesize\ttfamily void unpack\+\_\+2d (\begin{DoxyParamCaption}\item[{double $\ast$}]{buf,  }\item[{double $\ast$}]{data,  }\item[{struct \mbox{\hyperlink{structpack__plan__2d}{pack\+\_\+plan\+\_\+2d}} $\ast$}]{plan }\end{DoxyParamCaption})}
+
+
+
+Definition at line 64 of file pack\+\_\+2d.\+c.
+
+\mbox{\Hypertarget{pack__2d_8c_a2c14077878baba403329e1a9c4145cbd}\label{pack__2d_8c_a2c14077878baba403329e1a9c4145cbd}} 
+\index{pack\_2d.c@{pack\_2d.c}!unpack\_2d\_permute\_1@{unpack\_2d\_permute\_1}}
+\index{unpack\_2d\_permute\_1@{unpack\_2d\_permute\_1}!pack\_2d.c@{pack\_2d.c}}
+\doxysubsubsection{\texorpdfstring{unpack\_2d\_permute\_1()}{unpack\_2d\_permute\_1()}}
+{\footnotesize\ttfamily void unpack\+\_\+2d\+\_\+permute\+\_\+1 (\begin{DoxyParamCaption}\item[{double $\ast$}]{buf,  }\item[{double $\ast$}]{data,  }\item[{struct \mbox{\hyperlink{structpack__plan__2d}{pack\+\_\+plan\+\_\+2d}} $\ast$}]{plan }\end{DoxyParamCaption})}
+
+
+
+Definition at line 85 of file pack\+\_\+2d.\+c.
+
+\mbox{\Hypertarget{pack__2d_8c_a330e409deb00baef7398995693e09333}\label{pack__2d_8c_a330e409deb00baef7398995693e09333}} 
+\index{pack\_2d.c@{pack\_2d.c}!unpack\_2d\_permute\_2@{unpack\_2d\_permute\_2}}
+\index{unpack\_2d\_permute\_2@{unpack\_2d\_permute\_2}!pack\_2d.c@{pack\_2d.c}}
+\doxysubsubsection{\texorpdfstring{unpack\_2d\_permute\_2()}{unpack\_2d\_permute\_2()}}
+{\footnotesize\ttfamily void unpack\+\_\+2d\+\_\+permute\+\_\+2 (\begin{DoxyParamCaption}\item[{double $\ast$}]{buf,  }\item[{double $\ast$}]{data,  }\item[{struct \mbox{\hyperlink{structpack__plan__2d}{pack\+\_\+plan\+\_\+2d}} $\ast$}]{plan }\end{DoxyParamCaption})}
+
+
+
+Definition at line 106 of file pack\+\_\+2d.\+c.
+
+\mbox{\Hypertarget{pack__2d_8c_a26edc48b86bc60791b6d5dfae214c37e}\label{pack__2d_8c_a26edc48b86bc60791b6d5dfae214c37e}} 
+\index{pack\_2d.c@{pack\_2d.c}!unpack\_2d\_permute\_n@{unpack\_2d\_permute\_n}}
+\index{unpack\_2d\_permute\_n@{unpack\_2d\_permute\_n}!pack\_2d.c@{pack\_2d.c}}
+\doxysubsubsection{\texorpdfstring{unpack\_2d\_permute\_n()}{unpack\_2d\_permute\_n()}}
+{\footnotesize\ttfamily void unpack\+\_\+2d\+\_\+permute\+\_\+n (\begin{DoxyParamCaption}\item[{double $\ast$}]{buf,  }\item[{double $\ast$}]{data,  }\item[{struct \mbox{\hyperlink{structpack__plan__2d}{pack\+\_\+plan\+\_\+2d}} $\ast$}]{plan }\end{DoxyParamCaption})}
+
+
+
+Definition at line 129 of file pack\+\_\+2d.\+c.
+

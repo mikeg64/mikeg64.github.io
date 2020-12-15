@@ -1,0 +1,312 @@
+\hypertarget{turb_8c}{}\doxysection{src/prob/turb.c File Reference}
+\label{turb_8c}\index{src/prob/turb.c@{src/prob/turb.c}}
+{\ttfamily \#include \char`\"{}copyright.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$float.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}athena.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prototypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{turb_8c_a74178a836323ac4e47927b5bc5a93233}{O\+F\+ST}}(i,  \mbox{\hyperlink{bound1__flowout_8c_abf2bc2545a4a5f5683d9ef3ed0d977e0}{j}},  \mbox{\hyperlink{bound3_8c_adc468c70fb574ebd07287b38d0d0676d}{k}})~((\mbox{\hyperlink{bound3_8c_adc468c70fb574ebd07287b38d0d0676d}{k}}) + nx3$\ast$((\mbox{\hyperlink{bound1__flowout_8c_abf2bc2545a4a5f5683d9ef3ed0d977e0}{j}}) + nx2$\ast$(i)))
+\item 
+\#define \mbox{\hyperlink{turb_8c_ab8cfd028607260425ea81bcaab8b03ac}{K\+W\+VM}}(i,  \mbox{\hyperlink{bound1__flowout_8c_abf2bc2545a4a5f5683d9ef3ed0d977e0}{j}},  \mbox{\hyperlink{bound3_8c_adc468c70fb574ebd07287b38d0d0676d}{k}})
+\item 
+\#define \mbox{\hyperlink{turb_8c_a78325bdf48423acef7c012567628b391}{I\+M1}}~2147483563
+\item 
+\#define \mbox{\hyperlink{turb_8c_ad8c519de7e5de4ae35344ddcf21fd062}{I\+M2}}~2147483399
+\item 
+\#define \mbox{\hyperlink{turb_8c_ad301e6a88b1c01108f4867f2ea6f683c}{AM}}~(1.\+0/\mbox{\hyperlink{turb_8c_a78325bdf48423acef7c012567628b391}{I\+M1}})
+\item 
+\#define \mbox{\hyperlink{turb_8c_a87a6e0054f9d827c979c43aa0d5e621a}{I\+M\+M1}}~(\mbox{\hyperlink{turb_8c_a78325bdf48423acef7c012567628b391}{I\+M1}}-\/1)
+\item 
+\#define \mbox{\hyperlink{turb_8c_a6ef2749dca39c605c3d033f788afe6e3}{I\+A1}}~40014
+\item 
+\#define \mbox{\hyperlink{turb_8c_a372a58d7e9e25912fd79e7afaa06cc7a}{I\+A2}}~40692
+\item 
+\#define \mbox{\hyperlink{turb_8c_a9afa86ff22da69bda72fe271ae71ad46}{I\+Q1}}~53668
+\item 
+\#define \mbox{\hyperlink{turb_8c_abae040385946a6acdf5e10d2efd86f3d}{I\+Q2}}~52774
+\item 
+\#define \mbox{\hyperlink{turb_8c_a7b2b32709f9770a283701ffcf3723497}{I\+R1}}~12211
+\item 
+\#define \mbox{\hyperlink{turb_8c_a5a08e4f5cb3582e623cc14a6c92d48de}{I\+R2}}~3791
+\item 
+\#define \mbox{\hyperlink{turb_8c_a62339d74dd5d9d00480e1a288cf88fe8}{N\+D\+IV}}~(1+\mbox{\hyperlink{turb_8c_a87a6e0054f9d827c979c43aa0d5e621a}{I\+M\+M1}}/\mbox{\hyperlink{turb_8c_a0e93cfb2d62849853fd34957ba6e6fdc}{N\+T\+AB}})
+\item 
+\#define \mbox{\hyperlink{turb_8c_aa7436c9270ffb06f8c1eae8d2e605cec}{R\+N\+MX}}~(1.\+0-\/D\+B\+L\+\_\+\+E\+P\+S\+I\+L\+ON)
+\item 
+\#define \mbox{\hyperlink{turb_8c_a0e93cfb2d62849853fd34957ba6e6fdc}{N\+T\+AB}}~32
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{turb_8c_a6b1f4e0d0e00de01490fe4acc8d019c7}{problem}} (Grid $\ast$p\+Grid, Domain $\ast$pD)
+\item 
+void \mbox{\hyperlink{turb_8c_abca8edb7273f9852d4e298af7911c8dc}{Userwork\+\_\+in\+\_\+loop}} (Grid $\ast$p\+Grid, Domain $\ast$pD)
+\item 
+void \mbox{\hyperlink{turb_8c_ad48703df5a0f12e53ee3943a5767e7e4}{Userwork\+\_\+after\+\_\+loop}} (Grid $\ast$p\+Grid, Domain $\ast$pD)
+\item 
+void \mbox{\hyperlink{turb_8c_a8a95bb45e0b6964d0a207323d73a8199}{problem\+\_\+write\+\_\+restart}} (Grid $\ast$pG, Domain $\ast$pD, F\+I\+LE $\ast$fp)
+\item 
+void \mbox{\hyperlink{turb_8c_a92489854922d320bc791b15da1210c12}{problem\+\_\+read\+\_\+restart}} (Grid $\ast$pG, Domain $\ast$pD, F\+I\+LE $\ast$fp)
+\item 
+Gasfun\+\_\+t \mbox{\hyperlink{turb_8c_a0b19434c541c4e1716abdcad6baa4509}{get\+\_\+usr\+\_\+expr}} (const char $\ast$expr)
+\item 
+V\+G\+Funout\+\_\+t \mbox{\hyperlink{turb_8c_a5761a26dff3774a32e3fbf76935d97c0}{get\+\_\+usr\+\_\+out\+\_\+fun}} (const char $\ast$\mbox{\hyperlink{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}{name}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+long int \mbox{\hyperlink{turb_8c_a300948304edb535db49579870ccfa10f}{rseed}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{turb_8c_ad301e6a88b1c01108f4867f2ea6f683c}\label{turb_8c_ad301e6a88b1c01108f4867f2ea6f683c}} 
+\index{turb.c@{turb.c}!AM@{AM}}
+\index{AM@{AM}!turb.c@{turb.c}}
+\doxysubsubsection{\texorpdfstring{AM}{AM}}
+{\footnotesize\ttfamily \#define AM~(1.\+0/\mbox{\hyperlink{turb_8c_a78325bdf48423acef7c012567628b391}{I\+M1}})}
+
+
+
+Definition at line 712 of file turb.\+c.
+
+\mbox{\Hypertarget{turb_8c_a6ef2749dca39c605c3d033f788afe6e3}\label{turb_8c_a6ef2749dca39c605c3d033f788afe6e3}} 
+\index{turb.c@{turb.c}!IA1@{IA1}}
+\index{IA1@{IA1}!turb.c@{turb.c}}
+\doxysubsubsection{\texorpdfstring{IA1}{IA1}}
+{\footnotesize\ttfamily \#define I\+A1~40014}
+
+
+
+Definition at line 714 of file turb.\+c.
+
+\mbox{\Hypertarget{turb_8c_a372a58d7e9e25912fd79e7afaa06cc7a}\label{turb_8c_a372a58d7e9e25912fd79e7afaa06cc7a}} 
+\index{turb.c@{turb.c}!IA2@{IA2}}
+\index{IA2@{IA2}!turb.c@{turb.c}}
+\doxysubsubsection{\texorpdfstring{IA2}{IA2}}
+{\footnotesize\ttfamily \#define I\+A2~40692}
+
+
+
+Definition at line 715 of file turb.\+c.
+
+\mbox{\Hypertarget{turb_8c_a78325bdf48423acef7c012567628b391}\label{turb_8c_a78325bdf48423acef7c012567628b391}} 
+\index{turb.c@{turb.c}!IM1@{IM1}}
+\index{IM1@{IM1}!turb.c@{turb.c}}
+\doxysubsubsection{\texorpdfstring{IM1}{IM1}}
+{\footnotesize\ttfamily \#define I\+M1~2147483563}
+
+
+
+Definition at line 710 of file turb.\+c.
+
+\mbox{\Hypertarget{turb_8c_ad8c519de7e5de4ae35344ddcf21fd062}\label{turb_8c_ad8c519de7e5de4ae35344ddcf21fd062}} 
+\index{turb.c@{turb.c}!IM2@{IM2}}
+\index{IM2@{IM2}!turb.c@{turb.c}}
+\doxysubsubsection{\texorpdfstring{IM2}{IM2}}
+{\footnotesize\ttfamily \#define I\+M2~2147483399}
+
+
+
+Definition at line 711 of file turb.\+c.
+
+\mbox{\Hypertarget{turb_8c_a87a6e0054f9d827c979c43aa0d5e621a}\label{turb_8c_a87a6e0054f9d827c979c43aa0d5e621a}} 
+\index{turb.c@{turb.c}!IMM1@{IMM1}}
+\index{IMM1@{IMM1}!turb.c@{turb.c}}
+\doxysubsubsection{\texorpdfstring{IMM1}{IMM1}}
+{\footnotesize\ttfamily \#define I\+M\+M1~(\mbox{\hyperlink{turb_8c_a78325bdf48423acef7c012567628b391}{I\+M1}}-\/1)}
+
+
+
+Definition at line 713 of file turb.\+c.
+
+\mbox{\Hypertarget{turb_8c_a9afa86ff22da69bda72fe271ae71ad46}\label{turb_8c_a9afa86ff22da69bda72fe271ae71ad46}} 
+\index{turb.c@{turb.c}!IQ1@{IQ1}}
+\index{IQ1@{IQ1}!turb.c@{turb.c}}
+\doxysubsubsection{\texorpdfstring{IQ1}{IQ1}}
+{\footnotesize\ttfamily \#define I\+Q1~53668}
+
+
+
+Definition at line 716 of file turb.\+c.
+
+\mbox{\Hypertarget{turb_8c_abae040385946a6acdf5e10d2efd86f3d}\label{turb_8c_abae040385946a6acdf5e10d2efd86f3d}} 
+\index{turb.c@{turb.c}!IQ2@{IQ2}}
+\index{IQ2@{IQ2}!turb.c@{turb.c}}
+\doxysubsubsection{\texorpdfstring{IQ2}{IQ2}}
+{\footnotesize\ttfamily \#define I\+Q2~52774}
+
+
+
+Definition at line 717 of file turb.\+c.
+
+\mbox{\Hypertarget{turb_8c_a7b2b32709f9770a283701ffcf3723497}\label{turb_8c_a7b2b32709f9770a283701ffcf3723497}} 
+\index{turb.c@{turb.c}!IR1@{IR1}}
+\index{IR1@{IR1}!turb.c@{turb.c}}
+\doxysubsubsection{\texorpdfstring{IR1}{IR1}}
+{\footnotesize\ttfamily \#define I\+R1~12211}
+
+
+
+Definition at line 718 of file turb.\+c.
+
+\mbox{\Hypertarget{turb_8c_a5a08e4f5cb3582e623cc14a6c92d48de}\label{turb_8c_a5a08e4f5cb3582e623cc14a6c92d48de}} 
+\index{turb.c@{turb.c}!IR2@{IR2}}
+\index{IR2@{IR2}!turb.c@{turb.c}}
+\doxysubsubsection{\texorpdfstring{IR2}{IR2}}
+{\footnotesize\ttfamily \#define I\+R2~3791}
+
+
+
+Definition at line 719 of file turb.\+c.
+
+\mbox{\Hypertarget{turb_8c_ab8cfd028607260425ea81bcaab8b03ac}\label{turb_8c_ab8cfd028607260425ea81bcaab8b03ac}} 
+\index{turb.c@{turb.c}!KWVM@{KWVM}}
+\index{KWVM@{KWVM}!turb.c@{turb.c}}
+\doxysubsubsection{\texorpdfstring{KWVM}{KWVM}}
+{\footnotesize\ttfamily \#define K\+W\+VM(\begin{DoxyParamCaption}\item[{}]{i,  }\item[{}]{\mbox{\hyperlink{bound1__flowout_8c_abf2bc2545a4a5f5683d9ef3ed0d977e0}{j}},  }\item[{}]{\mbox{\hyperlink{bound3_8c_adc468c70fb574ebd07287b38d0d0676d}{k}} }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                            (sqrt(SQR(KCOMP(i,gis,gnx1))+ \(\backslash\)}
+\DoxyCodeLine{                            SQR(KCOMP(\mbox{\hyperlink{bound1_01__periodic_8c_abf2bc2545a4a5f5683d9ef3ed0d977e0}{j}},gjs,gnx2))+SQR(KCOMP(\mbox{\hyperlink{bound1_01__periodic_8c_adc468c70fb574ebd07287b38d0d0676d}{k}},gks,gnx3))))}
+
+\end{DoxyCode}
+
+
+Definition at line 58 of file turb.\+c.
+
+\mbox{\Hypertarget{turb_8c_a62339d74dd5d9d00480e1a288cf88fe8}\label{turb_8c_a62339d74dd5d9d00480e1a288cf88fe8}} 
+\index{turb.c@{turb.c}!NDIV@{NDIV}}
+\index{NDIV@{NDIV}!turb.c@{turb.c}}
+\doxysubsubsection{\texorpdfstring{NDIV}{NDIV}}
+{\footnotesize\ttfamily \#define N\+D\+IV~(1+\mbox{\hyperlink{turb_8c_a87a6e0054f9d827c979c43aa0d5e621a}{I\+M\+M1}}/\mbox{\hyperlink{turb_8c_a0e93cfb2d62849853fd34957ba6e6fdc}{N\+T\+AB}})}
+
+
+
+Definition at line 720 of file turb.\+c.
+
+\mbox{\Hypertarget{turb_8c_a0e93cfb2d62849853fd34957ba6e6fdc}\label{turb_8c_a0e93cfb2d62849853fd34957ba6e6fdc}} 
+\index{turb.c@{turb.c}!NTAB@{NTAB}}
+\index{NTAB@{NTAB}!turb.c@{turb.c}}
+\doxysubsubsection{\texorpdfstring{NTAB}{NTAB}}
+{\footnotesize\ttfamily \#define N\+T\+AB~32}
+
+
+
+Definition at line 722 of file turb.\+c.
+
+\mbox{\Hypertarget{turb_8c_a74178a836323ac4e47927b5bc5a93233}\label{turb_8c_a74178a836323ac4e47927b5bc5a93233}} 
+\index{turb.c@{turb.c}!OFST@{OFST}}
+\index{OFST@{OFST}!turb.c@{turb.c}}
+\doxysubsubsection{\texorpdfstring{OFST}{OFST}}
+{\footnotesize\ttfamily \#define O\+F\+ST(\begin{DoxyParamCaption}\item[{}]{i,  }\item[{}]{\mbox{\hyperlink{bound1__flowout_8c_abf2bc2545a4a5f5683d9ef3ed0d977e0}{j}},  }\item[{}]{\mbox{\hyperlink{bound3_8c_adc468c70fb574ebd07287b38d0d0676d}{k}} }\end{DoxyParamCaption})~((\mbox{\hyperlink{bound3_8c_adc468c70fb574ebd07287b38d0d0676d}{k}}) + nx3$\ast$((\mbox{\hyperlink{bound1__flowout_8c_abf2bc2545a4a5f5683d9ef3ed0d977e0}{j}}) + nx2$\ast$(i)))}
+
+
+
+Definition at line 56 of file turb.\+c.
+
+\mbox{\Hypertarget{turb_8c_aa7436c9270ffb06f8c1eae8d2e605cec}\label{turb_8c_aa7436c9270ffb06f8c1eae8d2e605cec}} 
+\index{turb.c@{turb.c}!RNMX@{RNMX}}
+\index{RNMX@{RNMX}!turb.c@{turb.c}}
+\doxysubsubsection{\texorpdfstring{RNMX}{RNMX}}
+{\footnotesize\ttfamily \#define R\+N\+MX~(1.\+0-\/D\+B\+L\+\_\+\+E\+P\+S\+I\+L\+ON)}
+
+
+
+Definition at line 721 of file turb.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{turb_8c_a0b19434c541c4e1716abdcad6baa4509}\label{turb_8c_a0b19434c541c4e1716abdcad6baa4509}} 
+\index{turb.c@{turb.c}!get\_usr\_expr@{get\_usr\_expr}}
+\index{get\_usr\_expr@{get\_usr\_expr}!turb.c@{turb.c}}
+\doxysubsubsection{\texorpdfstring{get\_usr\_expr()}{get\_usr\_expr()}}
+{\footnotesize\ttfamily Gasfun\+\_\+t get\+\_\+usr\+\_\+expr (\begin{DoxyParamCaption}\item[{const char $\ast$}]{expr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 673 of file turb.\+c.
+
+\mbox{\Hypertarget{turb_8c_a5761a26dff3774a32e3fbf76935d97c0}\label{turb_8c_a5761a26dff3774a32e3fbf76935d97c0}} 
+\index{turb.c@{turb.c}!get\_usr\_out\_fun@{get\_usr\_out\_fun}}
+\index{get\_usr\_out\_fun@{get\_usr\_out\_fun}!turb.c@{turb.c}}
+\doxysubsubsection{\texorpdfstring{get\_usr\_out\_fun()}{get\_usr\_out\_fun()}}
+{\footnotesize\ttfamily V\+G\+Funout\+\_\+t get\+\_\+usr\+\_\+out\+\_\+fun (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 676 of file turb.\+c.
+
+\mbox{\Hypertarget{turb_8c_a6b1f4e0d0e00de01490fe4acc8d019c7}\label{turb_8c_a6b1f4e0d0e00de01490fe4acc8d019c7}} 
+\index{turb.c@{turb.c}!problem@{problem}}
+\index{problem@{problem}!turb.c@{turb.c}}
+\doxysubsubsection{\texorpdfstring{problem()}{problem()}}
+{\footnotesize\ttfamily void problem (\begin{DoxyParamCaption}\item[{Grid $\ast$}]{p\+Grid,  }\item[{Domain $\ast$}]{pD }\end{DoxyParamCaption})}
+
+
+
+Definition at line 536 of file turb.\+c.
+
+\mbox{\Hypertarget{turb_8c_a92489854922d320bc791b15da1210c12}\label{turb_8c_a92489854922d320bc791b15da1210c12}} 
+\index{turb.c@{turb.c}!problem\_read\_restart@{problem\_read\_restart}}
+\index{problem\_read\_restart@{problem\_read\_restart}!turb.c@{turb.c}}
+\doxysubsubsection{\texorpdfstring{problem\_read\_restart()}{problem\_read\_restart()}}
+{\footnotesize\ttfamily void problem\+\_\+read\+\_\+restart (\begin{DoxyParamCaption}\item[{Grid $\ast$}]{pG,  }\item[{Domain $\ast$}]{pD,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 660 of file turb.\+c.
+
+\mbox{\Hypertarget{turb_8c_a8a95bb45e0b6964d0a207323d73a8199}\label{turb_8c_a8a95bb45e0b6964d0a207323d73a8199}} 
+\index{turb.c@{turb.c}!problem\_write\_restart@{problem\_write\_restart}}
+\index{problem\_write\_restart@{problem\_write\_restart}!turb.c@{turb.c}}
+\doxysubsubsection{\texorpdfstring{problem\_write\_restart()}{problem\_write\_restart()}}
+{\footnotesize\ttfamily void problem\+\_\+write\+\_\+restart (\begin{DoxyParamCaption}\item[{Grid $\ast$}]{pG,  }\item[{Domain $\ast$}]{pD,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 657 of file turb.\+c.
+
+\mbox{\Hypertarget{turb_8c_ad48703df5a0f12e53ee3943a5767e7e4}\label{turb_8c_ad48703df5a0f12e53ee3943a5767e7e4}} 
+\index{turb.c@{turb.c}!Userwork\_after\_loop@{Userwork\_after\_loop}}
+\index{Userwork\_after\_loop@{Userwork\_after\_loop}!turb.c@{turb.c}}
+\doxysubsubsection{\texorpdfstring{Userwork\_after\_loop()}{Userwork\_after\_loop()}}
+{\footnotesize\ttfamily void Userwork\+\_\+after\+\_\+loop (\begin{DoxyParamCaption}\item[{Grid $\ast$}]{p\+Grid,  }\item[{Domain $\ast$}]{pD }\end{DoxyParamCaption})}
+
+
+
+Definition at line 650 of file turb.\+c.
+
+\mbox{\Hypertarget{turb_8c_abca8edb7273f9852d4e298af7911c8dc}\label{turb_8c_abca8edb7273f9852d4e298af7911c8dc}} 
+\index{turb.c@{turb.c}!Userwork\_in\_loop@{Userwork\_in\_loop}}
+\index{Userwork\_in\_loop@{Userwork\_in\_loop}!turb.c@{turb.c}}
+\doxysubsubsection{\texorpdfstring{Userwork\_in\_loop()}{Userwork\_in\_loop()}}
+{\footnotesize\ttfamily void Userwork\+\_\+in\+\_\+loop (\begin{DoxyParamCaption}\item[{Grid $\ast$}]{p\+Grid,  }\item[{Domain $\ast$}]{pD }\end{DoxyParamCaption})}
+
+
+
+Definition at line 606 of file turb.\+c.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{turb_8c_a300948304edb535db49579870ccfa10f}\label{turb_8c_a300948304edb535db49579870ccfa10f}} 
+\index{turb.c@{turb.c}!rseed@{rseed}}
+\index{rseed@{rseed}!turb.c@{turb.c}}
+\doxysubsubsection{\texorpdfstring{rseed}{rseed}}
+{\footnotesize\ttfamily long int rseed}
+
+
+
+Definition at line 84 of file turb.\+c.
+

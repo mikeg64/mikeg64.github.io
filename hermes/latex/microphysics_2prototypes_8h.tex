@@ -1,0 +1,98 @@
+\hypertarget{microphysics_2prototypes_8h}{}\doxysection{src/microphysics/prototypes.h File Reference}
+\label{microphysics_2prototypes_8h}\index{src/microphysics/prototypes.h@{src/microphysics/prototypes.h}}
+
+
+Prototypes for all public functions in the /src/microphysics dir.  
+
+
+{\ttfamily \#include \char`\"{}../copyright.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../athena.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../config.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Real \mbox{\hyperlink{microphysics_2prototypes_8h_ad3f0acf91711b904e7a9e338df830655}{Koy\+Inut}} (const Real dens, const Real Press, const Real \mbox{\hyperlink{defs_8h_a0d83938800a951e18c7a96a4d5ff7a07}{dt}})
+\begin{DoxyCompactList}\small\item\em Analytic fit to cooling in the diffuse I\+SM given by eq. (4) in Koyama \& Inutsuka, ApJ 564, L97 (2002); Returns rate in cgs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{microphysics_2prototypes_8h_a614eba27ad788160f1bb8e9ef6a9ca1e}{integrate\+\_\+diff}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\begin{DoxyCompactList}\small\item\em Called in main loop, sets timestep and/or orchestrates subcycling, calls appropriate functions for each diffusion operator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{microphysics_2prototypes_8h_a69aff5d49cbd16b49ce6ce7c5d250d20}{integrate\+\_\+diff\+\_\+init}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\begin{DoxyCompactList}\small\item\em Call functions to allocate memory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{microphysics_2prototypes_8h_ac3242240d02ec4cf5ff07fd3307b92f7}{integrate\+\_\+diff\+\_\+destruct}} (void)
+\begin{DoxyCompactList}\small\item\em Frees memory associated with diffusion funcs ~\newline
+ \end{DoxyCompactList}\item 
+Real \mbox{\hyperlink{microphysics_2prototypes_8h_a2c84dd5b3af9a89387821ff3dc0ead75}{new\+\_\+dt\+\_\+diff}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Prototypes for all public functions in the /src/microphysics dir. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{microphysics_2prototypes_8h_a614eba27ad788160f1bb8e9ef6a9ca1e}\label{microphysics_2prototypes_8h_a614eba27ad788160f1bb8e9ef6a9ca1e}} 
+\index{prototypes.h@{prototypes.h}!integrate\_diff@{integrate\_diff}}
+\index{integrate\_diff@{integrate\_diff}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{integrate\_diff()}{integrate\_diff()}}
+{\footnotesize\ttfamily void integrate\+\_\+diff (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+Called in main loop, sets timestep and/or orchestrates subcycling, calls appropriate functions for each diffusion operator. 
+
+
+
+Definition at line 27 of file integrate\+\_\+diffusion.\+c.
+
+\mbox{\Hypertarget{microphysics_2prototypes_8h_ac3242240d02ec4cf5ff07fd3307b92f7}\label{microphysics_2prototypes_8h_ac3242240d02ec4cf5ff07fd3307b92f7}} 
+\index{prototypes.h@{prototypes.h}!integrate\_diff\_destruct@{integrate\_diff\_destruct}}
+\index{integrate\_diff\_destruct@{integrate\_diff\_destruct}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{integrate\_diff\_destruct()}{integrate\_diff\_destruct()}}
+{\footnotesize\ttfamily void integrate\+\_\+diff\+\_\+destruct (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Frees memory associated with diffusion funcs ~\newline
+ 
+
+
+
+Definition at line 93 of file integrate\+\_\+diffusion.\+c.
+
+\mbox{\Hypertarget{microphysics_2prototypes_8h_a69aff5d49cbd16b49ce6ce7c5d250d20}\label{microphysics_2prototypes_8h_a69aff5d49cbd16b49ce6ce7c5d250d20}} 
+\index{prototypes.h@{prototypes.h}!integrate\_diff\_init@{integrate\_diff\_init}}
+\index{integrate\_diff\_init@{integrate\_diff\_init}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{integrate\_diff\_init()}{integrate\_diff\_init()}}
+{\footnotesize\ttfamily void integrate\+\_\+diff\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+Call functions to allocate memory. 
+
+\mbox{\Hypertarget{microphysics_2prototypes_8h_ad3f0acf91711b904e7a9e338df830655}\label{microphysics_2prototypes_8h_ad3f0acf91711b904e7a9e338df830655}} 
+\index{prototypes.h@{prototypes.h}!KoyInut@{KoyInut}}
+\index{KoyInut@{KoyInut}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{KoyInut()}{KoyInut()}}
+{\footnotesize\ttfamily Real Koy\+Inut (\begin{DoxyParamCaption}\item[{const Real}]{dens,  }\item[{const Real}]{Press,  }\item[{const Real}]{dt }\end{DoxyParamCaption})}
+
+
+
+Analytic fit to cooling in the diffuse I\+SM given by eq. (4) in Koyama \& Inutsuka, ApJ 564, L97 (2002); Returns rate in cgs. 
+
+
+
+Definition at line 48 of file cool.\+c.
+
+\mbox{\Hypertarget{microphysics_2prototypes_8h_a2c84dd5b3af9a89387821ff3dc0ead75}\label{microphysics_2prototypes_8h_a2c84dd5b3af9a89387821ff3dc0ead75}} 
+\index{prototypes.h@{prototypes.h}!new\_dt\_diff@{new\_dt\_diff}}
+\index{new\_dt\_diff@{new\_dt\_diff}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{new\_dt\_diff()}{new\_dt\_diff()}}
+{\footnotesize\ttfamily Real new\+\_\+dt\+\_\+diff (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+Definition at line 31 of file new\+\_\+dt\+\_\+diff.\+c.
+

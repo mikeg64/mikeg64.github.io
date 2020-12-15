@@ -1,0 +1,23 @@
+\hypertarget{struct_domain_s}{}\doxysection{DomainS Struct Reference}
+\label{struct_domain_s}\index{DomainS@{DomainS}}
+
+
+Information about one region of Mesh at some particular level.  
+
+
+
+
+{\ttfamily \#include $<$athena.\+h$>$}
+
+
+
+\doxysubsection{Detailed Description}
+Information about one region of Mesh at some particular level. 
+
+Contains pointer to a single Grid, even though the Domain may contain many Grids, because for any general parallelization mode, no more than one Grid can exist per Domain per processor.
+
+The i,j,k displacements are measured in units of grid cells on this Domain 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{athena_8h}{athena.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,41 @@
+\hypertarget{output__particle_8c}{}\doxysection{src/particles/output\+\_\+particle.c File Reference}
+\label{output__particle_8c}\index{src/particles/output\_particle.c@{src/particles/output\_particle.c}}
+
+
+Contains routines necessary for outputting particles.  
+
+
+{\ttfamily \#include \char`\"{}../copyright.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../athena.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../prototypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prototypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}particle.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../globals.\+h\char`\"{}}\newline
+
+
+\doxysubsection{Detailed Description}
+Contains routines necessary for outputting particles. 
+
+P\+U\+R\+P\+O\+SE\+: contains routines necessary for outputting particles. There are two basic formats\+:
+\begin{DoxyItemize}
+\item 1. Bin particles to the grid, then output particles as a grid.
+\item 2. Dump the particle list directly.
+
+For particle binning, there can be many choices since particles may have different properties. We provide a default (and trivial) particle selection function, which select all the particles with different properties. The user can define their own particle selection functions in the problem generator and pass them to the main code.
+
+The output quantities include, density, momentum density and velocity of the selected particles averaged in one grid cell. The binned data are saved in arrays dpar, and grid\+\_\+v. The latter is borrowed from particle.\+c to save memory. The expression functions expr\+\_\+??? are used to pick the relevant quantities, which is part of the output data structure. The way to output these binned particle quantities are then exactly the same as other gas quantities.
+\end{DoxyItemize}
+
+C\+O\+N\+T\+A\+I\+NS P\+U\+B\+L\+IC F\+U\+N\+C\+T\+I\+O\+NS\+:
+\begin{DoxyItemize}
+\item particle\+\_\+to\+\_\+grid();
+\item dump\+\_\+particle\+\_\+binary();
+\item property\+\_\+all();
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+ 

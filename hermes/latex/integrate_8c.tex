@@ -1,0 +1,63 @@
+\hypertarget{integrate_8c}{}\doxysection{src/integrators/integrate.c File Reference}
+\label{integrate_8c}\index{src/integrators/integrate.c@{src/integrators/integrate.c}}
+
+
+Contains public functions to set integrator.  
+
+
+{\ttfamily \#include \char`\"{}../copyright.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../athena.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prototypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../prototypes.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{athena_8h_adfa510b1eb81a0865733437535b71cc9}{V\+D\+Fun\+\_\+t}} \mbox{\hyperlink{integrate_8c_a9a7eb17bb8821f3f998d3e141a9cc224}{integrate\+\_\+init}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\begin{DoxyCompactList}\small\item\em Initialize integrator; V\+G\+D\+Fun\+\_\+t defined in \mbox{\hyperlink{athena_8h}{athena.\+h}} ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{integrate_8c_a935423ee3b872e9b0190ca25b9a2ea48}{integrate\+\_\+destruct}} ()
+\begin{DoxyCompactList}\small\item\em Free memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains public functions to set integrator. 
+
+C\+O\+N\+T\+A\+I\+NS P\+U\+B\+L\+IC F\+U\+N\+C\+T\+I\+O\+NS\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{integrate_8c_a9a7eb17bb8821f3f998d3e141a9cc224}{integrate\+\_\+init()}} -\/ set pointer to integrate function based on dim
+\item \mbox{\hyperlink{integrate_8c_a935423ee3b872e9b0190ca25b9a2ea48}{integrate\+\_\+destruct()}} -\/ call destruct integrate function based on dim 
+\end{DoxyItemize}
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{integrate_8c_a935423ee3b872e9b0190ca25b9a2ea48}\label{integrate_8c_a935423ee3b872e9b0190ca25b9a2ea48}} 
+\index{integrate.c@{integrate.c}!integrate\_destruct@{integrate\_destruct}}
+\index{integrate\_destruct@{integrate\_destruct}!integrate.c@{integrate.c}}
+\doxysubsubsection{\texorpdfstring{integrate\_destruct()}{integrate\_destruct()}}
+{\footnotesize\ttfamily void integrate\+\_\+destruct (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Free memory. 
+
+
+
+Definition at line 123 of file integrate.\+c.
+
+\mbox{\Hypertarget{integrate_8c_a9a7eb17bb8821f3f998d3e141a9cc224}\label{integrate_8c_a9a7eb17bb8821f3f998d3e141a9cc224}} 
+\index{integrate.c@{integrate.c}!integrate\_init@{integrate\_init}}
+\index{integrate\_init@{integrate\_init}!integrate.c@{integrate.c}}
+\doxysubsubsection{\texorpdfstring{integrate\_init()}{integrate\_init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{athena_8h_adfa510b1eb81a0865733437535b71cc9}{V\+D\+Fun\+\_\+t}} integrate\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+Initialize integrator; V\+G\+D\+Fun\+\_\+t defined in \mbox{\hyperlink{athena_8h}{athena.\+h}} ~\newline
+ 
+
+
+
+Definition at line 24 of file integrate.\+c.
+

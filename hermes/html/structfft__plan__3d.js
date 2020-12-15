@@ -1,0 +1,27 @@
+var structfft__plan__3d =
+[
+    [ "copy", "structfft__plan__3d.html#adcc591cf0cfc86d1090a9512d98148bb", null ],
+    [ "length1", "structfft__plan__3d.html#a3d9df292114770252848d268a82a928a", null ],
+    [ "length2", "structfft__plan__3d.html#a76a0a804ac6705a2b25e6254468c97a6", null ],
+    [ "length3", "structfft__plan__3d.html#ac615de88cc32ac1dc015400a2d102ded", null ],
+    [ "mid1_plan", "structfft__plan__3d.html#aeae2f7fc9869b6491ddb46475c5a16cb", null ],
+    [ "mid1_target", "structfft__plan__3d.html#ab9475c94aff27f33b8d0c1afe81ec174", null ],
+    [ "mid2_plan", "structfft__plan__3d.html#ad1110aac680914093d7343309cd1af9c", null ],
+    [ "mid2_target", "structfft__plan__3d.html#ae374cb697bfd1c99234e84ea100646d4", null ],
+    [ "norm", "structfft__plan__3d.html#a7e8f00a437ef8fd856bc83c9a763d6cc", null ],
+    [ "normnum", "structfft__plan__3d.html#a91e06016482cb42064db4632bb355f7a", null ],
+    [ "plan_fast_backward", "structfft__plan__3d.html#abeb86edd50c1f9824852556d139d26de", null ],
+    [ "plan_fast_forward", "structfft__plan__3d.html#a246be427af0bddf6f88a80e5a3e5ee55", null ],
+    [ "plan_mid_backward", "structfft__plan__3d.html#a9a9d81c53a548f5c8ad8b982462e7c6a", null ],
+    [ "plan_mid_forward", "structfft__plan__3d.html#a31e46560a45a27d7d0cd841d5879dced", null ],
+    [ "plan_slow_backward", "structfft__plan__3d.html#ab2aa82a8efb9d4f01967e592ba67285e", null ],
+    [ "plan_slow_forward", "structfft__plan__3d.html#a477b332599a92b3e5f234dde05994824", null ],
+    [ "post_plan", "structfft__plan__3d.html#afab91ca7604c5fcf775e89e37e3686b1", null ],
+    [ "pre_plan", "structfft__plan__3d.html#ac849faa0c063ce2b2a7b7254bf4b2ee5", null ],
+    [ "pre_target", "structfft__plan__3d.html#ab5f0f2c507eccf67eb502507096edf32", null ],
+    [ "scaled", "structfft__plan__3d.html#a02e56b0a5dca08c73b41e5eafae33867", null ],
+    [ "scratch", "structfft__plan__3d.html#a781dd22ee5b5bf1d9f31e9d8675b30a4", null ],
+    [ "total1", "structfft__plan__3d.html#a25b967ccd3a7f4f215cf193f6ea5f5d5", null ],
+    [ "total2", "structfft__plan__3d.html#a9e5ac7e853c0b5db9b8523f868d5a47d", null ],
+    [ "total3", "structfft__plan__3d.html#aa9f1a6f4ad9eeb9fce94d60dd13bb5be", null ]
+];

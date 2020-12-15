@@ -1,0 +1,163 @@
+\hypertarget{linear__wave_8c}{}\doxysection{src/prob/linear\+\_\+wave.c File Reference}
+\label{linear__wave_8c}\index{src/prob/linear\_wave.c@{src/prob/linear\_wave.c}}
+
+
+Linear wave problem generator for 1D/2\+D/3D problems.  
+
+
+{\ttfamily \#include \char`\"{}copyright.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}athena.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prototypes.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{linear__wave_8c_a1b323f47153f1975b64382e0ffac6b73}{problem}} (\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$p\+Domain)
+\item 
+void \mbox{\hyperlink{linear__wave_8c_a2c334369ab621e9815591c76ccfb5fc7}{problem\+\_\+write\+\_\+restart}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, F\+I\+LE $\ast$fp)
+\item 
+void \mbox{\hyperlink{linear__wave_8c_acf733c9792756cbec1e9d226c4ff37ab}{problem\+\_\+read\+\_\+restart}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, F\+I\+LE $\ast$fp)
+\item 
+\mbox{\hyperlink{athena_8h_aaa64b3ee5eefc566b7c09368c414de89}{Cons\+Fun\+\_\+t}} \mbox{\hyperlink{linear__wave_8c_a4575c4cdbf2965a9857c45970d736676}{get\+\_\+usr\+\_\+expr}} (const char $\ast$expr)
+\item 
+\mbox{\hyperlink{athena_8h_a8bc2403d4d3a27d6f475f2dc6acc94cc}{V\+Out\+Fun\+\_\+t}} \mbox{\hyperlink{linear__wave_8c_a8b8cabb1061d5399fb492be89de213ff}{get\+\_\+usr\+\_\+out\+\_\+fun}} (const char $\ast$\mbox{\hyperlink{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}{name}})
+\item 
+void \mbox{\hyperlink{linear__wave_8c_a0ff640c24db1dc0d7c89d91f1d55ffce}{Userwork\+\_\+in\+\_\+loop}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\item 
+void \mbox{\hyperlink{linear__wave_8c_a5506a1df41ed88e038443271b9785337}{Userwork\+\_\+after\+\_\+loop}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Linear wave problem generator for 1D/2\+D/3D problems. 
+
+P\+U\+R\+P\+O\+SE\+: Linear wave problem generator. This routine is built from the earlier linear\+\_\+wave1d/2d/3d files. It was generalized so that regression tests would not require recompiling the code to run different dimensions.
+
+In 1D, the problem is setup along one of the three coordinate axes (specified by setting \mbox{[}ang\+\_\+2,ang\+\_\+3\mbox{]} = 0.\+0 or P\+I/2 in the input file). In 2D/3D this routine automatically sets the wavevector along the domain diagonal.
+
+Configure --with-\/gravity=fft to check Jeans stability of plane waves
+
+Configure --enable-\/resistivity and/or --enable-\/viscosity to check damping of linear waves by resistivity/ambipolar diffusion and/or viscosity
+
+For 2D/3D problems, the one dimensional problem in the coordinate system (x,y,z) is used with two coordinate rotations to obtain a new wave vector in a 3D space in the (x1,x2,x3) coordinate system.
+
+First rotate about the y axis\+:
+\begin{DoxyItemize}
+\item x\textquotesingle{} = x$\ast$cos(ang\+\_\+2) -\/ z$\ast$sin(ang\+\_\+2)
+\item y\textquotesingle{} = y
+\item z\textquotesingle{} = x$\ast$sin(ang\+\_\+2) + z$\ast$cos(ang\+\_\+2)
+\end{DoxyItemize}
+
+Next rotate about the z\textquotesingle{} axis\+:
+\begin{DoxyItemize}
+\item x = x\textquotesingle{}$\ast$cos(ang\+\_\+3) -\/ y\textquotesingle{}$\ast$sin(ang\+\_\+3)
+\item y = x\textquotesingle{}$\ast$sin(ang\+\_\+3) + y\textquotesingle{}$\ast$cos(ang\+\_\+3)
+\item z = z\textquotesingle{}
+\end{DoxyItemize}
+
+Expanding this out we get\+:
+\begin{DoxyItemize}
+\item x1 = x$\ast$cos(ang\+\_\+2)$\ast$cos(ang\+\_\+3) -\/ y$\ast$sin(ang\+\_\+3) -\/ z$\ast$sin(ang\+\_\+2)$\ast$cos(ang\+\_\+3)
+\item x2 = x$\ast$cos(ang\+\_\+2)$\ast$sin(ang\+\_\+3) -\/ y$\ast$cos(ang\+\_\+3) -\/ z$\ast$sin(ang\+\_\+2)$\ast$sin(ang\+\_\+3)
+\item x3 = x$\ast$sin(ang\+\_\+2) + z$\ast$cos(ang\+\_\+2)
+\end{DoxyItemize}
+
+This inverts to\+:
+\begin{DoxyItemize}
+\item x = x1$\ast$cos(ang\+\_\+2)$\ast$cos(ang\+\_\+3) + x2$\ast$cos(ang\+\_\+2)$\ast$sin(ang\+\_\+3) + x3$\ast$sin(ang\+\_\+2)
+\item y = -\/x1$\ast$sin(ang\+\_\+3) + x2$\ast$cos(ang\+\_\+3)
+\item z = -\/x1$\ast$sin(ang\+\_\+2)$\ast$cos(ang\+\_\+3) -\/ x2$\ast$sin(ang\+\_\+2)$\ast$sin(ang\+\_\+3) + x3$\ast$cos(ang\+\_\+2)
+\end{DoxyItemize}
+
+The magnetic field is given by\+:
+\begin{DoxyItemize}
+\item B\+\_\+x = b\+\_\+par
+\item B\+\_\+y = b\+\_\+perp$\ast$cos(k$\ast$x)
+\item B\+\_\+z = b\+\_\+perp$\ast$sin(k$\ast$x) where k = 2.\+0$\ast$\+P\+I/lambda
+\end{DoxyItemize}
+
+P\+R\+I\+V\+A\+TE F\+U\+N\+C\+T\+I\+ON P\+R\+O\+T\+O\+T\+Y\+P\+ES\+:
+\begin{DoxyItemize}
+\item A1() -\/ 1-\/component of vector potential for initial conditions
+\item A2() -\/ 2-\/component of vector potential for initial conditions
+\item \mbox{\hyperlink{cylfieldloop_8c_a08fa99b8e1672882848cd99d22d411dc}{A3()}} -\/ 3-\/component of vector potential for initial conditions
+\end{DoxyItemize}
+
+U\+S\+E\+R\+W\+O\+R\+K\+\_\+\+A\+F\+T\+E\+R\+\_\+\+L\+O\+OP function computes L1 error norm in solution by comparing to analytic solution, computed at the stopping time, and shifted by the \hypertarget{linear__wave_8c_autotoc_md15}{}\doxysubsection{background flow velocity (vflow).}\label{linear__wave_8c_autotoc_md15}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{linear__wave_8c_a4575c4cdbf2965a9857c45970d736676}\label{linear__wave_8c_a4575c4cdbf2965a9857c45970d736676}} 
+\index{linear\_wave.c@{linear\_wave.c}!get\_usr\_expr@{get\_usr\_expr}}
+\index{get\_usr\_expr@{get\_usr\_expr}!linear\_wave.c@{linear\_wave.c}}
+\doxysubsubsection{\texorpdfstring{get\_usr\_expr()}{get\_usr\_expr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{athena_8h_aaa64b3ee5eefc566b7c09368c414de89}{Cons\+Fun\+\_\+t}} get\+\_\+usr\+\_\+expr (\begin{DoxyParamCaption}\item[{const char $\ast$}]{expr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 545 of file linear\+\_\+wave.\+c.
+
+\mbox{\Hypertarget{linear__wave_8c_a8b8cabb1061d5399fb492be89de213ff}\label{linear__wave_8c_a8b8cabb1061d5399fb492be89de213ff}} 
+\index{linear\_wave.c@{linear\_wave.c}!get\_usr\_out\_fun@{get\_usr\_out\_fun}}
+\index{get\_usr\_out\_fun@{get\_usr\_out\_fun}!linear\_wave.c@{linear\_wave.c}}
+\doxysubsubsection{\texorpdfstring{get\_usr\_out\_fun()}{get\_usr\_out\_fun()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{athena_8h_a8bc2403d4d3a27d6f475f2dc6acc94cc}{V\+Out\+Fun\+\_\+t}} get\+\_\+usr\+\_\+out\+\_\+fun (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 550 of file linear\+\_\+wave.\+c.
+
+\mbox{\Hypertarget{linear__wave_8c_a1b323f47153f1975b64382e0ffac6b73}\label{linear__wave_8c_a1b323f47153f1975b64382e0ffac6b73}} 
+\index{linear\_wave.c@{linear\_wave.c}!problem@{problem}}
+\index{problem@{problem}!linear\_wave.c@{linear\_wave.c}}
+\doxysubsubsection{\texorpdfstring{problem()}{problem()}}
+{\footnotesize\ttfamily void problem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{p\+Domain }\end{DoxyParamCaption})}
+
+
+
+Definition at line 99 of file linear\+\_\+wave.\+c.
+
+\mbox{\Hypertarget{linear__wave_8c_acf733c9792756cbec1e9d226c4ff37ab}\label{linear__wave_8c_acf733c9792756cbec1e9d226c4ff37ab}} 
+\index{linear\_wave.c@{linear\_wave.c}!problem\_read\_restart@{problem\_read\_restart}}
+\index{problem\_read\_restart@{problem\_read\_restart}!linear\_wave.c@{linear\_wave.c}}
+\doxysubsubsection{\texorpdfstring{problem\_read\_restart()}{problem\_read\_restart()}}
+{\footnotesize\ttfamily void problem\+\_\+read\+\_\+restart (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 540 of file linear\+\_\+wave.\+c.
+
+\mbox{\Hypertarget{linear__wave_8c_a2c334369ab621e9815591c76ccfb5fc7}\label{linear__wave_8c_a2c334369ab621e9815591c76ccfb5fc7}} 
+\index{linear\_wave.c@{linear\_wave.c}!problem\_write\_restart@{problem\_write\_restart}}
+\index{problem\_write\_restart@{problem\_write\_restart}!linear\_wave.c@{linear\_wave.c}}
+\doxysubsubsection{\texorpdfstring{problem\_write\_restart()}{problem\_write\_restart()}}
+{\footnotesize\ttfamily void problem\+\_\+write\+\_\+restart (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 535 of file linear\+\_\+wave.\+c.
+
+\mbox{\Hypertarget{linear__wave_8c_a5506a1df41ed88e038443271b9785337}\label{linear__wave_8c_a5506a1df41ed88e038443271b9785337}} 
+\index{linear\_wave.c@{linear\_wave.c}!Userwork\_after\_loop@{Userwork\_after\_loop}}
+\index{Userwork\_after\_loop@{Userwork\_after\_loop}!linear\_wave.c@{linear\_wave.c}}
+\doxysubsubsection{\texorpdfstring{Userwork\_after\_loop()}{Userwork\_after\_loop()}}
+{\footnotesize\ttfamily void Userwork\+\_\+after\+\_\+loop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+Definition at line 574 of file linear\+\_\+wave.\+c.
+
+\mbox{\Hypertarget{linear__wave_8c_a0ff640c24db1dc0d7c89d91f1d55ffce}\label{linear__wave_8c_a0ff640c24db1dc0d7c89d91f1d55ffce}} 
+\index{linear\_wave.c@{linear\_wave.c}!Userwork\_in\_loop@{Userwork\_in\_loop}}
+\index{Userwork\_in\_loop@{Userwork\_in\_loop}!linear\_wave.c@{linear\_wave.c}}
+\doxysubsubsection{\texorpdfstring{Userwork\_in\_loop()}{Userwork\_in\_loop()}}
+{\footnotesize\ttfamily void Userwork\+\_\+in\+\_\+loop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+Definition at line 566 of file linear\+\_\+wave.\+c.
+

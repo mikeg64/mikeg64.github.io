@@ -1,0 +1,759 @@
+\hypertarget{streaming3d__single_8c}{}\doxysection{src/prob/streaming3d\+\_\+single.c File Reference}
+\label{streaming3d__single_8c}\index{src/prob/streaming3d\_single.c@{src/prob/streaming3d\_single.c}}
+
+
+Problem generator for streaming instability test in non-\/stratified disks.  
+
+
+{\ttfamily \#include \char`\"{}copyright.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$float.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}athena.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prototypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}particles/particle.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{streaming3d__single_8c_a78325bdf48423acef7c012567628b391}{I\+M1}}~2147483563
+\item 
+\#define \mbox{\hyperlink{streaming3d__single_8c_ad8c519de7e5de4ae35344ddcf21fd062}{I\+M2}}~2147483399
+\item 
+\#define \mbox{\hyperlink{streaming3d__single_8c_ad301e6a88b1c01108f4867f2ea6f683c}{AM}}~(1.\+0/\mbox{\hyperlink{turb_8c_a78325bdf48423acef7c012567628b391}{I\+M1}})
+\item 
+\#define \mbox{\hyperlink{streaming3d__single_8c_a87a6e0054f9d827c979c43aa0d5e621a}{I\+M\+M1}}~(\mbox{\hyperlink{turb_8c_a78325bdf48423acef7c012567628b391}{I\+M1}}-\/1)
+\item 
+\#define \mbox{\hyperlink{streaming3d__single_8c_a6ef2749dca39c605c3d033f788afe6e3}{I\+A1}}~40014
+\item 
+\#define \mbox{\hyperlink{streaming3d__single_8c_a372a58d7e9e25912fd79e7afaa06cc7a}{I\+A2}}~40692
+\item 
+\#define \mbox{\hyperlink{streaming3d__single_8c_a9afa86ff22da69bda72fe271ae71ad46}{I\+Q1}}~53668
+\item 
+\#define \mbox{\hyperlink{streaming3d__single_8c_abae040385946a6acdf5e10d2efd86f3d}{I\+Q2}}~52774
+\item 
+\#define \mbox{\hyperlink{streaming3d__single_8c_a7b2b32709f9770a283701ffcf3723497}{I\+R1}}~12211
+\item 
+\#define \mbox{\hyperlink{streaming3d__single_8c_a5a08e4f5cb3582e623cc14a6c92d48de}{I\+R2}}~3791
+\item 
+\#define \mbox{\hyperlink{streaming3d__single_8c_a0e93cfb2d62849853fd34957ba6e6fdc}{N\+T\+AB}}~32
+\item 
+\#define \mbox{\hyperlink{streaming3d__single_8c_a62339d74dd5d9d00480e1a288cf88fe8}{N\+D\+IV}}~(1+\mbox{\hyperlink{turb_8c_a87a6e0054f9d827c979c43aa0d5e621a}{I\+M\+M1}}/\mbox{\hyperlink{turb_8c_a0e93cfb2d62849853fd34957ba6e6fdc}{N\+T\+AB}})
+\item 
+\#define \mbox{\hyperlink{streaming3d__single_8c_aa7436c9270ffb06f8c1eae8d2e605cec}{R\+N\+MX}}~(1.\+0-\/D\+B\+L\+\_\+\+E\+P\+S\+I\+L\+ON)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{streaming3d__single_8c_a20fe861ca67faeb6e6c3ab7ddc536a02}{ran2}} (long int $\ast$idum)
+\item 
+void \mbox{\hyperlink{streaming3d__single_8c_aba113c7d473b295698538db951560011}{Output\+Mode\+Amplitude}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, \mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$p\+Out)
+\item 
+Real \mbox{\hyperlink{streaming3d__single_8c_ab79b8c19b17e4bf1a7c3b6ff6f375aff}{expr\+\_\+\+V3}} (const \mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$pG, const int i, const int \mbox{\hyperlink{bound1__flowout_8c_abf2bc2545a4a5f5683d9ef3ed0d977e0}{j}}, const int \mbox{\hyperlink{bound3_8c_adc468c70fb574ebd07287b38d0d0676d}{k}})
+\begin{DoxyCompactList}\small\item\em 3-\/velocity \end{DoxyCompactList}\item 
+Real \mbox{\hyperlink{streaming3d__single_8c_a61e9ccbb5286764add933172f22eddee}{expr\+\_\+\+V1par}} (const \mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$pG, const int i, const int \mbox{\hyperlink{bound1__flowout_8c_abf2bc2545a4a5f5683d9ef3ed0d977e0}{j}}, const int \mbox{\hyperlink{bound3_8c_adc468c70fb574ebd07287b38d0d0676d}{k}})
+\item 
+Real \mbox{\hyperlink{streaming3d__single_8c_ad17f1cb26a659295b8a1095dca958da5}{expr\+\_\+\+V2par}} (const \mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$pG, const int i, const int \mbox{\hyperlink{bound1__flowout_8c_abf2bc2545a4a5f5683d9ef3ed0d977e0}{j}}, const int \mbox{\hyperlink{bound3_8c_adc468c70fb574ebd07287b38d0d0676d}{k}})
+\item 
+Real \mbox{\hyperlink{streaming3d__single_8c_a758bb6e36ac295fd7a837bbbd6516f9b}{expr\+\_\+\+V3par}} (const \mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$pG, const int i, const int \mbox{\hyperlink{bound1__flowout_8c_abf2bc2545a4a5f5683d9ef3ed0d977e0}{j}}, const int \mbox{\hyperlink{bound3_8c_adc468c70fb574ebd07287b38d0d0676d}{k}})
+\item 
+void \mbox{\hyperlink{streaming3d__single_8c_a1b323f47153f1975b64382e0ffac6b73}{problem}} (\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$p\+Domain)
+\item 
+void \mbox{\hyperlink{streaming3d__single_8c_a2c334369ab621e9815591c76ccfb5fc7}{problem\+\_\+write\+\_\+restart}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, F\+I\+LE $\ast$fp)
+\item 
+void \mbox{\hyperlink{streaming3d__single_8c_acf733c9792756cbec1e9d226c4ff37ab}{problem\+\_\+read\+\_\+restart}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, F\+I\+LE $\ast$fp)
+\item 
+\mbox{\hyperlink{athena_8h_aaa64b3ee5eefc566b7c09368c414de89}{Cons\+Fun\+\_\+t}} \mbox{\hyperlink{streaming3d__single_8c_a4575c4cdbf2965a9857c45970d736676}{get\+\_\+usr\+\_\+expr}} (const char $\ast$expr)
+\item 
+\mbox{\hyperlink{athena_8h_a8bc2403d4d3a27d6f475f2dc6acc94cc}{V\+Out\+Fun\+\_\+t}} \mbox{\hyperlink{streaming3d__single_8c_a8b8cabb1061d5399fb492be89de213ff}{get\+\_\+usr\+\_\+out\+\_\+fun}} (const char $\ast$\mbox{\hyperlink{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}{name}})
+\item 
+void \mbox{\hyperlink{streaming3d__single_8c_a0ff640c24db1dc0d7c89d91f1d55ffce}{Userwork\+\_\+in\+\_\+loop}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\item 
+void \mbox{\hyperlink{streaming3d__single_8c_a5506a1df41ed88e038443271b9785337}{Userwork\+\_\+after\+\_\+loop}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Real \mbox{\hyperlink{streaming3d__single_8c_ab8e36533c29290d98a91375f7bdbf726}{rho0}}
+\item 
+Real \mbox{\hyperlink{streaming3d__single_8c_a35351c63b3cf78149628fab8059a276d}{mratio}}
+\item 
+Real \mbox{\hyperlink{streaming3d__single_8c_a9372fd203c06992263d3b7844525e5d8}{etavk}}
+\item 
+Real \mbox{\hyperlink{streaming3d__single_8c_abd4a1b8331e9fc6e051b002a73469000}{ux\+N\+SH}}
+\item 
+Real \mbox{\hyperlink{streaming3d__single_8c_a914606b391672c975b18a6ed65e454c8}{uy\+N\+SH}}
+\item 
+Real \mbox{\hyperlink{streaming3d__single_8c_a700b654ca34894e477030acda0bfbaac}{wx\+N\+SH}}
+\item 
+Real \mbox{\hyperlink{streaming3d__single_8c_a70725dd57eda1c854dd93f0e12813079}{wy\+N\+SH}}
+\item 
+int \mbox{\hyperlink{streaming3d__single_8c_ab3293858483aaa81751a77f58a1dfc33}{Npar}}
+\item 
+int \mbox{\hyperlink{streaming3d__single_8c_aad4072713982c83d1542442a8ca52ebe}{Npar3}}
+\item 
+int \mbox{\hyperlink{streaming3d__single_8c_a9a61364776daa55c1a82352d608eb22c}{downsamp}}
+\item 
+int \mbox{\hyperlink{streaming3d__single_8c_abfda77b016218238359bcc3e5c1600b0}{Nx}}
+\item 
+Real \mbox{\hyperlink{streaming3d__single_8c_ae6c39235076f2caaf5cdd57e86a97fd2}{Reux}}
+\item 
+Real \mbox{\hyperlink{streaming3d__single_8c_ab90a2e7cadcd1783c14922e8c054d081}{Imux}}
+\item 
+Real \mbox{\hyperlink{streaming3d__single_8c_a6c5b3be306fe7a3622ecc71dccf207df}{Reuy}}
+\item 
+Real \mbox{\hyperlink{streaming3d__single_8c_adbd11dec16f7f644d9f7d85eeb01c8fd}{Imuy}}
+\item 
+Real \mbox{\hyperlink{streaming3d__single_8c_aa364d35607b0fffe1a150cfe9ba3b814}{Reuz}}
+\item 
+Real \mbox{\hyperlink{streaming3d__single_8c_ad0b152b663cd19a2f41ff7f59efa165d}{Imuz}}
+\item 
+Real \mbox{\hyperlink{streaming3d__single_8c_a56da49c0c97aa835d5c9e818593704c2}{Rewx}}
+\item 
+Real \mbox{\hyperlink{streaming3d__single_8c_a0eac7a4316f8576613ae1b4d89d7c9c8}{Imwx}}
+\item 
+Real \mbox{\hyperlink{streaming3d__single_8c_aec64c5b9d0c96db82f4d4c06cfbdcc2a}{Rewy}}
+\item 
+Real \mbox{\hyperlink{streaming3d__single_8c_ad5dacbea9838aea80fdafd9a9702c5d5}{Imwy}}
+\item 
+Real \mbox{\hyperlink{streaming3d__single_8c_abae15283d2ec94216174c9b9fd6bef85}{Rewz}}
+\item 
+Real \mbox{\hyperlink{streaming3d__single_8c_a3b1026e7bf5fa25fa75321e5c1b00cfd}{Imwz}}
+\item 
+Real \mbox{\hyperlink{streaming3d__single_8c_abf2559c3222750e3b3a6d896b89f17cf}{Rerho}}
+\item 
+Real \mbox{\hyperlink{streaming3d__single_8c_a09eb24d3a5eded6c3f163a3dbfe478d2}{Imrho}}
+\item 
+Real \mbox{\hyperlink{streaming3d__single_8c_a7e99f602520a61b09d37fc25cc6723ba}{omg}}
+\item 
+Real \mbox{\hyperlink{streaming3d__single_8c_a0e63b0ad913b68a68ba39aa88ab60cb3}{s}}
+\item 
+Real \mbox{\hyperlink{streaming3d__single_8c_ad5a0b25666982c302ce2cc5597eb95d3}{amp}}
+\item 
+Real \mbox{\hyperlink{streaming3d__single_8c_acaf83ebbc7e966bbcd0c2c291f4dda90}{kx}}
+\item 
+Real \mbox{\hyperlink{streaming3d__single_8c_ad8f5dcd9af80221e8356e615c8da15d0}{kz}}
+\item 
+int \mbox{\hyperlink{streaming3d__single_8c_a3c641437c52015c53be985a7241cc83b}{ipert}}
+\item 
+int \mbox{\hyperlink{streaming3d__single_8c_ae5359dd3c1d5e591b8581b3b61216cc7}{nwave}}
+\item 
+char \mbox{\hyperlink{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}{name}} \mbox{[}50\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Problem generator for streaming instability test in non-\/stratified disks. 
+
+P\+U\+R\+P\+O\+SE\+: Problem generator for streaming instability test in non-\/stratified disks. This code works in 3D, with single particle species O\+N\+LY. Isothermal eos is assumed, and the value etavk/iso\+\_\+sound is fixed. In the case of growth rate test, since one requires an integer number of wavelengths across the grid, the isothermal sound speed is re-\/evaluated.
+
+Perturbation modes\+:
+\begin{DoxyItemize}
+\item ipert = 0\+: no perturbation, test for the N\+SH equilibrium, need F\+A\+R\+GO
+\item ipert = 1\+: linA of Y\+J07 (cold start), need F\+A\+R\+GO
+\item ipert = 2\+: linB of Y\+J07 (cold start), need F\+A\+R\+GO
+\item ipert = 3\+: random perturbation (warm start), do not need F\+A\+R\+GO
+\end{DoxyItemize}
+
+Must be configured using --enable-\/shearing-\/box and --with-\/eos=isothermal. F\+A\+R\+GO is need to establish the N\+SH equilibrium (ipert=0,1,2).
+
+Reference\+:
+\begin{DoxyItemize}
+\item Youdin \& Johansen, 2007, ApJ, 662, 613
+\item Johansen \& Youdin, 2007, ApJ, 662, 627 
+\end{DoxyItemize}
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{streaming3d__single_8c_ad301e6a88b1c01108f4867f2ea6f683c}\label{streaming3d__single_8c_ad301e6a88b1c01108f4867f2ea6f683c}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!AM@{AM}}
+\index{AM@{AM}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{AM}{AM}}
+{\footnotesize\ttfamily \#define AM~(1.\+0/\mbox{\hyperlink{turb_8c_a78325bdf48423acef7c012567628b391}{I\+M1}})}
+
+
+
+Definition at line 702 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_a6ef2749dca39c605c3d033f788afe6e3}\label{streaming3d__single_8c_a6ef2749dca39c605c3d033f788afe6e3}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!IA1@{IA1}}
+\index{IA1@{IA1}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{IA1}{IA1}}
+{\footnotesize\ttfamily \#define I\+A1~40014}
+
+
+
+Definition at line 704 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_a372a58d7e9e25912fd79e7afaa06cc7a}\label{streaming3d__single_8c_a372a58d7e9e25912fd79e7afaa06cc7a}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!IA2@{IA2}}
+\index{IA2@{IA2}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{IA2}{IA2}}
+{\footnotesize\ttfamily \#define I\+A2~40692}
+
+
+
+Definition at line 705 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_a78325bdf48423acef7c012567628b391}\label{streaming3d__single_8c_a78325bdf48423acef7c012567628b391}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!IM1@{IM1}}
+\index{IM1@{IM1}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{IM1}{IM1}}
+{\footnotesize\ttfamily \#define I\+M1~2147483563}
+
+
+
+Definition at line 700 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_ad8c519de7e5de4ae35344ddcf21fd062}\label{streaming3d__single_8c_ad8c519de7e5de4ae35344ddcf21fd062}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!IM2@{IM2}}
+\index{IM2@{IM2}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{IM2}{IM2}}
+{\footnotesize\ttfamily \#define I\+M2~2147483399}
+
+
+
+Definition at line 701 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_a87a6e0054f9d827c979c43aa0d5e621a}\label{streaming3d__single_8c_a87a6e0054f9d827c979c43aa0d5e621a}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!IMM1@{IMM1}}
+\index{IMM1@{IMM1}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{IMM1}{IMM1}}
+{\footnotesize\ttfamily \#define I\+M\+M1~(\mbox{\hyperlink{turb_8c_a78325bdf48423acef7c012567628b391}{I\+M1}}-\/1)}
+
+
+
+Definition at line 703 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_a9afa86ff22da69bda72fe271ae71ad46}\label{streaming3d__single_8c_a9afa86ff22da69bda72fe271ae71ad46}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!IQ1@{IQ1}}
+\index{IQ1@{IQ1}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{IQ1}{IQ1}}
+{\footnotesize\ttfamily \#define I\+Q1~53668}
+
+
+
+Definition at line 706 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_abae040385946a6acdf5e10d2efd86f3d}\label{streaming3d__single_8c_abae040385946a6acdf5e10d2efd86f3d}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!IQ2@{IQ2}}
+\index{IQ2@{IQ2}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{IQ2}{IQ2}}
+{\footnotesize\ttfamily \#define I\+Q2~52774}
+
+
+
+Definition at line 707 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_a7b2b32709f9770a283701ffcf3723497}\label{streaming3d__single_8c_a7b2b32709f9770a283701ffcf3723497}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!IR1@{IR1}}
+\index{IR1@{IR1}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{IR1}{IR1}}
+{\footnotesize\ttfamily \#define I\+R1~12211}
+
+
+
+Definition at line 708 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_a5a08e4f5cb3582e623cc14a6c92d48de}\label{streaming3d__single_8c_a5a08e4f5cb3582e623cc14a6c92d48de}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!IR2@{IR2}}
+\index{IR2@{IR2}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{IR2}{IR2}}
+{\footnotesize\ttfamily \#define I\+R2~3791}
+
+
+
+Definition at line 709 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_a62339d74dd5d9d00480e1a288cf88fe8}\label{streaming3d__single_8c_a62339d74dd5d9d00480e1a288cf88fe8}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!NDIV@{NDIV}}
+\index{NDIV@{NDIV}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{NDIV}{NDIV}}
+{\footnotesize\ttfamily \#define N\+D\+IV~(1+\mbox{\hyperlink{turb_8c_a87a6e0054f9d827c979c43aa0d5e621a}{I\+M\+M1}}/\mbox{\hyperlink{turb_8c_a0e93cfb2d62849853fd34957ba6e6fdc}{N\+T\+AB}})}
+
+
+
+Definition at line 711 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_a0e93cfb2d62849853fd34957ba6e6fdc}\label{streaming3d__single_8c_a0e93cfb2d62849853fd34957ba6e6fdc}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!NTAB@{NTAB}}
+\index{NTAB@{NTAB}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{NTAB}{NTAB}}
+{\footnotesize\ttfamily \#define N\+T\+AB~32}
+
+
+
+Definition at line 710 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_aa7436c9270ffb06f8c1eae8d2e605cec}\label{streaming3d__single_8c_aa7436c9270ffb06f8c1eae8d2e605cec}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!RNMX@{RNMX}}
+\index{RNMX@{RNMX}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{RNMX}{RNMX}}
+{\footnotesize\ttfamily \#define R\+N\+MX~(1.\+0-\/D\+B\+L\+\_\+\+E\+P\+S\+I\+L\+ON)}
+
+
+
+Definition at line 712 of file streaming3d\+\_\+single.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{streaming3d__single_8c_a61e9ccbb5286764add933172f22eddee}\label{streaming3d__single_8c_a61e9ccbb5286764add933172f22eddee}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!expr\_V1par@{expr\_V1par}}
+\index{expr\_V1par@{expr\_V1par}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{expr\_V1par()}{expr\_V1par()}}
+{\footnotesize\ttfamily Real expr\+\_\+\+V1par (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$}]{pG,  }\item[{const int}]{i,  }\item[{const int}]{j,  }\item[{const int}]{k }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{streaming3d__single_8c_ad17f1cb26a659295b8a1095dca958da5}\label{streaming3d__single_8c_ad17f1cb26a659295b8a1095dca958da5}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!expr\_V2par@{expr\_V2par}}
+\index{expr\_V2par@{expr\_V2par}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{expr\_V2par()}{expr\_V2par()}}
+{\footnotesize\ttfamily Real expr\+\_\+\+V2par (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$}]{pG,  }\item[{const int}]{i,  }\item[{const int}]{j,  }\item[{const int}]{k }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{streaming3d__single_8c_ab79b8c19b17e4bf1a7c3b6ff6f375aff}\label{streaming3d__single_8c_ab79b8c19b17e4bf1a7c3b6ff6f375aff}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!expr\_V3@{expr\_V3}}
+\index{expr\_V3@{expr\_V3}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{expr\_V3()}{expr\_V3()}}
+{\footnotesize\ttfamily Real expr\+\_\+\+V3 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$}]{pG,  }\item[{const int}]{i,  }\item[{const int}]{j,  }\item[{const int}]{k }\end{DoxyParamCaption})}
+
+
+
+3-\/velocity 
+
+~\newline
+ 
+
+Definition at line 1173 of file output.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_a758bb6e36ac295fd7a837bbbd6516f9b}\label{streaming3d__single_8c_a758bb6e36ac295fd7a837bbbd6516f9b}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!expr\_V3par@{expr\_V3par}}
+\index{expr\_V3par@{expr\_V3par}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{expr\_V3par()}{expr\_V3par()}}
+{\footnotesize\ttfamily Real expr\+\_\+\+V3par (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$}]{pG,  }\item[{const int}]{i,  }\item[{const int}]{j,  }\item[{const int}]{k }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{streaming3d__single_8c_a4575c4cdbf2965a9857c45970d736676}\label{streaming3d__single_8c_a4575c4cdbf2965a9857c45970d736676}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!get\_usr\_expr@{get\_usr\_expr}}
+\index{get\_usr\_expr@{get\_usr\_expr}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{get\_usr\_expr()}{get\_usr\_expr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{athena_8h_aaa64b3ee5eefc566b7c09368c414de89}{Cons\+Fun\+\_\+t}} get\+\_\+usr\+\_\+expr (\begin{DoxyParamCaption}\item[{const char $\ast$}]{expr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 531 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_a8b8cabb1061d5399fb492be89de213ff}\label{streaming3d__single_8c_a8b8cabb1061d5399fb492be89de213ff}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!get\_usr\_out\_fun@{get\_usr\_out\_fun}}
+\index{get\_usr\_out\_fun@{get\_usr\_out\_fun}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{get\_usr\_out\_fun()}{get\_usr\_out\_fun()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{athena_8h_a8bc2403d4d3a27d6f475f2dc6acc94cc}{V\+Out\+Fun\+\_\+t}} get\+\_\+usr\+\_\+out\+\_\+fun (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 542 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_aba113c7d473b295698538db951560011}\label{streaming3d__single_8c_aba113c7d473b295698538db951560011}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!OutputModeAmplitude@{OutputModeAmplitude}}
+\index{OutputModeAmplitude@{OutputModeAmplitude}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{OutputModeAmplitude()}{OutputModeAmplitude()}}
+{\footnotesize\ttfamily void Output\+Mode\+Amplitude (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{\mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$}]{p\+Out }\end{DoxyParamCaption})}
+
+
+
+Definition at line 641 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_a1b323f47153f1975b64382e0ffac6b73}\label{streaming3d__single_8c_a1b323f47153f1975b64382e0ffac6b73}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!problem@{problem}}
+\index{problem@{problem}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{problem()}{problem()}}
+{\footnotesize\ttfamily void problem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{p\+Domain }\end{DoxyParamCaption})}
+
+
+
+Definition at line 88 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_acf733c9792756cbec1e9d226c4ff37ab}\label{streaming3d__single_8c_acf733c9792756cbec1e9d226c4ff37ab}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!problem\_read\_restart@{problem\_read\_restart}}
+\index{problem\_read\_restart@{problem\_read\_restart}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{problem\_read\_restart()}{problem\_read\_restart()}}
+{\footnotesize\ttfamily void problem\+\_\+read\+\_\+restart (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 422 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_a2c334369ab621e9815591c76ccfb5fc7}\label{streaming3d__single_8c_a2c334369ab621e9815591c76ccfb5fc7}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!problem\_write\_restart@{problem\_write\_restart}}
+\index{problem\_write\_restart@{problem\_write\_restart}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{problem\_write\_restart()}{problem\_write\_restart()}}
+{\footnotesize\ttfamily void problem\+\_\+write\+\_\+restart (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 401 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_a20fe861ca67faeb6e6c3ab7ddc536a02}\label{streaming3d__single_8c_a20fe861ca67faeb6e6c3ab7ddc536a02}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!ran2@{ran2}}
+\index{ran2@{ran2}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{ran2()}{ran2()}}
+{\footnotesize\ttfamily double ran2 (\begin{DoxyParamCaption}\item[{long int $\ast$}]{idum }\end{DoxyParamCaption})}
+
+
+
+Definition at line 727 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_a5506a1df41ed88e038443271b9785337}\label{streaming3d__single_8c_a5506a1df41ed88e038443271b9785337}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!Userwork\_after\_loop@{Userwork\_after\_loop}}
+\index{Userwork\_after\_loop@{Userwork\_after\_loop}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{Userwork\_after\_loop()}{Userwork\_after\_loop()}}
+{\footnotesize\ttfamily void Userwork\+\_\+after\+\_\+loop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+Definition at line 583 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_a0ff640c24db1dc0d7c89d91f1d55ffce}\label{streaming3d__single_8c_a0ff640c24db1dc0d7c89d91f1d55ffce}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!Userwork\_in\_loop@{Userwork\_in\_loop}}
+\index{Userwork\_in\_loop@{Userwork\_in\_loop}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{Userwork\_in\_loop()}{Userwork\_in\_loop()}}
+{\footnotesize\ttfamily void Userwork\+\_\+in\+\_\+loop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+Definition at line 572 of file streaming3d\+\_\+single.\+c.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{streaming3d__single_8c_ad5a0b25666982c302ce2cc5597eb95d3}\label{streaming3d__single_8c_ad5a0b25666982c302ce2cc5597eb95d3}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!amp@{amp}}
+\index{amp@{amp}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{amp}{amp}}
+{\footnotesize\ttfamily Real amp}
+
+
+
+Definition at line 59 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_a9a61364776daa55c1a82352d608eb22c}\label{streaming3d__single_8c_a9a61364776daa55c1a82352d608eb22c}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!downsamp@{downsamp}}
+\index{downsamp@{downsamp}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{downsamp}{downsamp}}
+{\footnotesize\ttfamily int downsamp}
+
+
+
+Definition at line 55 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_a9372fd203c06992263d3b7844525e5d8}\label{streaming3d__single_8c_a9372fd203c06992263d3b7844525e5d8}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!etavk@{etavk}}
+\index{etavk@{etavk}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{etavk}{etavk}}
+{\footnotesize\ttfamily Real etavk}
+
+
+
+Definition at line 53 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_a09eb24d3a5eded6c3f163a3dbfe478d2}\label{streaming3d__single_8c_a09eb24d3a5eded6c3f163a3dbfe478d2}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!Imrho@{Imrho}}
+\index{Imrho@{Imrho}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{Imrho}{Imrho}}
+{\footnotesize\ttfamily Real Imrho}
+
+
+
+Definition at line 57 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_ab90a2e7cadcd1783c14922e8c054d081}\label{streaming3d__single_8c_ab90a2e7cadcd1783c14922e8c054d081}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!Imux@{Imux}}
+\index{Imux@{Imux}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{Imux}{Imux}}
+{\footnotesize\ttfamily Real Imux}
+
+
+
+Definition at line 57 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_adbd11dec16f7f644d9f7d85eeb01c8fd}\label{streaming3d__single_8c_adbd11dec16f7f644d9f7d85eeb01c8fd}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!Imuy@{Imuy}}
+\index{Imuy@{Imuy}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{Imuy}{Imuy}}
+{\footnotesize\ttfamily Real Imuy}
+
+
+
+Definition at line 57 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_ad0b152b663cd19a2f41ff7f59efa165d}\label{streaming3d__single_8c_ad0b152b663cd19a2f41ff7f59efa165d}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!Imuz@{Imuz}}
+\index{Imuz@{Imuz}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{Imuz}{Imuz}}
+{\footnotesize\ttfamily Real Imuz}
+
+
+
+Definition at line 57 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_a0eac7a4316f8576613ae1b4d89d7c9c8}\label{streaming3d__single_8c_a0eac7a4316f8576613ae1b4d89d7c9c8}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!Imwx@{Imwx}}
+\index{Imwx@{Imwx}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{Imwx}{Imwx}}
+{\footnotesize\ttfamily Real Imwx}
+
+
+
+Definition at line 57 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_ad5dacbea9838aea80fdafd9a9702c5d5}\label{streaming3d__single_8c_ad5dacbea9838aea80fdafd9a9702c5d5}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!Imwy@{Imwy}}
+\index{Imwy@{Imwy}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{Imwy}{Imwy}}
+{\footnotesize\ttfamily Real Imwy}
+
+
+
+Definition at line 57 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_a3b1026e7bf5fa25fa75321e5c1b00cfd}\label{streaming3d__single_8c_a3b1026e7bf5fa25fa75321e5c1b00cfd}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!Imwz@{Imwz}}
+\index{Imwz@{Imwz}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{Imwz}{Imwz}}
+{\footnotesize\ttfamily Real Imwz}
+
+
+
+Definition at line 57 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_a3c641437c52015c53be985a7241cc83b}\label{streaming3d__single_8c_a3c641437c52015c53be985a7241cc83b}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!ipert@{ipert}}
+\index{ipert@{ipert}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{ipert}{ipert}}
+{\footnotesize\ttfamily int ipert}
+
+
+
+Definition at line 60 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_acaf83ebbc7e966bbcd0c2c291f4dda90}\label{streaming3d__single_8c_acaf83ebbc7e966bbcd0c2c291f4dda90}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!kx@{kx}}
+\index{kx@{kx}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{kx}{kx}}
+{\footnotesize\ttfamily Real kx}
+
+
+
+Definition at line 59 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_ad8f5dcd9af80221e8356e615c8da15d0}\label{streaming3d__single_8c_ad8f5dcd9af80221e8356e615c8da15d0}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!kz@{kz}}
+\index{kz@{kz}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{kz}{kz}}
+{\footnotesize\ttfamily Real kz}
+
+
+
+Definition at line 59 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_a35351c63b3cf78149628fab8059a276d}\label{streaming3d__single_8c_a35351c63b3cf78149628fab8059a276d}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!mratio@{mratio}}
+\index{mratio@{mratio}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{mratio}{mratio}}
+{\footnotesize\ttfamily Real mratio}
+
+
+
+Definition at line 53 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}\label{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!name@{name}}
+\index{name@{name}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily char name\mbox{[}50\mbox{]}}
+
+
+
+Definition at line 62 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_ab3293858483aaa81751a77f58a1dfc33}\label{streaming3d__single_8c_ab3293858483aaa81751a77f58a1dfc33}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!Npar@{Npar}}
+\index{Npar@{Npar}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{Npar}{Npar}}
+{\footnotesize\ttfamily int Npar}
+
+
+
+Definition at line 55 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_aad4072713982c83d1542442a8ca52ebe}\label{streaming3d__single_8c_aad4072713982c83d1542442a8ca52ebe}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!Npar3@{Npar3}}
+\index{Npar3@{Npar3}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{Npar3}{Npar3}}
+{\footnotesize\ttfamily int Npar3}
+
+
+
+Definition at line 55 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_ae5359dd3c1d5e591b8581b3b61216cc7}\label{streaming3d__single_8c_ae5359dd3c1d5e591b8581b3b61216cc7}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!nwave@{nwave}}
+\index{nwave@{nwave}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{nwave}{nwave}}
+{\footnotesize\ttfamily int nwave}
+
+
+
+Definition at line 60 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_abfda77b016218238359bcc3e5c1600b0}\label{streaming3d__single_8c_abfda77b016218238359bcc3e5c1600b0}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!Nx@{Nx}}
+\index{Nx@{Nx}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{Nx}{Nx}}
+{\footnotesize\ttfamily int Nx}
+
+
+
+Definition at line 55 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_a7e99f602520a61b09d37fc25cc6723ba}\label{streaming3d__single_8c_a7e99f602520a61b09d37fc25cc6723ba}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!omg@{omg}}
+\index{omg@{omg}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{omg}{omg}}
+{\footnotesize\ttfamily Real omg}
+
+
+
+Definition at line 57 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_abf2559c3222750e3b3a6d896b89f17cf}\label{streaming3d__single_8c_abf2559c3222750e3b3a6d896b89f17cf}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!Rerho@{Rerho}}
+\index{Rerho@{Rerho}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{Rerho}{Rerho}}
+{\footnotesize\ttfamily Real Rerho}
+
+
+
+Definition at line 57 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_ae6c39235076f2caaf5cdd57e86a97fd2}\label{streaming3d__single_8c_ae6c39235076f2caaf5cdd57e86a97fd2}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!Reux@{Reux}}
+\index{Reux@{Reux}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{Reux}{Reux}}
+{\footnotesize\ttfamily Real Reux}
+
+
+
+Definition at line 57 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_a6c5b3be306fe7a3622ecc71dccf207df}\label{streaming3d__single_8c_a6c5b3be306fe7a3622ecc71dccf207df}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!Reuy@{Reuy}}
+\index{Reuy@{Reuy}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{Reuy}{Reuy}}
+{\footnotesize\ttfamily Real Reuy}
+
+
+
+Definition at line 57 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_aa364d35607b0fffe1a150cfe9ba3b814}\label{streaming3d__single_8c_aa364d35607b0fffe1a150cfe9ba3b814}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!Reuz@{Reuz}}
+\index{Reuz@{Reuz}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{Reuz}{Reuz}}
+{\footnotesize\ttfamily Real Reuz}
+
+
+
+Definition at line 57 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_a56da49c0c97aa835d5c9e818593704c2}\label{streaming3d__single_8c_a56da49c0c97aa835d5c9e818593704c2}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!Rewx@{Rewx}}
+\index{Rewx@{Rewx}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{Rewx}{Rewx}}
+{\footnotesize\ttfamily Real Rewx}
+
+
+
+Definition at line 57 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_aec64c5b9d0c96db82f4d4c06cfbdcc2a}\label{streaming3d__single_8c_aec64c5b9d0c96db82f4d4c06cfbdcc2a}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!Rewy@{Rewy}}
+\index{Rewy@{Rewy}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{Rewy}{Rewy}}
+{\footnotesize\ttfamily Real Rewy}
+
+
+
+Definition at line 57 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_abae15283d2ec94216174c9b9fd6bef85}\label{streaming3d__single_8c_abae15283d2ec94216174c9b9fd6bef85}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!Rewz@{Rewz}}
+\index{Rewz@{Rewz}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{Rewz}{Rewz}}
+{\footnotesize\ttfamily Real Rewz}
+
+
+
+Definition at line 57 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_ab8e36533c29290d98a91375f7bdbf726}\label{streaming3d__single_8c_ab8e36533c29290d98a91375f7bdbf726}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!rho0@{rho0}}
+\index{rho0@{rho0}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{rho0}{rho0}}
+{\footnotesize\ttfamily Real rho0}
+
+
+
+Definition at line 53 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_a0e63b0ad913b68a68ba39aa88ab60cb3}\label{streaming3d__single_8c_a0e63b0ad913b68a68ba39aa88ab60cb3}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!s@{s}}
+\index{s@{s}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{s}{s}}
+{\footnotesize\ttfamily Real s}
+
+
+
+Definition at line 57 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_abd4a1b8331e9fc6e051b002a73469000}\label{streaming3d__single_8c_abd4a1b8331e9fc6e051b002a73469000}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!uxNSH@{uxNSH}}
+\index{uxNSH@{uxNSH}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{uxNSH}{uxNSH}}
+{\footnotesize\ttfamily Real ux\+N\+SH}
+
+
+
+Definition at line 53 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_a914606b391672c975b18a6ed65e454c8}\label{streaming3d__single_8c_a914606b391672c975b18a6ed65e454c8}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!uyNSH@{uyNSH}}
+\index{uyNSH@{uyNSH}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{uyNSH}{uyNSH}}
+{\footnotesize\ttfamily Real uy\+N\+SH}
+
+
+
+Definition at line 53 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_a700b654ca34894e477030acda0bfbaac}\label{streaming3d__single_8c_a700b654ca34894e477030acda0bfbaac}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!wxNSH@{wxNSH}}
+\index{wxNSH@{wxNSH}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{wxNSH}{wxNSH}}
+{\footnotesize\ttfamily Real wx\+N\+SH}
+
+
+
+Definition at line 53 of file streaming3d\+\_\+single.\+c.
+
+\mbox{\Hypertarget{streaming3d__single_8c_a70725dd57eda1c854dd93f0e12813079}\label{streaming3d__single_8c_a70725dd57eda1c854dd93f0e12813079}} 
+\index{streaming3d\_single.c@{streaming3d\_single.c}!wyNSH@{wyNSH}}
+\index{wyNSH@{wyNSH}!streaming3d\_single.c@{streaming3d\_single.c}}
+\doxysubsubsection{\texorpdfstring{wyNSH}{wyNSH}}
+{\footnotesize\ttfamily Real wy\+N\+SH}
+
+
+
+Definition at line 53 of file streaming3d\+\_\+single.\+c.
+

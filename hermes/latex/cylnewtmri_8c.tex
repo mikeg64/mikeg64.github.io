@@ -1,0 +1,189 @@
+\hypertarget{cylnewtmri_8c}{}\doxysection{src/prob/cylnewtmri.c File Reference}
+\label{cylnewtmri_8c}\index{src/prob/cylnewtmri.c@{src/prob/cylnewtmri.c}}
+
+
+Test of the evolution/saturation of the M\+RI in an unstratified/uniform Newtonian disk.  
+
+
+{\ttfamily \#include \char`\"{}copyright.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}athena.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prototypes.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{cylnewtmri_8c_ad350bae49f72ba58d73027f1316e38b8}{S\+E\+ED}}~31337
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Real \mbox{\hyperlink{cylnewtmri_8c_ab433552c04b938208cefc0e8452b3eb7}{Mollifier}} (Real Center, Real Scl, Real x)
+\item 
+void \mbox{\hyperlink{cylnewtmri_8c_a9cedca4e8e8ed26381779bc6a285abed}{Scale\+To\+Beta}} (\mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$pG, Real beta)
+\item 
+void \mbox{\hyperlink{cylnewtmri_8c_adb4c1dd44d4e34f5c76e556e3acf1003}{disk\+\_\+ir}} (\mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$pG)
+\item 
+void \mbox{\hyperlink{cylnewtmri_8c_ac68be121602c5643bb19fa04512bc705}{disk\+\_\+or}} (\mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$pG)
+\item 
+void \mbox{\hyperlink{cylnewtmri_8c_a5ced9a902bba3a9c41dd4fa8fcee6da1}{out\+\_\+ktab}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, \mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$p\+Out)
+\item 
+void \mbox{\hyperlink{cylnewtmri_8c_a1b323f47153f1975b64382e0ffac6b73}{problem}} (\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$p\+Domain)
+\item 
+void \mbox{\hyperlink{cylnewtmri_8c_a2c334369ab621e9815591c76ccfb5fc7}{problem\+\_\+write\+\_\+restart}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, F\+I\+LE $\ast$fp)
+\item 
+void \mbox{\hyperlink{cylnewtmri_8c_acf733c9792756cbec1e9d226c4ff37ab}{problem\+\_\+read\+\_\+restart}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, F\+I\+LE $\ast$fp)
+\item 
+\mbox{\hyperlink{athena_8h_aaa64b3ee5eefc566b7c09368c414de89}{Cons\+Fun\+\_\+t}} \mbox{\hyperlink{cylnewtmri_8c_a4575c4cdbf2965a9857c45970d736676}{get\+\_\+usr\+\_\+expr}} (const char $\ast$expr)
+\item 
+\mbox{\hyperlink{athena_8h_a8bc2403d4d3a27d6f475f2dc6acc94cc}{V\+Out\+Fun\+\_\+t}} \mbox{\hyperlink{cylnewtmri_8c_a8b8cabb1061d5399fb492be89de213ff}{get\+\_\+usr\+\_\+out\+\_\+fun}} (const char $\ast$\mbox{\hyperlink{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}{name}})
+\item 
+void \mbox{\hyperlink{cylnewtmri_8c_a0ff640c24db1dc0d7c89d91f1d55ffce}{Userwork\+\_\+in\+\_\+loop}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\item 
+void \mbox{\hyperlink{cylnewtmri_8c_a5506a1df41ed88e038443271b9785337}{Userwork\+\_\+after\+\_\+loop}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Test of the evolution/saturation of the M\+RI in an unstratified/uniform Newtonian disk. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{cylnewtmri_8c_ad350bae49f72ba58d73027f1316e38b8}\label{cylnewtmri_8c_ad350bae49f72ba58d73027f1316e38b8}} 
+\index{cylnewtmri.c@{cylnewtmri.c}!SEED@{SEED}}
+\index{SEED@{SEED}!cylnewtmri.c@{cylnewtmri.c}}
+\doxysubsubsection{\texorpdfstring{SEED}{SEED}}
+{\footnotesize\ttfamily \#define S\+E\+ED~31337}
+
+
+
+Definition at line 19 of file cylnewtmri.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{cylnewtmri_8c_adb4c1dd44d4e34f5c76e556e3acf1003}\label{cylnewtmri_8c_adb4c1dd44d4e34f5c76e556e3acf1003}} 
+\index{cylnewtmri.c@{cylnewtmri.c}!disk\_ir@{disk\_ir}}
+\index{disk\_ir@{disk\_ir}!cylnewtmri.c@{cylnewtmri.c}}
+\doxysubsubsection{\texorpdfstring{disk\_ir()}{disk\_ir()}}
+{\footnotesize\ttfamily void disk\+\_\+ir (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$}]{pG }\end{DoxyParamCaption})}
+
+
+
+Definition at line 573 of file cylnewtmri.\+c.
+
+\mbox{\Hypertarget{cylnewtmri_8c_ac68be121602c5643bb19fa04512bc705}\label{cylnewtmri_8c_ac68be121602c5643bb19fa04512bc705}} 
+\index{cylnewtmri.c@{cylnewtmri.c}!disk\_or@{disk\_or}}
+\index{disk\_or@{disk\_or}!cylnewtmri.c@{cylnewtmri.c}}
+\doxysubsubsection{\texorpdfstring{disk\_or()}{disk\_or()}}
+{\footnotesize\ttfamily void disk\+\_\+or (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$}]{pG }\end{DoxyParamCaption})}
+
+
+
+Definition at line 679 of file cylnewtmri.\+c.
+
+\mbox{\Hypertarget{cylnewtmri_8c_a4575c4cdbf2965a9857c45970d736676}\label{cylnewtmri_8c_a4575c4cdbf2965a9857c45970d736676}} 
+\index{cylnewtmri.c@{cylnewtmri.c}!get\_usr\_expr@{get\_usr\_expr}}
+\index{get\_usr\_expr@{get\_usr\_expr}!cylnewtmri.c@{cylnewtmri.c}}
+\doxysubsubsection{\texorpdfstring{get\_usr\_expr()}{get\_usr\_expr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{athena_8h_aaa64b3ee5eefc566b7c09368c414de89}{Cons\+Fun\+\_\+t}} get\+\_\+usr\+\_\+expr (\begin{DoxyParamCaption}\item[{const char $\ast$}]{expr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 458 of file cylnewtmri.\+c.
+
+\mbox{\Hypertarget{cylnewtmri_8c_a8b8cabb1061d5399fb492be89de213ff}\label{cylnewtmri_8c_a8b8cabb1061d5399fb492be89de213ff}} 
+\index{cylnewtmri.c@{cylnewtmri.c}!get\_usr\_out\_fun@{get\_usr\_out\_fun}}
+\index{get\_usr\_out\_fun@{get\_usr\_out\_fun}!cylnewtmri.c@{cylnewtmri.c}}
+\doxysubsubsection{\texorpdfstring{get\_usr\_out\_fun()}{get\_usr\_out\_fun()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{athena_8h_a8bc2403d4d3a27d6f475f2dc6acc94cc}{V\+Out\+Fun\+\_\+t}} get\+\_\+usr\+\_\+out\+\_\+fun (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 479 of file cylnewtmri.\+c.
+
+\mbox{\Hypertarget{cylnewtmri_8c_ab433552c04b938208cefc0e8452b3eb7}\label{cylnewtmri_8c_ab433552c04b938208cefc0e8452b3eb7}} 
+\index{cylnewtmri.c@{cylnewtmri.c}!Mollifier@{Mollifier}}
+\index{Mollifier@{Mollifier}!cylnewtmri.c@{cylnewtmri.c}}
+\doxysubsubsection{\texorpdfstring{Mollifier()}{Mollifier()}}
+{\footnotesize\ttfamily Real Mollifier (\begin{DoxyParamCaption}\item[{Real}]{Center,  }\item[{Real}]{Scl,  }\item[{Real}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line 497 of file cylnewtmri.\+c.
+
+\mbox{\Hypertarget{cylnewtmri_8c_a5ced9a902bba3a9c41dd4fa8fcee6da1}\label{cylnewtmri_8c_a5ced9a902bba3a9c41dd4fa8fcee6da1}} 
+\index{cylnewtmri.c@{cylnewtmri.c}!out\_ktab@{out\_ktab}}
+\index{out\_ktab@{out\_ktab}!cylnewtmri.c@{cylnewtmri.c}}
+\doxysubsubsection{\texorpdfstring{out\_ktab()}{out\_ktab()}}
+{\footnotesize\ttfamily void out\+\_\+ktab (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{\mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$}]{p\+Out }\end{DoxyParamCaption})}
+
+
+
+Definition at line 939 of file cylnewtmri.\+c.
+
+\mbox{\Hypertarget{cylnewtmri_8c_a1b323f47153f1975b64382e0ffac6b73}\label{cylnewtmri_8c_a1b323f47153f1975b64382e0ffac6b73}} 
+\index{cylnewtmri.c@{cylnewtmri.c}!problem@{problem}}
+\index{problem@{problem}!cylnewtmri.c@{cylnewtmri.c}}
+\doxysubsubsection{\texorpdfstring{problem()}{problem()}}
+{\footnotesize\ttfamily void problem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{p\+Domain }\end{DoxyParamCaption})}
+
+
+
+Definition at line 127 of file cylnewtmri.\+c.
+
+\mbox{\Hypertarget{cylnewtmri_8c_acf733c9792756cbec1e9d226c4ff37ab}\label{cylnewtmri_8c_acf733c9792756cbec1e9d226c4ff37ab}} 
+\index{cylnewtmri.c@{cylnewtmri.c}!problem\_read\_restart@{problem\_read\_restart}}
+\index{problem\_read\_restart@{problem\_read\_restart}!cylnewtmri.c@{cylnewtmri.c}}
+\doxysubsubsection{\texorpdfstring{problem\_read\_restart()}{problem\_read\_restart()}}
+{\footnotesize\ttfamily void problem\+\_\+read\+\_\+restart (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 419 of file cylnewtmri.\+c.
+
+\mbox{\Hypertarget{cylnewtmri_8c_a2c334369ab621e9815591c76ccfb5fc7}\label{cylnewtmri_8c_a2c334369ab621e9815591c76ccfb5fc7}} 
+\index{cylnewtmri.c@{cylnewtmri.c}!problem\_write\_restart@{problem\_write\_restart}}
+\index{problem\_write\_restart@{problem\_write\_restart}!cylnewtmri.c@{cylnewtmri.c}}
+\doxysubsubsection{\texorpdfstring{problem\_write\_restart()}{problem\_write\_restart()}}
+{\footnotesize\ttfamily void problem\+\_\+write\+\_\+restart (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 414 of file cylnewtmri.\+c.
+
+\mbox{\Hypertarget{cylnewtmri_8c_a9cedca4e8e8ed26381779bc6a285abed}\label{cylnewtmri_8c_a9cedca4e8e8ed26381779bc6a285abed}} 
+\index{cylnewtmri.c@{cylnewtmri.c}!ScaleToBeta@{ScaleToBeta}}
+\index{ScaleToBeta@{ScaleToBeta}!cylnewtmri.c@{cylnewtmri.c}}
+\doxysubsubsection{\texorpdfstring{ScaleToBeta()}{ScaleToBeta()}}
+{\footnotesize\ttfamily void Scale\+To\+Beta (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$}]{pG,  }\item[{Real}]{beta }\end{DoxyParamCaption})}
+
+
+
+Definition at line 511 of file cylnewtmri.\+c.
+
+\mbox{\Hypertarget{cylnewtmri_8c_a5506a1df41ed88e038443271b9785337}\label{cylnewtmri_8c_a5506a1df41ed88e038443271b9785337}} 
+\index{cylnewtmri.c@{cylnewtmri.c}!Userwork\_after\_loop@{Userwork\_after\_loop}}
+\index{Userwork\_after\_loop@{Userwork\_after\_loop}!cylnewtmri.c@{cylnewtmri.c}}
+\doxysubsubsection{\texorpdfstring{Userwork\_after\_loop()}{Userwork\_after\_loop()}}
+{\footnotesize\ttfamily void Userwork\+\_\+after\+\_\+loop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+Definition at line 492 of file cylnewtmri.\+c.
+
+\mbox{\Hypertarget{cylnewtmri_8c_a0ff640c24db1dc0d7c89d91f1d55ffce}\label{cylnewtmri_8c_a0ff640c24db1dc0d7c89d91f1d55ffce}} 
+\index{cylnewtmri.c@{cylnewtmri.c}!Userwork\_in\_loop@{Userwork\_in\_loop}}
+\index{Userwork\_in\_loop@{Userwork\_in\_loop}!cylnewtmri.c@{cylnewtmri.c}}
+\doxysubsubsection{\texorpdfstring{Userwork\_in\_loop()}{Userwork\_in\_loop()}}
+{\footnotesize\ttfamily void Userwork\+\_\+in\+\_\+loop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+Definition at line 488 of file cylnewtmri.\+c.
+

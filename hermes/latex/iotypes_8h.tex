@@ -1,0 +1,347 @@
+\hypertarget{iotypes_8h}{}\doxysection{src/smaug/include/iotypes.h File Reference}
+\label{iotypes_8h}\index{src/smaug/include/iotypes.h@{src/smaug/include/iotypes.h}}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_meta}{Meta}}
+\item 
+struct \mbox{\hyperlink{struct_iome}{Iome}}
+\item 
+struct \mbox{\hyperlink{structparams}{params}}
+\item 
+struct \mbox{\hyperlink{structstate}{state}}
+\item 
+struct \mbox{\hyperlink{structhydrovars}{hydrovars}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{iotypes_8h_ab3b875a67316a31b08066c192fb8451d}{D\+E\+F\+I\+N\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON}}(T)~  typedef T real;
+\item 
+\#define \mbox{\hyperlink{iotypes_8h_a2b1fd2d28c6a7d4a3f7027cc1b6466f3}{N\+D\+IM}}~2
+\item 
+\#define \mbox{\hyperlink{iotypes_8h_a90e3bcb750b0a2efce1d069ca47c4850}{N\+V\+E\+C\+D\+IM}}~3
+\item 
+\#define \mbox{\hyperlink{iotypes_8h_a598a3330b3c21701223ee0ca14316eca}{PI}}~3.\+14159265358979
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{iotypes_8h_a1a6b6fb557d8d37d59700faf4e4c9167}{mode}} \mbox{\hyperlink{iotypes_8h_adcc8e4e0d70c386af8c371a6c1d74415}{M\+O\+DE}}
+\item 
+typedef enum \mbox{\hyperlink{iotypes_8h_a0b3a3fe52f5c9bded65063b458099bd3}{tempvars}} \mbox{\hyperlink{iotypes_8h_a211225f1f35e584500af7824541affbd}{T\+EV}}
+\item 
+typedef enum \mbox{\hyperlink{iotypes_8h_af6b2feaebd17ff7cfa72bcb1586a1253}{temp1vars}} \mbox{\hyperlink{iotypes_8h_a721c79dcd603ee6a47fc4b415ef9270e}{T\+E\+V1}}
+\item 
+typedef enum \mbox{\hyperlink{iotypes_8h_a5dd80e88a63f76c50ea5ba08429b8e7c}{temp2vars}} \mbox{\hyperlink{iotypes_8h_ab53b57226046d81f0c5d86cdb3f95840}{T\+E\+V2}}
+\item 
+typedef struct Source \mbox{\hyperlink{iotypes_8h_ac454e4d7501a43630cc334cac973dcb4}{source}}
+\item 
+typedef struct Constants \mbox{\hyperlink{iotypes_8h_a627de93261d2e8e2bab96df766a20a17}{constants}}
+\item 
+typedef struct Domain \mbox{\hyperlink{iotypes_8h_a5ce70e39ce61cf2411af26724e2e24a5}{domain}}
+\item 
+typedef struct \mbox{\hyperlink{struct_iome}{Iome}} \mbox{\hyperlink{iotypes_8h_a1092fd550f7d59796545c124f9b475fd}{iome}}
+\item 
+typedef struct \mbox{\hyperlink{struct_meta}{Meta}} \mbox{\hyperlink{iotypes_8h_ae4646c3755bce6d8ec761b71a0386bb5}{meta}}
+\item 
+typedef struct Stateinfo \mbox{\hyperlink{iotypes_8h_ad6c412010cfc693c38cbab227a4ec280}{stateinfo}}
+\item 
+typedef struct \mbox{\hyperlink{structparams}{params}} \mbox{\hyperlink{iotypes_8h_a3d58c688e59580741820699eb769d205}{Params}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{iotypes_8h_a1a6b6fb557d8d37d59700faf4e4c9167}{mode}} \{ \newline
+\mbox{\hyperlink{iotypes_8h_a1a6b6fb557d8d37d59700faf4e4c9167a28587bd6fdb2fda96552863fb27851cd}{run}}, 
+\mbox{\hyperlink{iotypes_8h_a1a6b6fb557d8d37d59700faf4e4c9167a36bfc2cb416f93a83fb25c99b9dce075}{scatter}}, 
+\mbox{\hyperlink{iotypes_8h_a1a6b6fb557d8d37d59700faf4e4c9167a6a764e85d833596961d1d179e942e444}{gather}}, 
+\mbox{\hyperlink{iotypes_8h_a1a6b6fb557d8d37d59700faf4e4c9167a2e804b7c8163d212e6231f5228f73ce9}{init}}, 
+\newline
+\mbox{\hyperlink{iotypes_8h_a1a6b6fb557d8d37d59700faf4e4c9167abaf4a98988e89dac65ceaccf4b426546}{redistribute}}
+ \}
+\item 
+enum \mbox{\hyperlink{iotypes_8h_a0b3a3fe52f5c9bded65063b458099bd3}{tempvars}} \{ \newline
+\mbox{\hyperlink{iotypes_8h_a0b3a3fe52f5c9bded65063b458099bd3a6fdb51edfd8dd626371f609eb106bdc6}{tmp1}}, 
+\mbox{\hyperlink{iotypes_8h_a0b3a3fe52f5c9bded65063b458099bd3a33ece33df10c533fe5e355c3be3b63af}{tmp2}}, 
+\mbox{\hyperlink{iotypes_8h_a0b3a3fe52f5c9bded65063b458099bd3a284dd3f920da8ad52d9fbe19ba86fc1f}{tmp3}}, 
+\mbox{\hyperlink{iotypes_8h_a0b3a3fe52f5c9bded65063b458099bd3acfe5ed4e1e17c40f1ccd5cc95ba0eaa4}{tmp4}}, 
+\newline
+\mbox{\hyperlink{iotypes_8h_a0b3a3fe52f5c9bded65063b458099bd3a341d9e1adbfd7dc5f019e2cf6c041fc4}{tmp5}}, 
+\mbox{\hyperlink{iotypes_8h_a0b3a3fe52f5c9bded65063b458099bd3a802b49dea4bfa94fc3412a3f473ae923}{tmp6}}, 
+\mbox{\hyperlink{iotypes_8h_a0b3a3fe52f5c9bded65063b458099bd3ac0d9d2f7bad00d2c51d903c351412c43}{tmp7}}, 
+\mbox{\hyperlink{iotypes_8h_a0b3a3fe52f5c9bded65063b458099bd3a72b8213f55270f9332057ba8e5728320}{tmp8}}
+ \}
+\item 
+enum \mbox{\hyperlink{iotypes_8h_af6b2feaebd17ff7cfa72bcb1586a1253}{temp1vars}} \{ \mbox{\hyperlink{iotypes_8h_af6b2feaebd17ff7cfa72bcb1586a1253aec6e5be66411cb5f2e5fc6b6748d1ea1}{d1}}, 
+\mbox{\hyperlink{iotypes_8h_af6b2feaebd17ff7cfa72bcb1586a1253a3e4ca955031f8865b5e54b47792c7f77}{d3}}
+ \}
+\item 
+enum \mbox{\hyperlink{iotypes_8h_a5dd80e88a63f76c50ea5ba08429b8e7c}{temp2vars}} \{ \mbox{\hyperlink{iotypes_8h_a5dd80e88a63f76c50ea5ba08429b8e7ca1046fd2f8b4091c6436cae813e547418}{tmpnui}}, 
+\mbox{\hyperlink{iotypes_8h_a5dd80e88a63f76c50ea5ba08429b8e7ca5172a258b1d690a3ea47f6b4b981d7e3}{tmpnui1}}, 
+\mbox{\hyperlink{iotypes_8h_a5dd80e88a63f76c50ea5ba08429b8e7ca13e02ca9797b854a086eb4a042001977}{tmpnui2}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{iotypes_8h_ab3b875a67316a31b08066c192fb8451d}\label{iotypes_8h_ab3b875a67316a31b08066c192fb8451d}} 
+\index{iotypes.h@{iotypes.h}!DEFINE\_PRECISION@{DEFINE\_PRECISION}}
+\index{DEFINE\_PRECISION@{DEFINE\_PRECISION}!iotypes.h@{iotypes.h}}
+\doxysubsubsection{\texorpdfstring{DEFINE\_PRECISION}{DEFINE\_PRECISION}}
+{\footnotesize\ttfamily \#define D\+E\+F\+I\+N\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON(\begin{DoxyParamCaption}\item[{}]{T }\end{DoxyParamCaption})~  typedef T real;}
+
+
+
+Definition at line 4 of file iotypes.\+h.
+
+\mbox{\Hypertarget{iotypes_8h_a2b1fd2d28c6a7d4a3f7027cc1b6466f3}\label{iotypes_8h_a2b1fd2d28c6a7d4a3f7027cc1b6466f3}} 
+\index{iotypes.h@{iotypes.h}!NDIM@{NDIM}}
+\index{NDIM@{NDIM}!iotypes.h@{iotypes.h}}
+\doxysubsubsection{\texorpdfstring{NDIM}{NDIM}}
+{\footnotesize\ttfamily \#define N\+D\+IM~2}
+
+
+
+Definition at line 20 of file iotypes.\+h.
+
+\mbox{\Hypertarget{iotypes_8h_a90e3bcb750b0a2efce1d069ca47c4850}\label{iotypes_8h_a90e3bcb750b0a2efce1d069ca47c4850}} 
+\index{iotypes.h@{iotypes.h}!NVECDIM@{NVECDIM}}
+\index{NVECDIM@{NVECDIM}!iotypes.h@{iotypes.h}}
+\doxysubsubsection{\texorpdfstring{NVECDIM}{NVECDIM}}
+{\footnotesize\ttfamily \#define N\+V\+E\+C\+D\+IM~3}
+
+
+
+Definition at line 21 of file iotypes.\+h.
+
+\mbox{\Hypertarget{iotypes_8h_a598a3330b3c21701223ee0ca14316eca}\label{iotypes_8h_a598a3330b3c21701223ee0ca14316eca}} 
+\index{iotypes.h@{iotypes.h}!PI@{PI}}
+\index{PI@{PI}!iotypes.h@{iotypes.h}}
+\doxysubsubsection{\texorpdfstring{PI}{PI}}
+{\footnotesize\ttfamily \#define PI~3.\+14159265358979}
+
+
+
+Definition at line 67 of file iotypes.\+h.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{iotypes_8h_a627de93261d2e8e2bab96df766a20a17}\label{iotypes_8h_a627de93261d2e8e2bab96df766a20a17}} 
+\index{iotypes.h@{iotypes.h}!constants@{constants}}
+\index{constants@{constants}!iotypes.h@{iotypes.h}}
+\doxysubsubsection{\texorpdfstring{constants}{constants}}
+{\footnotesize\ttfamily typedef struct Constants \mbox{\hyperlink{iotypes_8h_a627de93261d2e8e2bab96df766a20a17}{constants}}}
+
+
+
+Definition at line 1 of file iotypes.\+h.
+
+\mbox{\Hypertarget{iotypes_8h_a5ce70e39ce61cf2411af26724e2e24a5}\label{iotypes_8h_a5ce70e39ce61cf2411af26724e2e24a5}} 
+\index{iotypes.h@{iotypes.h}!domain@{domain}}
+\index{domain@{domain}!iotypes.h@{iotypes.h}}
+\doxysubsubsection{\texorpdfstring{domain}{domain}}
+{\footnotesize\ttfamily typedef struct Domain \mbox{\hyperlink{iotypes_8h_a5ce70e39ce61cf2411af26724e2e24a5}{domain}}}
+
+
+
+Definition at line 1 of file iotypes.\+h.
+
+\mbox{\Hypertarget{iotypes_8h_a1092fd550f7d59796545c124f9b475fd}\label{iotypes_8h_a1092fd550f7d59796545c124f9b475fd}} 
+\index{iotypes.h@{iotypes.h}!iome@{iome}}
+\index{iome@{iome}!iotypes.h@{iotypes.h}}
+\doxysubsubsection{\texorpdfstring{iome}{iome}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_iome}{Iome}} \mbox{\hyperlink{iotypes_8h_a1092fd550f7d59796545c124f9b475fd}{iome}}}
+
+
+
+Definition at line 1 of file iotypes.\+h.
+
+\mbox{\Hypertarget{iotypes_8h_ae4646c3755bce6d8ec761b71a0386bb5}\label{iotypes_8h_ae4646c3755bce6d8ec761b71a0386bb5}} 
+\index{iotypes.h@{iotypes.h}!meta@{meta}}
+\index{meta@{meta}!iotypes.h@{iotypes.h}}
+\doxysubsubsection{\texorpdfstring{meta}{meta}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_meta}{Meta}} \mbox{\hyperlink{iotypes_8h_ae4646c3755bce6d8ec761b71a0386bb5}{meta}}}
+
+
+
+Definition at line 1 of file iotypes.\+h.
+
+\mbox{\Hypertarget{iotypes_8h_adcc8e4e0d70c386af8c371a6c1d74415}\label{iotypes_8h_adcc8e4e0d70c386af8c371a6c1d74415}} 
+\index{iotypes.h@{iotypes.h}!MODE@{MODE}}
+\index{MODE@{MODE}!iotypes.h@{iotypes.h}}
+\doxysubsubsection{\texorpdfstring{MODE}{MODE}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{iotypes_8h_a1a6b6fb557d8d37d59700faf4e4c9167}{mode}} \mbox{\hyperlink{iotypes_8h_adcc8e4e0d70c386af8c371a6c1d74415}{M\+O\+DE}}}
+
+\mbox{\Hypertarget{iotypes_8h_a3d58c688e59580741820699eb769d205}\label{iotypes_8h_a3d58c688e59580741820699eb769d205}} 
+\index{iotypes.h@{iotypes.h}!Params@{Params}}
+\index{Params@{Params}!iotypes.h@{iotypes.h}}
+\doxysubsubsection{\texorpdfstring{Params}{Params}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structparams}{params}} \mbox{\hyperlink{iotypes_8h_a3d58c688e59580741820699eb769d205}{Params}}}
+
+
+
+Definition at line 1 of file iotypes.\+h.
+
+\mbox{\Hypertarget{iotypes_8h_ac454e4d7501a43630cc334cac973dcb4}\label{iotypes_8h_ac454e4d7501a43630cc334cac973dcb4}} 
+\index{iotypes.h@{iotypes.h}!source@{source}}
+\index{source@{source}!iotypes.h@{iotypes.h}}
+\doxysubsubsection{\texorpdfstring{source}{source}}
+{\footnotesize\ttfamily typedef struct Source \mbox{\hyperlink{iotypes_8h_ac454e4d7501a43630cc334cac973dcb4}{source}}}
+
+
+
+Definition at line 1 of file iotypes.\+h.
+
+\mbox{\Hypertarget{iotypes_8h_ad6c412010cfc693c38cbab227a4ec280}\label{iotypes_8h_ad6c412010cfc693c38cbab227a4ec280}} 
+\index{iotypes.h@{iotypes.h}!stateinfo@{stateinfo}}
+\index{stateinfo@{stateinfo}!iotypes.h@{iotypes.h}}
+\doxysubsubsection{\texorpdfstring{stateinfo}{stateinfo}}
+{\footnotesize\ttfamily typedef struct Stateinfo \mbox{\hyperlink{iotypes_8h_ad6c412010cfc693c38cbab227a4ec280}{stateinfo}}}
+
+
+
+Definition at line 1 of file iotypes.\+h.
+
+\mbox{\Hypertarget{iotypes_8h_a211225f1f35e584500af7824541affbd}\label{iotypes_8h_a211225f1f35e584500af7824541affbd}} 
+\index{iotypes.h@{iotypes.h}!TEV@{TEV}}
+\index{TEV@{TEV}!iotypes.h@{iotypes.h}}
+\doxysubsubsection{\texorpdfstring{TEV}{TEV}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{iotypes_8h_a0b3a3fe52f5c9bded65063b458099bd3}{tempvars}} \mbox{\hyperlink{iotypes_8h_a211225f1f35e584500af7824541affbd}{T\+EV}}}
+
+\mbox{\Hypertarget{iotypes_8h_a721c79dcd603ee6a47fc4b415ef9270e}\label{iotypes_8h_a721c79dcd603ee6a47fc4b415ef9270e}} 
+\index{iotypes.h@{iotypes.h}!TEV1@{TEV1}}
+\index{TEV1@{TEV1}!iotypes.h@{iotypes.h}}
+\doxysubsubsection{\texorpdfstring{TEV1}{TEV1}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{iotypes_8h_af6b2feaebd17ff7cfa72bcb1586a1253}{temp1vars}} \mbox{\hyperlink{iotypes_8h_a721c79dcd603ee6a47fc4b415ef9270e}{T\+E\+V1}}}
+
+\mbox{\Hypertarget{iotypes_8h_ab53b57226046d81f0c5d86cdb3f95840}\label{iotypes_8h_ab53b57226046d81f0c5d86cdb3f95840}} 
+\index{iotypes.h@{iotypes.h}!TEV2@{TEV2}}
+\index{TEV2@{TEV2}!iotypes.h@{iotypes.h}}
+\doxysubsubsection{\texorpdfstring{TEV2}{TEV2}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{iotypes_8h_a5dd80e88a63f76c50ea5ba08429b8e7c}{temp2vars}} \mbox{\hyperlink{iotypes_8h_ab53b57226046d81f0c5d86cdb3f95840}{T\+E\+V2}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{iotypes_8h_a1a6b6fb557d8d37d59700faf4e4c9167}\label{iotypes_8h_a1a6b6fb557d8d37d59700faf4e4c9167}} 
+\index{iotypes.h@{iotypes.h}!mode@{mode}}
+\index{mode@{mode}!iotypes.h@{iotypes.h}}
+\doxysubsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{iotypes_8h_a1a6b6fb557d8d37d59700faf4e4c9167}{mode}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{run@{run}!iotypes.h@{iotypes.h}}\index{iotypes.h@{iotypes.h}!run@{run}}}\mbox{\Hypertarget{iotypes_8h_a1a6b6fb557d8d37d59700faf4e4c9167a28587bd6fdb2fda96552863fb27851cd}\label{iotypes_8h_a1a6b6fb557d8d37d59700faf4e4c9167a28587bd6fdb2fda96552863fb27851cd}} 
+run&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{scatter@{scatter}!iotypes.h@{iotypes.h}}\index{iotypes.h@{iotypes.h}!scatter@{scatter}}}\mbox{\Hypertarget{iotypes_8h_a1a6b6fb557d8d37d59700faf4e4c9167a36bfc2cb416f93a83fb25c99b9dce075}\label{iotypes_8h_a1a6b6fb557d8d37d59700faf4e4c9167a36bfc2cb416f93a83fb25c99b9dce075}} 
+scatter&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{gather@{gather}!iotypes.h@{iotypes.h}}\index{iotypes.h@{iotypes.h}!gather@{gather}}}\mbox{\Hypertarget{iotypes_8h_a1a6b6fb557d8d37d59700faf4e4c9167a6a764e85d833596961d1d179e942e444}\label{iotypes_8h_a1a6b6fb557d8d37d59700faf4e4c9167a6a764e85d833596961d1d179e942e444}} 
+gather&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{init@{init}!iotypes.h@{iotypes.h}}\index{iotypes.h@{iotypes.h}!init@{init}}}\mbox{\Hypertarget{iotypes_8h_a1a6b6fb557d8d37d59700faf4e4c9167a2e804b7c8163d212e6231f5228f73ce9}\label{iotypes_8h_a1a6b6fb557d8d37d59700faf4e4c9167a2e804b7c8163d212e6231f5228f73ce9}} 
+init&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{redistribute@{redistribute}!iotypes.h@{iotypes.h}}\index{iotypes.h@{iotypes.h}!redistribute@{redistribute}}}\mbox{\Hypertarget{iotypes_8h_a1a6b6fb557d8d37d59700faf4e4c9167abaf4a98988e89dac65ceaccf4b426546}\label{iotypes_8h_a1a6b6fb557d8d37d59700faf4e4c9167abaf4a98988e89dac65ceaccf4b426546}} 
+redistribute&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 210 of file iotypes.\+h.
+
+\mbox{\Hypertarget{iotypes_8h_af6b2feaebd17ff7cfa72bcb1586a1253}\label{iotypes_8h_af6b2feaebd17ff7cfa72bcb1586a1253}} 
+\index{iotypes.h@{iotypes.h}!temp1vars@{temp1vars}}
+\index{temp1vars@{temp1vars}!iotypes.h@{iotypes.h}}
+\doxysubsubsection{\texorpdfstring{temp1vars}{temp1vars}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{iotypes_8h_af6b2feaebd17ff7cfa72bcb1586a1253}{temp1vars}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{d1@{d1}!iotypes.h@{iotypes.h}}\index{iotypes.h@{iotypes.h}!d1@{d1}}}\mbox{\Hypertarget{iotypes_8h_af6b2feaebd17ff7cfa72bcb1586a1253aec6e5be66411cb5f2e5fc6b6748d1ea1}\label{iotypes_8h_af6b2feaebd17ff7cfa72bcb1586a1253aec6e5be66411cb5f2e5fc6b6748d1ea1}} 
+d1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{d3@{d3}!iotypes.h@{iotypes.h}}\index{iotypes.h@{iotypes.h}!d3@{d3}}}\mbox{\Hypertarget{iotypes_8h_af6b2feaebd17ff7cfa72bcb1586a1253a3e4ca955031f8865b5e54b47792c7f77}\label{iotypes_8h_af6b2feaebd17ff7cfa72bcb1586a1253a3e4ca955031f8865b5e54b47792c7f77}} 
+d3&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 245 of file iotypes.\+h.
+
+\mbox{\Hypertarget{iotypes_8h_a5dd80e88a63f76c50ea5ba08429b8e7c}\label{iotypes_8h_a5dd80e88a63f76c50ea5ba08429b8e7c}} 
+\index{iotypes.h@{iotypes.h}!temp2vars@{temp2vars}}
+\index{temp2vars@{temp2vars}!iotypes.h@{iotypes.h}}
+\doxysubsubsection{\texorpdfstring{temp2vars}{temp2vars}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{iotypes_8h_a5dd80e88a63f76c50ea5ba08429b8e7c}{temp2vars}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{tmpnui@{tmpnui}!iotypes.h@{iotypes.h}}\index{iotypes.h@{iotypes.h}!tmpnui@{tmpnui}}}\mbox{\Hypertarget{iotypes_8h_a5dd80e88a63f76c50ea5ba08429b8e7ca1046fd2f8b4091c6436cae813e547418}\label{iotypes_8h_a5dd80e88a63f76c50ea5ba08429b8e7ca1046fd2f8b4091c6436cae813e547418}} 
+tmpnui&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{tmpnui1@{tmpnui1}!iotypes.h@{iotypes.h}}\index{iotypes.h@{iotypes.h}!tmpnui1@{tmpnui1}}}\mbox{\Hypertarget{iotypes_8h_a5dd80e88a63f76c50ea5ba08429b8e7ca5172a258b1d690a3ea47f6b4b981d7e3}\label{iotypes_8h_a5dd80e88a63f76c50ea5ba08429b8e7ca5172a258b1d690a3ea47f6b4b981d7e3}} 
+tmpnui1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{tmpnui2@{tmpnui2}!iotypes.h@{iotypes.h}}\index{iotypes.h@{iotypes.h}!tmpnui2@{tmpnui2}}}\mbox{\Hypertarget{iotypes_8h_a5dd80e88a63f76c50ea5ba08429b8e7ca13e02ca9797b854a086eb4a042001977}\label{iotypes_8h_a5dd80e88a63f76c50ea5ba08429b8e7ca13e02ca9797b854a086eb4a042001977}} 
+tmpnui2&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 246 of file iotypes.\+h.
+
+\mbox{\Hypertarget{iotypes_8h_a0b3a3fe52f5c9bded65063b458099bd3}\label{iotypes_8h_a0b3a3fe52f5c9bded65063b458099bd3}} 
+\index{iotypes.h@{iotypes.h}!tempvars@{tempvars}}
+\index{tempvars@{tempvars}!iotypes.h@{iotypes.h}}
+\doxysubsubsection{\texorpdfstring{tempvars}{tempvars}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{iotypes_8h_a0b3a3fe52f5c9bded65063b458099bd3}{tempvars}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{tmp1@{tmp1}!iotypes.h@{iotypes.h}}\index{iotypes.h@{iotypes.h}!tmp1@{tmp1}}}\mbox{\Hypertarget{iotypes_8h_a0b3a3fe52f5c9bded65063b458099bd3a6fdb51edfd8dd626371f609eb106bdc6}\label{iotypes_8h_a0b3a3fe52f5c9bded65063b458099bd3a6fdb51edfd8dd626371f609eb106bdc6}} 
+tmp1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{tmp2@{tmp2}!iotypes.h@{iotypes.h}}\index{iotypes.h@{iotypes.h}!tmp2@{tmp2}}}\mbox{\Hypertarget{iotypes_8h_a0b3a3fe52f5c9bded65063b458099bd3a33ece33df10c533fe5e355c3be3b63af}\label{iotypes_8h_a0b3a3fe52f5c9bded65063b458099bd3a33ece33df10c533fe5e355c3be3b63af}} 
+tmp2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{tmp3@{tmp3}!iotypes.h@{iotypes.h}}\index{iotypes.h@{iotypes.h}!tmp3@{tmp3}}}\mbox{\Hypertarget{iotypes_8h_a0b3a3fe52f5c9bded65063b458099bd3a284dd3f920da8ad52d9fbe19ba86fc1f}\label{iotypes_8h_a0b3a3fe52f5c9bded65063b458099bd3a284dd3f920da8ad52d9fbe19ba86fc1f}} 
+tmp3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{tmp4@{tmp4}!iotypes.h@{iotypes.h}}\index{iotypes.h@{iotypes.h}!tmp4@{tmp4}}}\mbox{\Hypertarget{iotypes_8h_a0b3a3fe52f5c9bded65063b458099bd3acfe5ed4e1e17c40f1ccd5cc95ba0eaa4}\label{iotypes_8h_a0b3a3fe52f5c9bded65063b458099bd3acfe5ed4e1e17c40f1ccd5cc95ba0eaa4}} 
+tmp4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{tmp5@{tmp5}!iotypes.h@{iotypes.h}}\index{iotypes.h@{iotypes.h}!tmp5@{tmp5}}}\mbox{\Hypertarget{iotypes_8h_a0b3a3fe52f5c9bded65063b458099bd3a341d9e1adbfd7dc5f019e2cf6c041fc4}\label{iotypes_8h_a0b3a3fe52f5c9bded65063b458099bd3a341d9e1adbfd7dc5f019e2cf6c041fc4}} 
+tmp5&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{tmp6@{tmp6}!iotypes.h@{iotypes.h}}\index{iotypes.h@{iotypes.h}!tmp6@{tmp6}}}\mbox{\Hypertarget{iotypes_8h_a0b3a3fe52f5c9bded65063b458099bd3a802b49dea4bfa94fc3412a3f473ae923}\label{iotypes_8h_a0b3a3fe52f5c9bded65063b458099bd3a802b49dea4bfa94fc3412a3f473ae923}} 
+tmp6&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{tmp7@{tmp7}!iotypes.h@{iotypes.h}}\index{iotypes.h@{iotypes.h}!tmp7@{tmp7}}}\mbox{\Hypertarget{iotypes_8h_a0b3a3fe52f5c9bded65063b458099bd3ac0d9d2f7bad00d2c51d903c351412c43}\label{iotypes_8h_a0b3a3fe52f5c9bded65063b458099bd3ac0d9d2f7bad00d2c51d903c351412c43}} 
+tmp7&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{tmp8@{tmp8}!iotypes.h@{iotypes.h}}\index{iotypes.h@{iotypes.h}!tmp8@{tmp8}}}\mbox{\Hypertarget{iotypes_8h_a0b3a3fe52f5c9bded65063b458099bd3a72b8213f55270f9332057ba8e5728320}\label{iotypes_8h_a0b3a3fe52f5c9bded65063b458099bd3a72b8213f55270f9332057ba8e5728320}} 
+tmp8&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 244 of file iotypes.\+h.
+

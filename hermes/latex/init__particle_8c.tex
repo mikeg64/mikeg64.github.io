@@ -1,0 +1,31 @@
+\hypertarget{init__particle_8c}{}\doxysection{src/particles/init\+\_\+particle.c File Reference}
+\label{init__particle_8c}\index{src/particles/init\_particle.c@{src/particles/init\_particle.c}}
+
+
+Initialize particle related structures and functions.  
+
+
+{\ttfamily \#include \char`\"{}../copyright.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../athena.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../prototypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prototypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}particle.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../globals.\+h\char`\"{}}\newline
+
+
+\doxysubsection{Detailed Description}
+Initialize particle related structures and functions. 
+
+P\+U\+R\+P\+O\+SE\+: Initialize particle related structures and functions. Particle integrator is enrolled by calling integrate\+\_\+particle\+\_\+init(int type). In init\+\_\+particle(\+Grid $\ast$p\+G, Domain $\ast$p\+D), all the particle related arrays are allocated, interpolation and stopping time calculation functions are enrolled, most global variables for particles are evaluated. Also contains functions for particle array reallocation and destruction.
+
+C\+O\+N\+T\+A\+I\+NS P\+U\+B\+L\+IC F\+U\+N\+C\+T\+I\+O\+NS\+:
+\begin{DoxyItemize}
+\item integrate\+\_\+particle\+\_\+init();
+\item init\+\_\+particle();
+\item particle\+\_\+destruct();
+\item particle\+\_\+realloc(); 
+\end{DoxyItemize}

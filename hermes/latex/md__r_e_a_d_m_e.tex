@@ -1,0 +1,46 @@
+Using athena as a basis for implementation of S\+AC and S\+M\+A\+UG
+
+Magnetohydrodynamic code for gravitationally-\/stratified media \+: S\+AC \href{http://adsabs.harvard.edu/abs/2008A\%26A...486..655S}{\texttt{ http\+://adsabs.\+harvard.\+edu/abs/2008\+A\%26\+A...\+486..\+655S}}
+
+A Fast M\+HD Code for Gravitationally Stratified Media using Graphical Processing Units\+: S\+M\+A\+UG \href{http://eprints.whiterose.ac.uk/86864/}{\texttt{ http\+://eprints.\+whiterose.\+ac.\+uk/86864/}}
+
+Athena\+: A New Code for Astrophysical M\+HD \href{http://arxiv.org/abs/0804.0402}{\texttt{ http\+://arxiv.\+org/abs/0804.\+0402}}\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{Objectives\+:}\label{md__r_e_a_d_m_e_autotoc_md1}
+
+\begin{DoxyEnumerate}
+\item Improve software engineering and enhance software sustainability
+\item Build in perturbed M\+HD using Athena C\+TU method
+\item Implement perturbed M\+HD with central differencing and hyperdiffusion (i.\+e. S\+AC)
+\item Integrate G\+PU code for C\+TU method re. \href{http://kft.umcs.lublin.pl/kmur/download/papers/2013/Wasiljew_Murawski_2013.pdf}{\texttt{ Wasiljew \& Murawski}}
+\item Integrate S\+M\+A\+UG
+\item Exploit S\+MR implementation in S\+A\+C/\+S\+M\+A\+UG
+\item Use multi-\/architectural approach (hybrid multi-\/core accelerator approach) \href{http://arxiv.org/abs/1405.6162}{\texttt{ target\+DP}}
+\end{DoxyEnumerate}
+
+B\+KG used to define problem including background fields S\+A\+C\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+OR sac integrator for use with background fields
+
+Next job to compile with S\+A\+C\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+OR, B\+KG and S\+A\+C\+\_\+\+F\+L\+UX
+
+./configure --with-\/problem=shkset1d --enable-\/bkg --with-\/integrator=sac --with-\/flux=sac
+
+./configure --with-\/problem=orszag-\/tang --with-\/order=3 --enable-\/bkg --with-\/integrator=sac --with-\/flux=sac
+
+./configure --with-\/gas=hydro --with-\/problem=shkset1d --enable-\/bkg --with-\/integrator=sac --with-\/flux=sac
+
+./configure --with-\/gas=hydro --with-\/problem=shkset1d --enable-\/bkg --with-\/integrator=smaug --with-\/flux=smaug --enable-\/smaug
+
+./configure --with-\/problem=orszag-\/tang --with-\/order=3 --enable-\/bkg --with-\/integrator=smaug --with-\/flux=smaug --enable-\/smaug
+
+all of the above problems will define U\+S\+E\+\_\+\+S\+AC 3D problems must include --enable-\/sac-\/3d this will activate U\+S\+E\+\_\+\+S\+A\+C\+\_\+3D instead of U\+S\+E\+\_\+\+S\+AC
+
+./configure --with-\/problem=orszag-\/tang --with-\/order=3 --enable-\/bkg --with-\/integrator=smaug --with-\/flux=smaug --enable-\/smaug\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{Helpful Links with Athena}\label{md__r_e_a_d_m_e_autotoc_md2}
+Source code description \href{http://www.astro.princeton.edu/~jstone/Athena/doxygen/html.with_source/annotated.html}{\texttt{ http\+://www.\+astro.\+princeton.\+edu/$\sim$jstone/\+Athena/doxygen/html.\+with\+\_\+source/annotated.\+html}}
+
+Configuring and setting up Athena \href{https://trac.princeton.edu/Athena/wiki/AthenaDocsUGConfigure}{\texttt{ https\+://trac.\+princeton.\+edu/\+Athena/wiki/\+Athena\+Docs\+U\+G\+Configure}}
+
+Configuring Integrators \href{https://trac.princeton.edu/Athena/wiki/AthenaDocsUGInt}{\texttt{ https\+://trac.\+princeton.\+edu/\+Athena/wiki/\+Athena\+Docs\+U\+G\+Int}}
+
+Quickstart \href{https://trac.princeton.edu/Athena/wiki/AthenaDocsTutQuickStart}{\texttt{ https\+://trac.\+princeton.\+edu/\+Athena/wiki/\+Athena\+Docs\+Tut\+Quick\+Start}}
+
+1D Sod Shock tube test (HD) \href{https://trac.princeton.edu/Athena/wiki/AthenaDocsTutSod}{\texttt{ https\+://trac.\+princeton.\+edu/\+Athena/wiki/\+Athena\+Docs\+Tut\+Sod}}
+
+2D Orszag-\/\+Tang Test (M\+HD) \href{https://trac.princeton.edu/Athena/wiki/AthenaDocsTutOT1}{\texttt{ https\+://trac.\+princeton.\+edu/\+Athena/wiki/\+Athena\+Docs\+Tut\+O\+T1}} 

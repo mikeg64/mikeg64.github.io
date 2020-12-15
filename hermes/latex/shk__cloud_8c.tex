@@ -1,0 +1,142 @@
+\hypertarget{shk__cloud_8c}{}\doxysection{src/prob/shk\+\_\+cloud.c File Reference}
+\label{shk__cloud_8c}\index{src/prob/shk\_cloud.c@{src/prob/shk\_cloud.c}}
+
+
+Problem generator for shock-\/cloud problem; planar shock impacting a single spherical cloud.  
+
+
+{\ttfamily \#include \char`\"{}copyright.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}athena.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prototypes.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{shk__cloud_8c_a35a388ee74ea24bd2c9d8eb3f44183b1}{shk\+\_\+cloud\+\_\+iib}} (\mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$p\+Grid)
+\begin{DoxyCompactList}\small\item\em Sets boundary condition on left X boundary (iib) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{shk__cloud_8c_a1b323f47153f1975b64382e0ffac6b73}{problem}} (\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$p\+Domain)
+\item 
+void \mbox{\hyperlink{shk__cloud_8c_a2c334369ab621e9815591c76ccfb5fc7}{problem\+\_\+write\+\_\+restart}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, F\+I\+LE $\ast$fp)
+\item 
+void \mbox{\hyperlink{shk__cloud_8c_acf733c9792756cbec1e9d226c4ff37ab}{problem\+\_\+read\+\_\+restart}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, F\+I\+LE $\ast$fp)
+\item 
+\mbox{\hyperlink{athena_8h_aaa64b3ee5eefc566b7c09368c414de89}{Cons\+Fun\+\_\+t}} \mbox{\hyperlink{shk__cloud_8c_a4575c4cdbf2965a9857c45970d736676}{get\+\_\+usr\+\_\+expr}} (const char $\ast$expr)
+\item 
+\mbox{\hyperlink{athena_8h_a8bc2403d4d3a27d6f475f2dc6acc94cc}{V\+Out\+Fun\+\_\+t}} \mbox{\hyperlink{shk__cloud_8c_a8b8cabb1061d5399fb492be89de213ff}{get\+\_\+usr\+\_\+out\+\_\+fun}} (const char $\ast$\mbox{\hyperlink{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}{name}})
+\item 
+void \mbox{\hyperlink{shk__cloud_8c_a0ff640c24db1dc0d7c89d91f1d55ffce}{Userwork\+\_\+in\+\_\+loop}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\item 
+void \mbox{\hyperlink{shk__cloud_8c_a5506a1df41ed88e038443271b9785337}{Userwork\+\_\+after\+\_\+loop}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Problem generator for shock-\/cloud problem; planar shock impacting a single spherical cloud. 
+
+P\+U\+R\+P\+O\+SE\+: Problem generator for shock-\/cloud problem; planar shock impacting a single spherical cloud. Input parameters are\+:
+\begin{DoxyItemize}
+\item problem/\+Mach = Mach number of incident shock
+\item problem/drat = density ratio of cloud to ambient
+\item problem/beta = ratio of Pgas/\+Pmag
+\item problem/iprob = integer flag to determine problem
+\end{DoxyItemize}
+
+The cloud radius is fixed at 1.\+0. The center of the coordinate system defines the center of the cloud, and should be in the middle of the cloud. The shock is initially at x1=-\/2.\+0. A typical grid domain should span x1 in \mbox{[}-\/3.\+0,7.\+0\mbox{]} , y and z in \href{see input file in /tst}{\texttt{ -\/2.\+5,2.\+5}} Various test cases are possible\+:
+\begin{DoxyItemize}
+\item (iprob=1)\+: B parallel to shock normal
+\item (iprob=2)\+: B perpendicular to shock normal -- N\+OT Y\+ET I\+M\+P\+L\+E\+M\+E\+N\+T\+ED
+\end{DoxyItemize}
+
+If the code is configured with nscalars$>$0, the cloud material is labeled with U\mbox{[}k\mbox{]}\mbox{[}j\mbox{]}\mbox{[}i\mbox{]}.s\mbox{[}0\mbox{]}=1. ~\newline
+
+
+P\+R\+I\+V\+A\+TE F\+U\+N\+C\+T\+I\+ON P\+R\+O\+T\+O\+T\+Y\+P\+ES\+: \mbox{\hyperlink{shk__cloud_8c_a35a388ee74ea24bd2c9d8eb3f44183b1}{shk\+\_\+cloud\+\_\+iib()}} -\/ fixes B\+Cs on L-\/x1 (left edge) of grid to postshock flow. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{shk__cloud_8c_a4575c4cdbf2965a9857c45970d736676}\label{shk__cloud_8c_a4575c4cdbf2965a9857c45970d736676}} 
+\index{shk\_cloud.c@{shk\_cloud.c}!get\_usr\_expr@{get\_usr\_expr}}
+\index{get\_usr\_expr@{get\_usr\_expr}!shk\_cloud.c@{shk\_cloud.c}}
+\doxysubsubsection{\texorpdfstring{get\_usr\_expr()}{get\_usr\_expr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{athena_8h_aaa64b3ee5eefc566b7c09368c414de89}{Cons\+Fun\+\_\+t}} get\+\_\+usr\+\_\+expr (\begin{DoxyParamCaption}\item[{const char $\ast$}]{expr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 256 of file shk\+\_\+cloud.\+c.
+
+\mbox{\Hypertarget{shk__cloud_8c_a8b8cabb1061d5399fb492be89de213ff}\label{shk__cloud_8c_a8b8cabb1061d5399fb492be89de213ff}} 
+\index{shk\_cloud.c@{shk\_cloud.c}!get\_usr\_out\_fun@{get\_usr\_out\_fun}}
+\index{get\_usr\_out\_fun@{get\_usr\_out\_fun}!shk\_cloud.c@{shk\_cloud.c}}
+\doxysubsubsection{\texorpdfstring{get\_usr\_out\_fun()}{get\_usr\_out\_fun()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{athena_8h_a8bc2403d4d3a27d6f475f2dc6acc94cc}{V\+Out\+Fun\+\_\+t}} get\+\_\+usr\+\_\+out\+\_\+fun (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 265 of file shk\+\_\+cloud.\+c.
+
+\mbox{\Hypertarget{shk__cloud_8c_a1b323f47153f1975b64382e0ffac6b73}\label{shk__cloud_8c_a1b323f47153f1975b64382e0ffac6b73}} 
+\index{shk\_cloud.c@{shk\_cloud.c}!problem@{problem}}
+\index{problem@{problem}!shk\_cloud.c@{shk\_cloud.c}}
+\doxysubsubsection{\texorpdfstring{problem()}{problem()}}
+{\footnotesize\ttfamily void problem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{p\+Domain }\end{DoxyParamCaption})}
+
+
+
+Definition at line 54 of file shk\+\_\+cloud.\+c.
+
+\mbox{\Hypertarget{shk__cloud_8c_acf733c9792756cbec1e9d226c4ff37ab}\label{shk__cloud_8c_acf733c9792756cbec1e9d226c4ff37ab}} 
+\index{shk\_cloud.c@{shk\_cloud.c}!problem\_read\_restart@{problem\_read\_restart}}
+\index{problem\_read\_restart@{problem\_read\_restart}!shk\_cloud.c@{shk\_cloud.c}}
+\doxysubsubsection{\texorpdfstring{problem\_read\_restart()}{problem\_read\_restart()}}
+{\footnotesize\ttfamily void problem\+\_\+read\+\_\+restart (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 244 of file shk\+\_\+cloud.\+c.
+
+\mbox{\Hypertarget{shk__cloud_8c_a2c334369ab621e9815591c76ccfb5fc7}\label{shk__cloud_8c_a2c334369ab621e9815591c76ccfb5fc7}} 
+\index{shk\_cloud.c@{shk\_cloud.c}!problem\_write\_restart@{problem\_write\_restart}}
+\index{problem\_write\_restart@{problem\_write\_restart}!shk\_cloud.c@{shk\_cloud.c}}
+\doxysubsubsection{\texorpdfstring{problem\_write\_restart()}{problem\_write\_restart()}}
+{\footnotesize\ttfamily void problem\+\_\+write\+\_\+restart (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 239 of file shk\+\_\+cloud.\+c.
+
+\mbox{\Hypertarget{shk__cloud_8c_a35a388ee74ea24bd2c9d8eb3f44183b1}\label{shk__cloud_8c_a35a388ee74ea24bd2c9d8eb3f44183b1}} 
+\index{shk\_cloud.c@{shk\_cloud.c}!shk\_cloud\_iib@{shk\_cloud\_iib}}
+\index{shk\_cloud\_iib@{shk\_cloud\_iib}!shk\_cloud.c@{shk\_cloud.c}}
+\doxysubsubsection{\texorpdfstring{shk\_cloud\_iib()}{shk\_cloud\_iib()}}
+{\footnotesize\ttfamily void shk\+\_\+cloud\+\_\+iib (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$}]{p\+Grid }\end{DoxyParamCaption})}
+
+
+
+Sets boundary condition on left X boundary (iib) 
+
+Note quantities at this boundary are held fixed at the downstream state 
+
+Definition at line 288 of file shk\+\_\+cloud.\+c.
+
+\mbox{\Hypertarget{shk__cloud_8c_a5506a1df41ed88e038443271b9785337}\label{shk__cloud_8c_a5506a1df41ed88e038443271b9785337}} 
+\index{shk\_cloud.c@{shk\_cloud.c}!Userwork\_after\_loop@{Userwork\_after\_loop}}
+\index{Userwork\_after\_loop@{Userwork\_after\_loop}!shk\_cloud.c@{shk\_cloud.c}}
+\doxysubsubsection{\texorpdfstring{Userwork\_after\_loop()}{Userwork\_after\_loop()}}
+{\footnotesize\ttfamily void Userwork\+\_\+after\+\_\+loop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+Definition at line 274 of file shk\+\_\+cloud.\+c.
+
+\mbox{\Hypertarget{shk__cloud_8c_a0ff640c24db1dc0d7c89d91f1d55ffce}\label{shk__cloud_8c_a0ff640c24db1dc0d7c89d91f1d55ffce}} 
+\index{shk\_cloud.c@{shk\_cloud.c}!Userwork\_in\_loop@{Userwork\_in\_loop}}
+\index{Userwork\_in\_loop@{Userwork\_in\_loop}!shk\_cloud.c@{shk\_cloud.c}}
+\doxysubsubsection{\texorpdfstring{Userwork\_in\_loop()}{Userwork\_in\_loop()}}
+{\footnotesize\ttfamily void Userwork\+\_\+in\+\_\+loop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+Definition at line 269 of file shk\+\_\+cloud.\+c.
+

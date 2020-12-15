@@ -1,0 +1,70 @@
+\hypertarget{ath__signal_8c}{}\doxysection{src/ath\+\_\+signal.c File Reference}
+\label{ath__signal_8c}\index{src/ath\_signal.c@{src/ath\_signal.c}}
+
+
+Implements very simple signal handling.  
+
+
+{\ttfamily \#include \char`\"{}copyright.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}athena.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prototypes.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ath__signal_8c_a5a25afc512191ef77dfc2b43184b9193}{ath\+\_\+sig\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Defines the signal handler function. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ath__signal_8c_aebc5c1f65709177569e43077ba9a272a}{ath\+\_\+sig\+\_\+act}} (int $\ast$piquit)
+\begin{DoxyCompactList}\small\item\em Handles response to any received signals. ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements very simple signal handling. 
+
+P\+U\+R\+P\+O\+SE\+: Implements very simple signal handling. Since signals can come in at any time, these functions set a static global variable which will be checked and reset if necessary -- T\+AG 8/19/2004
+
+C\+O\+N\+T\+A\+I\+NS P\+U\+B\+L\+IC F\+U\+N\+C\+T\+I\+O\+NS\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{ath__signal_8c_a5a25afc512191ef77dfc2b43184b9193}{ath\+\_\+sig\+\_\+init()}}
+\item \mbox{\hyperlink{ath__signal_8c_aebc5c1f65709177569e43077ba9a272a}{ath\+\_\+sig\+\_\+act()}}
+\end{DoxyItemize}
+
+P\+R\+I\+V\+A\+TE F\+U\+N\+C\+T\+I\+ON P\+R\+O\+T\+O\+T\+Y\+P\+ES\+:
+\begin{DoxyItemize}
+\item handler() 
+\end{DoxyItemize}
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ath__signal_8c_aebc5c1f65709177569e43077ba9a272a}\label{ath__signal_8c_aebc5c1f65709177569e43077ba9a272a}} 
+\index{ath\_signal.c@{ath\_signal.c}!ath\_sig\_act@{ath\_sig\_act}}
+\index{ath\_sig\_act@{ath\_sig\_act}!ath\_signal.c@{ath\_signal.c}}
+\doxysubsubsection{\texorpdfstring{ath\_sig\_act()}{ath\_sig\_act()}}
+{\footnotesize\ttfamily int ath\+\_\+sig\+\_\+act (\begin{DoxyParamCaption}\item[{int $\ast$}]{piquit }\end{DoxyParamCaption})}
+
+
+
+Handles response to any received signals. ~\newline
+ 
+
+At the moment, only response to S\+I\+G\+T\+E\+RM is implemented. ~\newline
+ 
+
+Definition at line 50 of file ath\+\_\+signal.\+c.
+
+\mbox{\Hypertarget{ath__signal_8c_a5a25afc512191ef77dfc2b43184b9193}\label{ath__signal_8c_a5a25afc512191ef77dfc2b43184b9193}} 
+\index{ath\_signal.c@{ath\_signal.c}!ath\_sig\_init@{ath\_sig\_init}}
+\index{ath\_sig\_init@{ath\_sig\_init}!ath\_signal.c@{ath\_signal.c}}
+\doxysubsubsection{\texorpdfstring{ath\_sig\_init()}{ath\_sig\_init()}}
+{\footnotesize\ttfamily void ath\+\_\+sig\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Defines the signal handler function. 
+
+
+
+Definition at line 39 of file ath\+\_\+signal.\+c.
+

@@ -1,0 +1,169 @@
+\hypertarget{noh_8c}{}\doxysection{src/prob/noh.c File Reference}
+\label{noh_8c}\index{src/prob/noh.c@{src/prob/noh.c}}
+
+
+Spherical Noh implosion problem, from Liska \& Wendroff, section 4.\+5 (figure 4.\+7).  
+
+
+{\ttfamily \#include \char`\"{}copyright.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}athena.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prototypes.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{noh_8c_a585ab7eed28f464a934e123583768bf6}{noh3d\+\_\+oib}} (\mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$p\+Grid)
+\begin{DoxyCompactList}\small\item\em Sets boundary condition on right X1 boundary (oib) for noh3d test. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{noh_8c_af33b173dca88984b735aafad1e92c00e}{noh3d\+\_\+ojb}} (\mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$p\+Grid)
+\begin{DoxyCompactList}\small\item\em Sets boundary condition on right X2 boundary (ojb) for noh3d test. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{noh_8c_ab0fe5ce03c2552419209b00214cae3f3}{noh3d\+\_\+okb}} (\mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$p\+Grid)
+\begin{DoxyCompactList}\small\item\em Sets boundary condition on right X3 boundary (okb) for noh3d test. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{noh_8c_aa218b64c90ee92848b8f3fb47ce8df7a}{problem}} (\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$pD)
+\item 
+void \mbox{\hyperlink{noh_8c_a2c334369ab621e9815591c76ccfb5fc7}{problem\+\_\+write\+\_\+restart}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, F\+I\+LE $\ast$fp)
+\item 
+void \mbox{\hyperlink{noh_8c_acf733c9792756cbec1e9d226c4ff37ab}{problem\+\_\+read\+\_\+restart}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, F\+I\+LE $\ast$fp)
+\item 
+\mbox{\hyperlink{athena_8h_aaa64b3ee5eefc566b7c09368c414de89}{Cons\+Fun\+\_\+t}} \mbox{\hyperlink{noh_8c_a4575c4cdbf2965a9857c45970d736676}{get\+\_\+usr\+\_\+expr}} (const char $\ast$expr)
+\item 
+\mbox{\hyperlink{athena_8h_a8bc2403d4d3a27d6f475f2dc6acc94cc}{V\+Out\+Fun\+\_\+t}} \mbox{\hyperlink{noh_8c_a8b8cabb1061d5399fb492be89de213ff}{get\+\_\+usr\+\_\+out\+\_\+fun}} (const char $\ast$\mbox{\hyperlink{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}{name}})
+\item 
+void \mbox{\hyperlink{noh_8c_a0ff640c24db1dc0d7c89d91f1d55ffce}{Userwork\+\_\+in\+\_\+loop}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\item 
+void \mbox{\hyperlink{noh_8c_a5506a1df41ed88e038443271b9785337}{Userwork\+\_\+after\+\_\+loop}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Spherical Noh implosion problem, from Liska \& Wendroff, section 4.\+5 (figure 4.\+7). 
+
+P\+U\+R\+P\+O\+SE\+: Spherical Noh implosion problem, from Liska \& Wendroff, section 4.\+5 (figure 4.\+7). Tests code on V\+E\+RY strong shock, also sensitive to carbuncle instability.
+
+P\+R\+I\+V\+A\+TE F\+U\+N\+C\+T\+I\+ON P\+R\+O\+T\+O\+T\+Y\+P\+ES\+:
+\begin{DoxyItemize}
+\item void \mbox{\hyperlink{noh_8c_a585ab7eed28f464a934e123583768bf6}{noh3d\+\_\+oib()}} -\/ sets B\+Cs on R-\/x1 boundary
+\item void \mbox{\hyperlink{noh_8c_af33b173dca88984b735aafad1e92c00e}{noh3d\+\_\+ojb()}} -\/ sets B\+Cs on R-\/x2 boundary
+\item void \mbox{\hyperlink{noh_8c_ab0fe5ce03c2552419209b00214cae3f3}{noh3d\+\_\+okb()}} -\/ sets B\+Cs on R-\/x3 boundary
+\item void scat\+\_\+plot() -\/ makes scatter plot of density
+\end{DoxyItemize}
+
+R\+E\+F\+E\+R\+E\+N\+CE\+: R. Liska \& B. Wendroff, S\+I\+AM J. Sci. Comput., 25, 995 (2003) ~\newline
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{noh_8c_a4575c4cdbf2965a9857c45970d736676}\label{noh_8c_a4575c4cdbf2965a9857c45970d736676}} 
+\index{noh.c@{noh.c}!get\_usr\_expr@{get\_usr\_expr}}
+\index{get\_usr\_expr@{get\_usr\_expr}!noh.c@{noh.c}}
+\doxysubsubsection{\texorpdfstring{get\_usr\_expr()}{get\_usr\_expr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{athena_8h_aaa64b3ee5eefc566b7c09368c414de89}{Cons\+Fun\+\_\+t}} get\+\_\+usr\+\_\+expr (\begin{DoxyParamCaption}\item[{const char $\ast$}]{expr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 107 of file noh.\+c.
+
+\mbox{\Hypertarget{noh_8c_a8b8cabb1061d5399fb492be89de213ff}\label{noh_8c_a8b8cabb1061d5399fb492be89de213ff}} 
+\index{noh.c@{noh.c}!get\_usr\_out\_fun@{get\_usr\_out\_fun}}
+\index{get\_usr\_out\_fun@{get\_usr\_out\_fun}!noh.c@{noh.c}}
+\doxysubsubsection{\texorpdfstring{get\_usr\_out\_fun()}{get\_usr\_out\_fun()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{athena_8h_a8bc2403d4d3a27d6f475f2dc6acc94cc}{V\+Out\+Fun\+\_\+t}} get\+\_\+usr\+\_\+out\+\_\+fun (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 112 of file noh.\+c.
+
+\mbox{\Hypertarget{noh_8c_a585ab7eed28f464a934e123583768bf6}\label{noh_8c_a585ab7eed28f464a934e123583768bf6}} 
+\index{noh.c@{noh.c}!noh3d\_oib@{noh3d\_oib}}
+\index{noh3d\_oib@{noh3d\_oib}!noh.c@{noh.c}}
+\doxysubsubsection{\texorpdfstring{noh3d\_oib()}{noh3d\_oib()}}
+{\footnotesize\ttfamily void noh3d\+\_\+oib (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$}]{p\+Grid }\end{DoxyParamCaption})}
+
+
+
+Sets boundary condition on right X1 boundary (oib) for noh3d test. 
+
+Note quantities at this boundary are held fixed at the time-\/dependent upstream state 
+
+Definition at line 133 of file noh.\+c.
+
+\mbox{\Hypertarget{noh_8c_af33b173dca88984b735aafad1e92c00e}\label{noh_8c_af33b173dca88984b735aafad1e92c00e}} 
+\index{noh.c@{noh.c}!noh3d\_ojb@{noh3d\_ojb}}
+\index{noh3d\_ojb@{noh3d\_ojb}!noh.c@{noh.c}}
+\doxysubsubsection{\texorpdfstring{noh3d\_ojb()}{noh3d\_ojb()}}
+{\footnotesize\ttfamily void noh3d\+\_\+ojb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$}]{p\+Grid }\end{DoxyParamCaption})}
+
+
+
+Sets boundary condition on right X2 boundary (ojb) for noh3d test. 
+
+Note quantities at this boundary are held fixed at the time-\/dependent upstream state 
+
+Definition at line 184 of file noh.\+c.
+
+\mbox{\Hypertarget{noh_8c_ab0fe5ce03c2552419209b00214cae3f3}\label{noh_8c_ab0fe5ce03c2552419209b00214cae3f3}} 
+\index{noh.c@{noh.c}!noh3d\_okb@{noh3d\_okb}}
+\index{noh3d\_okb@{noh3d\_okb}!noh.c@{noh.c}}
+\doxysubsubsection{\texorpdfstring{noh3d\_okb()}{noh3d\_okb()}}
+{\footnotesize\ttfamily void noh3d\+\_\+okb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$}]{p\+Grid }\end{DoxyParamCaption})}
+
+
+
+Sets boundary condition on right X3 boundary (okb) for noh3d test. 
+
+Note quantities at this boundary are held fixed at the time-\/dependent upstream state 
+
+Definition at line 235 of file noh.\+c.
+
+\mbox{\Hypertarget{noh_8c_aa218b64c90ee92848b8f3fb47ce8df7a}\label{noh_8c_aa218b64c90ee92848b8f3fb47ce8df7a}} 
+\index{noh.c@{noh.c}!problem@{problem}}
+\index{problem@{problem}!noh.c@{noh.c}}
+\doxysubsubsection{\texorpdfstring{problem()}{problem()}}
+{\footnotesize\ttfamily void problem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{pD }\end{DoxyParamCaption})}
+
+
+
+Definition at line 48 of file noh.\+c.
+
+\mbox{\Hypertarget{noh_8c_acf733c9792756cbec1e9d226c4ff37ab}\label{noh_8c_acf733c9792756cbec1e9d226c4ff37ab}} 
+\index{noh.c@{noh.c}!problem\_read\_restart@{problem\_read\_restart}}
+\index{problem\_read\_restart@{problem\_read\_restart}!noh.c@{noh.c}}
+\doxysubsubsection{\texorpdfstring{problem\_read\_restart()}{problem\_read\_restart()}}
+{\footnotesize\ttfamily void problem\+\_\+read\+\_\+restart (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 102 of file noh.\+c.
+
+\mbox{\Hypertarget{noh_8c_a2c334369ab621e9815591c76ccfb5fc7}\label{noh_8c_a2c334369ab621e9815591c76ccfb5fc7}} 
+\index{noh.c@{noh.c}!problem\_write\_restart@{problem\_write\_restart}}
+\index{problem\_write\_restart@{problem\_write\_restart}!noh.c@{noh.c}}
+\doxysubsubsection{\texorpdfstring{problem\_write\_restart()}{problem\_write\_restart()}}
+{\footnotesize\ttfamily void problem\+\_\+write\+\_\+restart (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 97 of file noh.\+c.
+
+\mbox{\Hypertarget{noh_8c_a5506a1df41ed88e038443271b9785337}\label{noh_8c_a5506a1df41ed88e038443271b9785337}} 
+\index{noh.c@{noh.c}!Userwork\_after\_loop@{Userwork\_after\_loop}}
+\index{Userwork\_after\_loop@{Userwork\_after\_loop}!noh.c@{noh.c}}
+\doxysubsubsection{\texorpdfstring{Userwork\_after\_loop()}{Userwork\_after\_loop()}}
+{\footnotesize\ttfamily void Userwork\+\_\+after\+\_\+loop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+Definition at line 120 of file noh.\+c.
+
+\mbox{\Hypertarget{noh_8c_a0ff640c24db1dc0d7c89d91f1d55ffce}\label{noh_8c_a0ff640c24db1dc0d7c89d91f1d55ffce}} 
+\index{noh.c@{noh.c}!Userwork\_in\_loop@{Userwork\_in\_loop}}
+\index{Userwork\_in\_loop@{Userwork\_in\_loop}!noh.c@{noh.c}}
+\doxysubsubsection{\texorpdfstring{Userwork\_in\_loop()}{Userwork\_in\_loop()}}
+{\footnotesize\ttfamily void Userwork\+\_\+in\+\_\+loop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+Definition at line 116 of file noh.\+c.
+

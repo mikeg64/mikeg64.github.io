@@ -1,0 +1,33 @@
+\hypertarget{two__shock_8c}{}\doxysection{src/rsolvers/two\+\_\+shock.c File Reference}
+\label{two__shock_8c}\index{src/rsolvers/two\_shock.c@{src/rsolvers/two\_shock.c}}
+
+
+Computes 1D fluxes using simple two-\/shock Riemann solver.  
+
+
+{\ttfamily \#include \char`\"{}../copyright.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../athena.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prototypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../prototypes.\+h\char`\"{}}\newline
+
+
+\doxysubsection{Detailed Description}
+Computes 1D fluxes using simple two-\/shock Riemann solver. 
+
+P\+U\+R\+P\+O\+SE\+: Computes 1D fluxes using simple two-\/shock Riemann solver. Currently only isothermal hydrodynamics has been implemented. ~\newline
+
+
+R\+E\+F\+E\+R\+E\+N\+C\+ES\+:
+\begin{DoxyItemize}
+\item E.\+F. Toro, \char`\"{}\+Riemann Solvers and numerical methods for fluid dynamics\char`\"{}, 2nd ed., Springer-\/\+Verlag, Berlin, (1999).
+\end{DoxyItemize}
+
+C\+O\+N\+T\+A\+I\+NS P\+U\+B\+L\+IC F\+U\+N\+C\+T\+I\+O\+NS\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{rsolvers_2prototypes_8h_a1dbc04a6e42d16faf8afa047e89353e2}{fluxes()}} -\/ all Riemann solvers in Athena must have this function name and use the same argument list as defined in \mbox{\hyperlink{rsolvers_2prototypes_8h}{rsolvers/prototypes.\+h}} 
+\end{DoxyItemize}

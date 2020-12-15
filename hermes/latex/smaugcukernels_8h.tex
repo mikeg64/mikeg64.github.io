@@ -1,0 +1,330 @@
+\hypertarget{smaugcukernels_8h}{}\doxysection{src/smaug/include/smaugcukernels.h File Reference}
+\label{smaugcukernels_8h}\index{src/smaug/include/smaugcukernels.h@{src/smaug/include/smaugcukernels.h}}
+{\ttfamily \#include \char`\"{}iotypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}iobparams.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_a9db503efa3f8fe061d52e10637411d45}{cuinit}} (\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$pD)
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_a22b68a7c174486fe437711964e34c37e}{cucopyfromgpu}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$Mesh, \mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$pD)
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_af85bd3f5c18ca68d708d7d1da109530c}{cucopytogpu}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$Mesh, \mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$pD)
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_ae01617699baf2b3462dd83ba989d7a28}{cucopyparamsfromgpu}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$Mesh, \mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$pD)
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_af9e55275f7b7be4da44075bcf4ef6955}{cucopyparamstogpu}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$Mesh, \mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$pD)
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_a20b55678e4101a9447cced5ac03b0242}{cusetgpu}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p)
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_a3eeb18976e7620e96bcb50843b58c8d1}{cusync}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p)
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_a17e2beed4b987cc70868ee15be1a73b4}{cufinish}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_ab0675a6fa65970bcea7db1b2c578cb58}{w}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_abca4bfaee14ae8cc72d93b370c448801}{wnew}}, struct \mbox{\hyperlink{structstate}{state}} $\ast$$\ast$\mbox{\hyperlink{structstate}{state}}, struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$d\+\_\+p, struct \mbox{\hyperlink{structbparams}{bparams}} $\ast$$\ast$d\+\_\+bp, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a87403f40a780274844fdc93e952d8f28}{d\+\_\+w}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a3a2b49eb23f22caa39cfc489156e44d3}{d\+\_\+wnew}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a892526709766215ab8df6655558af2f5}{d\+\_\+wmod}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_ad3bc1628aed999aab52044f4e389227c}{d\+\_\+dwn1}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_adda0ae3f17d56803f05d66e25d7badab}{d\+\_\+wd}}, struct \mbox{\hyperlink{structstate}{state}} $\ast$$\ast$d\+\_\+state, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a4c7f974dc7d10d79d742beda02155651}{d\+\_\+wtemp}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a3408ba2c8c48ab03220878fbf24b9e02}{d\+\_\+wtemp1}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a3e976baa62878f2f07e4024d714d881a}{d\+\_\+wtemp2}})
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_a1877f95949afa458b31d072793acb451}{cuboundary}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p, struct \mbox{\hyperlink{structbparams}{bparams}} $\ast$$\ast$bp, struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$d\+\_\+p, struct \mbox{\hyperlink{structbparams}{bparams}} $\ast$$\ast$d\+\_\+bp, struct \mbox{\hyperlink{structstate}{state}} $\ast$$\ast$d\+\_\+s, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a892526709766215ab8df6655558af2f5}{d\+\_\+wmod}}, int order, int idir, int field)
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_a4568466b28cb1b384608e7bdd3e42e81}{cuupdate}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_ab0675a6fa65970bcea7db1b2c578cb58}{w}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a50c7aa9b8eab05636255e46f5527dbfd}{wmod}}, real $\ast$$\ast$wtemp2, struct \mbox{\hyperlink{structstate}{state}} $\ast$$\ast$\mbox{\hyperlink{structstate}{state}}, struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$d\+\_\+p, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a87403f40a780274844fdc93e952d8f28}{d\+\_\+w}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a892526709766215ab8df6655558af2f5}{d\+\_\+wmod}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a3e976baa62878f2f07e4024d714d881a}{d\+\_\+wtemp2}}, struct \mbox{\hyperlink{structstate}{state}} $\ast$$\ast$d\+\_\+state, int step)
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_ab95f26f582b8a42052af11b8fe3c8019}{cuupdatehostwd}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a6014809790bbc6fe5a29a4a8a4e86b6d}{wd}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a50c7aa9b8eab05636255e46f5527dbfd}{wmod}}, real $\ast$$\ast$wtemp2, struct \mbox{\hyperlink{structstate}{state}} $\ast$$\ast$\mbox{\hyperlink{structstate}{state}}, struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$d\+\_\+p, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_adda0ae3f17d56803f05d66e25d7badab}{d\+\_\+wd}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a892526709766215ab8df6655558af2f5}{d\+\_\+wmod}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a3e976baa62878f2f07e4024d714d881a}{d\+\_\+wtemp2}}, struct \mbox{\hyperlink{structstate}{state}} $\ast$$\ast$d\+\_\+state, int step)
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_a6e64a8e4b016642f0a1821a527844761}{cuupdatedevicewd}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a6014809790bbc6fe5a29a4a8a4e86b6d}{wd}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a50c7aa9b8eab05636255e46f5527dbfd}{wmod}}, real $\ast$$\ast$wtemp2, struct \mbox{\hyperlink{structstate}{state}} $\ast$$\ast$\mbox{\hyperlink{structstate}{state}}, struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$d\+\_\+p, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_adda0ae3f17d56803f05d66e25d7badab}{d\+\_\+wd}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a892526709766215ab8df6655558af2f5}{d\+\_\+wmod}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a3e976baa62878f2f07e4024d714d881a}{d\+\_\+wtemp2}}, struct \mbox{\hyperlink{structstate}{state}} $\ast$$\ast$d\+\_\+state, int step)
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_a9a1aa43bcc9c82dff056b343dfca5694}{cucentdiff1}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p, struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$d\+\_\+p, struct \mbox{\hyperlink{structstate}{state}} $\ast$$\ast$d\+\_\+s, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a87403f40a780274844fdc93e952d8f28}{d\+\_\+w}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a892526709766215ab8df6655558af2f5}{d\+\_\+wmod}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_ad3bc1628aed999aab52044f4e389227c}{d\+\_\+dwn1}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_adda0ae3f17d56803f05d66e25d7badab}{d\+\_\+wd}}, int order, int ordero, real \mbox{\hyperlink{defs_8h_a0d83938800a951e18c7a96a4d5ff7a07}{dt}}, int field, int dir)
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_a50ca77eeec130ddce91e36bc80d566b8}{cucentdiff2}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p, struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$d\+\_\+p, struct \mbox{\hyperlink{structstate}{state}} $\ast$$\ast$d\+\_\+s, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a87403f40a780274844fdc93e952d8f28}{d\+\_\+w}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a892526709766215ab8df6655558af2f5}{d\+\_\+wmod}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_ad3bc1628aed999aab52044f4e389227c}{d\+\_\+dwn1}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_adda0ae3f17d56803f05d66e25d7badab}{d\+\_\+wd}}, int order, int ordero, real \mbox{\hyperlink{defs_8h_a0d83938800a951e18c7a96a4d5ff7a07}{dt}}, int field, int dir)
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_adbc18cc5509a93e3edfd278bc7e1dd18}{cugrav}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p, struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$d\+\_\+p, struct \mbox{\hyperlink{structstate}{state}} $\ast$$\ast$d\+\_\+s, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a87403f40a780274844fdc93e952d8f28}{d\+\_\+w}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a892526709766215ab8df6655558af2f5}{d\+\_\+wmod}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_ad3bc1628aed999aab52044f4e389227c}{d\+\_\+dwn1}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_adda0ae3f17d56803f05d66e25d7badab}{d\+\_\+wd}}, int order, int ordero, real \mbox{\hyperlink{defs_8h_a0d83938800a951e18c7a96a4d5ff7a07}{dt}})
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_a5175d599a85d05177b4942f8c72cbad7}{cusource}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p, struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$d\+\_\+p, struct \mbox{\hyperlink{structstate}{state}} $\ast$$\ast$d\+\_\+s, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a87403f40a780274844fdc93e952d8f28}{d\+\_\+w}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a892526709766215ab8df6655558af2f5}{d\+\_\+wmod}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_ad3bc1628aed999aab52044f4e389227c}{d\+\_\+dwn1}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_adda0ae3f17d56803f05d66e25d7badab}{d\+\_\+wd}}, int order, int ordero, real \mbox{\hyperlink{defs_8h_a0d83938800a951e18c7a96a4d5ff7a07}{dt}})
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_a7d6df0538f835c67c082b43e2f66d354}{cuadvance}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p, struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$d\+\_\+p, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a892526709766215ab8df6655558af2f5}{d\+\_\+wmod}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a87403f40a780274844fdc93e952d8f28}{d\+\_\+w}}, int order)
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_a5877641259b15d513dd4033598aaaed2}{cucomputedervfields}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p, struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$d\+\_\+p, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a892526709766215ab8df6655558af2f5}{d\+\_\+wmod}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_adda0ae3f17d56803f05d66e25d7badab}{d\+\_\+wd}}, int order)
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_aff8badb4dd29b762bdffd37c8b259636}{cucomputevels}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p, struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$d\+\_\+p, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a892526709766215ab8df6655558af2f5}{d\+\_\+wmod}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_adda0ae3f17d56803f05d66e25d7badab}{d\+\_\+wd}}, int order, int dir)
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_acb94dca6d750f5dbac9244c586280348}{cucomputemaxc}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p, struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$d\+\_\+p, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a892526709766215ab8df6655558af2f5}{d\+\_\+wmod}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_adda0ae3f17d56803f05d66e25d7badab}{d\+\_\+wd}}, int order, int dir, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a6014809790bbc6fe5a29a4a8a4e86b6d}{wd}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a4c7f974dc7d10d79d742beda02155651}{d\+\_\+wtemp}})
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_ade553927c43ae171fde8d9244fd3af46}{cucomputemaxcourant}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p, struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$d\+\_\+p, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a892526709766215ab8df6655558af2f5}{d\+\_\+wmod}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_adda0ae3f17d56803f05d66e25d7badab}{d\+\_\+wd}}, int order, int dir, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a6014809790bbc6fe5a29a4a8a4e86b6d}{wd}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a4c7f974dc7d10d79d742beda02155651}{d\+\_\+wtemp}})
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_aa867a8284f93a0ed4df61d0cc301ac1d}{cucomputec}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p, struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$d\+\_\+p, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a892526709766215ab8df6655558af2f5}{d\+\_\+wmod}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_adda0ae3f17d56803f05d66e25d7badab}{d\+\_\+wd}}, int order, int dir)
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_af92046bbd69b208fdf2347be0a72d49f}{cucomputept}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p, struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$d\+\_\+p, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a892526709766215ab8df6655558af2f5}{d\+\_\+wmod}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_adda0ae3f17d56803f05d66e25d7badab}{d\+\_\+wd}}, int order, int dir)
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_a19f2d603a1834f42901e21945133804a}{cucomputepk}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p, struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$d\+\_\+p, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a892526709766215ab8df6655558af2f5}{d\+\_\+wmod}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_adda0ae3f17d56803f05d66e25d7badab}{d\+\_\+wd}}, int order, int dir)
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_aa3be98588e627bec1f7cad0c8d70ac81}{cucomputepbg}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p, struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$d\+\_\+p, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a892526709766215ab8df6655558af2f5}{d\+\_\+wmod}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_adda0ae3f17d56803f05d66e25d7badab}{d\+\_\+wd}}, int order, int dir)
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_acbec68442f58965e0e4dda0bdb79560f}{cudivb}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p, struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$d\+\_\+p, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a87403f40a780274844fdc93e952d8f28}{d\+\_\+w}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a892526709766215ab8df6655558af2f5}{d\+\_\+wmod}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_ad3bc1628aed999aab52044f4e389227c}{d\+\_\+dwn1}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_adda0ae3f17d56803f05d66e25d7badab}{d\+\_\+wd}}, int order, int ordero, real \mbox{\hyperlink{defs_8h_a0d83938800a951e18c7a96a4d5ff7a07}{dt}})
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_af037bdd4836794459330a711a6387660}{cuhyperdifmomsource1}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p, struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$d\+\_\+p, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a892526709766215ab8df6655558af2f5}{d\+\_\+wmod}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_ad3bc1628aed999aab52044f4e389227c}{d\+\_\+dwn1}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_adda0ae3f17d56803f05d66e25d7badab}{d\+\_\+wd}}, int order, int ordero, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a4c7f974dc7d10d79d742beda02155651}{d\+\_\+wtemp}}, int field, int \mbox{\hyperlink{bound1__flowout_8c_ae6fa959b9e8f9c638e0d82bf2c7dc5e7}{dim}}, int ii, int ii0, real \mbox{\hyperlink{defs_8h_a0d83938800a951e18c7a96a4d5ff7a07}{dt}})
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_a433e1057ceef62e568426c0bd2b1258a}{cuhyperdifmomsourcene1}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p, struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$d\+\_\+p, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a892526709766215ab8df6655558af2f5}{d\+\_\+wmod}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_ad3bc1628aed999aab52044f4e389227c}{d\+\_\+dwn1}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_adda0ae3f17d56803f05d66e25d7badab}{d\+\_\+wd}}, int order, int ordero, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a4c7f974dc7d10d79d742beda02155651}{d\+\_\+wtemp}}, int field, int \mbox{\hyperlink{bound1__flowout_8c_ae6fa959b9e8f9c638e0d82bf2c7dc5e7}{dim}}, int ii, int ii0, real \mbox{\hyperlink{defs_8h_a0d83938800a951e18c7a96a4d5ff7a07}{dt}})
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_a3b99d4c55489fbab10b2aebbc34ae439}{cuhyperdifesource1}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p, struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$d\+\_\+p, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a892526709766215ab8df6655558af2f5}{d\+\_\+wmod}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_ad3bc1628aed999aab52044f4e389227c}{d\+\_\+dwn1}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_adda0ae3f17d56803f05d66e25d7badab}{d\+\_\+wd}}, int order, int ordero, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a4c7f974dc7d10d79d742beda02155651}{d\+\_\+wtemp}}, int field, int \mbox{\hyperlink{bound1__flowout_8c_ae6fa959b9e8f9c638e0d82bf2c7dc5e7}{dim}}, real \mbox{\hyperlink{defs_8h_a0d83938800a951e18c7a96a4d5ff7a07}{dt}})
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_a8c5b2e287f7dcbf9e64b8d02992e2e6c}{cuhyperdifbsource1}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p, struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$d\+\_\+p, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a892526709766215ab8df6655558af2f5}{d\+\_\+wmod}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_ad3bc1628aed999aab52044f4e389227c}{d\+\_\+dwn1}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_adda0ae3f17d56803f05d66e25d7badab}{d\+\_\+wd}}, int order, int ordero, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a4c7f974dc7d10d79d742beda02155651}{d\+\_\+wtemp}}, int field, int \mbox{\hyperlink{bound1__flowout_8c_ae6fa959b9e8f9c638e0d82bf2c7dc5e7}{dim}}, int jj, int ii0, int mm, real sb, real \mbox{\hyperlink{defs_8h_a0d83938800a951e18c7a96a4d5ff7a07}{dt}})
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_a44f5c932c563c8e8ef11f39103ca1e7f}{cuhyperdifbsourcene1}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p, struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$d\+\_\+p, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a892526709766215ab8df6655558af2f5}{d\+\_\+wmod}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_ad3bc1628aed999aab52044f4e389227c}{d\+\_\+dwn1}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_adda0ae3f17d56803f05d66e25d7badab}{d\+\_\+wd}}, int order, int ordero, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a4c7f974dc7d10d79d742beda02155651}{d\+\_\+wtemp}}, int field, int \mbox{\hyperlink{bound1__flowout_8c_ae6fa959b9e8f9c638e0d82bf2c7dc5e7}{dim}}, int jj, int ii0, int mm, real sb, real \mbox{\hyperlink{defs_8h_a0d83938800a951e18c7a96a4d5ff7a07}{dt}})
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_ae715cd519779e6b20ecd3520cf0fa939}{cuhyperdifrhosource1}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p, struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$d\+\_\+p, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a892526709766215ab8df6655558af2f5}{d\+\_\+wmod}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_ad3bc1628aed999aab52044f4e389227c}{d\+\_\+dwn1}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_adda0ae3f17d56803f05d66e25d7badab}{d\+\_\+wd}}, int order, int ordero, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a4c7f974dc7d10d79d742beda02155651}{d\+\_\+wtemp}}, int field, int \mbox{\hyperlink{bound1__flowout_8c_ae6fa959b9e8f9c638e0d82bf2c7dc5e7}{dim}}, real \mbox{\hyperlink{defs_8h_a0d83938800a951e18c7a96a4d5ff7a07}{dt}})
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_a1620b9acb35201fafe67522af42687fa}{cunushk1}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p, struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$d\+\_\+p, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a892526709766215ab8df6655558af2f5}{d\+\_\+wmod}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_adda0ae3f17d56803f05d66e25d7badab}{d\+\_\+wd}}, int order, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a4c7f974dc7d10d79d742beda02155651}{d\+\_\+wtemp}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a3408ba2c8c48ab03220878fbf24b9e02}{d\+\_\+wtemp1}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a3e976baa62878f2f07e4024d714d881a}{d\+\_\+wtemp2}})
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_aa0da571a9814ee1955b7961ffea30371}{cugetdtvisc1}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p, struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$d\+\_\+p, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a892526709766215ab8df6655558af2f5}{d\+\_\+wmod}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a6014809790bbc6fe5a29a4a8a4e86b6d}{wd}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_adda0ae3f17d56803f05d66e25d7badab}{d\+\_\+wd}}, int order, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a4c7f974dc7d10d79d742beda02155651}{d\+\_\+wtemp}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a3408ba2c8c48ab03220878fbf24b9e02}{d\+\_\+wtemp1}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a3e976baa62878f2f07e4024d714d881a}{d\+\_\+wtemp2}})
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_a60b5f3459ace005ab2f7937b58116a04}{cuhyperdifvisc1}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p, struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$d\+\_\+p, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a892526709766215ab8df6655558af2f5}{d\+\_\+wmod}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_adda0ae3f17d56803f05d66e25d7badab}{d\+\_\+wd}}, int order, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a4c7f974dc7d10d79d742beda02155651}{d\+\_\+wtemp}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a3408ba2c8c48ab03220878fbf24b9e02}{d\+\_\+wtemp1}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a3e976baa62878f2f07e4024d714d881a}{d\+\_\+wtemp2}}, int field, int \mbox{\hyperlink{bound1__flowout_8c_ae6fa959b9e8f9c638e0d82bf2c7dc5e7}{dim}}, int hand)
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_a8063b3dfb409b295d38fde829c27b201}{cuhyperdifvisc1r}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p, struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$d\+\_\+p, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a892526709766215ab8df6655558af2f5}{d\+\_\+wmod}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a6014809790bbc6fe5a29a4a8a4e86b6d}{wd}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_adda0ae3f17d56803f05d66e25d7badab}{d\+\_\+wd}}, int order, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a4c7f974dc7d10d79d742beda02155651}{d\+\_\+wtemp}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a3408ba2c8c48ab03220878fbf24b9e02}{d\+\_\+wtemp1}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a3e976baa62878f2f07e4024d714d881a}{d\+\_\+wtemp2}}, int field, int \mbox{\hyperlink{bound1__flowout_8c_ae6fa959b9e8f9c638e0d82bf2c7dc5e7}{dim}})
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_a30b11945aced52bdc517fb7c8bffb645}{cuhyperdifvisc1l}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p, struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$d\+\_\+p, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a892526709766215ab8df6655558af2f5}{d\+\_\+wmod}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a6014809790bbc6fe5a29a4a8a4e86b6d}{wd}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_adda0ae3f17d56803f05d66e25d7badab}{d\+\_\+wd}}, int order, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a4c7f974dc7d10d79d742beda02155651}{d\+\_\+wtemp}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a3408ba2c8c48ab03220878fbf24b9e02}{d\+\_\+wtemp1}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a3e976baa62878f2f07e4024d714d881a}{d\+\_\+wtemp2}}, int field, int \mbox{\hyperlink{bound1__flowout_8c_ae6fa959b9e8f9c638e0d82bf2c7dc5e7}{dim}})
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_a4ecb0a616d518beaac41fb3ccfb950ba}{cuhyperdifvisc1ir}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p, struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$d\+\_\+p, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a892526709766215ab8df6655558af2f5}{d\+\_\+wmod}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_adda0ae3f17d56803f05d66e25d7badab}{d\+\_\+wd}}, int order, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a4c7f974dc7d10d79d742beda02155651}{d\+\_\+wtemp}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a3408ba2c8c48ab03220878fbf24b9e02}{d\+\_\+wtemp1}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a3e976baa62878f2f07e4024d714d881a}{d\+\_\+wtemp2}}, int field, int \mbox{\hyperlink{bound1__flowout_8c_ae6fa959b9e8f9c638e0d82bf2c7dc5e7}{dim}})
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_aa1565690ded8fbf91fcd67bc387e6f24}{cuhyperdifvisc1il}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p, struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$d\+\_\+p, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a892526709766215ab8df6655558af2f5}{d\+\_\+wmod}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_adda0ae3f17d56803f05d66e25d7badab}{d\+\_\+wd}}, int order, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a4c7f974dc7d10d79d742beda02155651}{d\+\_\+wtemp}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a3408ba2c8c48ab03220878fbf24b9e02}{d\+\_\+wtemp1}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a3e976baa62878f2f07e4024d714d881a}{d\+\_\+wtemp2}}, int field, int \mbox{\hyperlink{bound1__flowout_8c_ae6fa959b9e8f9c638e0d82bf2c7dc5e7}{dim}})
+\item 
+int \mbox{\hyperlink{smaugcukernels_8h_a5f789d635245352a1ea1e5894c5c7f96}{cuhyperdifviscmax}} (struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$p, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_ab0675a6fa65970bcea7db1b2c578cb58}{w}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_abca4bfaee14ae8cc72d93b370c448801}{wnew}}, struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$d\+\_\+p, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a87403f40a780274844fdc93e952d8f28}{d\+\_\+w}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a3a2b49eb23f22caa39cfc489156e44d3}{d\+\_\+wnew}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a892526709766215ab8df6655558af2f5}{d\+\_\+wmod}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_ad3bc1628aed999aab52044f4e389227c}{d\+\_\+dwn1}}, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_adda0ae3f17d56803f05d66e25d7badab}{d\+\_\+wd}}, int order, real $\ast$$\ast$\mbox{\hyperlink{defs_8h_a4c7f974dc7d10d79d742beda02155651}{d\+\_\+wtemp}}, int field, int \mbox{\hyperlink{bound1__flowout_8c_ae6fa959b9e8f9c638e0d82bf2c7dc5e7}{dim}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{smaugcukernels_8h_a7d6df0538f835c67c082b43e2f66d354}\label{smaugcukernels_8h_a7d6df0538f835c67c082b43e2f66d354}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cuadvance@{cuadvance}}
+\index{cuadvance@{cuadvance}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cuadvance()}{cuadvance()}}
+{\footnotesize\ttfamily int cuadvance (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{d\+\_\+p,  }\item[{real $\ast$$\ast$}]{d\+\_\+wmod,  }\item[{real $\ast$$\ast$}]{d\+\_\+w,  }\item[{int}]{order }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_a1877f95949afa458b31d072793acb451}\label{smaugcukernels_8h_a1877f95949afa458b31d072793acb451}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cuboundary@{cuboundary}}
+\index{cuboundary@{cuboundary}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cuboundary()}{cuboundary()}}
+{\footnotesize\ttfamily int cuboundary (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structbparams}{bparams}} $\ast$$\ast$}]{bp,  }\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{d\+\_\+p,  }\item[{struct \mbox{\hyperlink{structbparams}{bparams}} $\ast$$\ast$}]{d\+\_\+bp,  }\item[{struct \mbox{\hyperlink{structstate}{state}} $\ast$$\ast$}]{d\+\_\+s,  }\item[{real $\ast$$\ast$}]{d\+\_\+wmod,  }\item[{int}]{order,  }\item[{int}]{idir,  }\item[{int}]{field }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_a9a1aa43bcc9c82dff056b343dfca5694}\label{smaugcukernels_8h_a9a1aa43bcc9c82dff056b343dfca5694}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cucentdiff1@{cucentdiff1}}
+\index{cucentdiff1@{cucentdiff1}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cucentdiff1()}{cucentdiff1()}}
+{\footnotesize\ttfamily int cucentdiff1 (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{d\+\_\+p,  }\item[{struct \mbox{\hyperlink{structstate}{state}} $\ast$$\ast$}]{d\+\_\+s,  }\item[{real $\ast$$\ast$}]{d\+\_\+w,  }\item[{real $\ast$$\ast$}]{d\+\_\+wmod,  }\item[{real $\ast$$\ast$}]{d\+\_\+dwn1,  }\item[{real $\ast$$\ast$}]{d\+\_\+wd,  }\item[{int}]{order,  }\item[{int}]{ordero,  }\item[{real}]{dt,  }\item[{int}]{field,  }\item[{int}]{dir }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_a50ca77eeec130ddce91e36bc80d566b8}\label{smaugcukernels_8h_a50ca77eeec130ddce91e36bc80d566b8}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cucentdiff2@{cucentdiff2}}
+\index{cucentdiff2@{cucentdiff2}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cucentdiff2()}{cucentdiff2()}}
+{\footnotesize\ttfamily int cucentdiff2 (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{d\+\_\+p,  }\item[{struct \mbox{\hyperlink{structstate}{state}} $\ast$$\ast$}]{d\+\_\+s,  }\item[{real $\ast$$\ast$}]{d\+\_\+w,  }\item[{real $\ast$$\ast$}]{d\+\_\+wmod,  }\item[{real $\ast$$\ast$}]{d\+\_\+dwn1,  }\item[{real $\ast$$\ast$}]{d\+\_\+wd,  }\item[{int}]{order,  }\item[{int}]{ordero,  }\item[{real}]{dt,  }\item[{int}]{field,  }\item[{int}]{dir }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_aa867a8284f93a0ed4df61d0cc301ac1d}\label{smaugcukernels_8h_aa867a8284f93a0ed4df61d0cc301ac1d}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cucomputec@{cucomputec}}
+\index{cucomputec@{cucomputec}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cucomputec()}{cucomputec()}}
+{\footnotesize\ttfamily int cucomputec (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{d\+\_\+p,  }\item[{real $\ast$$\ast$}]{d\+\_\+wmod,  }\item[{real $\ast$$\ast$}]{d\+\_\+wd,  }\item[{int}]{order,  }\item[{int}]{dir }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_a5877641259b15d513dd4033598aaaed2}\label{smaugcukernels_8h_a5877641259b15d513dd4033598aaaed2}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cucomputedervfields@{cucomputedervfields}}
+\index{cucomputedervfields@{cucomputedervfields}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cucomputedervfields()}{cucomputedervfields()}}
+{\footnotesize\ttfamily int cucomputedervfields (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{d\+\_\+p,  }\item[{real $\ast$$\ast$}]{d\+\_\+wmod,  }\item[{real $\ast$$\ast$}]{d\+\_\+wd,  }\item[{int}]{order }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_acb94dca6d750f5dbac9244c586280348}\label{smaugcukernels_8h_acb94dca6d750f5dbac9244c586280348}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cucomputemaxc@{cucomputemaxc}}
+\index{cucomputemaxc@{cucomputemaxc}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cucomputemaxc()}{cucomputemaxc()}}
+{\footnotesize\ttfamily int cucomputemaxc (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{d\+\_\+p,  }\item[{real $\ast$$\ast$}]{d\+\_\+wmod,  }\item[{real $\ast$$\ast$}]{d\+\_\+wd,  }\item[{int}]{order,  }\item[{int}]{dir,  }\item[{real $\ast$$\ast$}]{wd,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_ade553927c43ae171fde8d9244fd3af46}\label{smaugcukernels_8h_ade553927c43ae171fde8d9244fd3af46}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cucomputemaxcourant@{cucomputemaxcourant}}
+\index{cucomputemaxcourant@{cucomputemaxcourant}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cucomputemaxcourant()}{cucomputemaxcourant()}}
+{\footnotesize\ttfamily int cucomputemaxcourant (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{d\+\_\+p,  }\item[{real $\ast$$\ast$}]{d\+\_\+wmod,  }\item[{real $\ast$$\ast$}]{d\+\_\+wd,  }\item[{int}]{order,  }\item[{int}]{dir,  }\item[{real $\ast$$\ast$}]{wd,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_aa3be98588e627bec1f7cad0c8d70ac81}\label{smaugcukernels_8h_aa3be98588e627bec1f7cad0c8d70ac81}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cucomputepbg@{cucomputepbg}}
+\index{cucomputepbg@{cucomputepbg}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cucomputepbg()}{cucomputepbg()}}
+{\footnotesize\ttfamily int cucomputepbg (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{d\+\_\+p,  }\item[{real $\ast$$\ast$}]{d\+\_\+wmod,  }\item[{real $\ast$$\ast$}]{d\+\_\+wd,  }\item[{int}]{order,  }\item[{int}]{dir }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_a19f2d603a1834f42901e21945133804a}\label{smaugcukernels_8h_a19f2d603a1834f42901e21945133804a}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cucomputepk@{cucomputepk}}
+\index{cucomputepk@{cucomputepk}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cucomputepk()}{cucomputepk()}}
+{\footnotesize\ttfamily int cucomputepk (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{d\+\_\+p,  }\item[{real $\ast$$\ast$}]{d\+\_\+wmod,  }\item[{real $\ast$$\ast$}]{d\+\_\+wd,  }\item[{int}]{order,  }\item[{int}]{dir }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_af92046bbd69b208fdf2347be0a72d49f}\label{smaugcukernels_8h_af92046bbd69b208fdf2347be0a72d49f}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cucomputept@{cucomputept}}
+\index{cucomputept@{cucomputept}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cucomputept()}{cucomputept()}}
+{\footnotesize\ttfamily int cucomputept (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{d\+\_\+p,  }\item[{real $\ast$$\ast$}]{d\+\_\+wmod,  }\item[{real $\ast$$\ast$}]{d\+\_\+wd,  }\item[{int}]{order,  }\item[{int}]{dir }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_aff8badb4dd29b762bdffd37c8b259636}\label{smaugcukernels_8h_aff8badb4dd29b762bdffd37c8b259636}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cucomputevels@{cucomputevels}}
+\index{cucomputevels@{cucomputevels}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cucomputevels()}{cucomputevels()}}
+{\footnotesize\ttfamily int cucomputevels (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{d\+\_\+p,  }\item[{real $\ast$$\ast$}]{d\+\_\+wmod,  }\item[{real $\ast$$\ast$}]{d\+\_\+wd,  }\item[{int}]{order,  }\item[{int}]{dir }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_a22b68a7c174486fe437711964e34c37e}\label{smaugcukernels_8h_a22b68a7c174486fe437711964e34c37e}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cucopyfromgpu@{cucopyfromgpu}}
+\index{cucopyfromgpu@{cucopyfromgpu}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cucopyfromgpu()}{cucopyfromgpu()}}
+{\footnotesize\ttfamily int cucopyfromgpu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{Mesh,  }\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{pD }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_ae01617699baf2b3462dd83ba989d7a28}\label{smaugcukernels_8h_ae01617699baf2b3462dd83ba989d7a28}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cucopyparamsfromgpu@{cucopyparamsfromgpu}}
+\index{cucopyparamsfromgpu@{cucopyparamsfromgpu}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cucopyparamsfromgpu()}{cucopyparamsfromgpu()}}
+{\footnotesize\ttfamily int cucopyparamsfromgpu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{Mesh,  }\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{pD }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_af9e55275f7b7be4da44075bcf4ef6955}\label{smaugcukernels_8h_af9e55275f7b7be4da44075bcf4ef6955}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cucopyparamstogpu@{cucopyparamstogpu}}
+\index{cucopyparamstogpu@{cucopyparamstogpu}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cucopyparamstogpu()}{cucopyparamstogpu()}}
+{\footnotesize\ttfamily int cucopyparamstogpu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{Mesh,  }\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{pD }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_af85bd3f5c18ca68d708d7d1da109530c}\label{smaugcukernels_8h_af85bd3f5c18ca68d708d7d1da109530c}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cucopytogpu@{cucopytogpu}}
+\index{cucopytogpu@{cucopytogpu}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cucopytogpu()}{cucopytogpu()}}
+{\footnotesize\ttfamily int cucopytogpu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{Mesh,  }\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{pD }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_acbec68442f58965e0e4dda0bdb79560f}\label{smaugcukernels_8h_acbec68442f58965e0e4dda0bdb79560f}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cudivb@{cudivb}}
+\index{cudivb@{cudivb}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cudivb()}{cudivb()}}
+{\footnotesize\ttfamily int cudivb (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{d\+\_\+p,  }\item[{real $\ast$$\ast$}]{d\+\_\+w,  }\item[{real $\ast$$\ast$}]{d\+\_\+wmod,  }\item[{real $\ast$$\ast$}]{d\+\_\+dwn1,  }\item[{real $\ast$$\ast$}]{d\+\_\+wd,  }\item[{int}]{order,  }\item[{int}]{ordero,  }\item[{real}]{dt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_a17e2beed4b987cc70868ee15be1a73b4}\label{smaugcukernels_8h_a17e2beed4b987cc70868ee15be1a73b4}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cufinish@{cufinish}}
+\index{cufinish@{cufinish}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cufinish()}{cufinish()}}
+{\footnotesize\ttfamily int cufinish (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p,  }\item[{real $\ast$$\ast$}]{w,  }\item[{real $\ast$$\ast$}]{wnew,  }\item[{struct \mbox{\hyperlink{structstate}{state}} $\ast$$\ast$}]{state,  }\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{d\+\_\+p,  }\item[{struct \mbox{\hyperlink{structbparams}{bparams}} $\ast$$\ast$}]{d\+\_\+bp,  }\item[{real $\ast$$\ast$}]{d\+\_\+w,  }\item[{real $\ast$$\ast$}]{d\+\_\+wnew,  }\item[{real $\ast$$\ast$}]{d\+\_\+wmod,  }\item[{real $\ast$$\ast$}]{d\+\_\+dwn1,  }\item[{real $\ast$$\ast$}]{d\+\_\+wd,  }\item[{struct \mbox{\hyperlink{structstate}{state}} $\ast$$\ast$}]{d\+\_\+state,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp1,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_aa0da571a9814ee1955b7961ffea30371}\label{smaugcukernels_8h_aa0da571a9814ee1955b7961ffea30371}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cugetdtvisc1@{cugetdtvisc1}}
+\index{cugetdtvisc1@{cugetdtvisc1}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cugetdtvisc1()}{cugetdtvisc1()}}
+{\footnotesize\ttfamily int cugetdtvisc1 (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{d\+\_\+p,  }\item[{real $\ast$$\ast$}]{d\+\_\+wmod,  }\item[{real $\ast$$\ast$}]{wd,  }\item[{real $\ast$$\ast$}]{d\+\_\+wd,  }\item[{int}]{order,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp1,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_adbc18cc5509a93e3edfd278bc7e1dd18}\label{smaugcukernels_8h_adbc18cc5509a93e3edfd278bc7e1dd18}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cugrav@{cugrav}}
+\index{cugrav@{cugrav}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cugrav()}{cugrav()}}
+{\footnotesize\ttfamily int cugrav (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{d\+\_\+p,  }\item[{struct \mbox{\hyperlink{structstate}{state}} $\ast$$\ast$}]{d\+\_\+s,  }\item[{real $\ast$$\ast$}]{d\+\_\+w,  }\item[{real $\ast$$\ast$}]{d\+\_\+wmod,  }\item[{real $\ast$$\ast$}]{d\+\_\+dwn1,  }\item[{real $\ast$$\ast$}]{d\+\_\+wd,  }\item[{int}]{order,  }\item[{int}]{ordero,  }\item[{real}]{dt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_a8c5b2e287f7dcbf9e64b8d02992e2e6c}\label{smaugcukernels_8h_a8c5b2e287f7dcbf9e64b8d02992e2e6c}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cuhyperdifbsource1@{cuhyperdifbsource1}}
+\index{cuhyperdifbsource1@{cuhyperdifbsource1}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cuhyperdifbsource1()}{cuhyperdifbsource1()}}
+{\footnotesize\ttfamily int cuhyperdifbsource1 (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{d\+\_\+p,  }\item[{real $\ast$$\ast$}]{d\+\_\+wmod,  }\item[{real $\ast$$\ast$}]{d\+\_\+dwn1,  }\item[{real $\ast$$\ast$}]{d\+\_\+wd,  }\item[{int}]{order,  }\item[{int}]{ordero,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp,  }\item[{int}]{field,  }\item[{int}]{dim,  }\item[{int}]{jj,  }\item[{int}]{ii0,  }\item[{int}]{mm,  }\item[{real}]{sb,  }\item[{real}]{dt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_a44f5c932c563c8e8ef11f39103ca1e7f}\label{smaugcukernels_8h_a44f5c932c563c8e8ef11f39103ca1e7f}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cuhyperdifbsourcene1@{cuhyperdifbsourcene1}}
+\index{cuhyperdifbsourcene1@{cuhyperdifbsourcene1}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cuhyperdifbsourcene1()}{cuhyperdifbsourcene1()}}
+{\footnotesize\ttfamily int cuhyperdifbsourcene1 (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{d\+\_\+p,  }\item[{real $\ast$$\ast$}]{d\+\_\+wmod,  }\item[{real $\ast$$\ast$}]{d\+\_\+dwn1,  }\item[{real $\ast$$\ast$}]{d\+\_\+wd,  }\item[{int}]{order,  }\item[{int}]{ordero,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp,  }\item[{int}]{field,  }\item[{int}]{dim,  }\item[{int}]{jj,  }\item[{int}]{ii0,  }\item[{int}]{mm,  }\item[{real}]{sb,  }\item[{real}]{dt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_a3b99d4c55489fbab10b2aebbc34ae439}\label{smaugcukernels_8h_a3b99d4c55489fbab10b2aebbc34ae439}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cuhyperdifesource1@{cuhyperdifesource1}}
+\index{cuhyperdifesource1@{cuhyperdifesource1}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cuhyperdifesource1()}{cuhyperdifesource1()}}
+{\footnotesize\ttfamily int cuhyperdifesource1 (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{d\+\_\+p,  }\item[{real $\ast$$\ast$}]{d\+\_\+wmod,  }\item[{real $\ast$$\ast$}]{d\+\_\+dwn1,  }\item[{real $\ast$$\ast$}]{d\+\_\+wd,  }\item[{int}]{order,  }\item[{int}]{ordero,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp,  }\item[{int}]{field,  }\item[{int}]{dim,  }\item[{real}]{dt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_af037bdd4836794459330a711a6387660}\label{smaugcukernels_8h_af037bdd4836794459330a711a6387660}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cuhyperdifmomsource1@{cuhyperdifmomsource1}}
+\index{cuhyperdifmomsource1@{cuhyperdifmomsource1}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cuhyperdifmomsource1()}{cuhyperdifmomsource1()}}
+{\footnotesize\ttfamily int cuhyperdifmomsource1 (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{d\+\_\+p,  }\item[{real $\ast$$\ast$}]{d\+\_\+wmod,  }\item[{real $\ast$$\ast$}]{d\+\_\+dwn1,  }\item[{real $\ast$$\ast$}]{d\+\_\+wd,  }\item[{int}]{order,  }\item[{int}]{ordero,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp,  }\item[{int}]{field,  }\item[{int}]{dim,  }\item[{int}]{ii,  }\item[{int}]{ii0,  }\item[{real}]{dt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_a433e1057ceef62e568426c0bd2b1258a}\label{smaugcukernels_8h_a433e1057ceef62e568426c0bd2b1258a}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cuhyperdifmomsourcene1@{cuhyperdifmomsourcene1}}
+\index{cuhyperdifmomsourcene1@{cuhyperdifmomsourcene1}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cuhyperdifmomsourcene1()}{cuhyperdifmomsourcene1()}}
+{\footnotesize\ttfamily int cuhyperdifmomsourcene1 (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{d\+\_\+p,  }\item[{real $\ast$$\ast$}]{d\+\_\+wmod,  }\item[{real $\ast$$\ast$}]{d\+\_\+dwn1,  }\item[{real $\ast$$\ast$}]{d\+\_\+wd,  }\item[{int}]{order,  }\item[{int}]{ordero,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp,  }\item[{int}]{field,  }\item[{int}]{dim,  }\item[{int}]{ii,  }\item[{int}]{ii0,  }\item[{real}]{dt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_ae715cd519779e6b20ecd3520cf0fa939}\label{smaugcukernels_8h_ae715cd519779e6b20ecd3520cf0fa939}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cuhyperdifrhosource1@{cuhyperdifrhosource1}}
+\index{cuhyperdifrhosource1@{cuhyperdifrhosource1}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cuhyperdifrhosource1()}{cuhyperdifrhosource1()}}
+{\footnotesize\ttfamily int cuhyperdifrhosource1 (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{d\+\_\+p,  }\item[{real $\ast$$\ast$}]{d\+\_\+wmod,  }\item[{real $\ast$$\ast$}]{d\+\_\+dwn1,  }\item[{real $\ast$$\ast$}]{d\+\_\+wd,  }\item[{int}]{order,  }\item[{int}]{ordero,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp,  }\item[{int}]{field,  }\item[{int}]{dim,  }\item[{real}]{dt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_a60b5f3459ace005ab2f7937b58116a04}\label{smaugcukernels_8h_a60b5f3459ace005ab2f7937b58116a04}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cuhyperdifvisc1@{cuhyperdifvisc1}}
+\index{cuhyperdifvisc1@{cuhyperdifvisc1}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cuhyperdifvisc1()}{cuhyperdifvisc1()}}
+{\footnotesize\ttfamily int cuhyperdifvisc1 (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{d\+\_\+p,  }\item[{real $\ast$$\ast$}]{d\+\_\+wmod,  }\item[{real $\ast$$\ast$}]{d\+\_\+wd,  }\item[{int}]{order,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp1,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp2,  }\item[{int}]{field,  }\item[{int}]{dim,  }\item[{int}]{hand }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_aa1565690ded8fbf91fcd67bc387e6f24}\label{smaugcukernels_8h_aa1565690ded8fbf91fcd67bc387e6f24}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cuhyperdifvisc1il@{cuhyperdifvisc1il}}
+\index{cuhyperdifvisc1il@{cuhyperdifvisc1il}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cuhyperdifvisc1il()}{cuhyperdifvisc1il()}}
+{\footnotesize\ttfamily int cuhyperdifvisc1il (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{d\+\_\+p,  }\item[{real $\ast$$\ast$}]{d\+\_\+wmod,  }\item[{real $\ast$$\ast$}]{d\+\_\+wd,  }\item[{int}]{order,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp1,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp2,  }\item[{int}]{field,  }\item[{int}]{dim }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_a4ecb0a616d518beaac41fb3ccfb950ba}\label{smaugcukernels_8h_a4ecb0a616d518beaac41fb3ccfb950ba}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cuhyperdifvisc1ir@{cuhyperdifvisc1ir}}
+\index{cuhyperdifvisc1ir@{cuhyperdifvisc1ir}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cuhyperdifvisc1ir()}{cuhyperdifvisc1ir()}}
+{\footnotesize\ttfamily int cuhyperdifvisc1ir (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{d\+\_\+p,  }\item[{real $\ast$$\ast$}]{d\+\_\+wmod,  }\item[{real $\ast$$\ast$}]{d\+\_\+wd,  }\item[{int}]{order,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp1,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp2,  }\item[{int}]{field,  }\item[{int}]{dim }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_a30b11945aced52bdc517fb7c8bffb645}\label{smaugcukernels_8h_a30b11945aced52bdc517fb7c8bffb645}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cuhyperdifvisc1l@{cuhyperdifvisc1l}}
+\index{cuhyperdifvisc1l@{cuhyperdifvisc1l}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cuhyperdifvisc1l()}{cuhyperdifvisc1l()}}
+{\footnotesize\ttfamily int cuhyperdifvisc1l (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{d\+\_\+p,  }\item[{real $\ast$$\ast$}]{d\+\_\+wmod,  }\item[{real $\ast$$\ast$}]{wd,  }\item[{real $\ast$$\ast$}]{d\+\_\+wd,  }\item[{int}]{order,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp1,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp2,  }\item[{int}]{field,  }\item[{int}]{dim }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_a8063b3dfb409b295d38fde829c27b201}\label{smaugcukernels_8h_a8063b3dfb409b295d38fde829c27b201}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cuhyperdifvisc1r@{cuhyperdifvisc1r}}
+\index{cuhyperdifvisc1r@{cuhyperdifvisc1r}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cuhyperdifvisc1r()}{cuhyperdifvisc1r()}}
+{\footnotesize\ttfamily int cuhyperdifvisc1r (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{d\+\_\+p,  }\item[{real $\ast$$\ast$}]{d\+\_\+wmod,  }\item[{real $\ast$$\ast$}]{wd,  }\item[{real $\ast$$\ast$}]{d\+\_\+wd,  }\item[{int}]{order,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp1,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp2,  }\item[{int}]{field,  }\item[{int}]{dim }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_a5f789d635245352a1ea1e5894c5c7f96}\label{smaugcukernels_8h_a5f789d635245352a1ea1e5894c5c7f96}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cuhyperdifviscmax@{cuhyperdifviscmax}}
+\index{cuhyperdifviscmax@{cuhyperdifviscmax}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cuhyperdifviscmax()}{cuhyperdifviscmax()}}
+{\footnotesize\ttfamily int cuhyperdifviscmax (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p,  }\item[{real $\ast$$\ast$}]{w,  }\item[{real $\ast$$\ast$}]{wnew,  }\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{d\+\_\+p,  }\item[{real $\ast$$\ast$}]{d\+\_\+w,  }\item[{real $\ast$$\ast$}]{d\+\_\+wnew,  }\item[{real $\ast$$\ast$}]{d\+\_\+wmod,  }\item[{real $\ast$$\ast$}]{d\+\_\+dwn1,  }\item[{real $\ast$$\ast$}]{d\+\_\+wd,  }\item[{int}]{order,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp,  }\item[{int}]{field,  }\item[{int}]{dim }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_a9db503efa3f8fe061d52e10637411d45}\label{smaugcukernels_8h_a9db503efa3f8fe061d52e10637411d45}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cuinit@{cuinit}}
+\index{cuinit@{cuinit}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cuinit()}{cuinit()}}
+{\footnotesize\ttfamily int cuinit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{pD }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_a1620b9acb35201fafe67522af42687fa}\label{smaugcukernels_8h_a1620b9acb35201fafe67522af42687fa}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cunushk1@{cunushk1}}
+\index{cunushk1@{cunushk1}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cunushk1()}{cunushk1()}}
+{\footnotesize\ttfamily int cunushk1 (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{d\+\_\+p,  }\item[{real $\ast$$\ast$}]{d\+\_\+wmod,  }\item[{real $\ast$$\ast$}]{d\+\_\+wd,  }\item[{int}]{order,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp1,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_a20b55678e4101a9447cced5ac03b0242}\label{smaugcukernels_8h_a20b55678e4101a9447cced5ac03b0242}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cusetgpu@{cusetgpu}}
+\index{cusetgpu@{cusetgpu}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cusetgpu()}{cusetgpu()}}
+{\footnotesize\ttfamily int cusetgpu (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_a5175d599a85d05177b4942f8c72cbad7}\label{smaugcukernels_8h_a5175d599a85d05177b4942f8c72cbad7}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cusource@{cusource}}
+\index{cusource@{cusource}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cusource()}{cusource()}}
+{\footnotesize\ttfamily int cusource (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{d\+\_\+p,  }\item[{struct \mbox{\hyperlink{structstate}{state}} $\ast$$\ast$}]{d\+\_\+s,  }\item[{real $\ast$$\ast$}]{d\+\_\+w,  }\item[{real $\ast$$\ast$}]{d\+\_\+wmod,  }\item[{real $\ast$$\ast$}]{d\+\_\+dwn1,  }\item[{real $\ast$$\ast$}]{d\+\_\+wd,  }\item[{int}]{order,  }\item[{int}]{ordero,  }\item[{real}]{dt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_a3eeb18976e7620e96bcb50843b58c8d1}\label{smaugcukernels_8h_a3eeb18976e7620e96bcb50843b58c8d1}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cusync@{cusync}}
+\index{cusync@{cusync}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cusync()}{cusync()}}
+{\footnotesize\ttfamily int cusync (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_a4568466b28cb1b384608e7bdd3e42e81}\label{smaugcukernels_8h_a4568466b28cb1b384608e7bdd3e42e81}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cuupdate@{cuupdate}}
+\index{cuupdate@{cuupdate}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cuupdate()}{cuupdate()}}
+{\footnotesize\ttfamily int cuupdate (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p,  }\item[{real $\ast$$\ast$}]{w,  }\item[{real $\ast$$\ast$}]{wmod,  }\item[{real $\ast$$\ast$}]{wtemp2,  }\item[{struct \mbox{\hyperlink{structstate}{state}} $\ast$$\ast$}]{state,  }\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{d\+\_\+p,  }\item[{real $\ast$$\ast$}]{d\+\_\+w,  }\item[{real $\ast$$\ast$}]{d\+\_\+wmod,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp2,  }\item[{struct \mbox{\hyperlink{structstate}{state}} $\ast$$\ast$}]{d\+\_\+state,  }\item[{int}]{step }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_a6e64a8e4b016642f0a1821a527844761}\label{smaugcukernels_8h_a6e64a8e4b016642f0a1821a527844761}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cuupdatedevicewd@{cuupdatedevicewd}}
+\index{cuupdatedevicewd@{cuupdatedevicewd}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cuupdatedevicewd()}{cuupdatedevicewd()}}
+{\footnotesize\ttfamily int cuupdatedevicewd (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p,  }\item[{real $\ast$$\ast$}]{wd,  }\item[{real $\ast$$\ast$}]{wmod,  }\item[{real $\ast$$\ast$}]{wtemp2,  }\item[{struct \mbox{\hyperlink{structstate}{state}} $\ast$$\ast$}]{state,  }\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{d\+\_\+p,  }\item[{real $\ast$$\ast$}]{d\+\_\+wd,  }\item[{real $\ast$$\ast$}]{d\+\_\+wmod,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp2,  }\item[{struct \mbox{\hyperlink{structstate}{state}} $\ast$$\ast$}]{d\+\_\+state,  }\item[{int}]{step }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{smaugcukernels_8h_ab95f26f582b8a42052af11b8fe3c8019}\label{smaugcukernels_8h_ab95f26f582b8a42052af11b8fe3c8019}} 
+\index{smaugcukernels.h@{smaugcukernels.h}!cuupdatehostwd@{cuupdatehostwd}}
+\index{cuupdatehostwd@{cuupdatehostwd}!smaugcukernels.h@{smaugcukernels.h}}
+\doxysubsubsection{\texorpdfstring{cuupdatehostwd()}{cuupdatehostwd()}}
+{\footnotesize\ttfamily int cuupdatehostwd (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{p,  }\item[{real $\ast$$\ast$}]{wd,  }\item[{real $\ast$$\ast$}]{wmod,  }\item[{real $\ast$$\ast$}]{wtemp2,  }\item[{struct \mbox{\hyperlink{structstate}{state}} $\ast$$\ast$}]{state,  }\item[{struct \mbox{\hyperlink{structparams}{params}} $\ast$$\ast$}]{d\+\_\+p,  }\item[{real $\ast$$\ast$}]{d\+\_\+wd,  }\item[{real $\ast$$\ast$}]{d\+\_\+wmod,  }\item[{real $\ast$$\ast$}]{d\+\_\+wtemp2,  }\item[{struct \mbox{\hyperlink{structstate}{state}} $\ast$$\ast$}]{d\+\_\+state,  }\item[{int}]{step }\end{DoxyParamCaption})}
+

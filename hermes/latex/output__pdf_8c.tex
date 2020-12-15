@@ -1,0 +1,46 @@
+\hypertarget{output__pdf_8c}{}\doxysection{src/output\+\_\+pdf.c File Reference}
+\label{output__pdf_8c}\index{src/output\_pdf.c@{src/output\_pdf.c}}
+
+
+Outputs Probability Distribution Functions of selected variables in formatted tabular form. ~\newline
+  
+
+
+{\ttfamily \#include \char`\"{}copyright.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}athena.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prototypes.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{output__pdf_8c_ab8f7ef8a651b07524b87ef0f4f9b0262}{output\+\_\+pdf}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, \mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$p\+Out)
+\begin{DoxyCompactList}\small\item\em Outputs P\+D\+Fs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Outputs Probability Distribution Functions of selected variables in formatted tabular form. ~\newline
+ 
+
+P\+U\+R\+P\+O\+SE\+: Outputs Probability Distribution Functions of selected variables in formatted tabular form. Fully M\+PI enabled, which requires passing lots of global sums and means (only the parent process produces output). With S\+MR, dumps are made for all levels and domains, unless nlevel and ndomain are specified in $<$output$>$ block.
+
+C\+O\+N\+T\+A\+I\+NS P\+U\+B\+L\+IC F\+U\+N\+C\+T\+I\+O\+NS\+: \hypertarget{output__pdf_8c_autotoc_md8}{}\doxysubsection{-\/ output\+\_\+pdf() -\/ output P\+D\+Fs}\label{output__pdf_8c_autotoc_md8}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{output__pdf_8c_ab8f7ef8a651b07524b87ef0f4f9b0262}\label{output__pdf_8c_ab8f7ef8a651b07524b87ef0f4f9b0262}} 
+\index{output\_pdf.c@{output\_pdf.c}!output\_pdf@{output\_pdf}}
+\index{output\_pdf@{output\_pdf}!output\_pdf.c@{output\_pdf.c}}
+\doxysubsubsection{\texorpdfstring{output\_pdf()}{output\_pdf()}}
+{\footnotesize\ttfamily void output\+\_\+pdf (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{\mbox{\hyperlink{struct_output_s}{OutputS}} $\ast$}]{p\+Out }\end{DoxyParamCaption})}
+
+
+
+Outputs P\+D\+Fs. 
+
+
+
+Definition at line 40 of file output\+\_\+pdf.\+c.
+

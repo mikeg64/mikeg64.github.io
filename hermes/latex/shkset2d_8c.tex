@@ -1,0 +1,198 @@
+\hypertarget{shkset2d_8c}{}\doxysection{src/prob/shkset2d.c File Reference}
+\label{shkset2d_8c}\index{src/prob/shkset2d.c@{src/prob/shkset2d.c}}
+
+
+Sets up shock at angle to grid to test multidimensional algorithm.  
+
+
+{\ttfamily \#include \char`\"{}copyright.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}athena.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prototypes.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{shkset2d_8c_a5fe4d83bcdb9493352e2d0349e152f85}{shkset2d\+\_\+iib}} (\mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$p\+Grid)
+\begin{DoxyCompactList}\small\item\em Sets ghost zones using the nearest computational grid cells implied by the size of the unit cell (r1xr2). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{shkset2d_8c_a115367d9edf2d175c34f89592df98bc3}{shkset2d\+\_\+oib}} (\mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$p\+Grid)
+\begin{DoxyCompactList}\small\item\em Sets ghost zones using the nearest computational grid cells implied by the size of the unit cell (r1xr2). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{shkset2d_8c_a9295adb58f948718c7eb6c36ddd840c5}{shkset2d\+\_\+ijb}} (\mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$p\+Grid)
+\begin{DoxyCompactList}\small\item\em Sets ghost zones using the nearest computational grid cells implied by the size of the unit cell (r1xr2). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{shkset2d_8c_a60d3570ed9dd0a885c95bbcae9d3291f}{shkset2d\+\_\+ojb}} (\mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$p\+Grid)
+\begin{DoxyCompactList}\small\item\em Sets ghost zones using the nearest computational grid cells implied by the size of the unit cell (r1xr2). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{shkset2d_8c_a1b323f47153f1975b64382e0ffac6b73}{problem}} (\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$p\+Domain)
+\item 
+void \mbox{\hyperlink{shkset2d_8c_a2c334369ab621e9815591c76ccfb5fc7}{problem\+\_\+write\+\_\+restart}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, F\+I\+LE $\ast$fp)
+\item 
+void \mbox{\hyperlink{shkset2d_8c_acf733c9792756cbec1e9d226c4ff37ab}{problem\+\_\+read\+\_\+restart}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, F\+I\+LE $\ast$fp)
+\item 
+\mbox{\hyperlink{athena_8h_aaa64b3ee5eefc566b7c09368c414de89}{Cons\+Fun\+\_\+t}} \mbox{\hyperlink{shkset2d_8c_a4575c4cdbf2965a9857c45970d736676}{get\+\_\+usr\+\_\+expr}} (const char $\ast$expr)
+\item 
+\mbox{\hyperlink{athena_8h_a8bc2403d4d3a27d6f475f2dc6acc94cc}{V\+Out\+Fun\+\_\+t}} \mbox{\hyperlink{shkset2d_8c_a8b8cabb1061d5399fb492be89de213ff}{get\+\_\+usr\+\_\+out\+\_\+fun}} (const char $\ast$\mbox{\hyperlink{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}{name}})
+\item 
+void \mbox{\hyperlink{shkset2d_8c_a0ff640c24db1dc0d7c89d91f1d55ffce}{Userwork\+\_\+in\+\_\+loop}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\item 
+void \mbox{\hyperlink{shkset2d_8c_a5506a1df41ed88e038443271b9785337}{Userwork\+\_\+after\+\_\+loop}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sets up shock at angle to grid to test multidimensional algorithm. 
+
+P\+U\+R\+P\+O\+SE\+: Sets up shock at ang\+\_\+3=atan(Ly/\+Lx) to grid to test multidimensional algorithm. Nx1/\+Nx2 must be the same ratio as Lx/\+Ly. Uses the angle of the shock to remap ghost cells to the equivalent active grid cells, which requires Nx1$>$32, using special function pointers. The shock is initialized with reference to a coordinate system (x,y,z) with transformation rules to the code coordinate system (x1,x2,x3)
+\begin{DoxyItemize}
+\item x = x1$\ast$cos(ang\+\_\+3) + x2$\ast$sin(ang\+\_\+3)
+\item y = -\/x1$\ast$sin(ang\+\_\+3) + x2$\ast$cos(ang\+\_\+3)
+\item z = x3
+\end{DoxyItemize}
+
+This inverts to\+:
+\begin{DoxyItemize}
+\item x1 = x$\ast$cos(ang\+\_\+3) -\/ y$\ast$sin(ang\+\_\+3)
+\item x2 = x$\ast$sin(ang\+\_\+3) + y$\ast$cos(ang\+\_\+3)
+\item x3 = z ~\newline
+
+\end{DoxyItemize}
+
+If error\+\_\+test=1 in the $<$problem$>$ block, then the L1 error in the final solution will be computed for the Sod shocktube (hydrodynamics) or the R\+J2a test (M\+HD). This is useful for regression tests.
+
+P\+R\+I\+V\+A\+TE F\+U\+N\+C\+T\+I\+ON P\+R\+O\+T\+O\+T\+Y\+P\+ES\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{shkset2d_8c_a5fe4d83bcdb9493352e2d0349e152f85}{shkset2d\+\_\+iib()}} -\/ sets B\+Cs on L-\/x1 (left edge) of grid.
+\item \mbox{\hyperlink{shkset2d_8c_a115367d9edf2d175c34f89592df98bc3}{shkset2d\+\_\+oib()}} -\/ sets B\+Cs on R-\/x1 (right edge) of grid.
+\item \mbox{\hyperlink{shkset2d_8c_a9295adb58f948718c7eb6c36ddd840c5}{shkset2d\+\_\+ijb()}} -\/ sets B\+Cs on L-\/x2 (bottom edge) of grid.
+\item \mbox{\hyperlink{shkset2d_8c_a60d3570ed9dd0a885c95bbcae9d3291f}{shkset2d\+\_\+ojb()}} -\/ sets B\+Cs on R-\/x2 (top edge) of grid. ~\newline
+ 
+\end{DoxyItemize}
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{shkset2d_8c_a4575c4cdbf2965a9857c45970d736676}\label{shkset2d_8c_a4575c4cdbf2965a9857c45970d736676}} 
+\index{shkset2d.c@{shkset2d.c}!get\_usr\_expr@{get\_usr\_expr}}
+\index{get\_usr\_expr@{get\_usr\_expr}!shkset2d.c@{shkset2d.c}}
+\doxysubsubsection{\texorpdfstring{get\_usr\_expr()}{get\_usr\_expr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{athena_8h_aaa64b3ee5eefc566b7c09368c414de89}{Cons\+Fun\+\_\+t}} get\+\_\+usr\+\_\+expr (\begin{DoxyParamCaption}\item[{const char $\ast$}]{expr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 558 of file shkset2d.\+c.
+
+\mbox{\Hypertarget{shkset2d_8c_a8b8cabb1061d5399fb492be89de213ff}\label{shkset2d_8c_a8b8cabb1061d5399fb492be89de213ff}} 
+\index{shkset2d.c@{shkset2d.c}!get\_usr\_out\_fun@{get\_usr\_out\_fun}}
+\index{get\_usr\_out\_fun@{get\_usr\_out\_fun}!shkset2d.c@{shkset2d.c}}
+\doxysubsubsection{\texorpdfstring{get\_usr\_out\_fun()}{get\_usr\_out\_fun()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{athena_8h_a8bc2403d4d3a27d6f475f2dc6acc94cc}{V\+Out\+Fun\+\_\+t}} get\+\_\+usr\+\_\+out\+\_\+fun (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 563 of file shkset2d.\+c.
+
+\mbox{\Hypertarget{shkset2d_8c_a1b323f47153f1975b64382e0ffac6b73}\label{shkset2d_8c_a1b323f47153f1975b64382e0ffac6b73}} 
+\index{shkset2d.c@{shkset2d.c}!problem@{problem}}
+\index{problem@{problem}!shkset2d.c@{shkset2d.c}}
+\doxysubsubsection{\texorpdfstring{problem()}{problem()}}
+{\footnotesize\ttfamily void problem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{p\+Domain }\end{DoxyParamCaption})}
+
+
+
+Definition at line 65 of file shkset2d.\+c.
+
+\mbox{\Hypertarget{shkset2d_8c_acf733c9792756cbec1e9d226c4ff37ab}\label{shkset2d_8c_acf733c9792756cbec1e9d226c4ff37ab}} 
+\index{shkset2d.c@{shkset2d.c}!problem\_read\_restart@{problem\_read\_restart}}
+\index{problem\_read\_restart@{problem\_read\_restart}!shkset2d.c@{shkset2d.c}}
+\doxysubsubsection{\texorpdfstring{problem\_read\_restart()}{problem\_read\_restart()}}
+{\footnotesize\ttfamily void problem\+\_\+read\+\_\+restart (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 553 of file shkset2d.\+c.
+
+\mbox{\Hypertarget{shkset2d_8c_a2c334369ab621e9815591c76ccfb5fc7}\label{shkset2d_8c_a2c334369ab621e9815591c76ccfb5fc7}} 
+\index{shkset2d.c@{shkset2d.c}!problem\_write\_restart@{problem\_write\_restart}}
+\index{problem\_write\_restart@{problem\_write\_restart}!shkset2d.c@{shkset2d.c}}
+\doxysubsubsection{\texorpdfstring{problem\_write\_restart()}{problem\_write\_restart()}}
+{\footnotesize\ttfamily void problem\+\_\+write\+\_\+restart (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 548 of file shkset2d.\+c.
+
+\mbox{\Hypertarget{shkset2d_8c_a5fe4d83bcdb9493352e2d0349e152f85}\label{shkset2d_8c_a5fe4d83bcdb9493352e2d0349e152f85}} 
+\index{shkset2d.c@{shkset2d.c}!shkset2d\_iib@{shkset2d\_iib}}
+\index{shkset2d\_iib@{shkset2d\_iib}!shkset2d.c@{shkset2d.c}}
+\doxysubsubsection{\texorpdfstring{shkset2d\_iib()}{shkset2d\_iib()}}
+{\footnotesize\ttfamily void shkset2d\+\_\+iib (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$}]{p\+Grid }\end{DoxyParamCaption})}
+
+
+
+Sets ghost zones using the nearest computational grid cells implied by the size of the unit cell (r1xr2). 
+
+
+
+Definition at line 803 of file shkset2d.\+c.
+
+\mbox{\Hypertarget{shkset2d_8c_a9295adb58f948718c7eb6c36ddd840c5}\label{shkset2d_8c_a9295adb58f948718c7eb6c36ddd840c5}} 
+\index{shkset2d.c@{shkset2d.c}!shkset2d\_ijb@{shkset2d\_ijb}}
+\index{shkset2d\_ijb@{shkset2d\_ijb}!shkset2d.c@{shkset2d.c}}
+\doxysubsubsection{\texorpdfstring{shkset2d\_ijb()}{shkset2d\_ijb()}}
+{\footnotesize\ttfamily void shkset2d\+\_\+ijb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$}]{p\+Grid }\end{DoxyParamCaption})}
+
+
+
+Sets ghost zones using the nearest computational grid cells implied by the size of the unit cell (r1xr2). 
+
+
+
+Definition at line 889 of file shkset2d.\+c.
+
+\mbox{\Hypertarget{shkset2d_8c_a115367d9edf2d175c34f89592df98bc3}\label{shkset2d_8c_a115367d9edf2d175c34f89592df98bc3}} 
+\index{shkset2d.c@{shkset2d.c}!shkset2d\_oib@{shkset2d\_oib}}
+\index{shkset2d\_oib@{shkset2d\_oib}!shkset2d.c@{shkset2d.c}}
+\doxysubsubsection{\texorpdfstring{shkset2d\_oib()}{shkset2d\_oib()}}
+{\footnotesize\ttfamily void shkset2d\+\_\+oib (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$}]{p\+Grid }\end{DoxyParamCaption})}
+
+
+
+Sets ghost zones using the nearest computational grid cells implied by the size of the unit cell (r1xr2). 
+
+
+
+Definition at line 845 of file shkset2d.\+c.
+
+\mbox{\Hypertarget{shkset2d_8c_a60d3570ed9dd0a885c95bbcae9d3291f}\label{shkset2d_8c_a60d3570ed9dd0a885c95bbcae9d3291f}} 
+\index{shkset2d.c@{shkset2d.c}!shkset2d\_ojb@{shkset2d\_ojb}}
+\index{shkset2d\_ojb@{shkset2d\_ojb}!shkset2d.c@{shkset2d.c}}
+\doxysubsubsection{\texorpdfstring{shkset2d\_ojb()}{shkset2d\_ojb()}}
+{\footnotesize\ttfamily void shkset2d\+\_\+ojb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grid_s}{GridS}} $\ast$}]{p\+Grid }\end{DoxyParamCaption})}
+
+
+
+Sets ghost zones using the nearest computational grid cells implied by the size of the unit cell (r1xr2). 
+
+
+
+Definition at line 926 of file shkset2d.\+c.
+
+\mbox{\Hypertarget{shkset2d_8c_a5506a1df41ed88e038443271b9785337}\label{shkset2d_8c_a5506a1df41ed88e038443271b9785337}} 
+\index{shkset2d.c@{shkset2d.c}!Userwork\_after\_loop@{Userwork\_after\_loop}}
+\index{Userwork\_after\_loop@{Userwork\_after\_loop}!shkset2d.c@{shkset2d.c}}
+\doxysubsubsection{\texorpdfstring{Userwork\_after\_loop()}{Userwork\_after\_loop()}}
+{\footnotesize\ttfamily void Userwork\+\_\+after\+\_\+loop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+Definition at line 571 of file shkset2d.\+c.
+
+\mbox{\Hypertarget{shkset2d_8c_a0ff640c24db1dc0d7c89d91f1d55ffce}\label{shkset2d_8c_a0ff640c24db1dc0d7c89d91f1d55ffce}} 
+\index{shkset2d.c@{shkset2d.c}!Userwork\_in\_loop@{Userwork\_in\_loop}}
+\index{Userwork\_in\_loop@{Userwork\_in\_loop}!shkset2d.c@{shkset2d.c}}
+\doxysubsubsection{\texorpdfstring{Userwork\_in\_loop()}{Userwork\_in\_loop()}}
+{\footnotesize\ttfamily void Userwork\+\_\+in\+\_\+loop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+Definition at line 567 of file shkset2d.\+c.
+

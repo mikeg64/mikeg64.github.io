@@ -1,0 +1,110 @@
+\hypertarget{fft__3d_8h}{}\doxysection{src/fftsrc/fft\+\_\+3d.h File Reference}
+\label{fft__3d_8h}\index{src/fftsrc/fft\_3d.h@{src/fftsrc/fft\_3d.h}}
+{\ttfamily \#include \char`\"{}fftw3.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfft__plan__3d}{fft\+\_\+plan\+\_\+3d}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{fft__3d_8h_af6a2f5850fe238443b727519b015e005}{F\+F\+T\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON}}~2
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef fftw\+\_\+complex \mbox{\hyperlink{fft__3d_8h_ab3245335c9c664a8ff62d7c2eb067726}{F\+F\+T\+\_\+\+D\+A\+TA}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{fft__3d_8h_ab4687e837e2759f35183f611cca0a23d}{fft\+\_\+3d}} (\mbox{\hyperlink{fft__2d_8h_ab3245335c9c664a8ff62d7c2eb067726}{F\+F\+T\+\_\+\+D\+A\+TA}} $\ast$, \mbox{\hyperlink{fft__2d_8h_ab3245335c9c664a8ff62d7c2eb067726}{F\+F\+T\+\_\+\+D\+A\+TA}} $\ast$, int, struct \mbox{\hyperlink{structfft__plan__3d}{fft\+\_\+plan\+\_\+3d}} $\ast$)
+\item 
+struct \mbox{\hyperlink{structfft__plan__3d}{fft\+\_\+plan\+\_\+3d}} $\ast$ \mbox{\hyperlink{fft__3d_8h_aa3c430e1ff890182662af51ea3d35b68}{fft\+\_\+3d\+\_\+create\+\_\+plan}} (M\+P\+I\+\_\+\+Comm, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int $\ast$)
+\item 
+void \mbox{\hyperlink{fft__3d_8h_a070b460a473bc6fbc419bec23a51f176}{fft\+\_\+3d\+\_\+destroy\+\_\+plan}} (struct \mbox{\hyperlink{structfft__plan__3d}{fft\+\_\+plan\+\_\+3d}} $\ast$)
+\item 
+void \mbox{\hyperlink{fft__3d_8h_a3993fffde03cadc25d06b01b8fd57b4a}{factor}} (int, int $\ast$, int $\ast$)
+\item 
+void \mbox{\hyperlink{fft__3d_8h_a4f2d5e8954b632a4b07108c2b0f8c432}{bifactor}} (int, int $\ast$, int $\ast$)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{fft__3d_8h_af6a2f5850fe238443b727519b015e005}\label{fft__3d_8h_af6a2f5850fe238443b727519b015e005}} 
+\index{fft\_3d.h@{fft\_3d.h}!FFT\_PRECISION@{FFT\_PRECISION}}
+\index{FFT\_PRECISION@{FFT\_PRECISION}!fft\_3d.h@{fft\_3d.h}}
+\doxysubsubsection{\texorpdfstring{FFT\_PRECISION}{FFT\_PRECISION}}
+{\footnotesize\ttfamily \#define F\+F\+T\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON~2}
+
+
+
+Definition at line 26 of file fft\+\_\+3d.\+h.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{fft__3d_8h_ab3245335c9c664a8ff62d7c2eb067726}\label{fft__3d_8h_ab3245335c9c664a8ff62d7c2eb067726}} 
+\index{fft\_3d.h@{fft\_3d.h}!FFT\_DATA@{FFT\_DATA}}
+\index{FFT\_DATA@{FFT\_DATA}!fft\_3d.h@{fft\_3d.h}}
+\doxysubsubsection{\texorpdfstring{FFT\_DATA}{FFT\_DATA}}
+{\footnotesize\ttfamily typedef fftw\+\_\+complex \mbox{\hyperlink{fft__2d_8h_ab3245335c9c664a8ff62d7c2eb067726}{F\+F\+T\+\_\+\+D\+A\+TA}}}
+
+
+
+Definition at line 31 of file fft\+\_\+3d.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{fft__3d_8h_a4f2d5e8954b632a4b07108c2b0f8c432}\label{fft__3d_8h_a4f2d5e8954b632a4b07108c2b0f8c432}} 
+\index{fft\_3d.h@{fft\_3d.h}!bifactor@{bifactor}}
+\index{bifactor@{bifactor}!fft\_3d.h@{fft\_3d.h}}
+\doxysubsubsection{\texorpdfstring{bifactor()}{bifactor()}}
+{\footnotesize\ttfamily void bifactor (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int $\ast$}]{,  }\item[{int $\ast$}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 67 of file factor.\+c.
+
+\mbox{\Hypertarget{fft__3d_8h_a3993fffde03cadc25d06b01b8fd57b4a}\label{fft__3d_8h_a3993fffde03cadc25d06b01b8fd57b4a}} 
+\index{fft\_3d.h@{fft\_3d.h}!factor@{factor}}
+\index{factor@{factor}!fft\_3d.h@{fft\_3d.h}}
+\doxysubsubsection{\texorpdfstring{factor()}{factor()}}
+{\footnotesize\ttfamily void factor (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int $\ast$}]{,  }\item[{int $\ast$}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 20 of file factor.\+c.
+
+\mbox{\Hypertarget{fft__3d_8h_ab4687e837e2759f35183f611cca0a23d}\label{fft__3d_8h_ab4687e837e2759f35183f611cca0a23d}} 
+\index{fft\_3d.h@{fft\_3d.h}!fft\_3d@{fft\_3d}}
+\index{fft\_3d@{fft\_3d}!fft\_3d.h@{fft\_3d.h}}
+\doxysubsubsection{\texorpdfstring{fft\_3d()}{fft\_3d()}}
+{\footnotesize\ttfamily void fft\+\_\+3d (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{fft__2d_8h_ab3245335c9c664a8ff62d7c2eb067726}{F\+F\+T\+\_\+\+D\+A\+TA}} $\ast$}]{,  }\item[{\mbox{\hyperlink{fft__2d_8h_ab3245335c9c664a8ff62d7c2eb067726}{F\+F\+T\+\_\+\+D\+A\+TA}} $\ast$}]{,  }\item[{int}]{,  }\item[{struct \mbox{\hyperlink{structfft__plan__3d}{fft\+\_\+plan\+\_\+3d}} $\ast$}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 61 of file fft\+\_\+3d.\+c.
+
+\mbox{\Hypertarget{fft__3d_8h_aa3c430e1ff890182662af51ea3d35b68}\label{fft__3d_8h_aa3c430e1ff890182662af51ea3d35b68}} 
+\index{fft\_3d.h@{fft\_3d.h}!fft\_3d\_create\_plan@{fft\_3d\_create\_plan}}
+\index{fft\_3d\_create\_plan@{fft\_3d\_create\_plan}!fft\_3d.h@{fft\_3d.h}}
+\doxysubsubsection{\texorpdfstring{fft\_3d\_create\_plan()}{fft\_3d\_create\_plan()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structfft__plan__3d}{fft\+\_\+plan\+\_\+3d}}$\ast$ fft\+\_\+3d\+\_\+create\+\_\+plan (\begin{DoxyParamCaption}\item[{M\+P\+I\+\_\+\+Comm}]{,  }\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{,  }\item[{int $\ast$}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 167 of file fft\+\_\+3d.\+c.
+
+\mbox{\Hypertarget{fft__3d_8h_a070b460a473bc6fbc419bec23a51f176}\label{fft__3d_8h_a070b460a473bc6fbc419bec23a51f176}} 
+\index{fft\_3d.h@{fft\_3d.h}!fft\_3d\_destroy\_plan@{fft\_3d\_destroy\_plan}}
+\index{fft\_3d\_destroy\_plan@{fft\_3d\_destroy\_plan}!fft\_3d.h@{fft\_3d.h}}
+\doxysubsubsection{\texorpdfstring{fft\_3d\_destroy\_plan()}{fft\_3d\_destroy\_plan()}}
+{\footnotesize\ttfamily void fft\+\_\+3d\+\_\+destroy\+\_\+plan (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structfft__plan__3d}{fft\+\_\+plan\+\_\+3d}} $\ast$}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 463 of file fft\+\_\+3d.\+c.
+

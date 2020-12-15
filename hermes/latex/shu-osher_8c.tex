@@ -1,0 +1,117 @@
+\hypertarget{shu-osher_8c}{}\doxysection{src/prob/shu-\/osher.c File Reference}
+\label{shu-osher_8c}\index{src/prob/shu-\/osher.c@{src/prob/shu-\/osher.c}}
+
+
+Problem generator for Shu-\/\+Osher shocktube test, involving interaction of a Mach 3 shock with a sine wave density distribution. ~\newline
+  
+
+
+{\ttfamily \#include \char`\"{}copyright.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}athena.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prototypes.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{shu-osher_8c_a1b323f47153f1975b64382e0ffac6b73}{problem}} (\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$p\+Domain)
+\item 
+void \mbox{\hyperlink{shu-osher_8c_a2c334369ab621e9815591c76ccfb5fc7}{problem\+\_\+write\+\_\+restart}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, F\+I\+LE $\ast$fp)
+\item 
+void \mbox{\hyperlink{shu-osher_8c_acf733c9792756cbec1e9d226c4ff37ab}{problem\+\_\+read\+\_\+restart}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, F\+I\+LE $\ast$fp)
+\item 
+\mbox{\hyperlink{athena_8h_aaa64b3ee5eefc566b7c09368c414de89}{Cons\+Fun\+\_\+t}} \mbox{\hyperlink{shu-osher_8c_a4575c4cdbf2965a9857c45970d736676}{get\+\_\+usr\+\_\+expr}} (const char $\ast$expr)
+\item 
+\mbox{\hyperlink{athena_8h_a8bc2403d4d3a27d6f475f2dc6acc94cc}{V\+Out\+Fun\+\_\+t}} \mbox{\hyperlink{shu-osher_8c_a8b8cabb1061d5399fb492be89de213ff}{get\+\_\+usr\+\_\+out\+\_\+fun}} (const char $\ast$\mbox{\hyperlink{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}{name}})
+\item 
+void \mbox{\hyperlink{shu-osher_8c_a0ff640c24db1dc0d7c89d91f1d55ffce}{Userwork\+\_\+in\+\_\+loop}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\item 
+void \mbox{\hyperlink{shu-osher_8c_a5506a1df41ed88e038443271b9785337}{Userwork\+\_\+after\+\_\+loop}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Problem generator for Shu-\/\+Osher shocktube test, involving interaction of a Mach 3 shock with a sine wave density distribution. ~\newline
+ 
+
+P\+U\+R\+P\+O\+SE\+: Problem generator for Shu-\/\+Osher shocktube test, involving interaction of a Mach 3 shock with a sine wave density distribution. ~\newline
+
+
+R\+E\+F\+E\+R\+E\+N\+CE\+: C.\+W. Shu \& S. Osher, \char`\"{}\+Efficient implementation of essentially
+  non-\/oscillatory shock-\/capturing schemes, I\+I\char`\"{}, J\+CP, 83, 32 (1998) ~\newline
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{shu-osher_8c_a4575c4cdbf2965a9857c45970d736676}\label{shu-osher_8c_a4575c4cdbf2965a9857c45970d736676}} 
+\index{shu-\/osher.c@{shu-\/osher.c}!get\_usr\_expr@{get\_usr\_expr}}
+\index{get\_usr\_expr@{get\_usr\_expr}!shu-\/osher.c@{shu-\/osher.c}}
+\doxysubsubsection{\texorpdfstring{get\_usr\_expr()}{get\_usr\_expr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{athena_8h_aaa64b3ee5eefc566b7c09368c414de89}{Cons\+Fun\+\_\+t}} get\+\_\+usr\+\_\+expr (\begin{DoxyParamCaption}\item[{const char $\ast$}]{expr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 99 of file shu-\/osher.\+c.
+
+\mbox{\Hypertarget{shu-osher_8c_a8b8cabb1061d5399fb492be89de213ff}\label{shu-osher_8c_a8b8cabb1061d5399fb492be89de213ff}} 
+\index{shu-\/osher.c@{shu-\/osher.c}!get\_usr\_out\_fun@{get\_usr\_out\_fun}}
+\index{get\_usr\_out\_fun@{get\_usr\_out\_fun}!shu-\/osher.c@{shu-\/osher.c}}
+\doxysubsubsection{\texorpdfstring{get\_usr\_out\_fun()}{get\_usr\_out\_fun()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{athena_8h_a8bc2403d4d3a27d6f475f2dc6acc94cc}{V\+Out\+Fun\+\_\+t}} get\+\_\+usr\+\_\+out\+\_\+fun (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 104 of file shu-\/osher.\+c.
+
+\mbox{\Hypertarget{shu-osher_8c_a1b323f47153f1975b64382e0ffac6b73}\label{shu-osher_8c_a1b323f47153f1975b64382e0ffac6b73}} 
+\index{shu-\/osher.c@{shu-\/osher.c}!problem@{problem}}
+\index{problem@{problem}!shu-\/osher.c@{shu-\/osher.c}}
+\doxysubsubsection{\texorpdfstring{problem()}{problem()}}
+{\footnotesize\ttfamily void problem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{p\+Domain }\end{DoxyParamCaption})}
+
+
+
+Definition at line 32 of file shu-\/osher.\+c.
+
+\mbox{\Hypertarget{shu-osher_8c_acf733c9792756cbec1e9d226c4ff37ab}\label{shu-osher_8c_acf733c9792756cbec1e9d226c4ff37ab}} 
+\index{shu-\/osher.c@{shu-\/osher.c}!problem\_read\_restart@{problem\_read\_restart}}
+\index{problem\_read\_restart@{problem\_read\_restart}!shu-\/osher.c@{shu-\/osher.c}}
+\doxysubsubsection{\texorpdfstring{problem\_read\_restart()}{problem\_read\_restart()}}
+{\footnotesize\ttfamily void problem\+\_\+read\+\_\+restart (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 94 of file shu-\/osher.\+c.
+
+\mbox{\Hypertarget{shu-osher_8c_a2c334369ab621e9815591c76ccfb5fc7}\label{shu-osher_8c_a2c334369ab621e9815591c76ccfb5fc7}} 
+\index{shu-\/osher.c@{shu-\/osher.c}!problem\_write\_restart@{problem\_write\_restart}}
+\index{problem\_write\_restart@{problem\_write\_restart}!shu-\/osher.c@{shu-\/osher.c}}
+\doxysubsubsection{\texorpdfstring{problem\_write\_restart()}{problem\_write\_restart()}}
+{\footnotesize\ttfamily void problem\+\_\+write\+\_\+restart (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 89 of file shu-\/osher.\+c.
+
+\mbox{\Hypertarget{shu-osher_8c_a5506a1df41ed88e038443271b9785337}\label{shu-osher_8c_a5506a1df41ed88e038443271b9785337}} 
+\index{shu-\/osher.c@{shu-\/osher.c}!Userwork\_after\_loop@{Userwork\_after\_loop}}
+\index{Userwork\_after\_loop@{Userwork\_after\_loop}!shu-\/osher.c@{shu-\/osher.c}}
+\doxysubsubsection{\texorpdfstring{Userwork\_after\_loop()}{Userwork\_after\_loop()}}
+{\footnotesize\ttfamily void Userwork\+\_\+after\+\_\+loop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+Definition at line 112 of file shu-\/osher.\+c.
+
+\mbox{\Hypertarget{shu-osher_8c_a0ff640c24db1dc0d7c89d91f1d55ffce}\label{shu-osher_8c_a0ff640c24db1dc0d7c89d91f1d55ffce}} 
+\index{shu-\/osher.c@{shu-\/osher.c}!Userwork\_in\_loop@{Userwork\_in\_loop}}
+\index{Userwork\_in\_loop@{Userwork\_in\_loop}!shu-\/osher.c@{shu-\/osher.c}}
+\doxysubsubsection{\texorpdfstring{Userwork\_in\_loop()}{Userwork\_in\_loop()}}
+{\footnotesize\ttfamily void Userwork\+\_\+in\+\_\+loop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+Definition at line 108 of file shu-\/osher.\+c.
+

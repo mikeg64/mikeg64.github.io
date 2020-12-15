@@ -1,0 +1,94 @@
+\hypertarget{init__mesh_8c}{}\doxysection{src/init\+\_\+mesh.c File Reference}
+\label{init__mesh_8c}\index{src/init\_mesh.c@{src/init\_mesh.c}}
+
+
+General initialization of the nested mesh hierarchy.  
+
+
+{\ttfamily \#include \char`\"{}copyright.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}athena.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prototypes.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{init__mesh_8c_a916f9c7c3347abd0ff4e1acc00cd0f27}{init\+\_\+mesh}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\begin{DoxyCompactList}\small\item\em General initialization of the nested mesh hierarchy. ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{init__mesh_8c_aa16d281ef7a56861fdf7da0f960086ef}{get\+\_\+my\+Grid\+Index}} (\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$pD, const int my\+ID, int $\ast$pi, int $\ast$pj, int $\ast$pk)
+\begin{DoxyCompactList}\small\item\em Searches G\+Data\mbox{[}\mbox{]}\mbox{[}\mbox{]}\mbox{[}\mbox{]} array to find i,j,k components of block being updated on this processor. ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+General initialization of the nested mesh hierarchy. 
+
+P\+U\+R\+P\+O\+SE\+: General initialization of the nested mesh hierarchy. Works for both nested and uniform meshes, on single and multiple processors. Each Mesh contains one or more levels, each level contains one or more Domains (regions with the same grid resolution), and depending on the parallelization each Domain contains one or more Grids (however there can never be more than one Grid per Domain being updated on any given processor). In the Mesh, this hierarchy is stored as an \char`\"{}array\char`\"{} of Domains indexed as Domain\mbox{[}nlevel\mbox{]}\mbox{[}ndomain\mbox{]}. Since ndomain is different for each level, this \char`\"{}array\char`\"{} is not square, (really it is nlevel pointers, each to ndomain\mbox{[}nlevel\mbox{]} Domains).
+
+Note for a uniform mesh on a single processor\+:
+\begin{DoxyItemize}
+\item \# of Mesh levels = \# of Domains = \# of Grids = 1 For a uniform mesh on multiple processors\+:
+\item \# of Mesh levels = \# of Domains = 1; \# of Grids = \# of processors For a nested mesh on a single processor\+:
+\item \# of Domains = \# of Grids
+\end{DoxyItemize}
+
+For a nested mesh on multiple processors, there is no relationship between these quantaties in general.
+
+This function\+:
+\begin{DoxyItemize}
+\item (1) sets properties of each Domain read from $<$domain$>$ blocks in input file
+\item (2) allocates and initializes the array of Domains,
+\item (3) divides each Domain into one or more Grids depending on the parallelization.
+
+This function supercedes init\+\_\+domain() from v3.\+2. The \mbox{\hyperlink{init__grid_8c_a95667109c997592ac508a6f67e34b827}{init\+\_\+grid()}} function initializes the data in each Grid structure in each Domain, including finding all child and parent Grids with S\+MR.
+\end{DoxyItemize}
+
+C\+O\+N\+T\+A\+I\+NS P\+U\+B\+L\+IC F\+U\+N\+C\+T\+I\+O\+NS\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{init__mesh_8c_a916f9c7c3347abd0ff4e1acc00cd0f27}{init\+\_\+mesh()}}
+\item \mbox{\hyperlink{init__mesh_8c_aa16d281ef7a56861fdf7da0f960086ef}{get\+\_\+my\+Grid\+Index()}} ~\newline
+
+\end{DoxyItemize}
+
+P\+R\+I\+V\+A\+TE F\+U\+N\+C\+T\+I\+ON P\+R\+O\+T\+O\+T\+Y\+P\+ES\+:
+\begin{DoxyItemize}
+\item dom\+\_\+decomp() -\/ calls auto domain decomposition functions
+\item dom\+\_\+decomp\+\_\+2d() -\/ finds optimum domain decomposition in 2D
+\item dom\+\_\+decomp\+\_\+3d() -\/ finds optimum domain decomposition in 3D ~\newline
+ 
+\end{DoxyItemize}
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{init__mesh_8c_aa16d281ef7a56861fdf7da0f960086ef}\label{init__mesh_8c_aa16d281ef7a56861fdf7da0f960086ef}} 
+\index{init\_mesh.c@{init\_mesh.c}!get\_myGridIndex@{get\_myGridIndex}}
+\index{get\_myGridIndex@{get\_myGridIndex}!init\_mesh.c@{init\_mesh.c}}
+\doxysubsubsection{\texorpdfstring{get\_myGridIndex()}{get\_myGridIndex()}}
+{\footnotesize\ttfamily void get\+\_\+my\+Grid\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{pD,  }\item[{const int}]{my\+ID,  }\item[{int $\ast$}]{pi,  }\item[{int $\ast$}]{pj,  }\item[{int $\ast$}]{pk }\end{DoxyParamCaption})}
+
+
+
+Searches G\+Data\mbox{[}\mbox{]}\mbox{[}\mbox{]}\mbox{[}\mbox{]} array to find i,j,k components of block being updated on this processor. ~\newline
+ 
+
+
+
+Definition at line 833 of file init\+\_\+mesh.\+c.
+
+\mbox{\Hypertarget{init__mesh_8c_a916f9c7c3347abd0ff4e1acc00cd0f27}\label{init__mesh_8c_a916f9c7c3347abd0ff4e1acc00cd0f27}} 
+\index{init\_mesh.c@{init\_mesh.c}!init\_mesh@{init\_mesh}}
+\index{init\_mesh@{init\_mesh}!init\_mesh.c@{init\_mesh.c}}
+\doxysubsubsection{\texorpdfstring{init\_mesh()}{init\_mesh()}}
+{\footnotesize\ttfamily void init\+\_\+mesh (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+General initialization of the nested mesh hierarchy. ~\newline
+ 
+
+
+
+Definition at line 84 of file init\+\_\+mesh.\+c.
+

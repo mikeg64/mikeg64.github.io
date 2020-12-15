@@ -1,0 +1,36 @@
+\hypertarget{hlld_8c}{}\doxysection{src/rsolvers/hlld.c File Reference}
+\label{hlld_8c}\index{src/rsolvers/hlld.c@{src/rsolvers/hlld.c}}
+
+
+Computes 1D fluxes using the H\+L\+LD Riemann solver.  
+
+
+{\ttfamily \#include \char`\"{}../copyright.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../athena.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prototypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../prototypes.\+h\char`\"{}}\newline
+
+
+\doxysubsection{Detailed Description}
+Computes 1D fluxes using the H\+L\+LD Riemann solver. 
+
+P\+U\+R\+P\+O\+SE\+: Computes 1D fluxes using the H\+L\+LD Riemann solver, an extension of the H\+L\+LE solver to M\+HD. Only works for M\+HD problems. S\+E\+P\+A\+R\+A\+TE code blocks for adiabatic and isothermal equations of state.
+
+R\+E\+F\+E\+R\+E\+N\+C\+ES\+:
+\begin{DoxyItemize}
+\item T. Miyoshi \& K. Kusano, \char`\"{}\+A multi-\/state H\+L\+L approximate Riemann solver
+  for ideal M\+H\+D\char`\"{}, J\+CP, 208, 315 (2005)
+\item A. Mignone, \char`\"{}\+A simple and accurate Riemann solver for isothermal M\+H\+D\char`\"{}, J\+PC, 225, 1427 (2007)
+\end{DoxyItemize}
+
+H\+I\+S\+T\+O\+RY\+: Adiabatic version written by Brian Biskeborn, May 8, 2006, C\+OS sophmore project. Isothermal version written by Nicole Lemaster, May 1, 2008.
+
+C\+O\+N\+T\+A\+I\+NS P\+U\+B\+L\+IC F\+U\+N\+C\+T\+I\+O\+NS\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{rsolvers_2prototypes_8h_a1dbc04a6e42d16faf8afa047e89353e2}{fluxes()}} -\/ all Riemann solvers in Athena must have this function name and use the same argument list as defined in \mbox{\hyperlink{rsolvers_2prototypes_8h}{rsolvers/prototypes.\+h}} 
+\end{DoxyItemize}

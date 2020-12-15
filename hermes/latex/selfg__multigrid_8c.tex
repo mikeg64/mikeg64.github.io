@@ -1,0 +1,34 @@
+\hypertarget{selfg__multigrid_8c}{}\doxysection{src/gravity/selfg\+\_\+multigrid.c File Reference}
+\label{selfg__multigrid_8c}\index{src/gravity/selfg\_multigrid.c@{src/gravity/selfg\_multigrid.c}}
+
+
+Contains functions to solve Poisson\textquotesingle{}s equation for self-\/gravity in 3D using multigrid.  
+
+
+{\ttfamily \#include \char`\"{}../copyright.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$float.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../athena.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prototypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../prototypes.\+h\char`\"{}}\newline
+
+
+\doxysubsection{Detailed Description}
+Contains functions to solve Poisson\textquotesingle{}s equation for self-\/gravity in 3D using multigrid. 
+
+These functions work for non-\/periodic domains. A low-\/order multipole expansion is used to compute the potential on the boundaries.
+
+H\+I\+S\+T\+O\+RY\+:
+\begin{DoxyItemize}
+\item june-\/2007 -\/ 2D and 3D solvers written by Irene Balmes
+\item july-\/2007 -\/ routines incorporated into Athena by J\+MS and IB
+\end{DoxyItemize}
+
+C\+O\+N\+T\+A\+I\+NS P\+U\+B\+L\+IC F\+U\+N\+C\+T\+I\+O\+NS\+:
+\begin{DoxyItemize}
+\item selfg\+\_\+by\+\_\+multig\+\_\+2d() -\/ 2D Poisson solver using multigrid
+\item selfg\+\_\+by\+\_\+multig\+\_\+3d() -\/ 3D Poisson solver using multigrid
+\item selfg\+\_\+by\+\_\+multig\+\_\+3d\+\_\+init() -\/ Initializes send/receive buffers for M\+PI 
+\end{DoxyItemize}

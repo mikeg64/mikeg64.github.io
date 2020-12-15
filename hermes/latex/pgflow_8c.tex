@@ -1,0 +1,126 @@
+\hypertarget{pgflow_8c}{}\doxysection{src/prob/pgflow.c File Reference}
+\label{pgflow_8c}\index{src/prob/pgflow.c@{src/prob/pgflow.c}}
+
+
+Problem generator for steady planar gravitational flow in a simple 1D gravitational field.  
+
+
+{\ttfamily \#include \char`\"{}copyright.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}athena.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prototypes.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{pgflow_8c_a1b323f47153f1975b64382e0ffac6b73}{problem}} (\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$p\+Domain)
+\item 
+void \mbox{\hyperlink{pgflow_8c_a2c334369ab621e9815591c76ccfb5fc7}{problem\+\_\+write\+\_\+restart}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, F\+I\+LE $\ast$fp)
+\item 
+void \mbox{\hyperlink{pgflow_8c_acf733c9792756cbec1e9d226c4ff37ab}{problem\+\_\+read\+\_\+restart}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM, F\+I\+LE $\ast$fp)
+\item 
+\mbox{\hyperlink{athena_8h_aaa64b3ee5eefc566b7c09368c414de89}{Cons\+Fun\+\_\+t}} \mbox{\hyperlink{pgflow_8c_a4575c4cdbf2965a9857c45970d736676}{get\+\_\+usr\+\_\+expr}} (const char $\ast$expr)
+\item 
+\mbox{\hyperlink{athena_8h_a8bc2403d4d3a27d6f475f2dc6acc94cc}{V\+Out\+Fun\+\_\+t}} \mbox{\hyperlink{pgflow_8c_a8b8cabb1061d5399fb492be89de213ff}{get\+\_\+usr\+\_\+out\+\_\+fun}} (const char $\ast$\mbox{\hyperlink{streaming3d__single_8c_ae5cb967283dbbdf75cb2032c1fa08fee}{name}})
+\item 
+void \mbox{\hyperlink{pgflow_8c_a0ff640c24db1dc0d7c89d91f1d55ffce}{Userwork\+\_\+in\+\_\+loop}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\item 
+void \mbox{\hyperlink{pgflow_8c_a5506a1df41ed88e038443271b9785337}{Userwork\+\_\+after\+\_\+loop}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Problem generator for steady planar gravitational flow in a simple 1D gravitational field. 
+
+P\+U\+R\+P\+O\+SE\+: Problem generator for steady planar gravitational flow in a simple 1D gravitational field\+: g = grav$\ast$cos(k\+\_\+par$\ast$x) with periodic boundary conditions. The 1D flow can be initialized in a 3D (x1,x2,x3) domain using the following transformation rules\+:
+\begin{DoxyItemize}
+\item x = x1$\ast$cos(alpha) + x2$\ast$sin(alpha)
+\item y = -\/x1$\ast$sin(alpha) + x2$\ast$cos(alpha)
+\item z = x3
+\end{DoxyItemize}
+
+This problem is a good test of the source terms in a static grav potential.
+
+P\+R\+I\+V\+A\+TE F\+U\+N\+C\+T\+I\+ON P\+R\+O\+T\+O\+T\+Y\+P\+ES\+:
+\begin{DoxyItemize}
+\item rtbis() -\/ finds roots via bisection
+\item \mbox{\hyperlink{cylwind_8c_ab96d39891400b325474dcab674830d4f}{grav\+\_\+pot()}} -\/ gravitational potential
+\item Bfunc() -\/ computes Bernoilli function
+\item expr\+\_\+drho() -\/ computes difference d-\/d0 
+\end{DoxyItemize}
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pgflow_8c_a4575c4cdbf2965a9857c45970d736676}\label{pgflow_8c_a4575c4cdbf2965a9857c45970d736676}} 
+\index{pgflow.c@{pgflow.c}!get\_usr\_expr@{get\_usr\_expr}}
+\index{get\_usr\_expr@{get\_usr\_expr}!pgflow.c@{pgflow.c}}
+\doxysubsubsection{\texorpdfstring{get\_usr\_expr()}{get\_usr\_expr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{athena_8h_aaa64b3ee5eefc566b7c09368c414de89}{Cons\+Fun\+\_\+t}} get\+\_\+usr\+\_\+expr (\begin{DoxyParamCaption}\item[{const char $\ast$}]{expr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 217 of file pgflow.\+c.
+
+\mbox{\Hypertarget{pgflow_8c_a8b8cabb1061d5399fb492be89de213ff}\label{pgflow_8c_a8b8cabb1061d5399fb492be89de213ff}} 
+\index{pgflow.c@{pgflow.c}!get\_usr\_out\_fun@{get\_usr\_out\_fun}}
+\index{get\_usr\_out\_fun@{get\_usr\_out\_fun}!pgflow.c@{pgflow.c}}
+\doxysubsubsection{\texorpdfstring{get\_usr\_out\_fun()}{get\_usr\_out\_fun()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{athena_8h_a8bc2403d4d3a27d6f475f2dc6acc94cc}{V\+Out\+Fun\+\_\+t}} get\+\_\+usr\+\_\+out\+\_\+fun (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 223 of file pgflow.\+c.
+
+\mbox{\Hypertarget{pgflow_8c_a1b323f47153f1975b64382e0ffac6b73}\label{pgflow_8c_a1b323f47153f1975b64382e0ffac6b73}} 
+\index{pgflow.c@{pgflow.c}!problem@{problem}}
+\index{problem@{problem}!pgflow.c@{pgflow.c}}
+\doxysubsubsection{\texorpdfstring{problem()}{problem()}}
+{\footnotesize\ttfamily void problem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{p\+Domain }\end{DoxyParamCaption})}
+
+
+
+Definition at line 69 of file pgflow.\+c.
+
+\mbox{\Hypertarget{pgflow_8c_acf733c9792756cbec1e9d226c4ff37ab}\label{pgflow_8c_acf733c9792756cbec1e9d226c4ff37ab}} 
+\index{pgflow.c@{pgflow.c}!problem\_read\_restart@{problem\_read\_restart}}
+\index{problem\_read\_restart@{problem\_read\_restart}!pgflow.c@{pgflow.c}}
+\doxysubsubsection{\texorpdfstring{problem\_read\_restart()}{problem\_read\_restart()}}
+{\footnotesize\ttfamily void problem\+\_\+read\+\_\+restart (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 212 of file pgflow.\+c.
+
+\mbox{\Hypertarget{pgflow_8c_a2c334369ab621e9815591c76ccfb5fc7}\label{pgflow_8c_a2c334369ab621e9815591c76ccfb5fc7}} 
+\index{pgflow.c@{pgflow.c}!problem\_write\_restart@{problem\_write\_restart}}
+\index{problem\_write\_restart@{problem\_write\_restart}!pgflow.c@{pgflow.c}}
+\doxysubsubsection{\texorpdfstring{problem\_write\_restart()}{problem\_write\_restart()}}
+{\footnotesize\ttfamily void problem\+\_\+write\+\_\+restart (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 207 of file pgflow.\+c.
+
+\mbox{\Hypertarget{pgflow_8c_a5506a1df41ed88e038443271b9785337}\label{pgflow_8c_a5506a1df41ed88e038443271b9785337}} 
+\index{pgflow.c@{pgflow.c}!Userwork\_after\_loop@{Userwork\_after\_loop}}
+\index{Userwork\_after\_loop@{Userwork\_after\_loop}!pgflow.c@{pgflow.c}}
+\doxysubsubsection{\texorpdfstring{Userwork\_after\_loop()}{Userwork\_after\_loop()}}
+{\footnotesize\ttfamily void Userwork\+\_\+after\+\_\+loop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+Definition at line 245 of file pgflow.\+c.
+
+\mbox{\Hypertarget{pgflow_8c_a0ff640c24db1dc0d7c89d91f1d55ffce}\label{pgflow_8c_a0ff640c24db1dc0d7c89d91f1d55ffce}} 
+\index{pgflow.c@{pgflow.c}!Userwork\_in\_loop@{Userwork\_in\_loop}}
+\index{Userwork\_in\_loop@{Userwork\_in\_loop}!pgflow.c@{pgflow.c}}
+\doxysubsubsection{\texorpdfstring{Userwork\_in\_loop()}{Userwork\_in\_loop()}}
+{\footnotesize\ttfamily void Userwork\+\_\+in\+\_\+loop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+Definition at line 227 of file pgflow.\+c.
+

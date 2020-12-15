@@ -1,0 +1,123 @@
+\hypertarget{pack__3d_8c}{}\doxysection{src/fftsrc/pack\+\_\+3d.c File Reference}
+\label{pack__3d_8c}\index{src/fftsrc/pack\_3d.c@{src/fftsrc/pack\_3d.c}}
+{\ttfamily \#include \char`\"{}pack\+\_\+3d.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pack__3d_8c_a58cc9f256201c7ec20588ae55490e30f}{P\+A\+C\+K\+\_\+\+A\+R\+R\+AY}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{pack__3d_8c_a3d8bdf539e8240f729948f0f92af07f5}{pack\+\_\+3d}} (double $\ast$data, double $\ast$buf, struct \mbox{\hyperlink{structpack__plan__3d}{pack\+\_\+plan\+\_\+3d}} $\ast$plan)
+\item 
+void \mbox{\hyperlink{pack__3d_8c_af04872b9960cf41e77e78089fa60f105}{unpack\+\_\+3d}} (double $\ast$buf, double $\ast$data, struct \mbox{\hyperlink{structpack__plan__3d}{pack\+\_\+plan\+\_\+3d}} $\ast$plan)
+\item 
+void \mbox{\hyperlink{pack__3d_8c_a967a39b2eca2a4e7c4b633a8bc68823e}{unpack\+\_\+3d\+\_\+permute1\+\_\+1}} (double $\ast$buf, double $\ast$data, struct \mbox{\hyperlink{structpack__plan__3d}{pack\+\_\+plan\+\_\+3d}} $\ast$plan)
+\item 
+void \mbox{\hyperlink{pack__3d_8c_aa608ff2e157bf316b23085388f620a0c}{unpack\+\_\+3d\+\_\+permute1\+\_\+2}} (double $\ast$buf, double $\ast$data, struct \mbox{\hyperlink{structpack__plan__3d}{pack\+\_\+plan\+\_\+3d}} $\ast$plan)
+\item 
+void \mbox{\hyperlink{pack__3d_8c_a028b38fa67864658ccc9caf6dbd023bb}{unpack\+\_\+3d\+\_\+permute1\+\_\+n}} (double $\ast$buf, double $\ast$data, struct \mbox{\hyperlink{structpack__plan__3d}{pack\+\_\+plan\+\_\+3d}} $\ast$plan)
+\item 
+void \mbox{\hyperlink{pack__3d_8c_a92002653e0ce3383c4917a7903b90dca}{unpack\+\_\+3d\+\_\+permute2\+\_\+1}} (double $\ast$buf, double $\ast$data, struct \mbox{\hyperlink{structpack__plan__3d}{pack\+\_\+plan\+\_\+3d}} $\ast$plan)
+\item 
+void \mbox{\hyperlink{pack__3d_8c_ab61b784397a0aa1171819857644a9f21}{unpack\+\_\+3d\+\_\+permute2\+\_\+2}} (double $\ast$buf, double $\ast$data, struct \mbox{\hyperlink{structpack__plan__3d}{pack\+\_\+plan\+\_\+3d}} $\ast$plan)
+\item 
+void \mbox{\hyperlink{pack__3d_8c_ac50e3447e895c6dc700f1a1915dfe758}{unpack\+\_\+3d\+\_\+permute2\+\_\+n}} (double $\ast$buf, double $\ast$data, struct \mbox{\hyperlink{structpack__plan__3d}{pack\+\_\+plan\+\_\+3d}} $\ast$plan)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pack__3d_8c_a58cc9f256201c7ec20588ae55490e30f}\label{pack__3d_8c_a58cc9f256201c7ec20588ae55490e30f}} 
+\index{pack\_3d.c@{pack\_3d.c}!PACK\_ARRAY@{PACK\_ARRAY}}
+\index{PACK\_ARRAY@{PACK\_ARRAY}!pack\_3d.c@{pack\_3d.c}}
+\doxysubsubsection{\texorpdfstring{PACK\_ARRAY}{PACK\_ARRAY}}
+{\footnotesize\ttfamily \#define P\+A\+C\+K\+\_\+\+A\+R\+R\+AY}
+
+
+
+Definition at line 18 of file pack\+\_\+3d.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pack__3d_8c_a3d8bdf539e8240f729948f0f92af07f5}\label{pack__3d_8c_a3d8bdf539e8240f729948f0f92af07f5}} 
+\index{pack\_3d.c@{pack\_3d.c}!pack\_3d@{pack\_3d}}
+\index{pack\_3d@{pack\_3d}!pack\_3d.c@{pack\_3d.c}}
+\doxysubsubsection{\texorpdfstring{pack\_3d()}{pack\_3d()}}
+{\footnotesize\ttfamily void pack\+\_\+3d (\begin{DoxyParamCaption}\item[{double $\ast$}]{data,  }\item[{double $\ast$}]{buf,  }\item[{struct \mbox{\hyperlink{structpack__plan__3d}{pack\+\_\+plan\+\_\+3d}} $\ast$}]{plan }\end{DoxyParamCaption})}
+
+
+
+Definition at line 43 of file pack\+\_\+3d.\+c.
+
+\mbox{\Hypertarget{pack__3d_8c_af04872b9960cf41e77e78089fa60f105}\label{pack__3d_8c_af04872b9960cf41e77e78089fa60f105}} 
+\index{pack\_3d.c@{pack\_3d.c}!unpack\_3d@{unpack\_3d}}
+\index{unpack\_3d@{unpack\_3d}!pack\_3d.c@{pack\_3d.c}}
+\doxysubsubsection{\texorpdfstring{unpack\_3d()}{unpack\_3d()}}
+{\footnotesize\ttfamily void unpack\+\_\+3d (\begin{DoxyParamCaption}\item[{double $\ast$}]{buf,  }\item[{double $\ast$}]{data,  }\item[{struct \mbox{\hyperlink{structpack__plan__3d}{pack\+\_\+plan\+\_\+3d}} $\ast$}]{plan }\end{DoxyParamCaption})}
+
+
+
+Definition at line 69 of file pack\+\_\+3d.\+c.
+
+\mbox{\Hypertarget{pack__3d_8c_a967a39b2eca2a4e7c4b633a8bc68823e}\label{pack__3d_8c_a967a39b2eca2a4e7c4b633a8bc68823e}} 
+\index{pack\_3d.c@{pack\_3d.c}!unpack\_3d\_permute1\_1@{unpack\_3d\_permute1\_1}}
+\index{unpack\_3d\_permute1\_1@{unpack\_3d\_permute1\_1}!pack\_3d.c@{pack\_3d.c}}
+\doxysubsubsection{\texorpdfstring{unpack\_3d\_permute1\_1()}{unpack\_3d\_permute1\_1()}}
+{\footnotesize\ttfamily void unpack\+\_\+3d\+\_\+permute1\+\_\+1 (\begin{DoxyParamCaption}\item[{double $\ast$}]{buf,  }\item[{double $\ast$}]{data,  }\item[{struct \mbox{\hyperlink{structpack__plan__3d}{pack\+\_\+plan\+\_\+3d}} $\ast$}]{plan }\end{DoxyParamCaption})}
+
+
+
+Definition at line 95 of file pack\+\_\+3d.\+c.
+
+\mbox{\Hypertarget{pack__3d_8c_aa608ff2e157bf316b23085388f620a0c}\label{pack__3d_8c_aa608ff2e157bf316b23085388f620a0c}} 
+\index{pack\_3d.c@{pack\_3d.c}!unpack\_3d\_permute1\_2@{unpack\_3d\_permute1\_2}}
+\index{unpack\_3d\_permute1\_2@{unpack\_3d\_permute1\_2}!pack\_3d.c@{pack\_3d.c}}
+\doxysubsubsection{\texorpdfstring{unpack\_3d\_permute1\_2()}{unpack\_3d\_permute1\_2()}}
+{\footnotesize\ttfamily void unpack\+\_\+3d\+\_\+permute1\+\_\+2 (\begin{DoxyParamCaption}\item[{double $\ast$}]{buf,  }\item[{double $\ast$}]{data,  }\item[{struct \mbox{\hyperlink{structpack__plan__3d}{pack\+\_\+plan\+\_\+3d}} $\ast$}]{plan }\end{DoxyParamCaption})}
+
+
+
+Definition at line 121 of file pack\+\_\+3d.\+c.
+
+\mbox{\Hypertarget{pack__3d_8c_a028b38fa67864658ccc9caf6dbd023bb}\label{pack__3d_8c_a028b38fa67864658ccc9caf6dbd023bb}} 
+\index{pack\_3d.c@{pack\_3d.c}!unpack\_3d\_permute1\_n@{unpack\_3d\_permute1\_n}}
+\index{unpack\_3d\_permute1\_n@{unpack\_3d\_permute1\_n}!pack\_3d.c@{pack\_3d.c}}
+\doxysubsubsection{\texorpdfstring{unpack\_3d\_permute1\_n()}{unpack\_3d\_permute1\_n()}}
+{\footnotesize\ttfamily void unpack\+\_\+3d\+\_\+permute1\+\_\+n (\begin{DoxyParamCaption}\item[{double $\ast$}]{buf,  }\item[{double $\ast$}]{data,  }\item[{struct \mbox{\hyperlink{structpack__plan__3d}{pack\+\_\+plan\+\_\+3d}} $\ast$}]{plan }\end{DoxyParamCaption})}
+
+
+
+Definition at line 149 of file pack\+\_\+3d.\+c.
+
+\mbox{\Hypertarget{pack__3d_8c_a92002653e0ce3383c4917a7903b90dca}\label{pack__3d_8c_a92002653e0ce3383c4917a7903b90dca}} 
+\index{pack\_3d.c@{pack\_3d.c}!unpack\_3d\_permute2\_1@{unpack\_3d\_permute2\_1}}
+\index{unpack\_3d\_permute2\_1@{unpack\_3d\_permute2\_1}!pack\_3d.c@{pack\_3d.c}}
+\doxysubsubsection{\texorpdfstring{unpack\_3d\_permute2\_1()}{unpack\_3d\_permute2\_1()}}
+{\footnotesize\ttfamily void unpack\+\_\+3d\+\_\+permute2\+\_\+1 (\begin{DoxyParamCaption}\item[{double $\ast$}]{buf,  }\item[{double $\ast$}]{data,  }\item[{struct \mbox{\hyperlink{structpack__plan__3d}{pack\+\_\+plan\+\_\+3d}} $\ast$}]{plan }\end{DoxyParamCaption})}
+
+
+
+Definition at line 178 of file pack\+\_\+3d.\+c.
+
+\mbox{\Hypertarget{pack__3d_8c_ab61b784397a0aa1171819857644a9f21}\label{pack__3d_8c_ab61b784397a0aa1171819857644a9f21}} 
+\index{pack\_3d.c@{pack\_3d.c}!unpack\_3d\_permute2\_2@{unpack\_3d\_permute2\_2}}
+\index{unpack\_3d\_permute2\_2@{unpack\_3d\_permute2\_2}!pack\_3d.c@{pack\_3d.c}}
+\doxysubsubsection{\texorpdfstring{unpack\_3d\_permute2\_2()}{unpack\_3d\_permute2\_2()}}
+{\footnotesize\ttfamily void unpack\+\_\+3d\+\_\+permute2\+\_\+2 (\begin{DoxyParamCaption}\item[{double $\ast$}]{buf,  }\item[{double $\ast$}]{data,  }\item[{struct \mbox{\hyperlink{structpack__plan__3d}{pack\+\_\+plan\+\_\+3d}} $\ast$}]{plan }\end{DoxyParamCaption})}
+
+
+
+Definition at line 203 of file pack\+\_\+3d.\+c.
+
+\mbox{\Hypertarget{pack__3d_8c_ac50e3447e895c6dc700f1a1915dfe758}\label{pack__3d_8c_ac50e3447e895c6dc700f1a1915dfe758}} 
+\index{pack\_3d.c@{pack\_3d.c}!unpack\_3d\_permute2\_n@{unpack\_3d\_permute2\_n}}
+\index{unpack\_3d\_permute2\_n@{unpack\_3d\_permute2\_n}!pack\_3d.c@{pack\_3d.c}}
+\doxysubsubsection{\texorpdfstring{unpack\_3d\_permute2\_n()}{unpack\_3d\_permute2\_n()}}
+{\footnotesize\ttfamily void unpack\+\_\+3d\+\_\+permute2\+\_\+n (\begin{DoxyParamCaption}\item[{double $\ast$}]{buf,  }\item[{double $\ast$}]{data,  }\item[{struct \mbox{\hyperlink{structpack__plan__3d}{pack\+\_\+plan\+\_\+3d}} $\ast$}]{plan }\end{DoxyParamCaption})}
+
+
+
+Definition at line 230 of file pack\+\_\+3d.\+c.
+

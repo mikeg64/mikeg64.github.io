@@ -1,0 +1,64 @@
+\hypertarget{dump__particle__history_8c}{}\doxysection{src/particles/dump\+\_\+particle\+\_\+history.c File Reference}
+\label{dump__particle__history_8c}\index{src/particles/dump\_particle\_history.c@{src/particles/dump\_particle\_history.c}}
+
+
+Functions to write dumps of particle \char`\"{}history\char`\"{} variables in a formatted table.  
+
+
+{\ttfamily \#include \char`\"{}../copyright.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../athena.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../prototypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prototypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}particle.\+h\char`\"{}}\newline
+
+
+\doxysubsection{Detailed Description}
+Functions to write dumps of particle \char`\"{}history\char`\"{} variables in a formatted table. 
+
+P\+U\+R\+P\+O\+SE\+: Functions to write dumps of particle \char`\"{}history\char`\"{} variables in a formatted table. \char`\"{}\+History\char`\"{} dumps are scalars (usually volume averages) written periodically, giving the time-\/evolution of that quantitity.
+
+The particle history dump has two sets. The first set is global, particle type independent quantities, including the following\+:
+\begin{DoxyItemize}
+\item scal\mbox{[}0\mbox{]} = time
+\item scal\mbox{[}1\mbox{]} = maximum particle density
+\item scal\mbox{[}2\mbox{]} = energy dissipation rate from the drag
+\item scal\mbox{[}3\mbox{]} = maximum stiffness parameter
+\item scal\mbox{[}4\mbox{]} = particle mass
+\item scal\mbox{[}5\mbox{]} = particle x1 momentum
+\item scal\mbox{[}6\mbox{]} = particle x2 momentum
+\item scal\mbox{[}7\mbox{]} = particle x3 momentum
+\item scal\mbox{[}8\mbox{]} = particle x1 kinetic energy
+\item scal\mbox{[}9\mbox{]} = particle x2 kinetic energy
+\item scal\mbox{[}10\mbox{]} = particle x3 kinetic energy
+\end{DoxyItemize}
+
+The second set is particle type dependent quantities, which contains
+\begin{DoxyItemize}
+\item array\mbox{[}0\mbox{]} = particle x1 average position
+\item array\mbox{[}1\mbox{]} = particle x2 average position
+\item array\mbox{[}2\mbox{]} = particle x3 average position
+\item array\mbox{[}3\mbox{]} = particle x1 average velocity
+\item array\mbox{[}4\mbox{]} = particle x2 average velocity
+\item array\mbox{[}5\mbox{]} = particle x3 average velocity
+\item array\mbox{[}6\mbox{]} = particle x1 position variation
+\item array\mbox{[}7\mbox{]} = particle x2 position variation
+\item array\mbox{[}8\mbox{]} = particle x3 position variation
+\item array\mbox{[}9\mbox{]} = particle x1 velocity dispersion
+\item array\mbox{[}10\mbox{]}= particle x2 velocity dispersion
+\item array\mbox{[}11\mbox{]}= particle x3 velocity dispersion
+\end{DoxyItemize}
+
+More variables can be hardwired by increasing N\+S\+C\+AL=number of variables, and adding calculation of desired quantities below.
+
+Alternatively, up to M\+A\+X\+\_\+\+U\+S\+R\+\_\+\+H\+\_\+\+C\+O\+U\+NT new history variables can be added using dump\+\_\+parhistory\+\_\+enroll() in the problem generator.
+
+C\+O\+N\+T\+A\+I\+NS P\+U\+B\+L\+IC F\+U\+N\+C\+T\+I\+O\+NS\+:
+\begin{DoxyItemize}
+\item dump\+\_\+particle\+\_\+history() -\/ Writes variables as formatted table
+\item dump\+\_\+parhistory\+\_\+enroll() -\/ Adds new user-\/defined history variables ~\newline
+ 
+\end{DoxyItemize}

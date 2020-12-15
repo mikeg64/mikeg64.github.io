@@ -1,0 +1,202 @@
+\hypertarget{integrators_2prototypes_8h}{}\doxysection{src/integrators/prototypes.h File Reference}
+\label{integrators_2prototypes_8h}\index{src/integrators/prototypes.h@{src/integrators/prototypes.h}}
+
+
+Prototypes for all public functions in the /src/integrators dir.  
+
+
+{\ttfamily \#include \char`\"{}../copyright.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../athena.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../config.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{athena_8h_adfa510b1eb81a0865733437535b71cc9}{V\+D\+Fun\+\_\+t}} \mbox{\hyperlink{integrators_2prototypes_8h_a9a7eb17bb8821f3f998d3e141a9cc224}{integrate\+\_\+init}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\begin{DoxyCompactList}\small\item\em Initialize integrator; V\+G\+D\+Fun\+\_\+t defined in \mbox{\hyperlink{athena_8h}{athena.\+h}} ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{integrators_2prototypes_8h_a66dbda52cf99dad2b965673c7d20c36b}{integrate\+\_\+destruct}} (void)
+\begin{DoxyCompactList}\small\item\em Free memory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{integrators_2prototypes_8h_a0bca76a74a769a5c8610ab34ce96ef4a}{integrate\+\_\+destruct\+\_\+1d}} (void)
+\item 
+void \mbox{\hyperlink{integrators_2prototypes_8h_aec671ee90713156b79b8ab79d63a8da9}{integrate\+\_\+init\+\_\+1d}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\item 
+void \mbox{\hyperlink{integrators_2prototypes_8h_a9dc4efbdaacc165d133d6f21dee673a8}{integrate\+\_\+1d\+\_\+ctu}} (\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$pD)
+\item 
+void \mbox{\hyperlink{integrators_2prototypes_8h_a4fb49313e5a261469e8b7585033295aa}{integrate\+\_\+1d\+\_\+vl}} (\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$pD)
+\item 
+void \mbox{\hyperlink{integrators_2prototypes_8h_a9d2c9c1950f870513833dc424c3647da}{integrate\+\_\+1d\+\_\+sac}} (\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$pD)
+\item 
+void \mbox{\hyperlink{integrators_2prototypes_8h_ae94db5c818237f4023061566c118a821}{integrate\+\_\+1d\+\_\+smaug}} (\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$pD)
+\item 
+void \mbox{\hyperlink{integrators_2prototypes_8h_a1d177cf3e52b61638f36345c4a986edb}{integrate\+\_\+destruct\+\_\+2d}} (void)
+\item 
+void \mbox{\hyperlink{integrators_2prototypes_8h_a19c6ee24ecbba2252b542ad0259f1e92}{integrate\+\_\+init\+\_\+2d}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\item 
+void \mbox{\hyperlink{integrators_2prototypes_8h_aaf4f015ce68bdcca8d818ed7759e69a1}{integrate\+\_\+2d\+\_\+ctu}} (\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$pD)
+\item 
+void \mbox{\hyperlink{integrators_2prototypes_8h_af18f111f04d8f10f21b2066eb8f300b3}{integrate\+\_\+2d\+\_\+vl}} (\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$pD)
+\item 
+void \mbox{\hyperlink{integrators_2prototypes_8h_afd0dd65e4a906fb4a3a7aec8bce6c652}{integrate\+\_\+2d\+\_\+sac}} (\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$pD)
+\item 
+void \mbox{\hyperlink{integrators_2prototypes_8h_a615732c4234823533f4edc22aab79d4a}{integrate\+\_\+2d\+\_\+smaug}} (\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$pD)
+\item 
+void \mbox{\hyperlink{integrators_2prototypes_8h_a2e835d9fc9b5da3b40ae42f3472f5182}{integrate\+\_\+destruct\+\_\+3d}} (void)
+\item 
+void \mbox{\hyperlink{integrators_2prototypes_8h_a4447c7ecea16f9db08ae63130efd4439}{integrate\+\_\+init\+\_\+3d}} (\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$pM)
+\item 
+void \mbox{\hyperlink{integrators_2prototypes_8h_aa2361b2bd26ee3630843fcd4ae80febc}{integrate\+\_\+3d\+\_\+ctu}} (\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$pD)
+\item 
+void \mbox{\hyperlink{integrators_2prototypes_8h_afe127fbd2c6a6238b721594ad519a5a3}{integrate\+\_\+3d\+\_\+vl}} (\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$pD)
+\item 
+void \mbox{\hyperlink{integrators_2prototypes_8h_a08c28e635d02160120e8e0b5ece9196f}{integrate\+\_\+3d\+\_\+sac}} (\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$pD)
+\item 
+void \mbox{\hyperlink{integrators_2prototypes_8h_a442904767ba72e9600084238073d60cf}{integrate\+\_\+3d\+\_\+smaug}} (\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$pD)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Prototypes for all public functions in the /src/integrators dir. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{integrators_2prototypes_8h_a9dc4efbdaacc165d133d6f21dee673a8}\label{integrators_2prototypes_8h_a9dc4efbdaacc165d133d6f21dee673a8}} 
+\index{prototypes.h@{prototypes.h}!integrate\_1d\_ctu@{integrate\_1d\_ctu}}
+\index{integrate\_1d\_ctu@{integrate\_1d\_ctu}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{integrate\_1d\_ctu()}{integrate\_1d\_ctu()}}
+{\footnotesize\ttfamily void integrate\+\_\+1d\+\_\+ctu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{pD }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{integrators_2prototypes_8h_a9d2c9c1950f870513833dc424c3647da}\label{integrators_2prototypes_8h_a9d2c9c1950f870513833dc424c3647da}} 
+\index{prototypes.h@{prototypes.h}!integrate\_1d\_sac@{integrate\_1d\_sac}}
+\index{integrate\_1d\_sac@{integrate\_1d\_sac}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{integrate\_1d\_sac()}{integrate\_1d\_sac()}}
+{\footnotesize\ttfamily void integrate\+\_\+1d\+\_\+sac (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{pD }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{integrators_2prototypes_8h_ae94db5c818237f4023061566c118a821}\label{integrators_2prototypes_8h_ae94db5c818237f4023061566c118a821}} 
+\index{prototypes.h@{prototypes.h}!integrate\_1d\_smaug@{integrate\_1d\_smaug}}
+\index{integrate\_1d\_smaug@{integrate\_1d\_smaug}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{integrate\_1d\_smaug()}{integrate\_1d\_smaug()}}
+{\footnotesize\ttfamily void integrate\+\_\+1d\+\_\+smaug (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{pD }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{integrators_2prototypes_8h_a4fb49313e5a261469e8b7585033295aa}\label{integrators_2prototypes_8h_a4fb49313e5a261469e8b7585033295aa}} 
+\index{prototypes.h@{prototypes.h}!integrate\_1d\_vl@{integrate\_1d\_vl}}
+\index{integrate\_1d\_vl@{integrate\_1d\_vl}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{integrate\_1d\_vl()}{integrate\_1d\_vl()}}
+{\footnotesize\ttfamily void integrate\+\_\+1d\+\_\+vl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{pD }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{integrators_2prototypes_8h_aaf4f015ce68bdcca8d818ed7759e69a1}\label{integrators_2prototypes_8h_aaf4f015ce68bdcca8d818ed7759e69a1}} 
+\index{prototypes.h@{prototypes.h}!integrate\_2d\_ctu@{integrate\_2d\_ctu}}
+\index{integrate\_2d\_ctu@{integrate\_2d\_ctu}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{integrate\_2d\_ctu()}{integrate\_2d\_ctu()}}
+{\footnotesize\ttfamily void integrate\+\_\+2d\+\_\+ctu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{pD }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{integrators_2prototypes_8h_afd0dd65e4a906fb4a3a7aec8bce6c652}\label{integrators_2prototypes_8h_afd0dd65e4a906fb4a3a7aec8bce6c652}} 
+\index{prototypes.h@{prototypes.h}!integrate\_2d\_sac@{integrate\_2d\_sac}}
+\index{integrate\_2d\_sac@{integrate\_2d\_sac}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{integrate\_2d\_sac()}{integrate\_2d\_sac()}}
+{\footnotesize\ttfamily void integrate\+\_\+2d\+\_\+sac (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{pD }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{integrators_2prototypes_8h_a615732c4234823533f4edc22aab79d4a}\label{integrators_2prototypes_8h_a615732c4234823533f4edc22aab79d4a}} 
+\index{prototypes.h@{prototypes.h}!integrate\_2d\_smaug@{integrate\_2d\_smaug}}
+\index{integrate\_2d\_smaug@{integrate\_2d\_smaug}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{integrate\_2d\_smaug()}{integrate\_2d\_smaug()}}
+{\footnotesize\ttfamily void integrate\+\_\+2d\+\_\+smaug (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{pD }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{integrators_2prototypes_8h_af18f111f04d8f10f21b2066eb8f300b3}\label{integrators_2prototypes_8h_af18f111f04d8f10f21b2066eb8f300b3}} 
+\index{prototypes.h@{prototypes.h}!integrate\_2d\_vl@{integrate\_2d\_vl}}
+\index{integrate\_2d\_vl@{integrate\_2d\_vl}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{integrate\_2d\_vl()}{integrate\_2d\_vl()}}
+{\footnotesize\ttfamily void integrate\+\_\+2d\+\_\+vl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{pD }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{integrators_2prototypes_8h_aa2361b2bd26ee3630843fcd4ae80febc}\label{integrators_2prototypes_8h_aa2361b2bd26ee3630843fcd4ae80febc}} 
+\index{prototypes.h@{prototypes.h}!integrate\_3d\_ctu@{integrate\_3d\_ctu}}
+\index{integrate\_3d\_ctu@{integrate\_3d\_ctu}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{integrate\_3d\_ctu()}{integrate\_3d\_ctu()}}
+{\footnotesize\ttfamily void integrate\+\_\+3d\+\_\+ctu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{pD }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{integrators_2prototypes_8h_a08c28e635d02160120e8e0b5ece9196f}\label{integrators_2prototypes_8h_a08c28e635d02160120e8e0b5ece9196f}} 
+\index{prototypes.h@{prototypes.h}!integrate\_3d\_sac@{integrate\_3d\_sac}}
+\index{integrate\_3d\_sac@{integrate\_3d\_sac}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{integrate\_3d\_sac()}{integrate\_3d\_sac()}}
+{\footnotesize\ttfamily void integrate\+\_\+3d\+\_\+sac (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{pD }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{integrators_2prototypes_8h_a442904767ba72e9600084238073d60cf}\label{integrators_2prototypes_8h_a442904767ba72e9600084238073d60cf}} 
+\index{prototypes.h@{prototypes.h}!integrate\_3d\_smaug@{integrate\_3d\_smaug}}
+\index{integrate\_3d\_smaug@{integrate\_3d\_smaug}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{integrate\_3d\_smaug()}{integrate\_3d\_smaug()}}
+{\footnotesize\ttfamily void integrate\+\_\+3d\+\_\+smaug (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{pD }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{integrators_2prototypes_8h_afe127fbd2c6a6238b721594ad519a5a3}\label{integrators_2prototypes_8h_afe127fbd2c6a6238b721594ad519a5a3}} 
+\index{prototypes.h@{prototypes.h}!integrate\_3d\_vl@{integrate\_3d\_vl}}
+\index{integrate\_3d\_vl@{integrate\_3d\_vl}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{integrate\_3d\_vl()}{integrate\_3d\_vl()}}
+{\footnotesize\ttfamily void integrate\+\_\+3d\+\_\+vl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_domain_s}{DomainS}} $\ast$}]{pD }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{integrators_2prototypes_8h_a66dbda52cf99dad2b965673c7d20c36b}\label{integrators_2prototypes_8h_a66dbda52cf99dad2b965673c7d20c36b}} 
+\index{prototypes.h@{prototypes.h}!integrate\_destruct@{integrate\_destruct}}
+\index{integrate\_destruct@{integrate\_destruct}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{integrate\_destruct()}{integrate\_destruct()}}
+{\footnotesize\ttfamily void integrate\+\_\+destruct (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Free memory. 
+
+
+
+Definition at line 123 of file integrate.\+c.
+
+\mbox{\Hypertarget{integrators_2prototypes_8h_a0bca76a74a769a5c8610ab34ce96ef4a}\label{integrators_2prototypes_8h_a0bca76a74a769a5c8610ab34ce96ef4a}} 
+\index{prototypes.h@{prototypes.h}!integrate\_destruct\_1d@{integrate\_destruct\_1d}}
+\index{integrate\_destruct\_1d@{integrate\_destruct\_1d}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{integrate\_destruct\_1d()}{integrate\_destruct\_1d()}}
+{\footnotesize\ttfamily void integrate\+\_\+destruct\+\_\+1d (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{integrators_2prototypes_8h_a1d177cf3e52b61638f36345c4a986edb}\label{integrators_2prototypes_8h_a1d177cf3e52b61638f36345c4a986edb}} 
+\index{prototypes.h@{prototypes.h}!integrate\_destruct\_2d@{integrate\_destruct\_2d}}
+\index{integrate\_destruct\_2d@{integrate\_destruct\_2d}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{integrate\_destruct\_2d()}{integrate\_destruct\_2d()}}
+{\footnotesize\ttfamily void integrate\+\_\+destruct\+\_\+2d (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{integrators_2prototypes_8h_a2e835d9fc9b5da3b40ae42f3472f5182}\label{integrators_2prototypes_8h_a2e835d9fc9b5da3b40ae42f3472f5182}} 
+\index{prototypes.h@{prototypes.h}!integrate\_destruct\_3d@{integrate\_destruct\_3d}}
+\index{integrate\_destruct\_3d@{integrate\_destruct\_3d}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{integrate\_destruct\_3d()}{integrate\_destruct\_3d()}}
+{\footnotesize\ttfamily void integrate\+\_\+destruct\+\_\+3d (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{integrators_2prototypes_8h_a9a7eb17bb8821f3f998d3e141a9cc224}\label{integrators_2prototypes_8h_a9a7eb17bb8821f3f998d3e141a9cc224}} 
+\index{prototypes.h@{prototypes.h}!integrate\_init@{integrate\_init}}
+\index{integrate\_init@{integrate\_init}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{integrate\_init()}{integrate\_init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{athena_8h_adfa510b1eb81a0865733437535b71cc9}{V\+D\+Fun\+\_\+t}} integrate\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+
+
+Initialize integrator; V\+G\+D\+Fun\+\_\+t defined in \mbox{\hyperlink{athena_8h}{athena.\+h}} ~\newline
+ 
+
+
+
+Definition at line 24 of file integrate.\+c.
+
+\mbox{\Hypertarget{integrators_2prototypes_8h_aec671ee90713156b79b8ab79d63a8da9}\label{integrators_2prototypes_8h_aec671ee90713156b79b8ab79d63a8da9}} 
+\index{prototypes.h@{prototypes.h}!integrate\_init\_1d@{integrate\_init\_1d}}
+\index{integrate\_init\_1d@{integrate\_init\_1d}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{integrate\_init\_1d()}{integrate\_init\_1d()}}
+{\footnotesize\ttfamily void integrate\+\_\+init\+\_\+1d (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{integrators_2prototypes_8h_a19c6ee24ecbba2252b542ad0259f1e92}\label{integrators_2prototypes_8h_a19c6ee24ecbba2252b542ad0259f1e92}} 
+\index{prototypes.h@{prototypes.h}!integrate\_init\_2d@{integrate\_init\_2d}}
+\index{integrate\_init\_2d@{integrate\_init\_2d}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{integrate\_init\_2d()}{integrate\_init\_2d()}}
+{\footnotesize\ttfamily void integrate\+\_\+init\+\_\+2d (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{integrators_2prototypes_8h_a4447c7ecea16f9db08ae63130efd4439}\label{integrators_2prototypes_8h_a4447c7ecea16f9db08ae63130efd4439}} 
+\index{prototypes.h@{prototypes.h}!integrate\_init\_3d@{integrate\_init\_3d}}
+\index{integrate\_init\_3d@{integrate\_init\_3d}!prototypes.h@{prototypes.h}}
+\doxysubsubsection{\texorpdfstring{integrate\_init\_3d()}{integrate\_init\_3d()}}
+{\footnotesize\ttfamily void integrate\+\_\+init\+\_\+3d (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_s}{MeshS}} $\ast$}]{pM }\end{DoxyParamCaption})}
+
