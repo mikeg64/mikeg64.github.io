@@ -41,12 +41,41 @@ Useful tutorial
 
 Commands for configuring and running models in hermes use make all to actually build before running
 
-./configure --with-gas=hydro --with-problem=shkset1d
-../bin/athena -i ../tst/1D-hydro/athinput.sod
+    ./configure --with-gas=hydro --with-problem=shkset1d
+    ../bin/athena -i ../tst/1D-hydro/athinput.sod
 
 
-./configure --with-gas=hydro --with-problem=shkset1d --enable-bkg --with-integrator=sac --with-flux=sac
-../bin/athena -i ../tst/1D-hydro/athinput.sod-sac
+    ./configure --with-gas=hydro --with-problem=shkset1d --enable-bkg --with-integrator=sac --with-flux=sac
+    ../bin/athena -i ../tst/1D-hydro/athinput.sod-sac
+
+
+## Installing and Configuring Tau with Spack
+
+    spack install tau@2.28.1 openmp=True
+
+You can also force installation with a specific compiler version by typing:
+
+    spack install tau@2.28.1 %gcc@8.2.0 openmp=True
+
+Define environment variables for TAU as shown below.
+
+    # TAU home location
+    export TAU_HOME=$(spack location -i tau)
+
+    # Put the location of tau_f90.sh in the search path
+    export PATH=$PATH:$TAU_HOME/bin
+
+    # Define options for TAU
+    export TAU_OPTIONS="-optRevert -optVerbose -optPreProcess -optContinueBeforeOMP -optPdtGnuFortranParser"
+
+    # Define location of TAU makefile
+    export TAU_MAKEFILE=$TAU_HOME/x86_64/lib/Makefile.tau-papi-pthread-pdt-openmp
+
+These instructions were taken from
+[http://wiki.seas.harvard.edu/geos-chem/index.php/Profiling_GEOS-Chem_with_the_TAU_performance_system](http://wiki.seas.harvard.edu/geos-chem/index.php/Profiling_GEOS-Chem_with_the_TAU_performance_system)
+
+
+
 
 
 

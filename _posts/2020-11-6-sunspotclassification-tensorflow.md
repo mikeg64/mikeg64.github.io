@@ -44,6 +44,40 @@ Unable to run the test model as tensor flow unable to detect a GPU. Solution is 
 * [CME Arrival Time Prediction Using Convolutional Neural Network](https://github.com/PyDL/CME-CNN)
 
 
+## Solution for Correct Installation and Configuration of Tensorflow on Bede
+Needed to install annd build correct distribution of tensorflow for GPUs
+(inspired by clues here)
+
+[https://github.com/DurhamARC/bede/wiki#ibm-powerai-and-watson-machine-learning-community-edition-wmlce](https://github.com/DurhamARC/bede/wiki#ibm-powerai-and-watson-machine-learning-community-edition-wmlce)
+
+
+
+
+
+
+
+    cd /nobackup/projects/bdshe01/cs1mkg
+
+ 
+
+    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-ppc64le.sh
+
+    sh Miniconda3-latest-Linux-ppc64le.sh
+
+
+
+    conda update conda
+
+    conda config --set channel_priority strict
+
+    conda config --prepend channels https://public.dhe.ibm.com/ibmdl/export/pub/software/server/ibm-ai/conda/
+
+    conda create -n tensorflow-gpu python=3.6
+
+    conda activate tensorflow-gpu
+
+    conda install --strict-channel-priority tensorflow-gpu
+
 
 
 
