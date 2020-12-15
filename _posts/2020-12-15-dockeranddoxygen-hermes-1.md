@@ -8,17 +8,31 @@ tags: hermes MHD Docker
 
 
 # Running Hermes Using a Docker Container
-Describe methods used to analyse wave components for washing machine simulations.
+
+Notes on a docker container for building MHD codes.
 
 docker run -v /Users/mikegriffiths/proj:/home/jupyter/notebooks --rm -p 8888:8888 mikeg64/sac-smaug
 
+Rebuild docker image using Dockerfile at 
+[Dockerfile for sac-smaug](https://github.com/mikeg64/smaug/blob/master/smaug/docker/Dockerfile)
+
+Notes on using docker
+[Notes on Using Docker](https://notesrcg.blogspot.com/2019/06/getting-started-with-containerization.html)
+will need to use the docker push command 
 
 
-* [tutorialApp.mlapp](https://github.com/mikeg64/smaug_wash/blob/master/matlab/appdes/tutorialApp.mlapp)  
+Need to update dockerfile as follows
 
-See the earlier post for details of the time-dist plot outputs, [Solar Washing Machine Distance Time Plots (2)](https://github.com/mikeg64/smaug_wash/blob/master/matlab/podtest2.m).
+* Use latest version of cuda with ubuntu image e.g. [nvidia/cuda:11.1.0-devel-ubuntu18.04](https://hub.docker.com/r/nvidia/cuda/)
+* Include gdb compiler using the command RUN apt-get install -y gdb
+* valgrind using the command RUN apt-get install -y valgrind
 
-
+Useful tutorial
+* [GDB tutorial](http://www.iro.umontreal.ca/~mignotte/IFT2425/Documents/Debugger_gdb.pdf)
+* [GDB documentation](https://www.gnu.org/software/gdb/documentation/)
+* [C programming GDB tutorial](https://www.cprogramming.com/gdb.html)
+* [Valgrind quickstart](https://www.valgrind.org/docs/manual/quick-start.html)
+* [Valgrind tutorial](http://cs.ecs.baylor.edu/~donahoo/tools/valgrind/)
 
 
 
