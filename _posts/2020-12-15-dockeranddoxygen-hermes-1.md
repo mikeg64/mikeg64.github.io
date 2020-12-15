@@ -75,6 +75,20 @@ These instructions were taken from
 [http://wiki.seas.harvard.edu/geos-chem/index.php/Profiling_GEOS-Chem_with_the_TAU_performance_system](http://wiki.seas.harvard.edu/geos-chem/index.php/Profiling_GEOS-Chem_with_the_TAU_performance_system)
 
 
+## Using gprof 
+
+Gprof gives users an execution profile of their C, Pascal, or Fortran77 programs. What Gprof basically does is, it calculates the amount of time spent in each routine or function. "Next, these times are propagated along the edges of the call graph. Cycles are discovered, and calls into a cycle are made to share the time of the cycle."
+
+Install gprof on ubuntu using
+
+    sudo apt-get install binutils
+
+* [https://www.thegeekstuff.com/2012/08/gprof-tutorial/](https://www.thegeekstuff.com/2012/08/gprof-tutorial/)
+* [https://users.cs.duke.edu/~ola/courses/programming/gprof.html](https://users.cs.duke.edu/~ola/courses/programming/gprof.html)
+* [https://sourceware.org/binutils/docs/gprof/](https://sourceware.org/binutils/docs/gprof/)
+* [https://www.cs.princeton.edu/courses/archive/fall07/cos217/lectures/16MakeGprof.pdf](https://www.cs.princeton.edu/courses/archive/fall07/cos217/lectures/16MakeGprof.pdf)
+
+
 
 
 
