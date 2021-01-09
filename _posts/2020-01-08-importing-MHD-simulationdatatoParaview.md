@@ -59,7 +59,20 @@ functions/operators, you should enter
 
     (iHat*X_VELOCITY) + (jHat*Y_VELOCITY) + (kHat*Z_VELOCITY)
 
+I've just added this (9/1/2020) as practicing and testing these procedures made me realise what the best approach for generating a python script is. It is as follows:
 
+### Method 1
+
+Select File->Save State
+The state file can either be saved as a .pvsm (that's paraview's method of storing the state of paraview).
+The state file can be saved as a .py file which can be run independently
+
+An example file saved using this method is here
+[https://github.com/mikeg64/smaug_wash/blob/master/python/paraviewimport/pywash5_uni3.py](https://github.com/mikeg64/smaug_wash/blob/master/python/paraviewimport/pywash5_uni3.py)
+
+This file has been adapted so that a loop reads a number of configurations and repeats the paraview steps.
+
+### Method 2
 
 from Catalyst menu Select generate script
 Wizard deprecated in favour of the export inspector in paraview 5.6
@@ -68,11 +81,18 @@ from the menu
 * add option 
 * select state configuration options - output rendering components i.e.views, view selection and image type
 
+### Method 3
+
 The other option which is not deprecated is to do the following
 * set options in catalyst Define Exports
 * Catalyst->Export Catalyst script
 
 Other options include the possibility of saving scene elements to a range of formats for example PLY (.ply) which might be used to generate the scenes for rendering tools such as [Blender](https://www.blender.org/).
+
+## Conclusion
+
+* Save configurations as hdf5 format - this is a recognised and powerful standard also saves space
+* Use the save state method to generate the a python script file
 
 
 
