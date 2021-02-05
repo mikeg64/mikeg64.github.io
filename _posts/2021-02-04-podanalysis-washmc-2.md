@@ -46,7 +46,7 @@ Use the amplitudes from the pod analysis to regenerate the signal and plot the s
 # Initial Fourier Analysis
 
 
-Given that we use routine  [3](https://github.com/mikeg64/smaug_wash/blob/master/matlab/pvertvvt.m) to generate time profile for each chunk of data. The Fourier transform  for each section through the model, was computed for a point in the box at a height of 1.3Mm (27 grid units).  Given that we have square sections the result is the FFT of the data at a given height (1.3Mm) at the middle of the box (2Mm) the FFT is computed at each point across the remaining dimension of the box, these will correspond to individual modes when POD analysis is undertaken.
+Given that we use routine  [3](https://github.com/mikeg64/smaug_wash/blob/master/matlab/pvertvvt.m) to generate time profile for each chunk of data. The Fourier transform  for each section through the model, was computed for a point in the box at a height of 1.0Mm (20 grid units) through the chromosphere.  Given that we have square sections the result is the FFT of the data at a given height (1.0Mm) at the middle of the box (1.16Mm, i.e. 36 units across) the FFT is computed at each point across the remaining dimension of the box, these will correspond to individual modes when POD analysis is undertaken.
 
 The results of the FFT are shown below.
 
