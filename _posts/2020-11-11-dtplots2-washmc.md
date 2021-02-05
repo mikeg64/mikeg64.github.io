@@ -28,6 +28,8 @@ In this post we describe the configurations used for the solar washing machine s
 evelchrom_vh, eveltran_vh, evelcor_vh
 
 
+**Need to repeat the phase difference analysis  with uni5 and uni6 models i.e. for different amplitudes**
+
 # Pictures for uni1 with amplitude 10m/s
 
 ## podtest2.m
