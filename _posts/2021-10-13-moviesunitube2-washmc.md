@@ -30,7 +30,7 @@ For this series of runs  the driver amplitude was varied.
 
 We used the matlab routine  [plotsecs_array.m](https://github.com/mikeg64/smaug_wash/blob/master/matlab/plotsecs_array.m) to generate  the plots for all timesteps.
 
-Theresults display clear evidence of MHD waves.
+The results display clear evidence of MHD waves.
 
 # Results
 
@@ -47,6 +47,11 @@ Theresults display clear evidence of MHD waves.
 
  [![3d-secs-v](https://drive.google.com/uc?export=view&id=1OepZqkjQbQzRHyiWAkKZz7DlqPWVnNmR)](https://drive.google.com/file/d/1qWC0OTNSd3YvFpMeBfDNmidypEChe1yP/view?usp=sharing)
 
+### 2d view showing mutually perpendicular slices  and the B field magnitude, lower figure shows a horizontal slice at the bae of the model
+
+ [![2d-secs-mags](https://drive.google.com/uc?export=view&id=1qaabNWqHgKu3nr441QJ3aIaPfn9yvvSR)](https://drive.google.com/file/d/149FRejXsdvTyUlzpS7E7TGiJxhEbjyhj/view?usp=sharing)
+
+
 
 ## uni6
 
@@ -54,9 +59,15 @@ Theresults display clear evidence of MHD waves.
 
  [![3d-secs-v](https://drive.google.com/uc?export=view&id=16XUofhcO6RpoEniDoprPrAn2OTUxPzNA)](https://drive.google.com/file/d/145iU3aV7FrW8ZV_W9ElSUA2fZjrIBPY8/view?usp=sharing)
 
+### 2d view showing mutually perpendicular slices  and the B field magnitude, lower figure shows a horizontal slice at the bae of the model
+
+ [![2d-secs-mags](https://drive.google.com/uc?export=view&id=17c29VYA05VPScr4gST3Qj_9Yf3jp0qgF)](https://drive.google.com/file/d/1UqvwW9Vu126W45BDwyPJwMU2yXOG3jBH/view?usp=sharing)
 
 
 
+
+
+The magnetic field movies illustrate kink motions of the magnetic flux tube, along with a propagating wavefront. This was revealed after some data exploration using [paraview](https://www.paraview.org/). We illustrate some results generated using paraview and describe the techniques used.
 
 
 ## Pictures with hyperlinks in markdown
