@@ -48,6 +48,8 @@ Use the amplitudes from the pod analysis to regenerate the signal and plot the s
 
 Given that we use routine  [3](https://github.com/mikeg64/smaug_wash/blob/master/matlab/pvertvvt.m) to generate time profile for each chunk of data. The Fourier transform  for each section through the model, was computed for a point in the box at a height of 1.0Mm (20 grid units) through the chromosphere.  Given that we have square sections the result is the FFT of the data at a given height (1.0Mm) at the middle of the box (1.16Mm, i.e. 36 units across) the FFT is computed at each point across the remaining dimension of the box, these will correspond to individual modes when POD analysis is undertaken.
 
+The FFT's were generated using the routine [fftorig.m](https://github.com/mikeg64/smaug_wash/blob/master/matlab/fftorig.m).
+
 The results of the FFT are shown below.
 
 For the uni6 model (driver amplitude aa=20 m/s). (see [Solar Washing Machine Single Frequency Driver Rerun 2](http://mikeg64.github.io/washing/machine/update/2020/11/11/uni1singlefreq-washmc-2.html)
@@ -69,13 +71,22 @@ For the uni1 model (driver amplitude aa=10 m/s)
 ![pic](https://drive.google.com/uc?export=view&id=1861xkZP-zKqoT3P8iwLgBagmHAP0tFRK)  
 
 
+The results exhibit a strong peak corresponding to the driver but there is clear evidence of other frequencies which are now investigated using POD analysis.
 
+# POD Analysis
 
 Using the matlab [AppDesigner](https://uk.mathworks.com/help/matlab/creating_guis/create-a-simple-app-or-gui-using-app-designer.html) to create a simple visualisation experiment to investigate mode decomposition different time steps. This was based on the tutorial application but rapidly developed and very effective.
 
 * [tutorialApp.mlapp](https://github.com/mikeg64/smaug_wash/blob/master/matlab/appdes/tutorialApp.mlapp)  
 
 See the earlier post for details of the time-dist plot outputs, [Solar Washing Machine Distance Time Plots (2)](https://github.com/mikeg64/smaug_wash/blob/master/matlab/podtest2.m).
+
+We use pod analysis to identify the different modes,  fft's on reconstructed modes are used to compute the frequencies for these modes
+include the dominant mode with a frequency close to that of the driver [pod.m](https://github.com/mikeg64/smaug_wash/blob/master/matlab/pod.m)
+
+
+
+
 
 
 
