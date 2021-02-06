@@ -86,20 +86,40 @@ include the dominant mode with a frequency close to that of the driver [pod.m](h
 
 
 
+Slices through the chromosphere at layer 32 and time 360 for the vertical component of the velocity.
+Computed using [pod.m](https://github.com/mikeg64/smaug_wash/blob/master/matlab/pod.m)
+## Uni1
+
+
+Original data set
+![pic](https://drive.google.com/uc?export=view&id=1hcYGbi58S8YzHmiMH4YpppA9TSdjk8sf)  
+
+POD analysis showing modes 1-6
+![pic](https://drive.google.com/uc?export=view&id=1nfJC2Q0qphp5vkvngs5GU0b1BotwHB3m)  
+
+
+## Uni5
+
+
+Original data set
+![pic](https://drive.google.com/uc?export=view&id=18JZNAs4BHp5CzcSt_YCDkiUmdLE7a3We)  
+
+POD analysis showing modes 1-6
+![pic](https://drive.google.com/uc?export=view&id=1tGJjPM35hEpoNd-Te6JWlr3SPEDFlP4p)  
 
 
 
+## Uni6
 
 
+Original data set
+![pic](https://drive.google.com/uc?export=view&id=1k-yeMAE-dCMFmf40IrxXMqXT4kZ672bG)  
 
+POD analysis showing modes 1-6
+![pic](https://drive.google.com/uc?export=view&id=1-UqiUaB-tKOUuiOAejKzcBLPKMsWpOQD)  
 
-
-
-
-
-
-
-
+An FFT analysis of the recosntructed modes revealed a range of modes with the time periods:
+181.4s, 79.4s, 60.5s, 74.7s and 63.5s
 
 
 
