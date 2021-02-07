@@ -86,20 +86,93 @@ include the dominant mode with a frequency close to that of the driver [pod.m](h
 
 
 
+Slices through the chromosphere at layer 32 and time 360 for the vertical component of the velocity.
+Computed using [pod.m](https://github.com/mikeg64/smaug_wash/blob/master/matlab/pod.m)
+## Uni1
+
+
+Original data set
+![pic](https://drive.google.com/uc?export=view&id=1hcYGbi58S8YzHmiMH4YpppA9TSdjk8sf)  
+
+POD analysis showing modes 1-6
+![pic](https://drive.google.com/uc?export=view&id=1nfJC2Q0qphp5vkvngs5GU0b1BotwHB3m)  
+
+
+## Uni5
+
+
+Original data set
+![pic](https://drive.google.com/uc?export=view&id=18JZNAs4BHp5CzcSt_YCDkiUmdLE7a3We)  
+
+POD analysis showing modes 1-6
+![pic](https://drive.google.com/uc?export=view&id=1tGJjPM35hEpoNd-Te6JWlr3SPEDFlP4p)  
+
+
+
+## Uni6
+
+
+Original data set
+![pic](https://drive.google.com/uc?export=view&id=1k-yeMAE-dCMFmf40IrxXMqXT4kZ672bG)  
+
+POD analysis showing modes 1-6
+![pic](https://drive.google.com/uc?export=view&id=1-UqiUaB-tKOUuiOAejKzcBLPKMsWpOQD)  
+
+An FFT analysis of the recosntructed modes revealed a range of modes with the time periods:
+181.4s, 79.4s, 60.5s, 74.7s and 63.5s
 
 
 
 
 
+# More Modes!
+
+## Uni1
+
+###  Even modes
+
+![pic](https://drive.google.com/uc?export=view&id=1jBa7pxJxP1FdgU0JaRZOpKcadljuOLNW)  
+
+### Odd Modes
+
+![pic](https://drive.google.com/uc?export=view&id=146yGLgveqUtMOZCzHSvXfukLGC5UR_Wm)  
+
+### Higher order modes (summed)
+
+![pic](https://drive.google.com/uc?export=view&id=1JIwn7zCsEZGOnuF9TC8135V9_zDV9lNg)  
 
 
 
 
 
+## Uni5
+
+###  Even modes
+
+![pic](https://drive.google.com/uc?export=view&id=1ikIs04WTj2k6w76-gEDmo1QbVltCVDPu)  
+
+### Odd Modes
+
+![pic](https://drive.google.com/uc?export=view&id=1ww6HJ1_hsG8Me2oddf1Mda_qPSCeGd2w)  
+
+### Higher order modes (summed)
+
+![pic](https://drive.google.com/uc?export=view&id=1IO12MTBemarxOamgYS6aKhDU8kcTkQHU)  
 
 
+## Uni6
+
+###  Even modes
+
+![pic](https://drive.google.com/uc?export=view&id=1ZM3o9n4qGKuV1saoibX6zp-6zf6rmOma)  
 
 
+### Odd Modes
 
+![pic](https://drive.google.com/uc?export=view&id=1cRZys0nWXaIag1iibMcJE68QJV2s3VQr)  
+
+### Higher order modes (summed)
+
+![pic](https://drive.google.com/uc?export=view&id=1cnbzqAIcpxfjrYUMpposi4AnRbjV8E83)  
 
 
