@@ -48,7 +48,7 @@ The data set being visualised consisted of approximately 1000 separate files eac
 
 As well as a recognised standard and an efficient file format for read/write the hdf5 format is 20% smaller... bonus!
 
-Conveniently Paraview provides a number of readers for hdf5.
+Conveniently Paraview provides a number of readers for hdf5. The import method has already been described in an earlier post [Importing MHD Simulation Data into Paraview]().
 
 
 
