@@ -48,7 +48,41 @@ The data set being visualised consisted of approximately 1000 separate files eac
 
 As well as a recognised standard and an efficient file format for read/write the hdf5 format is 20% smaller... bonus!
 
-Conveniently Paraview provides a number of readers for hdf5. The import method has already been described in an earlier post [Importing MHD Simulation Data into Paraview]().
+Conveniently Paraview provides a number of readers for hdf5. The import method has already been described in an earlier post [Importing MHD Simulation Data into Paraview](http://mikeg64.github.io/visualisation/paraview/2021/01/08/importing-MHD-simulationdatatoParaview.html).
+
+
+
+
+
+## Paraview State Scripts
+
+
+
+* [stream_contour_extract_slices_magslices_dualview](https://github.com/mikeg64/smaug_wash/blob/master/paraview/py27-pv570/stream_contour_extract_slices_magslices_dualview.pvsm)
+
+![pic](https://drive.google.com/uc?export=view&id=1tKPKc13Cgoxi3tZiYqsuRXFnwXcp7V6R)  
+
+Example below includes generated python script which we can run using pvpython
+
+
+* [createvecs-visosurf-slice-vstreamline-denslicebase-extract.pvsm](https://github.com/mikeg64/smaug_wash/blob/master/paraview/createvecs-visosurf-slice-vstreamline-denslicebase-extract.pvsm)
+* [createvecs-visosurf-slice-vstreamline-denslicebase-extract.pvsm](https://github.com/mikeg64/smaug_wash/blob/master/paraview/createvecs-visosurf-slice-vstreamline-denslicebase-jpg-loop.py)
+
+
+![pic](https://drive.google.com/uc?export=view&id=1Nba7AfzGQguQT8FUwCBuAfbvCL6mgd3X)  
+
+
+
+https://drive.google.com/file/d/1Qcww2KSFQ0IpHdOv4nBecciSyxB9IX8u/view?usp=sharing
+
+https://drive.google.com/file/d/1eLglFaFlnl4UCEFP3TzKm9Zp51fVmlRp/view?usp=sharing         mov
+
+
+
+
+
+ [![2d-secs-mags](https://drive.google.com/uc?export=view&id=1Qcww2KSFQ0IpHdOv4nBecciSyxB9IX8u)](https://drive.google.com/file/d/1eLglFaFlnl4UCEFP3TzKm9Zp51fVmlRp/view?usp=sharing)
+
 
 
 
@@ -72,6 +106,36 @@ Custom loader plugin e.g. see:
 
 1. [https://www.paraview.org/Wiki/The_ParaView_Tutorial](https://www.paraview.org/Wiki/The_ParaView_Tutorial)
 2. [Introduction to Paraview](https://docs.paraview.org/en/latest/UsersGuide/introduction.html)
+
+
+
+
+
+
+
+
+## Pictures with hyperlinks in markdown
+
+embedding moview
+
+### 2d view showing mutually perpendicular slices  and the B field magnitude, lower figure shows a horizontal slice at the bae of the model
+
+ [![2d-secs-mags](https://drive.google.com/uc?export=view&id=17c29VYA05VPScr4gST3Qj_9Yf3jp0qgF)](https://drive.google.com/file/d/1UqvwW9Vu126W45BDwyPJwMU2yXOG3jBH/view?usp=sharing)
+
+
+
+
+![pic](https://drive.google.com/uc?export=view&id=1FGPalJfnkLemhIh833kqYk1H6uvqfaWc)  
+
+Copy the link to share and you will have something like
+https://drive.google.com/file/d/<FILE_ID>/view?usp=sharing
+
+Copy the <FILE_ID> to make a link like this:
+https://drive.google.com/uc?export=view&id=<FILE_ID>
+
+Insert image in Markdown as ususal using the link from step 4.
+For example: ![image](https://drive.google.com/uc?export=view&id=<FILE_ID>)
+
 
 
 
