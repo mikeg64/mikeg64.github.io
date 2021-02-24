@@ -195,8 +195,7 @@ Methods which were used for the visualisation included the following
 
 Another method which is highly effective is the use of a paraview client server system in which we can run paraview on a local desktop and the paraview server processes the data on the remote generating a rendered image. This proved problematic and the solution was not fully resolved, we look forward to resolving this soon!
 
-Guidelines for running and using pvserver are at [Running ParaView in Client-Server Mode
-](Running ParaView in Client-Server Mode).
+Guidelines for running and using pvserver are at  [Running ParaView in Client-Server Mode](https://hpc.llnl.gov/software/visualization-software/paraview/running-paraview-client-server-mode).
 
 # Future Developments
 
