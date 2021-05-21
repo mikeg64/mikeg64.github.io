@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Paraview of Washing Machine Results"
+title:  "Reading VAC/SAC/SMAUG Data into Paraview"
 date:   2021-05-21 15:11:28 +0100
 categories: Washing Machine Update
 tags: washingmachine  analysis matlab paraview Visualisation
@@ -20,7 +20,26 @@ Now installing a later version on the compute service at The University of Sheff
 * Use an existing idl based converter e.g. see [run_convert_wash_vtk](https://github.com/mikeg64/smaug_wash/blob/master/Idl/runconvert_wash_vtk)
 
 A post detailing the problem on kitwares discussion group explains the problem as follows.
-[](https://discourse.paraview.org/t/implementing-a-visit-reader-in-paraview-5-8-0-add-visit-plugin-reader/3726)
+[Implementing a Visit Reader in Paraview 5.8.0 ADD_VISIT_PLUGIN_READER](https://discourse.paraview.org/t/implementing-a-visit-reader-in-paraview-5-8-0-add-visit-plugin-reader/3726)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Pictures with hyperlinks in markdown
