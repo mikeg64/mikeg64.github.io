@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "A Study of Solar Jets Using 2D MHD"
-date: "2021-30-07"
+date: "2021-07-30"
 tags:
  jets
 ---
