@@ -21,15 +21,29 @@ We want to use the NVIVO software to
 
 ## Method
 
+An initial collection of references for this project has been identified through Harvard ADS at reference 12 (below) these references could be imported into Endnote (ref. 5). There are two jobs we need to complete using NVivo
 
-https://drive.google.com/file/d/1h7pyQpMlOa4al9qJW9CmB8LotvE4MiH_/view?usp=sharing
+1. Download the papers as pdf's and link to them using NVIVO
+2. import the endnote publication archive into nvivo
 
+With the papers imported into NVIVO a number of qualitative research possibilities are open textual processing, tagging, annotation and coding.
+
+Coding requires care and before emabarking on this check some of the material linked below  [6] [7] [8] [9] [10] '11]
+
+A useful lapproach is a mind map representation of our documents as illustrated below
 
 ![picll](https://drive.google.com/uc?export=view&id=1FQKUCAv0O6ee6XCSABmfUuYeDBX78mxx)  
 
+
+
+
+Constructing the mindmap and colouring it appropriately. The NVIVO  window is shown below
+
+1. Use the mand map to create a set of codes
+2. Open a paper and select sections of text  also open the coding menu to select an appropriate code to code that section to
 ![picnvivo](https://drive.google.com/uc?export=view&id=1h7pyQpMlOa4al9qJW9CmB8LotvE4MiH_)  
 
- 
+ This procedure is repeated for all the papers this is an iterative process part of which include the annotation of relevant sections of the document.
 
 ## References
 
