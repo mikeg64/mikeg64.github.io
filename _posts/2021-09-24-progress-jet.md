@@ -43,12 +43,12 @@ In the file boundary_jet_hydro.cu the functions for calling continuous boundary 
 
 For the 2D model the key lines are as follows:
 
-    `           if((i==0 || i==1) )              
-                    wmod[  shift+encode3_b(p,i,j,k,f)]=wmod[  shift+encode3_b(p,3,j,k,f)];             
-                else if((( i==((p->n[0])-1)   )) )               
-                    wmod[  shift+encode3_b(p,i,j,k,f)]=wmod[  shift+encode3_b(p,(p->n[0])-3,j,k,f)];
-                else if(((  i==((p->n[0])-2) ))  )               
-                    wmod[  shift+encode3_b(p,i,j,k,f)]=wmod[  shift+encode3_b(p,(p->n[0])-3,j,k,f)]; `
+    `if((i==0 || i==1) )              
+          wmod[  shift+encode3_b(p,i,j,k,f)]=wmod[  shift+encode3_b(p,3,j,k,f)];             
+      else if((( i==((p->n[0])-1)   )) )               
+          wmod[  shift+encode3_b(p,i,j,k,f)]=wmod[  shift+encode3_b(p,(p->n[0])-3,j,k,f)];
+      else if(((  i==((p->n[0])-2) ))  )               
+          wmod[  shift+encode3_b(p,i,j,k,f)]=wmod[  shift+encode3_b(p,(p->n[0])-3,j,k,f)]; `
 
 The lines above set the values in the ghost cell regions to be identical to the values at the true edge of the model.
 
